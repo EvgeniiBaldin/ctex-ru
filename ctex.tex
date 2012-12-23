@@ -1,0 +1,166 @@
+%  -*- coding: koi8-r -*-
+
+\input{preheader}
+% \usepackage[print]{booklet}
+% \usepackage{twoup}
+
+
+\includeonly{
+  ctex-title, %титул и оглавление
+  preamble/preamble, %Введение
+ intro/intro, %Запускаем LaTeX
+ base/base, %Базовые элементы
+ math/math-1,
+ graphics/graphics,
+ program/program, %программирование
+ make-up/make-up,
+ classes/classes,
+ presentation/presentation,
+ base/base-2, %Базовые элементы 2
+ tables/tables,
+ apparatus/apparatus,
+ math/math-2, %Математика
+ code/code, %Документация и программный код
+ science/science, %Точные науки
+ humanities/humanities,%гуманитарные направления
+ catalog/catalog, %каталог пакетов
+ catalog/appendix, %приложение
+ ctex-index %указатель
+}
+
+
+\excludeonly{
+%   ctex-title, %титул и оглавление
+%  preamble/preamble, %Введение
+%    intro/intro, %Запускаем LaTeX
+%   base/base, %Базовые элементы
+%    math/math-1,
+%    graphics/graphics,
+%   program/program, %программирование
+%       make-up/make-up,
+%     classes/classes,
+%    presentation/presentation,
+%   base/base-2, %Базовые элементы
+%    tables/tables,
+%    apparatus/apparatus,
+% %   math/math-2, %Математика
+%    code/code, %Документация и программный код
+%    science/science, %Точные науки
+%    humanities/humanities,%гуманитарные направления
+% catalog/catalog, %каталог пакетов
+% catalog/appendix, %приложение
+% ctex-index %указатель
+}
+
+
+
+
+% \makeglossary
+
+\begin{document}
+
+%\title{\LaTeX, Unix и русский стиль}
+%\author{Балдин Е.М.}
+
+%колонтитулы
+%\usepackage{scrpage2}
+%\pagestyle{empty}
+
+
+%\frontmatter
+\mainmatter
+
+%нумерация строк для работы с ним
+%\switchlinenumbers
+% \setpagewiselinenumbers
+% \linenumbers
+
+
+%первая страничка
+\include{ctex-title}
+
+
+%\listoffixmes{}
+
+
+% \mainmatter
+
+
+
+%Введение
+\include{preamble/preamble}
+%Запускаем LaTeX
+\include{intro/intro}
+%Базовые элементы
+\include{base/base} 
+%Школьная математика
+\include{math/math-1}
+%Графика-1
+\include{graphics/graphics}
+% Начала программирования
+%\newcounter{MyCount}
+%\newcounter{Main}
+%\newcounter{Dep}
+%\newcounter{Problem}[section]
+\include{program/program} 
+%Вёрстка
+\include{make-up/make-up}
+%путеводитель по классам
+\include{classes/classes}
+%презентации
+\include{presentation/presentation}
+%базовые элементы 2
+\include{base/base-2} %Базовые элементы 2
+%всё о таблицах
+\include{tables/tables}
+%аппарат издания
+\include{apparatus/apparatus}
+%Математика
+\newcounter{Thexmpl}[section]
+\include{math/math-2}
+%Документация и программный код
+\include{code/code}
+%Точные науки
+\include{science/science}
+%гуманитарные направления
+\include{humanities/humanities}
+%Каталог пакетов
+\include{catalog/catalog}
+
+%нумерация для правки
+% \nolinenumbers
+
+
+%библиография
+
+% \nocite{Gussens-1999}
+% \nocite{Lvovskij-2003}
+% \nocite{Kotelnikov-2004}
+% \nocite{Rozhenko-2005}
+
+\backmatter
+
+%Приложение
+\pdfbookmark{Приложение}{appendix}
+\include{catalog/appendix}
+%Указатель
+\include{ctex-index}
+
+
+
+
+
+
+%\printindex[pkg]
+
+
+%\printindex[idx]
+
+
+
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% End: 

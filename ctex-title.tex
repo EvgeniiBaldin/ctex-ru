@@ -1,0 +1,187 @@
+%  -*- coding: koi8-r -*-
+\begin{titlepage}
+
+% \bigskip
+%   \bigskip
+%   \bigskip
+
+  
+  \begin{center}
+    \large Компьютерные \TeXнологии
+  \end{center}
+
+  \vspace*{0.15\textheight}
+  \renewcommand{\thefootnote}{\fnsymbol{footnote}}  
+  \Large \textsc{Е.\,М. Балдин}\footnote[1]{e-mail: E.M.Baldin@inp.nsk.su}
+  \smallskip
+    
+  \Huge \textsc{Компьютерная типография}\\[5mm]
+  \includegraphics[width=0.6\textwidth]{title-LaTeX}
+  % {\LaTeX{}}
+
+
+
+%или \LaTeX{} [латех]  для ВСЕХ
+  \bigskip
+
+
+%   \bigskip
+%   \bigskip
+%   \bigskip
+
+% \includegraphics[height=0.1\textheight]{math/math-1.eps}
+% \includegraphics[height=0.1\textheight]{science/chemistry-xymtex.eps}
+% \includegraphics[height=0.1\textheight]{humanities/humanities-musixtex-2.eps}
+% \includegraphics[height=0.1\textheight]{humanities/hierotex.eps}
+\vfill
+
+
+
+\begin{center}
+  \Large \ccbysa \smallskip
+
+  \large Новосибирск 2008, 2012
+\end{center}
+
+
+% \includegraphics[height=0.1\textheight]{science/eepsiee.eps}
+% \includegraphics[height=0.1\textheight]{science/physics-pst-optic.eps}
+% \includegraphics[height=0.1\textheight]{science/physics-pst-osci.eps}
+
+
+%     \includegraphics[width=\textwidth]{title.1.eps}
+%     \footnotetext{Эмблемы \TeX{} и  \METAFONT{},
+%       созданные Дуайном Бибби, взяты со странички Д.Э.\,Кнута.}
+
+% \vfill
+
+% \begin{center}
+%   Новосибирск, 2006
+% \end{center}
+  
+\end{titlepage}
+
+
+% \makeatletter
+% \renewcommand*\toc@heading{%
+%   {\Huge\normalfont\contentsname sdfsadfsad}%
+%   \@mkboth{\contentsname}{\contentsname}%
+% }
+% \makeatother
+
+%параметры оглавления
+\addtolength{\cftchapnumwidth}{0.7ex}
+\addtolength{\cftsecnumwidth}{1ex}
+\addtolength{\cftsubsecnumwidth}{0.8ex}
+\setlength{\cftbeforetoctitleskip}{\TopHeaderSkip}
+\setlength{\cftaftertoctitleskip}{\AfterHeaderSkip}
+\renewcommand{\cfttoctitlefont}{\MyHeaderFont}
+% \renewcommand{\cftchapleader}{\cftdotfill{\cftchapdotsep}}
+% \renewcommand{\cftchapdotsep}{\cftdotsep}
+
+%
+
+%\addcontentsline{toc}{section}{Краткое оглавление}
+%\tableofcontents{}%
+\thispagestyle{empty}
+% \newlength{\ML}
+% \setlength{\ML}{\parindent}
+% \noindent\hspace*{2cm}
+% \begin{minipage}{\textwidth-2cm}
+  % \hspace*{\ML} 
+\pdfbookmark{Преамбула}{preambule}
+
+<<Компьютерная типография \LaTeX>> была выпущена издательством
+<<БХВ"=Петербург>> в 2008 году за номером ISBN 978-5-9775-0230-6.  По
+договору с издательством права на текст возвратились ко мне, и я решил
+выложить его под свободной лицензией Creative Commons
+Attribution"=ShareAlike 3.0 Unported (CC-BY-SA 3.0).  Если для вашего
+проекта необходима смена лицензии на другую, то свяжитесь со мной по
+этому поводу.
+
+Книга является руководством по использованию текстового процессора
+\LaTeX. Описаны все базовые элементы процесса набора и вёрстки,
+упомянуто свыше 1300 команд \LaTeX{} и около 750 пакетов, стилей и
+классов, которые можно использовать при наборе любых текстовых
+документов. Рассмотрены создание презентаций, вёрстка таблиц, вставка
+графических объектов, формирование библиографии, алфавитного указателя
+и многие другие задачи. На конкретных примерах показано, что
+компьютерной типографии под управлением \LaTeX{} доступны проекты
+любой сложности и направленности. Значительная часть книги посвящена
+главному преимуществу \LaTeX{} перед другими текстовыми процессорами
+"--- набору математики.
+
+
+Эта книга была создана с нуля целиком и полностью исключительно
+средствами \LaTeX. Я ответственен и за текст, и за вёрстку, поэтому
+буду благодарен любым замечаниям и конструктивным советам по поводу
+улучшения качества электронной версии книги.
+
+
+  % \hspace*{\ML}CD содержит дистрибутив \TeXLive{} 2007, в
+  % котором есть всё необходимое для работы с издательской системой
+  % \LaTeX{} в средах GNU/Linux и Windows, а также обширную коллекцию
+  % шрифтов и пакетов \LaTeX{} с исчерпывающей документацией к ним.
+
+\begin{center}
+  \textit{Для широкого круга пользователей}
+\end{center}
+% \end{minipage}
+\bigskip
+
+\begin{otherlanguage}{english}
+  The book ``Computer Typesetting Using \LaTeX'' was published by the
+  ``BHV-Petersburg'' (Russia) publishing house in 2008 under ISBN
+  978-5-9775-0230-6.  Under the contract with the publishing house, I
+  have now regained exclusive rights to the content and decided to
+  publish it under a Creative Commons Attribution-ShareAlike 3.0
+  Unported License (CC-BY-SA 3.0).  Please contact me if you require a different type
+  of copyright license for your purposes.
+
+% the free license CC BY-SA 3.0.
+
+  This book is a guide to using the \LaTeX{} document preparation
+  system. It describes the complete fundamentals of the typesetting
+  and layout processes and covers at least 1300 \LaTeX{} commands and
+  about 750 packages, styles, and classes that can be used in the
+  typesetting of any documents.  It also deals with creating
+  presentations, table layouts, inserting graphics, bibliography and
+  index, and many other tasks. Specific examples demonstrate that
+  publishing systems using \LaTeX{} can handle projects of any scope
+  and complexity. A major part of the book is devoted to the
+  typesetting of mathematical text, which is the key differentiator of
+  \LaTeX{} compared to other word processors.
+
+  The book was written completely and exclusively by means of \LaTeX{}
+  tools.  As the author of both the content and the typesetting, I
+  will greatly appreciate any comments and useful advice on improving
+  the quality of the electronic version of the book.
+\end{otherlanguage}
+
+
+\newpage
+
+
+\thispagestyle{empty}
+{
+  \vspace*{\TopHeaderSkip}%
+  \noindent\MyHeaderFont Краткое оглавление%
+  \pdfbookmark{Краткое оглавление}{shortcontent}
+  \vspace*{0.5\AfterHeaderSkip}%
+}
+\shorttableofcontents{\cfttoctitlefont Краткое оглавление}{0}%
+
+\newpage
+\thispagestyle{empty}
+\pdfbookmark{Оглавление}{content}
+\tableofcontents{}
+
+% \addcontentsline{toc}{chapter}{Список иллюстраций}
+% \listoffigures{}
+% \addcontentsline{toc}{chapter}{Список таблиц}
+% \listoftables{}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "ctex"
+%%% End: 

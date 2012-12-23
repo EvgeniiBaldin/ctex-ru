@@ -1,0 +1,369 @@
+%  -*- coding: koi8-r -*-
+\chapter{Запускаем \LaTeX}
+\label{cha:runlatex}
+
+{\setlength{\epigraphwidth}{0.57\textwidth}
+  \epigraph{Лучший способ в чём-то разобраться до конца "---  попробовать научить
+этому компьютер.}{\emph{Дональд Э.\,Кнут}}}
+
+
+% {\setlength{\epigraphwidth}{0.7\textwidth}
+%   \epigraph{\LaTeX{} "--- это истинная \TeXнология.\\
+%     Никогда ещё создание книг не было таким интересным.}{Я
+%     действительно так думаю.}}
+
+
+% \begin{flushright}
+% \end{flushright}
+
+
+% \section{Выбор дистрибутива \LaTeX}
+% \label{sec:runlatex:dist}
+
+
+% \begin{figure}[phtb]
+%   \centering
+%   % для печати следует использовать png - надо как-то понять как
+%   % делать скриншорты
+%   \includegraphics[angle=90,width=\textwidth]{reftex-contents}
+%   \caption{Пример набора текста в текстовом редакторе слева. Просмотр
+%     результата набора справа.}\label{fig:reftex-screen-example}
+% \end{figure}
+
+
+
+% \section{А теперь запускаем \LaTeX}
+% \label{sec:runlatex:runlatex}
+
+
+Предполагается, что дистрибутив \LaTeX{} на компьютере уже установлен
+и настроен. Если это не так, то следует потревожить администратора или
+суперпользователя по этому поводу. Обычно проблем с установкой не
+возникает. Возможные шероховатости с русским языком в современных
+дистрибутивах возникают по недоразумению.
+
+По традиции для начала скажем: <<Здравствуй, мир!!!>> Для этого в
+любом удобном для вас текстовом редакторе\footnote{Лучше, чтобы этот
+  текстовый редактор оказался \textprog{emacs} "--- в каждой шутке есть только
+  доля шутки \smiley. } нужно создать файл \texttt{helloworld.tex},
+примерно следующего содержания:
+\begin{lstlisting}[]
+% Выбор класса документа
+\documentclass{article} 
+% Чтобы можно было использовать русские буквы в формулах,
+%но в случае использования предупреждать об этом
+\usepackage[warn]{mathtext}
+% Выбор внутренней |\TeX{}|-кодировки
+\usepackage[T2A]{fontenc}
+% Выбор кодовой страницы документа 
+% Так же можно выбрать cp1251 или utf8
+\usepackage[koi8-r]{inputenc}
+% Выбор языка документа
+\usepackage[english,russian]{babel}
+% Начинать первый параграф раздела следует с красной строки
+\usepackage{indentfirst}
+% Конец преамбулы и начало текста
+\begin{document}
+\LARGE Здравствуй|,| мир!!!
+\end{document}
+
+\end{lstlisting}
+Комментарии, которые начинаются со знака \lstinline!%!, можно опускать.
+Всё, что идёт до~\lstinline!\begin{document}!, называется преамбулой
+или <<шапкой>>. Преамбула определяет вид итогового документа. Нет
+необходимости каждый раз набивать эти строчки с нуля. Для этого
+достаточно обучить текстовый редактор вставлять их автоматически при
+создании нового tex-файла. После создания текста его необходимо
+откомпилировать:
+\begin{lstlisting}[language=bash,frame=]
+> latex helloworld.tex 
+This is pdfeTeXk, Version 3.141592-1.30.3-2.2 (Web2C 7.5.5)
+ %&-line parsing enabled.
+entering extended mode
+(./helloworld.tex
+LaTeX2e <2003/12/01>
+
+       |\ldots|
+
+(./helloworld.aux) [1] (./helloworld.aux) )
+Output written on helloworld.dvi (1 page, 240 bytes).
+Transcript written on helloworld.log.
+>
+
+\end{lstlisting}
+В качестве результата \LaTeX{} выдаёт файл \texttt{helloworld.dvi}.
+Далее есть выбор:
+\begin{itemize}
+\item просмотреть результат с помощью 
+  \textprog{xdvi}\footnote{\textprog{xdvi} распространён в
+    Unix-подобных операционных системах. В других операционных
+    системах могут быть свои программы просмотра.} или
+  \textprog{dviout}\footnote{\textprog{dviout} является для \TeXLive{} базовой
+    программой просмотра dvi в среде MS~Windows.}:
+\begin{lstlisting}[language=bash,frame=]
+> xdvi helloworld.dvi
+
+\end{lstlisting}
+\item преобразовать dvi-файл в
+  PostScript\footnote{PostScript "--- язык описания страниц,
+    разработан Джоном Уорноком и Чаком Гешке из~Adobe
+    Systems. Интерпретаторы PostScript аппаратные или программные
+    (ghostscript) широко используется при печати документов.} и
+  просмотреть его с помощью \textprog{gv} (для Unix) или
+  \textprog{ghostview} (для Windows), а потом распечатать на
+  стандартном PostScript-принтере (если он есть, естественно),
+  например так:
+\begin{lstlisting}[language=bash,frame=]
+> dvips helloworld.dvi
+> gv helloworld.ps
+> lpr helloworld.ps
+
+\end{lstlisting}
+\item сделать PDF\footnote{PDF "--- Portable Document Format. Этот
+    формат, как и PostScript, создан фирмой Adobe Systems. Является
+    стандартом для электронной документации.} и, естественно,
+  просмотреть его с помощью \textprog{xpdf}, \textprog{kpdf} или Adobe
+  Reader:
+\begin{lstlisting}[language=bash,frame=]
+> dvips helloworld.dvi
+> ps2pdf helloworld.ps helloworld.pdf
+> kpdf helloworld.pdf
+
+\end{lstlisting}
+\end{itemize}
+Во всех случаях на экране отобразится одно и то же:
+\begin{figure}[htbp]
+  \centering
+  \includegraphics[width=\textwidth]{intro/helloworld}
+  \caption{<<Здравствуй, мир!!!>> от \LaTeX}\label{fig:helloworld}
+\end{figure}
+
+Если используется редактор, ориентированный на набор \LaTeX-текстов, то,
+скорее всего, всё, что перечислялось выше, можно сделать из него через
+клавиатурные сокращения/меню/команды/кнопки.
+
+\section{Проблемы с компиляцией}
+\label{sec:runlatex:compile-error}
+
+Случается, что при наборе допускается ошибка, тогда при компиляции
+исходника \LaTeX{} может затребовать дополнительную информацию. 
+
+Если просто запустить \textprog{latex} без каких либо инструкций, то
+на экране появится приглашение:
+\begin{lstlisting}[language=bash,frame=]
+> latex
+This is pdfeTeXk, Version 3.141592-1.30.3-2.2 (Web2C 7.5.5)
+ %&-line parsing enabled.
+**
+
+\end{lstlisting}
+
+\LaTeX{} ждёт ввода имени текстового файла, чтобы начать его
+обработку.  Можно прервать ожидание по \lstinline!^C! (Ctrl+C). 
+
+Если же правильно задать файл при запуске \textprog{latex}, но при
+этом ошибиться в коде, то \LaTeX{} выдаст сообщение об ошибке с
+номером строчки, где возникла проблема, и предложит сделать выбор:
+\begin{lstlisting}[language=Clean,frame=]
+! Undefined control sequence.
+l.11 \errorinbody
+                 
+?
+\end{lstlisting}
+На запрос (\lstinline{?}) можно ввести \lstinline{h}, и тогда будет
+выдано предположение о том, с чем может быть связана ошибка.
+\begin{lstlisting}[language=Clean,frame=]
+? h
+
+The control sequence at the end of the top line of 
+your error message was never \def'ed. If you have 
+misspelled it (e.g., `\hobx'), type `I' and the 
+correct spelling (e.g., `I\hbox'). Otherwise just 
+continue, and I'll forget about whatever was undefined.
+
+? x
+
+\end{lstlisting}
+
+Для того чтобы прервать выполнение компиляции, нужно набрать
+\lstinline{x} и перевод строки. В случае обычного перевода строки
+компиляция продолжится до следующей ошибки или до самого конца.
+Краткую информацию об управляющих командах можно получить, введя знак
+вопроса (\lstinline{?}).
+
+\Note\emph{Добрый совет}: найденную ошибку следует немедленно
+ликвидировать. Следующие предупреждения об ошибке могут быть
+следствием той самой первой.
+
+Интерактивный режим для работы с ошибками \LaTeX{} "--- довольно мощный
+инструмент разбирательства, но на первых порах лучше следовать
+<<Доброму совету>>. Текстовые редакторы, в которых предусмотрена
+поддержка редактирования исходников \LaTeX, обычно на основании
+сообщения об ошибке позволяют её локализовать.
+
+
+\section{\LaTeX-конвейер}
+\label{sec:runlatex:ltx-pipe}
+
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\textwidth]{intro/intro-1}
+  \caption{\LaTeX-конвейер}\label{fig:ltx-pipe}
+\end{figure}
+
+
+
+
+В процессе работы \LaTeX{} читает и записывает несколько файлов.
+Полезно знать, что это за файлы и зачем они нужны.
+
+На вход подаётся текстовый файл с \LaTeX-разметкой. Традиционно файл
+имеет расширение \textext{tex}.  В качестве результата на выходе
+получается файл с тем же самым именем, что и на входе, но с
+расширением \textext{dvi}. Dvi "--- это device
+independent (не зависящий от устройства) формат, который хранит
+информацию о форматировании текста и размещении всех его элементов на
+странице, но без самих букв и картинок. Программы, преобразующие
+dvi-файл в другое представление, называются dvi"=драйверами.
+
+
+Программа просмотра \textprog{xdvi} преобразует dvi-файл в
+картинку на экране монитора. Это очень продвинутый драйвер. Он
+реалистично представляет вид напечатанной страницы, поддерживает
+гиперссылки и позволяет организовать обратную связь с текстом. Ещё
+одним популярным dvi-драйвером является
+\textprog{dvips}. \textprog{dvips} производит качественный PostScript,
+который уже можно передать принтеру на печать либо напрямую (если принтер
+поддерживает PostScript аппаратно), либо через программный
+интерпретатор Ghostscript. Существуют и другие dvi"=драйверы, например,
+\textprog{dvi2tty} пытается перевести dvi обратно в текст,
+\textprog{dvilj} переводит dvi в инструкции PCL для принтеров HP,
+\textprog{dvipdf} транслирует dvi в pdf. Обилие dvi-драйверов
+позволяет рассмотреть/напечатать dvi"=файлы практически в любой
+ситуации.
+
+Свободный программный интерпретатор Ghostscript (\textprog{gs}) в свою
+очередь позволяет преобразовывать PostScript"=файлы (\textext{ps}) в
+другие форматы. Обычно PDF получают именно из PostScript с помощью
+скрипта \textprog{ps2pdf}.
+
+Графика в \LaTeX, как правило, добавляется через eps-файлы. EPS, или
+En\-cap\-su\-lated PostScript, "--- это векторный графический формат,
+который представляет из себя инструкции на языке PostScript с
+некоторыми ограничениями.  Одно из~основных требований заключается в
+том, что в заголовке eps-файла обязательно должны быть
+указаны его размеры (BoundingBox).  Так выглядит заголовок
+eps"=файла, сделанного из примера <<Здравствуй, мир!!!>>:
+\begin{lstlisting}[language=Clean,frame=]
+%!PS-Adobe-2.0 EPSF-2.0
+%%Creator: dvips(k) 5.95b Copyright 2005 Radical Eye Software
+%%Title: helloworld.dvi
+%%BoundingBox: 148 651 288 668
+%%DocumentFonts: SFRM1728
+
+\end{lstlisting}
+%%EndComments
+
+{\renewcommand{\theenumi}{\Roman{enumi}}
+\renewcommand{\labelenumi}{\theenumi.}
+Перечислим теперь остальные файлы, которые участвуют в этом круговороте:
+\begin{enumerate}
+\item Внешние файлы.
+  \begin{eqlist*}
+  \item[\textext{fmt}] "--- форматный файл. Содержит, главным образом, все команды
+    \LaTeX{} в предварительно откомпилированной форме. Также содержит
+    информацию о переносах. При изменении значений глобальных
+    переменных \TeX{} требуется пересборка форматного файла:
+\begin{lstlisting}[language=bash,frame=]
+> texconfig init 
+\end{lstlisting}
+  \longitem[\textext{cls}, \textext{sty}] "--- определение макета и структуры
+    документа. Класс (\textext{cls}) документа  выбирается с помощью
+    инструкции \textcmd{documentclass}. Дополнительные возможности и
+    изменение поведения класса по умолчанию достигаются посредством
+    использования пакетов (\textext{sty}), которые инициализируются командой 
+    \textcmd{usepackage}.
+  \item[\textext{tfm}] "--- метрики шрифтов. Размеры и правила
+    взаимодействия литер друг с~другом.
+  \item[\textext{fd}] "--- приведение внешних названий шрифтов к виду,
+    принятому в \LaTeX.
+  \item[\textext{pfb}] "---  векторные Type1-шрифты.
+  \longitem[\textext{pk} \textext{(mf)}] "--- растровые pk-шрифты по мере
+    необходимости создаются из векторных mf-шрифтов (\METAFONT) с
+    необходимым разрешением.
+  \end{eqlist*}
+\item Файлы, создаваемые в процессе \LaTeX-конвейера. Обычно для
+  получения итоговой копии документа требуется несколько раз запускать
+  \textprog{latex}. При первом проходе записывается некоторое число
+  информационных файлов, которые при последующих проходах используются
+  для нумерации ссылок, составления оглавления и тому подобного.
+  \begin{eqlist*}
+  \item[\textext{log}] "--- файл протокола. В этот файл <<скидывается>> вся
+    информация, имеющая отношение к компиляции. Фактически дублирует
+    стандартный вывод на экран.
+  \item[\textext{aux}] "--- информация о перекрёстных ссылках.
+  \item[\textext{toc}] "--- файл оглавления (table of contents).
+  \item[\textext{lof}] "--- список иллюстраций (list of figures).
+  \item[\textext{lot}] "--- список таблиц (list of tables).
+  \item[\textext{bbl}] "--- список литературы, сформированный с помощью программы
+    \BibTeX. На первых порах можно обойтись без этой \TeXнологии, но
+    для серьёзных проектов управление списком литературы становится не
+    менее серьёзной задачей.
+  \item[\textext{ind}] "--- предметный указатель, сформированный программой
+    MakeIndex или \textprog{xindy}.  В каждой <<уважающей себя>> и несущей
+    полезную информацию книге есть такой. Для составления используются
+    idx-файлы.  Организация указателя "--- это отдельная
+    весьма нетривиальная задача.
+  \end{eqlist*}
+\end{enumerate}
+}
+
+Ранее был описан <<классический>> \LaTeX-конвейер. Программа
+\textprog{latex} может быть заменена на \textprog{pdflatex}, тогда на
+выходе сразу будет получаться pdf-файл, а графическая
+информация должна быть представлена в форматах png\footnote{PNG
+  (Portable Network Graphics) "--- растровый формат хранения
+  графической информации, использующий сжатие без потерь.} или
+pdf. Возможны и другие вариации, но в целом структура остаётся той же.
+
+
+
+% \section*{Врезка <<про CTAN>>}
+% \label{base:CTAN}
+
+% Q. Что такое CTAN?
+                                      
+% A. CTAN "--- это международный файловый архив. Аббревиатура CTAN
+% расшифровывается как Comprehensive TeX Archive Network. Цель CTAN "---
+% собрать всё, что относится к \TeX{} и его производным в одном месте..
+% Основные сайты, составляющие CTAN "--- это:
+% \begin{itemize}
+% \item \url{ftp://ftp.dante.de/tex-archive/}
+% \item \url{ftp://ftp.tex.ac.uk/tex-archive/}
+% \item \url{ftp://ctan.tug.org/tex-archive/}
+% \end{itemize}
+% Зеркала CTAN разбросаны по всему свету, в частности, в России
+% находятся:
+% \begin{itemize}
+% \item \url{ftp://ftp.chg.ru/pub/TeX/CTAN/}
+% \item \url{ftp://ftp.nsu.ru/mirrors/ftp.dante.de/tex-archive/}
+% \end{itemize}
+
+
+% Пакеты, это как мясо, жилы и даже жир, которыми обрастает скелет в
+% виде стабильного ядра \TeX. Такая модель разработки (ядро плюс
+% множество расширений) довольно успешна. Существуют достаточно много
+% развитых сообществ, которые исповедуют тот же путь. Взять тот же
+% CPAN\footnote{Comprehensive Perl Archive Network.} для perl
+% CRAN\footnote{Comprehensive R Archive Network} для R и
+% PyPI\footnote{Python Package Index} для python "--- один в один модель
+% CTAN, тем более, что именно с него она и копировалась.
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../ctex"
+%%% End: 
+

@@ -10,4 +10,9 @@
 *.glo
 *.gls
 *.tar.bz2
+*.mpx
+*.out
 *~
+*-eps-converted-to.pdf
+# auctex dir
+auto/
