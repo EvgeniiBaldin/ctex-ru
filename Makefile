@@ -5,18 +5,7 @@
 # 2012 (c)  Е.М. Балдин 
 #
 
-PREFIX := @
-MPOST := mpost -tex=latex 
-LATEX := latex
-PDFLATEX := pdflatex
-DVIPS := dvips
-RM := rm -f
-ECHO := echo
-
-TMPFILES := *.aux *.log *.dvi *.exa *.idx *.ind *.ilg *.cb *.blg *.glo *.gls \
-            *.mpx *~ *-eps-converted-to.pdf *.out
-
-TITLEPICS := title-LaTeX.eps
+include rules.mk
 
 
 all:
@@ -56,10 +45,14 @@ intro/intro-1.eps:
 	$(PREFIX)cd intro; make intro-1.eps
 
 
-base-1:
+# Базовые элементы
+base-1: base/base.tex
 
-math-1:
+# Начала математики
+math-1: math/math-1.tex math/math-1-amsfonts.eps
 
+math/math-1-amsfonts.eps
+	$(PREFIX)cd intro; make math-1-amsfonts.eps
 
 graphics-1:
 
@@ -94,4 +87,4 @@ index-1:
 
 
 clean:
-	$(PREFIX)$(RM) $(TITLEPICS) $(TMPFILES)
+	$(PREFIX)$(RM)  $(TMPFILES)

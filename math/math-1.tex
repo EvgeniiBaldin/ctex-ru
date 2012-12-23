@@ -1,0 +1,733 @@
+%  -*- coding: koi8-r -*-
+\chapter{Начала математики}
+\label{cha:math} {\setlength{\epigraphwidth}{0.55\textwidth}
+  \epigraph{Полиграфисты относят математические работы к
+    каторжным\ldots}{\emph{Дональд Э.\,Кнут}} }
+
+
+
+Иногда от незнакомых с \TeXнологиями людей приходится слышать, что
+\LaTeX{} годится \emph{только} для набора математики. При знакомстве
+же с истинными \TeXно\-ло\-ги\-ями возникает понимание, что \LaTeX{}
+настолько хорош, что с его помощью можно набирать \emph{даже}
+математику.
+
+
+Набор математики всегда считался вершиной типографского искусства.
+Дело в том, что формулы для концентрации информации и дополнительной
+выразительности в отличие от обычного текста являются
+многоуровневыми. Д.\,Э.~Кнут к своей программе компьютерной типографии
+создал язык для описания формул. После короткого периода обучения
+пользователь будет в состоянии читать и набирать формулы на этом языке
+фактически независимо от их сложности. 
+
+
+\LaTeX{} не единственная программная среда, использующая
+\TeX"=нотацию. Эта же нотация рекомендуется при наборе 
+%всех хоть сколько"=нибудь сложных
+ формул на~страницах Википедии\mindex{Википедия}
+(статья <<Википедия:Формулы>> на сайте \url{http://ru.wikipedia.org} ).
+
+Становлению \TeX{} как стандарта для набора формул в значительной
+степени поспособствовало Американское математическое сообщество (The
+American Mathema\-tical Society или AMS), которое в начале
+восьмидесятых годов прошлого столетия инициализировало и субсидировало разработку
+расширения \TeX, известного как \AMSTeX. В 1987 году наработки
+\AMSTeX{} были добавлены в~\LaTeX{} в виде пакета
+\textpkg{amsmath}. 
+
+Вместе с \textpkg{amsmath} в \LaTeX{} было добавлено множество
+улучшений, позволяющих набирать действительно изощрённую
+математику. Поэтому при использовании в тексте математики в преамбуле
+документа следует в обязательном порядке загружать пакет
+\textpkg{amsmath}.
+
+В дальнейшем предполагается, что этот пакет уже загружен:
+\begin{lstlisting}[language=TeX]
+\usepackage{amsmath}
+\end{lstlisting}
+
+Полностью описать \emph{все} команды языка описания формул вряд ли
+реально, потому что математика, как и способы её описания,
+безграничны. Поэтому основное внимание будет уделено базовым правилам
+и русскому стилю в формулах.
+
+% В любой сколько-нибудь большой книге по \LaTeX{} будет полный список
+% всех команд. Если серьёзно работать с математикой, то подобная книжка
+% в любом случае понадобится.
+
+
+
+\section{Набор формул}
+\label{sec:formula}
+
+
+При формирования текста формулы подразделяются на \emph{строчные} и
+\emph{выносные}. Строчные формулы набираются внутри абзаца вместе
+с текстом.  По описанию формулы \LaTeX{} создаёт бокс, который
+обрабатывается наравне с обычными текстовыми боксами. Как правило,
+строковые формулы "--- это небольшие вставки, вроде \(E=mc^2\). Выносные
+или \emph{выключенные} формулы выводятся за пределы абзаца.
+
+
+Строчная формула ограничивается\footnote{Есть более формальное
+  оформление строчной формулы как окружения: \texttt{\bs
+    begin\{math\}} <<формула>> \texttt{\bs end\{math\}}. Но в силу
+  понятных причин никто подобное описание не использует в пользу
+  кратких обозначений.} с помощью символа доллара \$<<формула>>\$ или
+с помощью команд-скобок \bs(<<формула>>\bs). При наборе
+предпочтительно использовать второй вариант оформления, так как он
+позволяет легко определить, где начинается, а где заканчивается
+формула. <<Долларовое>> (\$) окружение лучше тем, что оно чуть-чуть
+короче, кроме этого команда \$ \emph{крепкая}\footnote{Когда начинаешь
+  изучать команды \LaTeX{}, то довольно быстро сталкиваешься с
+  понятиями <<хрупкости>>/<<крепкости>>. Крепкие команды в отличие от
+  хрупких можно без опаски использовать в качестве аргументов других
+  команд. С другой стороны, хрупкие команды тоже можно использовать как
+  параметры, защитив их с помощью команды \textcmd{protect}. Эти
+  понятия в большинстве своём пережитки прошлого, и их постепенно
+  изживают, но пока их следует иметь в виду.} в отличие 
+от~команд"=скобок.
+
+
+Однострочные выносные формулы, как правило, формируются с помощью
+окружения \textenv{equation}.  Так как в этом случае формула вынесена
+за пределы абзаца, то её можно пронумеровать. Например:
+\smallskip
+
+\begin{examplenv}{equation-int}
+\begin{equation}
+  \label{eq:math:ex1}
+  \int\limits_{-\infty}^{\infty}
+           e^{-x^2/2}dx=\sqrt{2\pi}
+\end{equation}
+\end{examplenv}
+\smallskip
+
+Нумерация формул удобна для того, чтобы позже в тексте на неё можно
+было легко сослаться с помощью команды
+\textcmd{eqref}\lstinline!{eq:math:1}!\footnote{Метка выставляется с
+  помощью команды \textcmd{label}.}. Если же формул немного и не
+хочется никакой нумерации, то можно воспользоваться окружением
+\textenv{equation$*$}\footnote{К \textenv{equation} добавляется
+  звёздочка. Подобный приём в создании команд применяется достаточно
+  часто. Команда со звёздочкой ($*$) обычно не нумеруется и не отображается
+  ни в~каких автоматически составляемых списках.}.
+
+
+По умолчанию выносная формула центрируется. Если при загрузке пакета
+\textpkg{amsmath} указать опцию \textopt{fleqn}, то формулы будут
+выравниваться по левому краю с отступом \textcmd{mathindent}.  В
+пакете \textpkg{nccmath} определена декларативная команда
+\textcmd{fleqn}\lstinline![отступ]!, действие которой аналогично опции
+\textopt{fleqn}. Для центрирования формул в \textpkg{nccmath}
+определена команда \textcmd{ceqn}.
+
+При создании выключенной формулы размер шрифта для улучшения
+читаемости немного увеличивается. \LaTeX{} имеет несколько стилей для
+оформления математических формул. При желании для целей улучшения
+визуального представления формулы можно выбрать один из следующих стилей вручную:
+\smallskip
+
+\begin{eqlist*}
+\item[\textcmd{displaystyle}] "--- стиль, который используется в выносных формулах,
+\item[\textcmd{textstyle}] "--- стиль строчных формул,
+\item[\textcmd{scriptstyle}] "--- в этом стиле набираются индексы,
+\item[\textcmd{scriptscriptstyle}] "--- индексы второго уровня.
+\end{eqlist*}
+
+С помощью этих команд можно увеличить размер шрифта для формул внутри
+абзаца или заставить индексы выглядеть как базовые символы. Для
+примера можно сравнить:
+\medskip
+
+\begin{examplenv}{fraction-def}
+\begin{equation*}
+  \frac{1}{1+
+    \frac{1}{1+
+      \frac{1}{1+
+        \frac{1}{2}}}}
+\end{equation*}
+\end{examplenv}
+\medskip
+
+\begin{examplenv}{fraction-displaystyle}
+\begin{equation*}
+  \frac{1}{\displaystyle 1+
+    \frac{1}{\displaystyle 1+
+      \frac{1}{\displaystyle 1+
+        \frac{\displaystyle 1}
+             {\displaystyle 2}}}}
+\end{equation*}
+\end{examplenv}
+\medskip
+
+Пробелы в формулах отмечают только конец команды, а сами по себе
+смысла не имеют. \LaTeX, как правило,  <<знает>> лучше, как
+сформировать результат. 
+
+
+\section{Кириллица в формулах}
+\label{sec:math:rus}
+
+\mindex{русификация!формулы|(}
+
+Всё дело в имеющихся шрифтах "--- они красивые, разнообразные, но в
+большинстве своём англоязычные. В настоящее время кириллические
+математические шрифты в <<дикой природе>> отсутствуют, поэтому
+приходится пользоваться их текстовыми версиями.
+
+Стиль \textpkg{mathtext} (пакет \textpkg{t2}) позволяет использовать
+кириллицу в формулах без дополнительных ухищрений. Стиль можно
+применять с опцией \textopt{warn}, тогда он сообщает при компиляции
+обо всех случаях наличия кириллических букв в~формулах. 
+
+Стиль \textpkg{mathtext} следует загружать до \textpkg{babel}
+и/или \textpkg{fontenc}:
+\begin{lstlisting}[language=TeX]
+\usepackage[warn]{mathtext}
+\end{lstlisting}
+\begin{example}{cyrillic-in-math}
+\[
+ v_{ср}=\frac{S_{конец}-S_{начало}}
+             {\delta t}
+\]
+\end{example}
+В примере со средней скоростью для создания выключенной формулы
+используется конструкция вида \lstinline!\[!<<формула>>\lstinline!\]!
+"--- краткий аналог окружения \textenv{equation$*$}. В отличие от
+латиницы русские буквы в формулах печатаются прямым шрифтом "--- это
+было сделано специально. Чтобы изменить это умолчание, в преамбуле
+следует добавить команду для переопределения шрифта:
+\begin{lstlisting}[language=TeX]
+\DeсlareSуmbolFont{T2Aletters}{T2A}{cmr}{m}{it}
+\end{lstlisting}
+
+\mindex{формулы!вставка текста}
+
+Стиль \textpkg{amstext}, загружаемый автоматически при загрузке
+\textpkg{amsmath}, определяет команду \textcmd{text}, которая
+позволяет вставлять в формулу обычный  текст. В~качестве аргумента этой
+команды можно передавать  и русские символы:
+\medskip
+
+\begin{examplenv}{text}
+\[v_{ср}=
+    \frac{\text{конец пути}-
+          \text{начало пути}}
+         {\text{время в пути}}\]
+\end{examplenv}
+\medskip
+
+Преимущество такого подхода заключается в том, что пробелы внутри команды
+\textcmd{text}  воспринимаются как нормальные символы и
+слова не сливаются. Использование \textcmd{text} предпочтительнее и
+для целей переносимости.
+
+
+\mindex{русификация!формулы|)}
+
+\section{Школьная математика}
+\label{sec:math:school}
+
+% \begin{floatingfigure}{0.25\textwidth}
+%   \noindent\includegraphics*[width=0.2\textwidth]{math/math-1.eps} %Имя файла
+% \end{floatingfigure}
+Математика в школе "--- это явление, близкое каждому. Именно поэтому
+фактически любой вменяемый россиянин умеет обращаться с дробями, знает
+теорему Пифагора, с лёгкостью решает квадратные уравнения и что-то
+слышал про интеграл и производную. Разберёмся с этим поподробнее.
+
+
+\subsection{Отделяем целую часть от дробной}
+\label{sec:math:school:comma}
+
+В англоязычной литературе целая часть от дробной отделяется точкой. В
+России действуют правила, которые подразумевают, что
+разделителем должна быть запятая. Проблема в том, что запятая в
+англоязычной литературе используется для разделения многозначных чисел
+на группы по три цифры (например, \(123,456,789\)) и после запятой
+добавляется пробел. Можно сравнить, как ведут себя разные разделители:
+\begin{example}{math-1-comma-1}
+  \(3.14159\)\par
+  \(3,14159\)
+\end{example}
+Однозначного решения этой проблемы нет. Если можно, то следует
+использовать в качестве разделителя точку. Если чисел в тексте
+немного, то можно оформлять их руками, заключив запятую в группирующие
+скобки, как это сделано в следующем примере:
+\begin{example}{math-1-comma-2}
+  \(3.14159\)\par
+  \(3{,}14159\)
+\end{example}
+Также можно воспользоваться стилем \textpkg{ncccomma} из пакета
+\textpkg{nctools}. При инициализации этого стиля запятая будет считаться
+простым символом, если после неё идёт цифра, и знаком пунктуации, если
+после неё есть пробел. Единственное, за чем надо следить, так это за
+перечислениями вида \(k=1, 2, \ldots, n\) с целью не забыть поставить
+пробел после запятой.
+
+
+\subsection{Индексы}
+\label{sec:math:school:index}
+
+
+Букв в латинском алфавите не так уж и много, а научных понятий не
+счесть. Один из способов отличать обозначения друг от друга "--- это
+индексы:
+\begin{examplenv}{index}
+\[A_{\text{нижний индекс}}\quad
+  B^{\text{верхний индекс}}\quad
+  C_n^k\]
+\end{examplenv}
+Следует обратить внимание, что если в индексе ровно один знак, то фигурные
+скобки вокруг него можно и нужно опустить. Теперь несложно записать
+теорему Пифагора: \lstinline!\(a^2+b^2=c^2\)!, что эквивалентно
+\(a^2+b^2=c^2\).
+
+
+%{\centering\includegraphics*[width=0.3\textwidth]{math/math-1.eps}} %Имя файла
+
+\subsection{Математические символы}
+\label{sec:math:school:symbol}
+
+
+Кроме символов латиницы и кириллицы математики используют множество
+самых разнообразных значков. Да и латиница не так уж проста. Если
+воспользоваться пакетом \textpkg{amsfonts}, то она может стать: 
+\textcmdh{mathbf}\textcmdh{mathbb}\textcmdh{mathbcal}
+\medskip
+
+\noindent\includegraphics*[width=\textwidth]{math/math-1-amsfonts.eps}
+% \begin{example}[0.57\linewidth]{latin-design}
+% \begin{itemize}
+% \item\(ABCD\) "--- обычной,
+% \item\(\mathbf{ABCD}\) "--- жирной,
+% \item\(\mathbb{ABCD}\) "--- ажурной,
+% \item\(\mathcal{ABCD}\) "--- прописной.
+% \item\(\mathfrak{ABCD}\) "--- готической.
+% \end{itemize}
+% \end{example}
+Это далеко не все возможные шрифтовые стили, которые можно применять в
+математической моде. Но лучше особо не перегружать формулы всякой
+<<готикой>> (намёк на команду \textcmd{mathfrak}).
+
+
+\subsubsection{Греческие символы}
+Не единой латиницей жив математик. Традиционно везде, где только
+можно, используются греческие буквы:
+%begin{example}{tab-greek}
+\textcmdh{alpha} \textcmdh{beta} \textcmdh{gamma} \textcmdh{delta}
+\textcmdh{varepsilon} \textcmdh{zeta} \textcmdh{eta} \textcmdh{theta}
+\textcmdh{iota} \textcmdh{varkappa} \textcmdh{lambda} \textcmdh{mu}
+\textcmdh{nu} \textcmdh{xi} \textcmdh{pi} \textcmdh{rho}
+\textcmdh{sigma} \textcmdh{tau} \textcmdh{upsilon} \textcmdh{varphi}
+\textcmdh{chi} \textcmdh{psi} \textcmdh{omega} \textcmdh{Gamma}
+\textcmdh{Delta} \textcmdh{Theta} \textcmdh{Lambda} \textcmdh{Xi}
+\textcmdh{Pi} \textcmdh{Sigma} \textcmdh{Upsilon} \textcmdh{Phi}
+\textcmdh{Psi} \textcmdh{Omega}
+\begin{table}[htbp]
+  \centering
+%  \caption{проба}
+  \label{tab:math:greek}
+  \begin{tabular}{clclclclcl}\hline
+    \multicolumn{10}{c}{\cbox{Греческие символы}}\\\hline
+    \(\alpha\)&\lstinline!\alpha!&
+    \(\beta\)&\lstinline!\beta!&
+    \(\gamma\)&\lstinline!\gamma!&
+    \(\delta\)&\lstinline!\delta!&
+    \(\varepsilon\)&\lstinline!\epsilon!\\
+    \(\zeta\)&\lstinline!\zeta!&
+    \(\eta\)&\lstinline!\eta!&
+    \(\theta\)&\lstinline!\theta!&
+    \(\iota\)&\lstinline!\iota!&
+    \(\varkappa\)&\lstinline!\kappa!\\
+    \(\lambda\)&\lstinline!\lambda!&
+    \(\mu\)&\lstinline!\mu!&
+    \(\nu\)&\lstinline!\nu!&
+    \(\xi\)&\lstinline!\xi!&
+    \(o\)&\lstinline!o!\\
+    \(\pi\)&\lstinline!\pi!&
+    \(\rho\)&\lstinline!\rho!&
+    \(\sigma\)&\lstinline!\sigma!&
+    \(\tau\)&\lstinline!\tau!&
+    \(\upsilon\)&\lstinline!\upsilon!\\
+    \(\varphi\)&\lstinline!\phi!&
+    \(\chi\)&\lstinline!\chi!&
+    \(\psi\)&\lstinline!\psi!&
+    \(\omega\)&\lstinline!\omega!&
+    \(\Gamma\)&\lstinline!\Gamma!\\
+    \(\Delta\)&\lstinline!\Delta!&
+    \(\Theta\)&\lstinline!\Theta!&
+    \(\Lambda\)&\lstinline!\Lambda!&
+    \(\Xi\)&\lstinline!\Xi!&
+    \(\Pi\)&\lstinline!\Pi!\\
+    \(\Sigma\)&\lstinline!\Sigma!&
+    \(\Upsilon\)&\lstinline!\Upsilon!&
+    \(\Phi\)&\lstinline!\Phi!&
+    \(\Psi\)&\lstinline!\Psi!&
+    \(\Omega\)&\lstinline!\Omega!\\\hline
+  \end{tabular}
+\end{table}
+%end{example}
+
+В \LaTeX{} присутствует полный набор, и за исключением трёх букв
+начертание вполне привычное. Для исправления непривычных начертаний
+эти буквы были переопределены с помощью стиля \textpkg{amssymb}: 
+\begin{lstlisting}[language=TeX]
+% |Переопределение \bs kappa, \bs epsilon и \bs phi на русский лад|
+\renewcommand{\kappa}{\varkappa}
+\renewcommand{\epsilon}{\varepsilon}
+\renewcommand{\phi}{\varphi}
+
+\end{lstlisting}
+
+\mindex{спецсимволы}
+
+\subsubsection{Школьные спецсимволы}
+
+Спецсимволов в \LaTeX{} великое множество. В стандартной поставке
+\TeXLive идёт <<Всеобъемлющий список символов \LaTeX>> (The
+Comprehensive LaTeX Sym\-bols List "--- файл \textfile{symbols-a4.pdf}), в
+котором перечислено около 3300 распространённых символа, доступных
+пользователями \LaTeX. Почти наверняка любой операнд, который вам
+нужен, там уже есть. Далее будет перечислена только та часть символов,
+которая  может пригодиться в наборе школьной
+математики. Стиль \textpkg{amssymb} для использования обязателен.
+%begin{example}{tab-school}
+\textcmdh{hat} \textcmdh{bar} \textcmdh{vec} \textcmdh{dot}
+\textcmdh{tilde} \textcmdh{pm} \textcmdh{mp} \textcmdh{times}
+\textcmdh{cdot} \textcmdh{div} \textcmdh{lor} \textcmdh{land}
+\textcmdh{neg} \textcmdh{forall} \textcmdh{exists} \textcmdh{in}
+\textcmdh{le} \textcmdh{ge} \textcmdh{ll} \textcmdh{gg} \textcmdh{neq}
+\textcmdh{equiv} \textcmdh{sim} \textcmdh{simeq} \textcmdh{approx}
+\textcmdh{propto} \textcmdh{parallel} \textcmdh{perp} \textcmdh{angle}
+\textcmdh{triangle} \textcmdh{sphericalangle} \textcmdh{infty}
+\textcmdh{ell} \textcmdh{sum} \textcmdh{prod} \textcmdh{varnothing}
+\begin{table}[htbp]
+  \label{tab:math:school}
+  \centering
+  \begin{tabular}{clclclcl}\hline
+    \multicolumn{8}{c}{\cbox{<<Школьные>> символы}}\\\hline    
+    \(\hat{a}\)&\lstinline!\hat{a}!&
+    \(\bar{a}\)&\lstinline!\bar{a}!&
+    \(\vec{a}\)&\lstinline!\vec{a}!&
+    \(\dot{a}\)&\lstinline!\dot{a}!\\
+    \(\tilde{a}\)&\lstinline!\tilde{a}!&
+    \(\pm\)&\textcmd{pm}&
+    \(\mp\)&\textcmd{mp}&
+    \(\times\)&\textcmd{times}\\
+    \(\cdot\)&\textcmd{cdot}&
+    \(\div\)&\textcmd{div}&
+    \(\lor\)&\textcmd{lor}&
+    \(\land\)&\textcmd{land}\\
+    \(\neg\)&\textcmd{neg}&
+    \(\forall\)&\textcmd{forall}&
+    \(\exists\)&\textcmd{exists}&
+    \(\in\)&\textcmd{in}\\
+    \(\leqslant\)&\textcmd{le}&
+    \(\geqslant\)&\textcmd{ge}&
+    \(\ll\)&\textcmd{ll}&
+    \(\gg\)&\textcmd{gg}\\
+    \(\neq\)&\textcmd{neq}&
+    \(\equiv\)&\textcmd{equiv}&
+    \(\sim\)&\textcmd{sim}&
+    \(\simeq\)&\textcmd{simeq}\\
+    \(\approx\)&\textcmd{approx}&
+    \(\propto\)&\textcmd{propto}&
+    \(\parallel\)&\textcmd{parallel}&
+    \(\perp\)&\textcmd{perp}\\
+    \(\angle\)&\textcmd{angle}&
+    \(\triangle\)&\textcmd{triangle}&
+    \(\sphericalangle\)&\textcmd{sphericalangle}&
+    \(\infty\)&\textcmd{infty}\\
+    \(\ell\)&\textcmd{ell}&
+    \(\sum\)&\textcmd{sum}&
+    \(\prod\)&\textcmd{prod}&
+    \(\varnothing\)&\textcmd{varnothing}\\\hline
+  \end{tabular}
+\end{table}
+%end{example}
+
+Для соответствия русским традициям два символа (\(\leqslant\) и
+\(\geqslant\)) из представленных в таблице были переопределены:
+\textcmdh{leqslant} \textcmdh{geqslant}
+\begin{lstlisting}[language=TeX]
+% |Переопределение \bs le и \bs ge на русский лад|
+\renewcommand{\le}{\leqslant}
+\renewcommand{\ge}{\geqslant}
+
+\end{lstlisting}
+
+
+
+
+\subsection{Корни}
+\label{sec:math:school:sqrt}
+
+Для рисования знака корня используется команда:
+\textcmdh{sqrt}
+\begin{lstlisting}[language=TeX]
+\sqrt[|<<степень>>|]{|<<подкоренное выражение>>|}
+
+\end{lstlisting}
+Степень можно опустить. В этом случае рисуется обычный квадратный
+корень.
+\begin{example}[0.55\linewidth]{sqrt-def}
+\[
+ \overline{
+  \underline{\Large
+   \sqrt[3]{a}+\sqrt[2]{b}+\sqrt[99]{g}
+   }
+  }
+\]
+\end{example}
+Следует обратить внимание, что знак корня размещается в соответствии с
+размерами подкоренного выражения. Если в выражении присутствует только
+один корень, то это самое разумное поведение, но в случае нескольких
+корней, как в~приведённом примере, необходимо выравнивание.
+
+Для выравнивания по высоте используется команда
+\textcmd{mathstrut}\footnote{От английского strut "--- подпорка или
+  страта.}. В результате её применения вставляется невидимый символ
+нулевой толщины,  в точности равной высоте круглой скобки:
+\begin{example}{sqrt-strut}
+\[\Large
+   \sqrt[3]{\mathstrut a}+
+   \sqrt[2]{\mathstrut b}+
+   \sqrt[99]{\mathstrut g}
+\]
+\end{example}
+
+
+\subsection{Дроби}
+\label{sec:math:school:frac}
+
+
+Дроби формируются с помощью команды \textcmd{frac}\footnote{От
+  слова fraction "--- дробь.}:
+\begin{example}{fraction}
+\[
+ дробь=\frac{числитель}{знаменатель}
+\]
+\end{example}
+Как и практически вся математика в \LaTeX, дробь записывается точно
+так же, как
+читается само выражение. 
+
+
+\subsection{Квадратное уравнение}
+\label{sec:math:school:eqsq}
+
+И наконец, вершина школьной математики "--- это решение квадратного
+уравнения \(ax^2\hm{+}bx+c=0\):\textcmdh{sqrt}\textcmdh{frac}
+\begin{example}[0.6\linewidth]{quadratic}
+\[
+ x_{1,2}=\frac{-b\pm\sqrt{b^2-4ac}}{2a}
+\]
+\end{example}
+Теперь можно смело пис\'ать методички по школьной математике \smiley.
+
+
+\subsection{Производная и интеграл}
+\label{sec:math:school:diff-int}
+В старших классах в конце обучения чуть-чуть касаются понятий
+интегрирования и дифференцирования. Возможно, для того, чтобы правильно
+подсчитать сдачу в магазине, эти знания не являются необходимыми. Но
+для изучения физики и, как следствие, химии и биологии без интегралов
+никак. Ведь даже второй закон Ньютона \(\vec{F}=m\vec{a}\) является
+при более внимательном рассмотрении дифференциальным уравнением
+второго порядка.
+
+Производная обычно отмечается штрихом. В физике производная по
+времени выделяется точкой.  Можно также честно написать
+\textcmd{frac}\lstinline!{d F(x)}{dx}!.  Для частной производной
+вместо буквы \(d\) используется спецсимвол
+\textcmd{partial}:\textcmdh{dot} \textcmdh{ddot} \textcmdh{dddot}
+\begin{example}[0.6\linewidth]{derivative}
+\[ f'\quad f''\quad f''' \quad f^n \]
+\[\dot{x}\quad \ddot{x}\quad \ddot{x}\]
+\[\frac{d f}{d x}\quad
+ \frac{d^n f}{d x^n}\quad
+\frac{\partial^2 f}{\partial x\partial y}\]
+\end{example}
+
+
+Дифференцирование есть действие, противоположное интегрированию. В отличие от
+производной для интеграла есть своя функция \textcmd{int}:
+\begin{example}{derivative-integral}
+\[
+ \frac{d}{dx}\int F(x) dx=F(x)
+\]
+\end{example}
+Приглядевшись к этому примеру, можно отметить, что в отличие
+от русских математических традиций представленный здесь интеграл не
+прямой, а наклонный. Проблема решается, например, с помощью загрузки стиля
+\textpkg{wasysym} с опцией \textopt{integrals}.  К сожалению,
+получающиеся интегралы <<не смотрятся>>. Поэтому пока лучше
+использовать начертания по умолчанию в надежде, что в будущем ситуация
+изменится к лучшему.
+
+Неопределённый интеграл "--- это хорошо, но с определённым тоже надо
+уметь работать. Качественное оформление пределов 
+критично для восприятия: \textcmdh{nolimits} \textcmdh{limits}
+\begin{example}{limits}
+\[
+ \int_0^{\infty}\quad
+ \int\limits_0^{\infty}\quad
+ \sum_{i=1}^n\quad
+ \sum\nolimits_{i=1}^n\quad
+\]
+\end{example}
+По умолчанию пределы размещаются справа от интеграла. Ситуацию можно
+поправить с помощью команды \textcmd{limits}.  Следует отметить, что
+пределы для знака суммы \textcmd{sum} по умолчанию расположены сверху
+и снизу. Для изменения этого умолчания следует воспользоваться командой
+\textcmd{nolimits}. 
+
+\subsection{Функции}
+\label{sec:math:school:func}
+Все символы в математической моде печатаются курсивом, поэтому
+названия именованных функций для выделения печатаются прямым
+шрифтом. Кроме смены шрифта функции с обеих сторон должны правильно
+<<отбиваться>> пробелами, иначе будет некрасиво. При загрузке русского
+языка с помощью пакета \textpkg{babel} кроме стандартных имён функций
+доопределяется несколько сокращений, применяемых в~русскоязычной
+литературе. Среди часто употребляемых функций можно упомянуть:
+\textcmd{cos}, \textcmd{arccos}, \textcmd{sin}, \textcmd{arcsin},
+\textcmd{tg}, \textcmd{arctg}, \textcmd{ctg}, \textcmd{arcctg},
+\textcmd{sh}, \textcmd{ch}, \textcmd{th}, \textcmd{cth},
+\textcmd{exp}, \textcmd{ln}, \textcmd{log}, \textcmd{lim},
+\textcmd{min} и \textcmd{max}. В математической моде эти функции можно
+использовать как обычные команды.
+\begin{examplenv}[0.56\linewidth]{functions}
+\begin{equation*}
+ \begin{split}
+  &\log_2 10=\ln10/\ln2\simeq3.32 \\
+  &\lim_{x\to0}\frac{\sin x}{x}=1\\
+  &(a+b)^n=\sum_{k=1}^n C^k_n a^kb^{n-k}
+ \end{split}
+\end{equation*}
+\end{examplenv}
+Из примера видно, что обработка индексов для функции \textcmd{log}
+(логарифм) и \textcmd{lim} (предел) значительно отличается. Для
+доопределения новых функций правильнее всего в преамбуле будет
+воспользоваться командой \textcmd{DeclareMathOperator}:
+\begin{lstlisting}[language=TeX]
+% |В преамбуле "--- определение новых функций|
+\DeclareMathOperator{\log-like}{log-like}
+\DeclareMathOperator*{\lim-like}{lim-like}
+
+\end{lstlisting}
+В зависимости от варианта команды индексы отображаются как для
+логарифма (команда без звёздочки) или как для предела (команда со
+звёздочкой).
+
+
+
+\subsection{Скобки}
+\label{sec:math:school:braces}
+
+
+Для визуальной группировки символов внутри формулы скобки "--- вещь
+незаменимая. Для красоты и выразительности размер скобок в формуле
+варьируется. В принципе, размер скобок можно выставить вручную, тогда
+перед скобкой следует добавить одну из следующих команд:
+\textcmdh{big} \textcmdh{Big} \textcmdh{bigg} \textcmdh{Bigg}
+\begin{examplenv}{braces-size}
+\[ ( \big( \Big( \bigg( \Bigg( \]
+\end{examplenv}
+
+Эстеты в зависимости от ситуации в конце команды могут добавить
+модификатор позиционирования разделителя как левого "--- \textopt{l}
+(отбивка как для \textcmd{left}), правого "--- \textopt{r} (отбивка
+  как для \textcmd{right}) и среднего "--- \textopt{m}:
+\begin{examplenv}{braces-size}
+\[ \Biggl|\int\Biggl| \Biggm|\int\Biggm| 
+   \Biggr|\int\Biggr|\]
+\end{examplenv}
+
+
+Особенно здорово, если скобки автоматически подбирают
+свой размер под выражение, которое они окружают. Парные команды
+\textcmd{left}  и \textcmd{right} включают режим подобной
+подстройки.
+\medskip
+
+\begin{examplenv}[0.45\linewidth]{braces-types}
+\[\left(
+   \left[
+    \left\langle
+     \left\{
+      \left\uparrow
+       \left\lceil
+        \left|
+         \left\lfloor
+         \text{что-то}^{10} 
+         \right\rfloor^9
+        \right|^8
+       \right\rceil^7
+      \right\downarrow^6
+     \right\}^5
+    \right\rangle^4
+   \right]^3
+  \right)^2\]
+\end{examplenv}
+
+
+
+\section{Перенос формул}
+\label{sec:math:LaTeX-operands-hyphenations}
+
+\mindex{перенос формул|(}
+
+
+В русскоязычной литературе принято, что при переносе строчной формулы
+на другую строку знак, по которому формула разрывается, дублируется на
+следующей строке. Например так:
+\begin{verbatim}
+a + b =
+= c
+\end{verbatim}
+
+
+По умолчанию автоматического переноса с дублированием знаков не
+происходит. Проще всего решить эту проблему вручную с помощью
+макроса\footnote{Рецепт от Евгения Миньковского из fido7.ru.tex.},
+который необходимо определить в преамбуле:
+\begin{lstlisting}[]
+% |перенос формул в тексте|
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}%
+  {\hbox{$\mathsurround=0pt #1$}}{}}
+\end{lstlisting}
+Здесь  была определена команда \textcmd{hm}, которую следует добавлять в
+местах потенциального переноса формулы, примерно так:
+\lstinline!\(a + b \hm{=} c\)!. Сделать это можно во время
+окончательной доводки текста. В любом случае для полировки рукописи
+ручная работа необходима.
+
+Разрыв математических формул при переносе предпочтителен на знаках
+отношения (\(=\), \(>\), \(<\), \(\leqslant\), \(\geqslant\),
+\(\neq\), \(\simeq\)); во вторую очередь на отточии, знаках сложения и
+вычитания; в третью "--- на знаке умножения в виде косого
+креста. Не рекомендуется разбивать формулу на знаке деления и на
+каких-либо других знаках, кроме упомянутых ранее.
+
+
+
+\mindex{перенос формул|)}
+
+\bigskip
+
+\Note Изложенных в этой главе правил и приёмов вполне хватит для
+набора в рамках школьной математики. Для более изощрённых формул
+требуются более продвинутые приёмы и конструкции, часть из
+которых представлена в главе~\ref{cha:math-2}.
+
+
+%Забыть про eqnarray. - l2tabuen.pdf
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../ctex"
+%%% End: 

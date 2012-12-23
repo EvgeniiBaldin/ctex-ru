@@ -1,16 +1,13 @@
 # -*- coding: koi8-r -*-
 #
-# Компиляция картинок intro
+# Компиляция картинок base
 #
 # 2012 (c)  Е.М. Балдин 
 #
 
 include ../rules.mk
 
-all:  intro-1.eps
-
-intro-1.eps: intro.mp
-	$(PREFIX)$(MPOST) intro.mp
+all: 
 
 clean:
 	$(PREFIX)$(RM) $(TMPFILES)

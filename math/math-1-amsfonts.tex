@@ -1,0 +1,41 @@
+%  -*- coding: koi8-r -*-
+\input{../structheader}
+\usepackage[warn]{mathtext}
+\usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}%first paragraph indent
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}
+\usepackage{../example}
+%\usepackage{eufrak}
+%\captiondelim{. }
+\usepackage{xspace}
+%научные символы и смайлики \smiley \frownie
+\usepackage{wasysym}
+
+%backslash
+\newcommand{\bs}{\symbol{'134}}
+%degree
+\newcommand{\grad}{\ensuremath{{}^{\circ}}\xspace}
+\begin{document}
+\pagestyle{empty}
+\begin{example}[0.57\linewidth]{latin-design}
+\begin{itemize}
+\item\(ABCD\) "--- обычной,
+\item\(\mathbf{ABCD}\) "--- жирной,
+\item\(\mathbb{ABCD}\) "--- ажурной,
+\item\(\mathcal{ABCD}\) "--- прописной,
+\item\(\mathfrak{ABCD}\) "--- готической,
+\item\(\mathscr{ABCD}\) "--- как в mathrsfs.
+\end{itemize}
+\end{example}
+
+
+%\begin{thebibliography}{9}
+%\bibitem{}
+%\newblock
+%\end{thebibliography}
+\end{document}

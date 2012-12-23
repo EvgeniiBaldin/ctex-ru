@@ -12,7 +12,10 @@
 *.tar.bz2
 *.mpx
 *.out
+*.exa
 *~
 *-eps-converted-to.pdf
+.#*
+\#*
 # auctex dir
 auto/

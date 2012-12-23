@@ -1,0 +1,162 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Contents: example environment fo lurs.tex
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Взято из lshort.sty
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\errorcontextlines=10
+
+%save pageref an label
+\let\lsspageref\pageref
+\ProvidesPackage{example}
+\RequirePackage{verbatim}
+\RequirePackage{fancyhdr}
+\RequirePackage{calc}
+\RequirePackage{amsmath}
+%
+%
+% --- example ----
+% This is an environment to set LaTeX examples.
+% On the left side the source text and on the
+% right side the typeset text.
+%
+% \begin{example}
+% \Large This is Large
+% \end{example}
+%
+% This Part is stolen from the verbaim.sty by FMi
+% 
+\newwrite\example@out
+\newcounter{exacnt}
+\setcounter{exacnt}{1}
+\newlength{\savefboxrule}
+\newlength{\savefboxsep}
+\newlength{\examplewidth}
+\newlength{\outdent}
+%\setlength{\outdent}{2cm}
+\setlength{\outdent}{0cm}
+\addtolength{\headwidth}{\outdent}
+\newenvironment{example}[2][0.5\textwidth]%
+{\setlength{\examplewidth}{#1}%
+\begingroup% Lets Keep the Changes Local
+  \@bsphack
+  \immediate\openout \example@out \jobname.exa
+  \let\do\@makeother\dospecials\catcode`\^^M\active
+  \def\verbatim@processline{%
+    \immediate\write\example@out{\the\verbatim@line}}%
+  \verbatim@start}%
+{\immediate\closeout\example@out\@esphack\endgroup%
+                                %
+                                % And here comes my part. :-
+                                %   
+  \stepcounter{exacnt}%
+  \setlength{\parindent}{0pt}%
+  \par\addvspace{3.0ex plus 0.8ex minus 0.5ex}\vskip -\parskip
+%  Page \lsspageref{exa:\theexacnt}
+\expandafter\ifx\csname r@exa\theexacnt\endcsname\relax\else
+%проблемы без hyperref begin
+%\ifx\pdfoutput\undefined % We're not running pdftex
+%  \ifodd\lsspageref{exa\theexacnt}\hspace*{0pt}\else\hspace*{-\outdent}\fi%
+%\else
+%% HyPsd@pageref internal hyperref command v6.69c
+%  \ifodd\HyPsd@pageref{exa\theexacnt}\hspace*{0pt}\else\hspace*{-\outdent}\fi%
+%\fi
+%проблемы без hyperref end
+\fi
+%  \newsavebox{\MyVerBox}
+%  \begin{lrbox}{\MyVerBox}%
+%    \input{\jobname.exa}%
+%  \end{lrbox}
+\makebox[\textwidth][l]{%
+%\raisebox{-\height}[0pt][\totalheight]{%
+  \begin{minipage}[c]{0.5\outdent+\examplewidth-3mm}%
+    \small\verbatiminput{\jobname.exa}%
+  \end{minipage}%
+                                %}%
+  \hspace{5mm}%
+%  \rule{0.2pt}{1cm}
+%  \hspace{2.5mm}%
+  \setlength{\savefboxrule}{\fboxrule}%
+%  \setlength{\fboxrule}{0.1pt}% было
+  \setlength{\fboxrule}{0pt}%
+  \setlength{\savefboxsep}{\fboxsep}%
+  \setlength{\fboxsep}{3mm}%
+                                %  \raisebox{-\height}[0pt][\totalheight]{%
+  \fbox{%
+    \begin{minipage}[c]{0.5\outdent+\textwidth-\examplewidth-3.5mm-2\fboxrule-2\fboxsep}%
+      \setlength{\fboxrule}{\savefboxrule}%
+      \setlength{\fboxsep}{\savefboxsep}%
+%      \setlength{\fboxrule}{0.5pt}%
+%      \setlength{\fboxrule}{0.5pt}%
+%      \setlength{\parskip}{1ex plus 0.4ex minus 0.2ex}%
+      \begin{trivlist}\item\small\input{\jobname.exa}
+      \end{trivlist}
+    \end{minipage}
+    }%
+%  }%
+}\label{exa\theexacnt}%
+\par\addvspace{3ex plus 0.8ex minus 0.5ex}\vskip -\parskip
+}
+
+
+%без вертикальных пробелов
+\newenvironment{examplenv}[2][0.5\textwidth]%
+{\setlength{\examplewidth}{#1}%
+\begingroup% Lets Keep the Changes Local
+  \@bsphack
+  \immediate\openout \example@out \jobname.exa
+  \let\do\@makeother\dospecials\catcode`\^^M\active
+  \def\verbatim@processline{%
+    \immediate\write\example@out{\the\verbatim@line}}%
+  \verbatim@start}%
+{\immediate\closeout\example@out\@esphack\endgroup%
+                                %
+                                % And here comes my part. :-
+                                %   
+  \stepcounter{exacnt}%
+  \setlength{\parindent}{0pt}%
+  \par%\addvspace{3.0ex plus 0.8ex minus 0.5ex}\vskip -\parskip
+%  Page \lsspageref{exa:\theexacnt}
+\expandafter\ifx\csname r@exa\theexacnt\endcsname\relax\else
+%проблемы без hyperref begin
+%\ifx\pdfoutput\undefined % We're not running pdftex
+%  \ifodd\lsspageref{exa\theexacnt}\hspace*{0pt}\else\hspace*{-\outdent}\fi%
+%\else
+%% HyPsd@pageref internal hyperref command v6.69c
+%  \ifodd\HyPsd@pageref{exa\theexacnt}\hspace*{0pt}\else\hspace*{-\outdent}\fi%
+%\fi
+%проблемы без hyperref end
+\fi
+%  \newsavebox{\MyVerBox}
+%  \begin{lrbox}{\MyVerBox}%
+%    \input{\jobname.exa}%
+%  \end{lrbox}
+\makebox[\textwidth][l]{%
+%\raisebox{-\height}[0pt][\totalheight]{%
+  \begin{minipage}[c]{0.5\outdent+\examplewidth-3mm}%
+    \small\verbatiminput{\jobname.exa}%
+  \end{minipage}%
+                                %}%
+  \hspace{5mm}%
+%  \rule{0.2pt}{1cm}
+%  \hspace{2.5mm}%
+  \setlength{\savefboxrule}{\fboxrule}%
+%  \setlength{\fboxrule}{0.1pt}% было
+  \setlength{\fboxrule}{0pt}%
+  \setlength{\savefboxsep}{\fboxsep}%
+  \setlength{\fboxsep}{3mm}%
+                                %  \raisebox{-\height}[0pt][\totalheight]{%
+  \fbox{%
+    \begin{minipage}[c]{0.5\outdent+\textwidth-\examplewidth-3.5mm-2\fboxrule-2\fboxsep}%
+      \setlength{\fboxrule}{\savefboxrule}%
+      \setlength{\fboxsep}{\savefboxsep}%
+%      \setlength{\fboxrule}{0.5pt}%
+%      \setlength{\fboxrule}{0.5pt}%
+%      \setlength{\parskip}{1ex plus 0.4ex minus 0.2ex}%
+      \begin{trivlist}\item\small\input{\jobname.exa}
+      \end{trivlist}
+    \end{minipage}
+    }%
+%  }%
+}\label{exa\theexacnt}%
+\par%\addvspace{3ex plus 0.8ex minus 0.5ex}\vskip -\parskip
+}
