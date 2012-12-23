@@ -1,0 +1,13 @@
+*.aux
+*.log
+*.dvi
+*.exa
+*.idx
+*.ind
+*.ilg
+*.cb
+*.blg
+*.glo
+*.gls
+*.tar.bz2
+*~
