@@ -6,10 +6,11 @@
 #
 
 
-PREFIX := @
+PREFIX := 
 MPOST := mpost -tex=latex 
 LATEX := latex
 PDFLATEX := pdflatex
+PDFTOPS := pdftops
 DVIPS := dvips
 RM := rm -f
 ECHO := echo

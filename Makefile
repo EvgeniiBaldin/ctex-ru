@@ -22,18 +22,14 @@ ctex.pdf: preheader title-1 preamble-1 intro-1 \
 	$(PREFIX)$(PDFLATEX) ctex.tex
 
 # TeXнический заголовок
-preheader: preheader.tex
-
-preheader.tex: structheader.tex	
+preheader: preheader.tex structheader.tex 
 
 # Титульная страница
 title-1: ctex-title.tex title-LaTeX.eps
 
-title-LaTeX.eps: title-LaTeX.dvi
-	$(PREFIX)$(DVIPS) -E title-LaTeX.dvi -o title-LaTeX.eps
-
-title-LaTeX.dvi: title-LaTeX.tex
+title-LaTeX.eps: title-LaTeX.tex
 	$(PREFIX)$(LATEX) title-LaTeX.tex
+	$(PREFIX)$(DVIPS) -E title-LaTeX.dvi -o title-LaTeX.eps
 
 # Преамбула
 preamble-1: preamble/preamble.tex
@@ -41,7 +37,7 @@ preamble-1: preamble/preamble.tex
 # Введение
 intro-1: intro/intro.tex intro/intro-1.eps
 
-intro/intro-1.eps:
+intro/intro-1.eps: intro/intro.mp
 	$(PREFIX)cd intro; make intro-1.eps
 
 
@@ -51,14 +47,54 @@ base-1: base/base.tex
 # Начала математики
 math-1: math/math-1.tex math/math-1-amsfonts.eps
 
-math/math-1-amsfonts.eps
+math/math-1-amsfonts.eps: math/math-1-amsfonts.tex structheader.tex
 	$(PREFIX)cd intro; make math-1-amsfonts.eps
 
-graphics-1:
+#Вставка графики
+graphics-1: graphics/graphics.tex title.eps graphics/wrapfigure.eps
 
-program-1: 
+#Начала программирования
+program-1: program/program.tex program/make-up-text-size.eps
 
-make-up-1:
+program/make-up-text-size.eps: program/make-up-text-size.tex structheader.tex
+	$(PREFIX)cd program; make make-up-text-size.eps
+
+
+# Вёрстка
+make-up-1: make-up/make-up.tex make-up/make-up-layout.eps \
+           make-up/make-up-lscape.eps \
+           make-up/make-up-rotpages.eps \
+           make-up/make-up-coridor.eps make-up/make-up-draft.eps \
+           make-up/make-up-twocolumn.eps \
+           make-up/make-up-twocolumn-2.eps \
+           make-up/make-up-twocolumn-3.eps \
+           make-up/make-up-multicol.eps 
+
+make-up/make-up-layout.eps: make-up/make-up-layout.tex
+	$(PREFIX)cd make-up; make make-up-layout.eps
+
+make-up/make-up-lscape.eps: make-up/make-up-lscape.tex
+	$(PREFIX)cd make-up; make make-up-lscape.eps
+
+# после сборки надо ещё BBOX подправить
+#make-up/make-up-rotpages.eps: make-up/make-up-rotpages.tex
+#	$(PREFIX)cd make-up; make make-up-rotpages.eps
+
+make-up/make-up-coridor.eps: make-up/make-up-coridor.tex
+	$(PREFIX)cd make-up; make make-up-coridor.eps
+
+make-up/make-up-twocolumn.eps: make-up/make-up-twocolumn.tex
+	$(PREFIX)cd make-up; make make-up-twocolumn.eps
+
+make-up/make-up-twocolumn-2.eps: make-up/make-up-twocolumn-2.tex
+	$(PREFIX)cd make-up; make make-up-twocolumn-2.eps
+
+make-up/make-up-twocolumn-3.eps: make-up/make-up-twocolumn-3.tex
+	$(PREFIX)cd make-up; make make-up-twocolumn-3.eps
+
+make-up/make-up-multicol.eps: make-up/make-up-multicol.tex
+	$(PREFIX)cd make-up; make make-up-multicol.eps
+
 
 classes-1:
 

@@ -7,13 +7,13 @@
 
 include ../rules.mk
 
-all: math-1-amsfonts.eps
+PICS := math-1-amsfonts.eps
 
-math-1-amsfonts.eps: ../structheader.tex math-1-amsfonts.dvi
+all: $(PICS) 
+
+math-1-amsfonts.eps: ../structheader.tex math-1-amsfonts.tex
 	$(PREFIX)$(DVIPS) -E math-1-amsfonts.dvi -o math-1-amsfonts.eps
-
-math-1-amsfonts.dvi: math-1-amsfonts.tex
 	$(PREFIX)$(LATEX) math-1-amsfonts.tex
 
-clean:
-	$(PREFIX)$(RM) $(TMPFILES)
+include ../rules-post.mk
+

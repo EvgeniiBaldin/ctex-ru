@@ -7,10 +7,11 @@
 
 include ../rules.mk
 
-all:  intro-1.eps
+PICS :=  intro-1.eps
+
+all:  $(PICS)
 
 intro-1.eps: intro.mp
 	$(PREFIX)$(MPOST) intro.mp
 
-clean:
-	$(PREFIX)$(RM) $(TMPFILES)
+include ../rules-post.mk

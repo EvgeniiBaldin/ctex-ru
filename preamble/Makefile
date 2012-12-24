@@ -9,5 +9,5 @@ include ../rules.mk
 
 all: 
 
-clean:
-	$(PREFIX)$(RM) $(TMPFILES)
+include ../rules-post.mk
+

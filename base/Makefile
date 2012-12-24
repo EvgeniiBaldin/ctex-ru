@@ -7,7 +7,8 @@
 
 include ../rules.mk
 
-all: 
+PICS := 
 
-clean:
-	$(PREFIX)$(RM) $(TMPFILES)
+all: $(PICS) 
+
+include ../rules-post.mk
