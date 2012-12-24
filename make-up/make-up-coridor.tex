@@ -1,0 +1,55 @@
+%  -*- coding: koi8-r -*-
+%\documentclass[a4paper,12pt]{memoir} 
+\documentclass[a4paper,12pt,draft]{scrbook} 
+ \usepackage[warn]{mathtext}
+\usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+ \usepackage{indentfirst}%first paragraph indent
+ \usepackage{cmap}
+ \usepackage[unicode=true]{hyperref}
+ \usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{srcltx}
+\usepackage{textcomp}
+\usepackage{floatflt}
+\usepackage{wrapfig}
+\usepackage{afterpage}
+% \usepackage{layout}
+ \usepackage{layouts}
+\usepackage{ccaption}
+%\usepackage[columns=4]{typogrid}
+\usepackage{rotpages}
+\captiondelim{. }
+\usepackage{xspace}
+%научные символы и смайлики \smiley \frownie
+\usepackage{wasysym}
+\usepackage{calc}
+%\usepackage[pdftex]{lscape}
+%\usepackage{portland}
+%backslash
+%\newcommand{\bs}{\symbol{'134}}
+%degree
+\newcommand{\grad}{\ensuremath{{}^{\circ}}\xspace}
+
+%\setlength{\textheight}{0.3\textheight}
+ \usepackage{fancyhdr} 
+
+\begin{document}
+
+\pagestyle{empty} 
+
+\begin{minipage}{0.44\linewidth}
+  \newcommand{\R}[1]{\textcolor{red}{#1}}
+%  \newcommand{\R}[1]{\textbf{\textit{#1}}}
+<<Коридоры\R{>>} \R{г}рафически разделяют  
+текст абзац\R{а} \R{и}ли полосы на некото%
+рое подоби\R{е} \R{н}еожиданных колонок, 
+а они могу\R{т} \R{о}сложнять восприятие 
+текста, из-з\R{а} \R{ч}его~~ <<коридоры>>~~
+на\-до устранят\R{ь} \R{к}ак дефект набора.
+\end{minipage}
+
+\end{document}
