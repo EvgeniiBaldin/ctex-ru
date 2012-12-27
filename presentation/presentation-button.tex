@@ -1,0 +1,54 @@
+%  -*- coding: koi8-r -*-
+\documentclass{beamer} 
+\usepackage[warn]{mathtext}
+\usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}%first paragraph indent
+\usepackage{cmap}
+%\usepackage[unicode=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multimedia}
+\usepackage{srcltx}
+\usepackage{textcomp}
+\usepackage{floatflt}
+\usepackage{wrapfig}
+\usepackage{afterpage}
+\usepackage{ccaption}
+\captiondelim{. }
+\usepackage{xspace}
+%научные символы и смайлики \smiley \frownie
+\usepackage{wasysym}
+\newcommand{\ee}{\ensuremath{e^{+}e^{-}}\xspace}
+%mumu
+\newcommand{\mumu}{\ensuremath{{\mu^{+}\mu^{-}}}\xspace}
+%J/\psi
+\newcommand{\Jpsi}{\ensuremath{J/\psi}\xspace}
+%кэВ
+\newcommand{\kev}{\ensuremath{\text{кэВ}}\xspace}
+
+\newcommand{\Gee}{\ensuremath{\Gamma_{\ee}}\xspace}
+\newcommand{\GBee}{\ensuremath{\Gamma_{\ee}\times\Gamma_{\ee}/\,\Gamma_{\text{total}}}\xspace}
+%Im
+\renewcommand{\Im}{\ensuremath{\text{Im}}\xspace}
+\renewcommand{\Re}{\ensuremath{\text{Re}}\xspace}
+%перенос формул в тексте
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}%
+  {\hbox{$\mathsurround=0pt #1$}}{}}
+
+\usetheme{Madrid}
+\usecolortheme{dove}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}{}
+
+\begin{document}
+
+%а можно так
+\begin{frame}
+\beamerbutton{кнопка}
+\end{frame}
+\end{document}
+

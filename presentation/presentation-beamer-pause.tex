@@ -1,0 +1,97 @@
+%  -*- coding: koi8-r -*-
+\documentclass{beamer} 
+\usepackage[warn]{mathtext}
+\usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}%first paragraph indent
+\usepackage{cmap}
+%\usepackage[unicode=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{multimedia}
+\usepackage{srcltx}
+\usepackage{textcomp}
+\usepackage{floatflt}
+\usepackage{wrapfig}
+\usepackage{afterpage}
+\usepackage{ccaption}
+\captiondelim{. }
+\usepackage{xspace}
+%научные символы и смайлики \smiley \frownie
+\usepackage{wasysym}
+\newcommand{\ee}{\ensuremath{e^{+}e^{-}}\xspace}
+%mumu
+\newcommand{\mumu}{\ensuremath{{\mu^{+}\mu^{-}}}\xspace}
+%J/\psi
+\newcommand{\Jpsi}{\ensuremath{J/\psi}\xspace}
+%кэВ
+\newcommand{\kev}{\ensuremath{\text{кэВ}}\xspace}
+
+\newcommand{\Gee}{\ensuremath{\Gamma_{\ee}}\xspace}
+\newcommand{\GBee}{\ensuremath{\Gamma_{\ee}\times\Gamma_{\ee}/\,\Gamma_{\text{total}}}\xspace}
+%Im
+\renewcommand{\Im}{\ensuremath{\text{Im}}\xspace}
+\renewcommand{\Re}{\ensuremath{\text{Re}}\xspace}
+%перенос формул в тексте
+\newcommand*{\hm}[1]{#1\nobreak\discretionary{}%
+  {\hbox{$\mathsurround=0pt #1$}}{}}
+
+%\usetheme{Madrid}
+\usetheme{Warsaw}
+\useoutertheme{shadow}
+\setbeamertemplate{navigation symbols}{}
+\usecolortheme{crane}
+%\renewcommand{\arraystretch}{1.4}
+
+%\usetheme{Marburg}
+%\usetheme{Goettingen}
+%\usetheme{Szeged}
+%\useoutertheme{shadow}
+
+%\useinnertheme{rectangles}
+%\usetheme{Warsaw}
+%\usecolortheme{albatross}
+%\useoutertheme{smoothtree}
+%\usecolortheme{fly}
+%\usecolortheme{seahorse}
+%\usecolortheme{rose}
+
+%\setbeamerfont{title}{shape=\itshape,family=\rmfamily}
+%\setbeamercolor{title}{fg=red!80!black}
+%\setbeamercolor{title}{fg=red!80!black,bg=red!20!white}
+
+%backslash
+\newcommand{\bs}{\symbol{'134}}
+%degree
+\newcommand{\grad}{\ensuremath{{}^{\circ}}\xspace}
+\title{\(\Gamma(J/\psi\to e^+e^-)\times\text{Br}(J/\psi\to e^+e^-)\)}
+\date[КЕДР]{Семинар КЕДРа}
+\author{Е.М.\,Балдин}
+
+\begin{document}
+
+\begin{frame}
+  \frametitle{PDG 2007}
+  \begin{itemize}
+  \item  \(\Gamma_{\ee}\times\Gamma_{\ee}/\,\Gamma_{\text{total}}\)
+  формально точность 6\% (DASP-1979)
+  \pause
+
+  \item \(\Gamma_{\ee}\times\Gamma_{\mumu}/\,\Gamma_{\text{total}}\)
+    \begin{itemize}
+    \item PDG 2007 \(0.335\pm0.007\,\kev\) (2.1\%)
+    \item \textsc{BaBar} (2004) 
+      \(0.3301\pm0.0077\pm0.0073\,\kev\)
+      
+      \textcolor{red}{2.3\%} статистика \textcolor{red}{2.2\%} систематика ISR
+    \item CLEO-c (2006) 
+      \(0.3384\pm0.0058\hm{\pm}0.0071\,\kev\)
+      
+      \textcolor{red}{1.7\%} в статистики и \textcolor{red}{2.1\%} в систематике ISR.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+\end{document}
+

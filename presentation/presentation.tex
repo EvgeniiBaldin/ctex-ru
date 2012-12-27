@@ -1,0 +1,742 @@
+%  -*- coding: koi8-r -*-
+\chapter{Делаем презентации}
+\label{cha:presentation}
+
+{\setlength{\epigraphwidth}{0.45\textwidth}
+  \epigraph{Существует три разновидности людей:\\
+    "--* те, кто видит;\\
+    "--* те, кто видит, когда им показывают;\\
+    "--* и те, кто не видит.}{\emph{Леонардо да Винчи}}}
+
+
+Хочется  стать популярным? Достаточно подкупить
+слушателей. Хочется донести свою идею? Нужно сделать нормальную
+презентацию.  При этом вовсе не нужно аляповатого фона, мультипликации
+при смене слайдов, но необходим разборчивый текст и картинки к
+месту. 
+% Вполне можно ограничься <<прозрачками>> и стандартным
+% <<оверхэдом>>.
+% Если
+% слайд требует от аудитории размышления, то на него следует не пожалеть
+% как минимум пяти минут. В противном случае все усилия напрасны.
+
+% \section{Правила хорошей презентации}
+% \label{sec:pr:afterwords}
+
+Создание презентации "---  очень тяжёлое занятие,  не следует жалеть
+о потерянных минутах для наведения блеска. Делая же презентацию,
+нужно не забывать об эмпирических  правилах.
+\begin{itemize}
+\item Один слайд требует не меньше одной минуты.
+\item Один слайд со смыслом требует не менее пяти минут.
+\item Времени всегда не хватает.
+\item Не следует <<пихать>> в презентацию больше слайдов, чем получится
+  рассказать по времени. Перебор по времени только раздражает
+  слушателей.
+\item Каждый слайд должен иметь свой заголовок (\textcmd{frametitle}).
+\item В один слайд можно поместить около 20--40 слов и заведомо не
+  больше 80.
+\item Полезно использовать \textenv{block}, \textenv{theorem},
+  \textenv{proof} и \textenv{example}.  Эти окружения структурируют
+  текст и помогают выделять основные мысли.
+\item Для разных аудиторий эти правила могут существенно отличаться.
+\end{itemize}
+
+
+
+\section{slides}
+\label{sec:pr:slides}
+
+\begin{floatingfigure}{0.545\textwidth}
+  \centering
+  \fbox{\includegraphics[width=0.54\textwidth]{presentation/presentation-slides.eps}}
+  \caption{\textpkg{slides} "--- это просто}\label{fig:prsentation:slides}
+\end{floatingfigure}
+
+Динозавр среди классов \LaTeX, специализирующихся на
+презентациях. Идея очень простая. В качестве класса документа
+выбирается \textpkg{slides}. В результате базовый размер шрифта
+автоматически увеличивается. Это позволяет прочитать стандартный текст
+на экране и избавиться от одного из <<смертных грехов>> докладчика, а именно
+желания уместить слишком много информации на одной страничке. В данном
+случае здесь по
+умолчанию ничего с этим не выйдет. Опция  класса \textopt{landscape}
+позволяет выбирать альбомную ориентацию для страницы по
+умолчанию. Слайды создаются с~помощью окружения \textenv{slide}. Всё.
+
+
+\begin{lstlisting}[]
+|\bs|documentclass[a4paper,landscape]{slides} 
+|\ldots|
+|\bs|begin{document}
+\begin{slide}
+  \begin{center}
+    \Large Идея обработки
+  \end{center}
+  |\ldots|
+\end{slide}
+|\bs|end{document}
+
+\end{lstlisting}
+
+
+Класс \textpkg{seminar} похож на \textpkg{slides} и лишь чуть-чуть
+более современен (1993~г.), но не в пример лучше документирован (файл
+\textfile{sem-user.pdf}) и кроме стандартного окружения
+\textenv{slide} имеет простейший набор команд для создания рамок.
+
+Если надо что-то сделать по-быстрому из уже готового текста с целью
+просто продемонстрировать какую-то идею, то старые, но надёжные классы
+\textenv{slide} и \textpkg{seminar} вполне для этого подойдут.
+
+
+
+
+% ./texmf-dist/tex/latex/seminar/seminar.cls
+
+% ./texmf-dist/tex/latex/sides/sides.cls
+
+
+
+
+
+\section{Немного о PDF}
+\label{sec:present:pdf}
+
+\mindex{графический формат!pdf|(}
+
+PDF (Portable Document Format) "--- открытый платформонезависимый
+формат для описания электронных документов был создан фирмой Adobe
+Systems в~1993~году. В~2006 году была опубликована версия стандарта
+под номером 1.7. В~декабре 2007 года PDF 1.7 стал стандартом
+ISO~32000. Файл в PDF"=формате может представлять собой комбинацию
+векторной графики, текста и растровых изображений (фотографий, снимков
+экрана и тому подобное). В стандарте PDF предусмотрена возможность
+создания гиперссылок, заполняемых форм и интерактивных вставок на
+JavaScript. Начиная с версии 1.6 декларируется возможность описания 3D
+интерактивных документов "--- что бы это ни значило, звучит заманчиво,
+но к сожалению, пока рано использовать эти возможности.
+
+С точки зрения формата для представления презентации PDF удовлетворяет
+необходимым условиям, таким как:
+\begin{itemize}
+\item Простота создания. Это сила качественных открытых форматов
+  "--- рано или поздно их начинают поддерживать все кому не лень.
+\item Переносимость. Везде найдётся программа просмотра PDF.
+\item Элементы интерактивности. Документ представляет собой не
+  только плоскую последовательность страниц.
+\end{itemize}
+
+
+\subsection{Простота создания}
+\label{sec:present:pdf:create}
+
+Допустим, что тем или иным способом был получен PostScript"=файл
+презентации. Из него с помощью \textprog{ghostscript}, точнее с
+помощью скрипта \textprog{ps2pdf},  можно
+получить нормальный PDF:
+\begin{lstlisting}[language=bash,frame=]
+> ps2pdf |<<файл.ps>>| |<<файл.pdf>>|
+
+\end{lstlisting}
+
+Получить PDF можно и напрямую из tex"=исходников с помощью программы
+\textprog{pdflatex}. Эта программа отличается от \textprog{latex} в
+основном только тем, что в качестве выходного формата получается
+PDF. При использовании \textprog{pdflatex} следует учитывать, что все
+графические файлы должны быть либо в виде pdf (вектор), либо png/jpeg
+(растр). \textprog{pdflatex} не умеет обрабатывать eps"=файлы, за
+исключением картинок, созданных с помощью \mpost.
+
+
+Если вдруг по какой-то причине pdf нужно преобразовать в PostScript,
+то лучше воспользоваться утилитой \textprog{pdftops} из пакета \textpkge{xpdf}.
+\begin{lstlisting}[language=bash,frame=]
+> pdftops [-eps] |<<pdf-файл>>|
+
+\end{lstlisting}
+Если необходимо получить картинку в формате EPS, то следует
+использовать ключ \textopt{-eps}.
+
+
+\subsubsection{Немного о шрифтах}
+В PDF можно внедрять векторные шрифты Type1. Это позволяет отображать
+готовые документы независимо от набора имеющихся шрифтов. Отображение
+на экране, особенно при низких разрешениях, зависит исключительно от
+качества внедрённых шрифтов. Парадокс качества: чем хуже разрешение,
+тем больший объём работы надо проделать с векторным шрифтом, чтобы он
+выглядел приемлемо. К счастью, в случае презентаций это не является
+проблемой, так как для читабельности на большом экране размер шрифта нужно
+сильно увеличить. Это эффективно увеличивает разрешение до
+сравнимого с разрешением лазерного принтера, под который и
+оптимизированы наиболее популярные векторные шрифты Computer Modern
+(пакет \textpkg{cm-super}). 
+
+Ни в коем случае для отображения на экране не стоит использовать
+растровые шрифты в формате Type3. Шрифты \textpkg{cm-super} (в \TeXLive есть
+заведомо) обязательно должны быть установлены.
+
+
+
+% \begin{lstlisting}[language=bash]
+% > dvips -P pdf
+
+% \end{lstlisting}
+
+
+
+\subsection{Переносимость}
+\label{sec:present:pdf:interoperability}
+
+Везде есть Adobe Reader и Ghostscript. Если этого где-то нет, то оно
+легко может там появиться. Adobe Reader предоставляется всем
+желающим самой Adobe Systems. Как следствие в смысле поддержки всех
+расширений формата PDF эта программа условно <<впереди планеты
+всей>>. Поэтому презентацию, скорее всего, придётся показывать именно с
+её помощью. 
+
+Одной из раздражающих особенностей Adobe Reader, мешающей
+использовать эту программу при работе над документом, является то, что
+в нём отсутствует возможность перезагружать изменённый документ.  Эту
+проблему можно частично решить с помощью сторонних программ
+\textprog{pdfopen} и \textprog{pdfclose} (заведомо присутствуют в
+дистрибутиве \TeXLive):
+\begin{lstlisting}[language=bash,frame=]
+> pdfclose --file |<<файл.pdf>>|
+# |обновляем <<файл.pdf>>| 
+> pdfopen --file |<<файл.pdf>>|
+
+\end{lstlisting}
+
+Ghostscript и программа просмотра с его использованием также есть
+везде. Ghostscript отображает PDF как обычный <<плоский>> документ, то
+есть об интерактивных <<эффектах>> можно забыть. Зато проблем с
+обновлением текста нет: нажал <<\texttt{.}>> (точку) и картинка
+обновилась.
+
+\textprog{xpdf} (\url{http://www.foolabs.com/xpdf/}) для просмотра PDF
+доступен только для систем, где есть X Window. Начиная с версии 3.02,
+\textprog{xpdf} поддерживает структуру PDF вплоть до
+1.7. \textprog{xpdf} используется как <<движок>> и для других программ
+просмотра, например, для \textprog{kpdf}. Обновить документ можно с
+помощью клавиши <<r>>. Очень удобен при просмотре в процессе
+подготовки документа.
+
+
+
+
+
+\subsection{Интерактивность}
+\label{sec:present:pdf:interaction}
+
+Зависит исключительно от стиля, который используется для подготовки
+PDF. Присутствует весь простейший джентльменский набор:
+гиперссылки, различные виды переходов со слайда на слайд и
+анимация. Есть ограниченная возможность демонстрировать клипы и
+внедрять в презентацию звуки.
+
+%\fxnote{Вставить ссылку на описание пакета} 
+
+За активные гиперссылки отвечает пакет \textpkg{hyperref}. Пакет
+обладает многочисленными и очень гибкими настройками, которые можно
+найти в  \textfile{manual.pdf}.
+
+Для вставки мультимедийных  фрагментов  можно воспользоваться пакетом
+\textpkg{movie15}. Ограничения: этот пакет работает только в связке с
+\textprog{pdflatex}, и просмотр возможен только в Adobe Reader в сборке
+под MS~Windows или MacOS. При~внедрении видеофрагмента следует
+убедиться, что он может быть просмотрен на платформе, на которой
+планируется провести презентацию. Для выяснения подробностей нужно
+обратиться к файлу документации \textfile{movie15.pdf}.
+
+\Note На текущий момент даже в существующей поддержке проигрывания
+клипов внутри PDF есть проблемы. Одна из самых распространённых "---
+это попытка проиграть клип в презентации, сделанной на Mac~OS  в
+MS~Windows, и наоборот. Так как клип воспроизводится системным плеером,
+а кодеки кодирования видеофрагментов на этих системах по умолчанию
+разные, то с очень большой долей вероятности ничего не получится.
+
+\mindex{графический формат!pdf|)}
+
+
+\section{beamer}
+\label{sec:pr:beamer}
+
+Время шло, компьютеры матерели, появились проекторы и захотелось
+чего"=то разноцветного. Так увидело свет новое поколение презентационных
+классов.
+
+
+С помощью пакета \textpkg{beamer} в принципе можно создавать
+<<прозрачки>>, как это делается посредством \textpkg{slides}, но
+основное его предназначение "--- электронная презентация. Пакету чуть
+более трёх лет, но он очень активно развивается, и на сегодня это,
+пожалуй, лучший пакет для презентаций в \LaTeX. Автор Тил Тантау (Till
+Tantau) оказался очень восприимчивым к предложениям сообщества
+относительно своего проекта. 
+
+У пакета \textpkg{beamer} есть масса стандартных стилей, исчерпывающее
+описание на более чем двухстах  страницах
+(\textfile{beameruserguide.pdf}) и домашняя страничка
+\url{http://sourceforge.net/projects/latex-beamer}.  \TeXLive содержит \textpkg{beamer} по умолчанию.
+
+\textpkg{beamer} можно использовать как с \textprog{pdflatex}, так и со
+<<стандартной связкой>> \(\text{\textprog{latex}}+\text{\textprog{dvips}}\hm{+}
+\text{\textprog{ps2pdf}}\).  
+Первое, что надо сделать "---  это выбрать класс:
+\begin{lstlisting}[]
+\documentclass[hyperref={unicode=true}]{beamer}
+\usepackage[koi8-r]{inputenc}
+
+\end{lstlisting}
+
+Класс \textpkg{beamer} по умолчанию загружает пакет
+\textpkg{hyperref}. Если в документе планируется использовать этот
+пакет со значениями, отличными от умолчания (например, добавить опцию
+\textopt{unicode=true} для кириллических закладок), то их следует
+передать как необязательный параметр команды выбора класса.
+
+Если текст представлен в кодировке UTF-8, то это также необходимо
+указать при загрузке \textpkg{beamer}:
+\begin{lstlisting}[]
+\documentclass[utf8]{beamer}
+\usepackage[utf8]{inputenc}
+
+\end{lstlisting}
+
+Теперь можно выбрать тему для презентации и определить заголовок для
+титульного листа. Единицей представления для \textpkg{beamer} является
+окружение \textenv{frame}.
+
+\begin{minipage}{0.43\linewidth}
+\begin{lstlisting}[frame=]
+% Выбор темы (преамбула)
+\usetheme{Madrid}
+% Выбор декорации
+\useoutertheme{shadow}
+\title{|<<Заголовок>>|}
+\date{|<<Дата или место>>|}
+\author{|<<Автор>>|}
+\begin{document}
+% Титульная страница
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\end{lstlisting}
+\end{minipage}\hfill
+\begin{minipage}{0.55\linewidth}
+  \fbox{\includegraphics[width=\textwidth]{presentation/presentation-beamer-title.eps}}
+\end{minipage}
+\smallskip
+
+Окружению \textenv{frame} можно передать необязательный параметр
+\textopt{t}, который <<прижимает>> текст к верхней части слайда.
+
+
+Теперь можно приступить к самой презентации. Как и в обычных статьях, в
+\textpkg{beamer} можно применять команды структурной разметки типа
+\textenv{section}. Эти команды должны идти за пределами окружения
+\textenv{frame}. Структурная разметка, в частности, полезна для быстрого
+доступа, например, через навигационное меню или оглавление. Оглавление
+создаётся с помощью стандартной команды \textcmd{tableofcontents}.
+Чтобы оглавление разворачивалось не
+сразу, а по ходу дела, этой команде следует передать необязательный
+параметр \textopt{pausesections}.  \bigskip
+
+\begin{minipage}{0.4\linewidth}
+\begin{lstlisting}[frame=]
+% Тема с навигацией
+\usetheme{Montpellier}
+% Чёрно-белые цвета
+% Хорошо для бумаги
+\usecolortheme{dove}
+
+% Структурная разметка
+\section{Теория}
+\subsection{Формула}
+\begin{frame}
+  \frametitle{|<<Заголовок>>|}
+   |\ldots|
+\end{frame}
+
+\end{lstlisting}
+\end{minipage}\hfill
+\begin{minipage}{0.55\linewidth}
+  \fbox{\includegraphics[width=\textwidth]{presentation/presentation-beamer-frametitle.eps}}
+\end{minipage}
+\bigskip
+
+Для создания заголовка текущего слайда используется команда
+\textcmd{frametitle}.  Так же можно определить и подзаголовок с помощью
+команды \textcmd{framesubtitle}.
+\smallskip
+
+\Note Для этого примера была выбрана цветовая схема dove, которая всю
+цветовую палитру приводит к оттенкам серого. Это удобно, если слайды
+будут печататься на бумаге, например, как иллюстрации в обычной книге
+без цветных вкладок. Для электронных презентаций это не нужно. Примеры
+разных цветовых схем разобраны в документации к пакету. 
+
+
+\subsubsection{Оверлеи}
+В процессе представления очень полезны \emph{оверлеи} "--- составные
+слайды, которые как бы накладываются друг на друга. Для создания
+простейшего оверлея используется команда \textcmd{pause}:
+
+\begin{figure}[t]
+  \centering
+  \fbox{\includegraphics[width=0.48\linewidth]{presentation/presentation-beamer-pause-1.eps}}\hfill
+   \fbox{\includegraphics[width=0.48\linewidth]{presentation/presentation-beamer-pause-2.eps}}
+
+  \caption{Пример оверлеев, созданных с помощью \textcmd{pause} в \textpkg{beamer}}
+  \label{fig:beamer:overley}
+\end{figure}
+
+\begin{lstlisting}[]
+\begin{itemize}
+  \item  |\ldots|
+% Здесь заканчивается первый оверлей и начинается второй
+  \pause
+  \item |\ldots|
+\end{itemize}
+\end{lstlisting}
+
+На рис.~\ref{fig:beamer:overley} приведён пример двух слайдов,
+созданных автоматически из такой простой конструкции. Сначала
+показывается левый слайд, а затем правый и создаётся впечатление, что
+второй пункт перечисления как бы добавляется к первому без смены слайда.
+
+\Note Если приглядеться к цифрам со знаками процента на слайде
+(например, 1.7\% в последней строчке), то можно заметить, что они
+отличаются от остального текста. В цвете это отличие было бы очевидно,
+так как эти цифры выделены командой \textcmd{alert}. Команда \textcmd{alert}
+"--- это аналог \textcmd{emph}. По умолчанию выделенный фрагмент просто
+отображается красным цветом, но при желании \textcmd{alert} всегда
+можно переопределить. Выделить короткий фрагмент текста также можно с
+помощью команды \textcmd{beamerbutton}\lstinline!{текст}! "--- в этом
+случае из текста получается 
+\parbox[c]{1.4cm}{\includegraphics[clip,width=1.4cm]{presentation/presentation-button.eps}}.
+
+
+
+
+
+Для работы с оверлеями в \textpkg{beamer} добавлен ещё один способ
+передачи параметров командам \texttt{< >} "--- меньше/больше. Таким
+образом команде передаётся список оверлеев, на которых она должна
+действовать. То есть переопределённая в пакете \textpkg{beamer}
+команда \lstinline!\color<3-4>!\textcmdh{color} раскрашивает текст в
+указанный цвет с 3 по 4 оверлей. Список можно передавать через
+запятую или как интервал. Список вида: \texttt{-3,5-9,12,17-}
+означает, что команда действует для оверлеев из~интервалов: от начала
+до 3, от 5 до 9, для 12, от 17 и до конца.
+
+
+\begin{figure}[t]
+  \centering
+  \fbox{\includegraphics[width=0.48\textwidth]{presentation/presentation-beamer-overley-1.eps}}\hfill
+  \fbox{\includegraphics[width=0.48\textwidth]{presentation/presentation-beamer-overley-2.eps}}
+
+  \parbox{0.48\textwidth}{\caption{Оверлей \No 1}\label{fig:beamer:ov1}}\hfill
+  \parbox{0.48\textwidth}{\caption{Оверлей \No 2}\label{fig:beamer:ov2}}\bigskip
+
+  \fbox{\includegraphics[width=0.48\textwidth]{presentation/presentation-beamer-overley-3.eps}}\hfill
+  \fbox{\includegraphics[width=0.48\textwidth]{presentation/presentation-beamer-overley-4.eps}}
+
+  \parbox{0.48\textwidth}{\caption{Оверлей \No 3}\label{fig:beamer:ov3}}\hfill
+  \parbox{0.48\textwidth}{\caption{Оверлей \No 4}\label{fig:beamer:ov4}}
+\end{figure}
+
+В \textpkg{beamer} предусмотрена масса способов работы с
+оверлеями. Рассмотрим некоторые из них:
+\textcmdh{newtheorem}
+\textcmdh{frametitle}
+\textcmdh{framesubtitle}
+\begin{lstlisting}[]
+% Создание своей теоремы
+\newtheorem{MyTheorem}{Теорема}
+\begin{frame}
+% Заголовок
+\frametitle{Использование класса \textbf{beamer}}
+% Подзаголовок
+ \framesubtitle{theorem, proof, block и enumerate}
+% Использование теоремы 
+ \begin{MyTheorem}[равенство]
+% Выделяется красным цветом на 3 и 4 оверлеях
+  \color<3-4>[rgb]{1,0,0}{Доказать \(A=B\)}|\textcmdh{color}|
+ \end{MyTheorem}
+% Доказательство
+ \begin{proof}|\textenvh{proof}|
+  \begin{enumerate}
+% Присутствует вплоть до 2 оверлея
+   \item<-2> \(A=C\)
+% Появляется только на 2 оверлее
+   \item<2> \(B=C\)
+% Есть на 3 и 4 оверлеях
+   \item<3,4> \(A=B\)\qedhere|\textcmdh{qedhere}|
+  \end{enumerate}
+ \end{proof}
+% Последняя фраза (от 4 оверлея и далее, если можно)
+ \uncover<4->{Вот и \beamerbutton{всё}}|\textcmdh{uncover}\textcmdh{beamerbutton}|
+% Манипуляция с блоком (есть на 1 и 3 оверлеях)
+ \begin{block}<1,3>{Структурный блок}|\textenvh{block}|
+   Появляемся и исчезаем
+ \end{block}
+\end{frame}
+
+\end{lstlisting}
+
+На рис.~\ref{fig:beamer:ov1}--\ref{fig:beamer:ov4} представлены четыре
+оверлея, которые получены при компиляции приведённого ранее кода.
+
+
+Некоторые стандартные команды в пакете \textpkg{beamer} переопределены
+так, что могут воспринимать списки оверлеев. Примерами таких команд
+являются:
+\begin{itemize}
+\item \textcmd{color}\lstinline!{текст}! "--- цвет текста;
+\item \textcmd{includegraphics} "--- для вставки графики;
+\item \textcmd{item} "--- определена внутри перечислений, к которым
+  относятся окружения \textenv{itemize} и \textenv{enumerate};
+\item окружение \textenv{theorem} (подробности в
+  разделе~\ref{sec:math-2:theorem} на
+  стр.~\pageref{sec:math-2:theorem});
+\item окружение \textenv{proof}. Если есть теорема, то должно быть и
+  доказательство. В~конце доказательства традиционно добавляется
+  символ \(\Box\) "--- знак QED (quod erat demonstrandum "--- что и
+  требовалось доказать). Команда \textcmd{qedhere} размещает знак QED в той же
+  строке, где он указан. По умолчанию же QED будет отведена своя
+  собственная строка, что, как правило, нежелательно.
+\end{itemize}
+
+В \textpkg{beamer} дополнительно определены  новые
+команды, воспринимающие список оверлеев:
+\begin{itemize}
+\item \textcmd{alert}\lstinline!{текст}! "--- выделение текста;
+\item \textcmd{only} или \textcmd{visible} "--- добавление текста
+  только для указанного списка оверлеев;
+\item  \textcmd{invisible} "--- команда комплементарная \textcmd{only};
+\item  \textcmd{uncover} "--- то же, что и \textcmd{only}, только
+  резервируется место под текст даже на тех слайдах, где он
+  отсутствует;
+\item \textcmd{alt}\lstinline!<список>{текст}{альтернативный текст}! "--- для
+  указанного списка оверлеев выводится <<текст>> иначе <<альтернативный
+  текст>>;
+\item окружение \textenv{block} "--- именованный блок. Похоже на
+  окружение \textenv{theorem}.
+\end{itemize}
+
+\subsubsection{Гиперссылки} 
+
+Для создания гиперссылки для начала следует установить метку или
+<<якорь>> в нужном месте. Это можно сделать с помощью команды
+\textcmd{label}. После того как метка установлена, с помощью команды \textcmd{hyperlink}
+организуется гиперссылка:
+\begin{lstlisting}[]
+ \label{metka} 
+ \hyperlink{metka}{|<<Гиперссылка>>|}
+
+\end{lstlisting}
+
+Вместо обычного текста можно использовать фактически любую
+\LaTeX"=структуру, например, команду создания <<кнопки>>
+\textcmd{beamerbutton}. Более общей командой для установки метки
+является команда:
+\begin{lstlisting}[]
+\hypertarget<|<<номер оверлея>>|>{|<<метка>>|}{|<<текст>>|}
+
+\end{lstlisting}
+
+С её помощью  можно указать не только структурную единицу, но и на
+какой именно оверлей следует сослаться.
+
+
+\subsubsection{Программный код}
+Для представления программного кода необходимо использовать окружения
+типа \textpkg{verbatim} или \textpkg{lstlistings}. Для того чтобы код на
+слайде отобразился правильно, окружению \textenv{frame} необходимо
+передать опцию \textopt{fragile}. Оформление кода может выглядеть,
+например, так:
+
+\begin{figure}[t]
+  \fbox{\includegraphics[width=0.48\textwidth]{presentation/presentation-beamer-code-1.eps}}\hfill
+  \fbox{\includegraphics[width=0.48\textwidth]{presentation/presentation-beamer-code-2.eps}}
+
+  \fbox{\includegraphics[width=0.48\textwidth]{presentation/presentation-beamer-code-3.eps}}\hfill
+  \fbox{\includegraphics[width=0.48\textwidth]{presentation/presentation-beamer-code-4.eps}}
+
+  \caption{Представление программного кода (тема Hannover,
+    естественно, в цвете)}
+  \label{fig:pr:beamer:code}
+\end{figure}
+
+\textcmdh{alert}
+\textcmdh{uncover}
+\textcmdh{visible}
+\textenvh{semiverbatim}
+\begin{lstlisting}[]
+\begin{frame}[fragile]
+% Определяем более короткие команды для удобства
+\newcommand{\un}{\uncover}
+\newcommand{\al}{\alert}
+\frametitle{An Algorithm For Finding Primes Numbers.}
+\begin{semiverbatim}
+\un<1->{\al<0>{int main (void)}}
+\un<1->{\al<0>{\{}}
+\un<1->{\al<1>{ \al<4>{std::}vector<bool>is_prime(100,true);}}
+\un<1->{\al<1>{ for (int i = 2; i < 100; i++)}}
+\un<2->{\al<2>{ if (is_prime[i])}}
+\un<2->{\al<0>{ \{}}
+\un<3->{\al<3>{  \al<4>{std::}cout << i << " ";}}
+\un<3->{\al<3>{  for (int j = i; j < 100;}}
+\un<3->{\al<3>{   is_prime [j] = false, j+=i);}}
+\un<2->{\al<0>{ \}}}
+\un<1->{\al<0>{ return 0;}}
+\un<1->{\al<0>{\}}}
+\end{semiverbatim}
+\visible<4->{Note the use of \alert{\texttt{std::}}.}
+\end{frame}
+
+\end{lstlisting}
+
+
+
+
+
+\subsubsection{Выбор и настройка темы} Все  темы \textpkg{beamer} разбиваются
+на пять классов.
+\begin{itemize}
+\item Именные темы "--- концепция презентации. Для выбора темы
+  используется команда \textcmd{usetheme}. Обычно создатель именной
+  темы просто выбирает в ней соответствующие цветовую, шрифтовую и
+  декоративные темы. В~\textpkg{beamer} на начало 2007 года есть
+  следующие именные темы: AnnArbor, Anti\-bes, Bergen, Berkeley, Berlin,
+  Boadilla, CambridgeUS, Copenhagen, Darm\-stadt, Dresden, Frankfurt,
+  Goettingen, Hannover, Ilmenau, JuanLesPins, Lue\-beck, Madrid, Malmoe,
+  Marburg, Montpellier, PaloAlto, Pittsburgh, Rochester, Singapore,
+  Szeged и Warsaw.
+\item Цветовые темы "--- палитра презентации. Для выбора темы
+  используется команда \textcmd{usecolortheme}. Можно выбрать из
+  следующего набора  палитр: alba\-tross, beaver, beetle, crane, dolphin, dove,
+  fly, lily, orchid, rose, seagull, seahorse, sidebartab, structure,
+  whale и wolverine.
+\item Шрифтовые темы "--- выбор подмножества шрифтов. Для выбора темы
+  используется команда \textcmd{usefonttheme}. Существуют следующие
+  шрифтовые темы: pro\-fes\-sionalfonts, serif, structurebold,
+  structureitalicserif и structuresmall\-cap\-sserif.
+\item Текстовые и структурные декорации "--- темы, определяющие, как
+  выглядят перечисления, теоремы и выделения. Для выбора темы
+  используется команда \textcmd{useinnertheme}. Можно выбрать
+  следующие варианты декораций: circles, inmargin, rectangles, rounded.
+\item Внешние декорации "--- темы, определяющие вид заголовков и
+  обрамления слайда. Для выбора темы
+  используется команда \textcmd{useoutertheme}. Существуют
+  следующие типы обрамлений: infolines, miniframes, shadow, sidebar,
+  smo\-oth\-bars, smoothtree, split и tree.
+\end{itemize}
+
+% \begin{figure}[t]
+%   \centering
+%   \fbox{\includegraphics[width=0.3\textwidth]{presentation/presentation-beamer-ex-1.eps}}
+%   \fbox{\includegraphics[width=0.3\textwidth]{presentation/presentation-beamer-ex-2.eps}}
+%   \fbox{\includegraphics[width=0.3\textwidth]{presentation/presentation-beamer-ex-3.eps}}
+
+%   \fbox{\includegraphics[width=0.3\textwidth]{presentation/presentation-beamer-ex-4.eps}}
+%   \fbox{\includegraphics[width=0.3\textwidth]{presentation/presentation-beamer-ex-5.eps}}
+%   \fbox{\includegraphics[width=0.3\textwidth]{presentation/presentation-beamer-ex-6.eps}}
+%   \caption{Примеры разных тем \textpkg{beamer}. Малая часть от того
+%     что есть.}
+%   \label{fig:pr:beamer:theams}
+% \end{figure}
+
+Никто не мешает  создать свою собственную тему и назвать её
+именем своего города или страны. Подробности, о том как это делается, а
+также примеры уже существующих тем следует искать в документации к пакету.
+
+
+\subsubsection{Печать слайдов} 
+
+Размер слайдов всего 128~мм на 98~мм. При растягивании такого маленького слайда
+на весь экран получаются большие и хорошо читаемые буквы. Для печати
+слайдов проще всего взять программу Adobe Reader и в диалоге печати установить
+опцию \textmenu{Page Scaling} (масштабирование страницы) в состояние
+\textmenu{Fit to Printable Area} (растянуть страницу на всё доступное
+пространство для печати).
+Также можно воспользоваться стилевым файлом \textpkg{pgfpages} из
+пакета \textpkg{pgf}. В~этом случае специально растягивать слайды не потребуется.
+\begin{lstlisting}[]
+\usepackage{pgfpages}
+\pgfpagesuselayout{resize to}[a4paper,%
+                              border shrink=5mm,landscape]
+
+\end{lstlisting}
+
+Здесь слайд растягивается на страницу A4 в альбомной ориентации с
+отступом от краёв в 5~мм. Если хочется распечатать по два слайда на
+страницу, то необходимо передать ещё и следующие настройки:
+\begin{lstlisting}[]
+\pgfpagesuselayout{2 on 1}[a4paper,border shrink=5mm]
+
+\end{lstlisting}
+
+
+
+\subsubsection{Ускорение компиляции} При подготовке презентации можно
+использовать опцию \textopt{draft} при выборе класса. Это немного
+ускорит компиляцию. Также можно указывать, какие именно слайды следует
+включать при компиляции (похоже на \textcmd{includeonly}):
+
+\begin{lstlisting}[]
+\includeonlyframes{ex1,ex3}
+\frame[label=ex1]
+{Этот слайд будет включён при компиляции. }
+\begin{frame}[label=ex2]
+Аналогично ex2.
+\end{frame}
+\frame{А вот этого слайда не будет.}
+
+\end{lstlisting}
+
+Использование меток позволяет выводить уже имеющиеся слайды ещё раз 
+с~помощью команды \textcmd{againframe}:
+\begin{lstlisting}[]
+%ex1 будет выведен ещё раз
+\againframe{ex1} 
+
+\end{lstlisting}
+
+
+
+
+\subsubsection{Мультимедиа} Пакет \textpkg{beamer} включает стилевой файл
+\textpkg{multimedia}. После загрузки этого файла можно воспользоваться
+командами \textcmd{movie} и \textcmd{sound} для включение клипа или
+звука в презентацию. К сожалению, пока эта возможность ограничена тем,
+что поддерживает её только Adobe Reader в сборке для MS~Win\-dows или
+MacOS. При этом всегда необходимо проверять результат на работоспособность.
+
+В пакете \textpkg{beamer} предусмотрена возможность создания анимации
+на основе созданных слайдов. Команда
+\begin{lstlisting}[]
+\animate<|<<список оверлеев>>|>
+
+\end{lstlisting}
+позволяет автоматически проигрывать последовательность слайдов. Для
+того чтобы эта возможность сработала, необходимо Adobe Reader раскрыть
+на весь экран. 
+
+
+
+
+% Думается, можно в правила добавить, что редко удаётся затратить меньше
+% минуты на слайд в процессе доклада (если не превращать презентацию в
+% мультик с быстрой сменой кадров). При трудностях с языком - умножить
+% на 2 или 3. Отсюда можно рассчитать максимальное количество слайдов.
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../ctex"
+%%% End: 

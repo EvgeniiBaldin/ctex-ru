@@ -1,0 +1,62 @@
+%  -*- coding: koi8-r -*-
+\documentclass[a4paper,landscape,clock]{slides} 
+\usepackage[warn]{mathtext}
+\usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}%first paragraph indent
+\usepackage{cmap}
+\usepackage[unicode=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{srcltx}
+\usepackage{textcomp}
+\usepackage{floatflt}
+\usepackage{wrapfig}
+\usepackage{afterpage}
+\usepackage{ccaption}
+\captiondelim{. }
+\usepackage{xspace}
+%научные символы и смайлики \smiley \frownie
+\usepackage{wasysym}
+
+%backslash
+\newcommand{\bs}{\symbol{'134}}
+%degree
+\newcommand{\grad}{\ensuremath{{}^{\circ}}\xspace}
+\renewcommand{\epsilon}{\varepsilon}
+\begin{document}
+\begin{slide}
+  \begin{center}
+    \Large Идея обработки
+  \end{center}
+
+  Разрабатываются два независимых отбора событий по трековой системе с
+  эффективностью $\epsilon_T$ и по калориметру с эффективностью
+  $\epsilon_C$, тогда
+\begin{equation}
+\epsilon_T = \epsilon^{(C)}_{T}\cdot\epsilon_{C} +
+\epsilon^{(\Bar{C})}_{T}\cdot(1-\epsilon_{C}),
+\label{eqn:Et}
+\end{equation}
+где $\epsilon^{(C)}_{T}$ "--- эффективность отбора $T$ при условии,
+что отбор $C$ сработал (она определяется экспериментально на данных
+\(J/\psi\)), а $\epsilon^{(\Bar{C})}_{T}$ "--- эффективность того же
+отбора при условии, что отбор $C$ не сработал (Определяется на
+\(J/\psi\to\pi^+\pi^-(X)\)).
+
+Аналогично
+\begin{equation}
+\epsilon_C = \epsilon^{(T)}_{C}\cdot\epsilon_{T} +
+\epsilon^{(\Bar{T})}_{C}\cdot(1-\epsilon_{T}).
+\label{eqn:Ec}
+\end{equation}
+
+\end{slide}
+
+%\begin{thebibliography}{9}
+%\bibitem{}
+%\newblock
+%\end{thebibliography}
+\end{document}
