@@ -95,10 +95,52 @@ make-up/make-up-twocolumn-3.eps: make-up/make-up-twocolumn-3.tex
 make-up/make-up-multicol.eps: make-up/make-up-multicol.tex
 	$(PREFIX)cd make-up; make make-up-multicol.eps
 
+#Путеводитель по классам \LaTeX
+classes-1: classes/classes.tex presentation/presentation-slides.eps
 
-classes-1:
+# Делаем презентации
+presentation-1:  presentation/presentation.tex \
+	presentation/presentation-slides.eps\
+        presentation/presentation-beamer-title.eps\
+        presentation/presentation-beamer-frametitle.eps \
+	presentation/presentation-beamer-pause-1.eps \
+	presentation/presentation-beamer-pause-2.eps \
+        presentation/presentation-button.eps \
+	presentation/presentation-beamer-overley-1.eps \
+	presentation/presentation-beamer-overley-2.eps \
+	presentation/presentation-beamer-overley-3.eps \
+	presentation/presentation-beamer-overley-4.eps \
+	presentation/presentation-beamer-code-1.eps \
+	presentation/presentation-beamer-code-2.eps \
+	presentation/presentation-beamer-code-3.eps \
+	presentation/presentation-beamer-code-4.eps 
 
-presentation-1:
+presentation/presentation-slides.eps: presentation/presentation-slides.tex
+	$(PREFIX)cd presentation; make presentation-slides.eps
+
+presentation/presentation-beamer-title.eps: presentation/presentation-beamer-title.tex
+	$(PREFIX)cd presentation; make presentation-beamer-title.eps
+
+presentation/presentation-beamer-pause-1.eps: presentation/presentation-beamer-pause.tex
+	$(PREFIX)cd presentation; make presentation-beamer-pause-1.eps
+
+presentation/presentation-beamer-pause-2.eps: presentation/presentation-beamer-pause.tex
+	$(PREFIX)cd presentation; make presentation-beamer-pause-2.eps
+
+#presentation/presentation-button.eps: presentation/presentation-button.tex
+#	$(PREFIX)cd presentation; make presentation-button.eps
+
+presentation/presentation-beamer-overley-1.eps: presentation/presentation-beamer-overley.tex
+	$(PREFIX)cd presentation; make presentation-beamer-overley-1.ep
+
+presentation/presentation-beamer-overley-2.eps: presentation/presentation-beamer-overley.tex
+	$(PREFIX)cd presentation; make presentation-beamer-overley-2.ep
+
+presentation/presentation-beamer-overley-3.eps: presentation/presentation-beamer-overley.tex
+	$(PREFIX)cd presentation; make presentation-beamer-overley-3.ep
+
+presentation/presentation-beamer-overley-4.eps: presentation/presentation-beamer-overley.tex
+	$(PREFIX)cd presentation; make presentation-beamer-overley-4.ep
 
 base-2:
 

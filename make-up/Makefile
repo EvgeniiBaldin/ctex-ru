@@ -8,17 +8,19 @@
 include ../rules.mk
 
 # make-up-rotpages.eps make-up-draft.eps
-PICS := make-up-layout.eps make-up-lscape.eps  \
+PICS := make-up-layout.eps make-up-lscape.eps  make-up-lscape.pdf \
         make-up-coridor.eps make-up-twocolumn.eps \
         make-up-twocolumn-2.eps make-up-twocolumn-3.eps \
         make-up-multicol.eps 
 
 all: $(PICS) 
 
-make-up-lscape.eps:  make-up-lscape.tex
-	$(PREFIX)$(PDFLATEX) make-up-lscape.tex
+make-up-lscape.eps:  make-up-lscape.pdf
 	$(PREFIX)$(PDFTOPS) -eps make-up-lscape.pdf make-up-lscape.eps
-	$(PREFIX)$(RM) make-up-lscape.pdf
+
+make-up-lscape.pdf:  make-up-lscape.tex
+	$(PREFIX)$(PDFLATEX) make-up-lscape.tex
+
 
 make-up-layout.eps:  make-up-layout.tex
 	$(PREFIX)$(LATEX) make-up-layout.tex

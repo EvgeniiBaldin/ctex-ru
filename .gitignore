@@ -13,6 +13,9 @@
 *.mpx
 *.out
 *.exa
+*.nav
+*.snm
+*.toc
 *~
 *-eps-converted-to.pdf
 .#*
