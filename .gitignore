@@ -25,4 +25,5 @@
 \#*
 # auctex dir
 auto/
+*.synctex.gz
 /ctex.pdf

@@ -494,7 +494,7 @@ aux"=файле при первой компиляции с помощью \textprog{latex}.
 \textpkgh{gost} 
 
 Игорь А. Котельников разработал стили для \BibTeX, соответствующие
-ГОСТ~7.0.5-2008 (Библиографическая ссылка. Общие требования и правила
+ГОСТ 7.0.5-2008 (Библиографическая ссылка. Общие требования и правила
 составления.), ГОСТ~7.1-2003 (Библиографическая
 запись. Библиографическое описание. Общие требования и правила
 составления.), ГОСТ~7.80-2000 (Библиографическая запись. Заголовок.
@@ -504,7 +504,7 @@ aux"=файле при первой компиляции с помощью \textprog{latex}.
 иностранных европейских языках) и ГОСТ~7.83-2001 (Электронные издания.
 Основные виды и выходные сведения.):
 \textbf{gost2003s}/\textbf{gost2008s}, аналогичные \textbf{plain}, и
-\textbf{gost2003}/\textbf{gost2008}, аналогичные
+\textbf{gost2003}/ \textbf{gost2008}, аналогичные
 \textbf{unsrt}. Информацию по этим библиографическим стилям можно
 найти в директории \textpath{texmf-dist/doc/bibtex/gost} в файлах
 \textfile{gost.pdf}, \textfile{gost2003.pdf} и
@@ -619,15 +619,6 @@ numpages "--- число страниц и language "--- влияет
 
 \mindex{указатель|(}
 
-\begin{figure}[t]
-  \centering
-  \includegraphics[width=0.5\textwidth]{apparatus/apparatus-2}
-  \caption{Конвейер \LaTeX+\textit{MakeIndex}: tex "---
-    \LaTeX-исходник, idx "--- не отсортированный индекс (полуфабрикат),
-    ist "--- стилевой файл для указателя, ilg "--- log-файл
-    \textit{MakeIndex}, ind "--- отсортированный указатель}
-  \label{fig:apparatus:makeindexandlatex}
-\end{figure}
 %\mindexemph{\textit{MakeIndex}}
 
 
@@ -652,6 +643,16 @@ numpages "--- число страниц и language "--- влияет
 \input{|<<ind-файл>>|}
 
 \end{lstlisting}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.5\textwidth]{apparatus/apparatus-2}
+  \caption{Конвейер \LaTeX+\textit{MakeIndex}: tex "---
+    \LaTeX-исходник, idx "--- не отсортированный индекс (полуфабрикат),
+    ist "--- стилевой файл для указателя, ilg "--- log-файл
+    \textit{MakeIndex}, ind "--- отсортированный указатель}
+  \label{fig:apparatus:makeindexandlatex}
+\end{figure}
 
 Это же делает и команда \textcmd{printindex} из пакета
 \textpkg{makeidx}. В дополнение к~подключению индекса команда
@@ -872,7 +873,7 @@ ukrainian), а опция \textopt{-C} "--- кодовую страницу документа
   \includegraphics[width=0.4\linewidth]{apparatus/apparatus-3}
   \caption{Конвейер \LaTeX+\textit{xindy} при создании глоссария: tex
     "--- \LaTeX-исходник, glo "--- не отсортированный глоссарий
-    (полуфабрикат), xdy "--- стилевой файл для глоссария, gls "---
+    (полуфабрикат), xdy "--- стилевой файл для~глоссария, gls "---
     отсортированный глоссарий}
   \label{fig:apparatus:glossandlatex}
 \end{figure}
@@ -969,7 +970,6 @@ ukrainian), а опция \textopt{-C} "--- кодовую страницу документа
 \addcontentsline{toc}{section}{\glossaryname}
 % Печать готового глоссария  gls-файла
 \printglossary{}
-
 % Создание заготовки для глоссария
 \glossary{Указатель:упорядоченный перечень объектов текста, 
   благодаря чему можно быстро находить сведения об этих 
@@ -1033,18 +1033,14 @@ definition = {Дикое животное}
 \begin{lstlisting}[escapechar=!]
 % Преамбула
 \usepackage{gloss}
-
 % Команда создания списка в gls.aux-файле
 \makegloss
  !\ldots!
-
 % Тело документа
 % Ссылка на словарную статью ГНУ
 \gloss{gnu}
-
 % Определение заголовка глоссария
 \renewcommand{\glossname}{Глоссарий}
-
 % Печать глоссария
 \printgloss{|<<имя bib-файла|}
 
