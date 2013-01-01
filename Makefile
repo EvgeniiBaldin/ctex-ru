@@ -52,7 +52,7 @@ base-1: base/base.tex
 math-1: math/math-1.tex math/math-1-amsfonts.eps
 
 math/math-1-amsfonts.eps: math/math-1-amsfonts.tex structheader.tex
-	$(PREFIX)cd intro; make math-1-amsfonts.eps
+	$(PREFIX)cd math; make math-1-amsfonts.eps
 
 #Вставка графики
 graphics-1: graphics/graphics.tex title.eps graphics/wrapfigure.eps
