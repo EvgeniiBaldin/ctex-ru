@@ -1,0 +1,57 @@
+%  -*- coding: koi8-r -*-
+\documentclass[a4paper,12pt]{scrartcl} 
+\usepackage[warn]{mathtext}
+\usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}%first paragraph indent
+\usepackage{cmap}
+\usepackage[unicode=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{srcltx}
+\usepackage{textcomp}
+\usepackage{floatflt}
+\usepackage{wrapfig}
+\usepackage{afterpage}
+\usepackage{ccaption}
+\captiondelim{. }
+\usepackage{xspace}
+%научные символы и смайлики \smiley \frownie
+\usepackage{wasysym}
+%глоссарий
+\usepackage{makeglos}
+\makeglossary
+
+
+%backslash
+\newcommand{\bs}{\symbol{'134}}
+%degree
+\newcommand{\grad}{\ensuremath{{}^{\circ}}\xspace}
+\begin{document}
+\pagestyle{empty}
+
+
+\renewcommand{\glossaryname}{Глоссарий}
+%\renewcommand{\glossaryintro}{Чуть ниже представлен пример глоссария}
+\printglossary{}
+
+
+\glossary{Указатель:упорядоченный перечень объектов текста, благодаря
+  чему можно быстро находить сведения об этих объектах, когда
+  требуется справка или выборочное чтение издания}
+
+
+\glossary{Глоссарий:собрание глосс, предшественик словаря}
+
+\glossary{xindy|is{программа для формирования вспомогательного указателя, может
+    использоваться и для создания глоссария}}
+\glossary{xindy|see{Указатель}}
+\glossary{xindy|seealso{Глоссарий}}
+
+%\begin{thebibliography}{9}
+%\bibitem{}
+%\newblock
+%\end{thebibliography}
+\end{document}

@@ -1,0 +1,502 @@
+%  -*- coding: koi8-r -*-
+\chapter{Гуманитарные направления}
+\label{cha:humanities} {\setlength{\epigraphwidth}{0.6\textwidth}
+  \epigraph{Музыка есть таинственная арифметика души; она вычисляет,
+    сама того не сознавая.}{\emph{Готфрид Лейбниц}} }
+% Настоящая наука и настоящая музыка требуют однородного мыслительного
+% процесса.( Альберт Эйнштейн)
+
+Гуманитарные дисциплины отнюдь не меньше точных нуждаются в
+качественном инструменте для создания книг. Та же нотная нотация по
+своей изощрённости вполне сравнивается с математической, а аппарат для
+создания комментариев к текстам архисложен в своём исполнении, если
+его не автоматизировать.
+
+
+
+\section{Стихи и  пьесы}
+\label{sec:humanities:poetry}
+
+Поэзия, наверное, всегда сопровождала человечество. Сложно понять, зачем
+это нужно, но людям нравится.
+
+
+Небольшие стихотворные фрагменты можно оформить с помощью окружения
+\textenv{verse}:
+\begin{example}[0.45\textwidth]{verse}
+  \begin{verse}
+    Пусть от бед тебя хранит\\*
+    Сгрызенный тобой гранит.
+
+    \emph{Студенту в помощь}
+  \end{verse}
+\end{example}
+Строфы разделяются пустыми строками, а сами бьются на строки с помощью
+команды переноса строки \lstinline!\\!. Если после этой команды
+поставить звёздочку (\lstinline!\\*!), то это будет эквивалентно
+запрету на разрыв строфы в этом месте при переносе на новую страницу.
+
+\subsubsection{verse}
+\label{sec:humanities:verse}
+
+Пакет \textpkg{verse} значительно расширяет возможности одноимённого
+окружения. В~документации \textfile{verse.pdf} кроме самого пакета
+описаны и простые альтернативы и приведены очень подробные примеры 
+формирования стихотворных фраз. \textenvh{verse}
+\medskip
+
+\noindent\includegraphics[]{humanities/humanities-verses.eps}
+\medskip
+
+Команда \textcmd{poemtoc} определяет уровень, которому будет
+соответствовать название стихотворения в
+оглавлении. \textcmd{poemtitle} формирует название
+стихотворения. \textcmd{versewidth} "--- просто предопределённая
+переменная, в которой можно хранить длину строки. Окружение
+\textenv{verse} принимает в качестве необязательного параметра
+примерную типичную длину строки.  Используя информацию о средней длине
+строки, окружение пытается максимально симметрично расположить
+стихотворение на странице. Команда \textcmd{vin} формирует отступ. 
+
+В пакете также определены команды для автоматического форматирования
+строф, оформления заголовков и формирования изощрённых форм у
+стихотворения.
+
+
+\subsubsection{stage}
+\label{sec:hunanities:stage}
+
+Для написания пьес, можно воспользоваться, например, классом
+\textpkg{stage}. При этом стилевой файл \textfile{stage.sty} лучше
+скопировать себе в рабочую директорию и кириллизовать его (заменить
+английские названия разделов на русские), так как по
+умолчанию предполагается английский язык.
+\begin{figure}[t]
+  \centering
+  \fbox{\includegraphics[width=0.85\textwidth]{humanities/humanities-stage.eps}}
+  \caption{Простой класс \textpkg{stage}}
+  \label{fig:stage}
+\end{figure}
+
+Пример использования класса \textpkg{stage}:
+\textcmdh{addcharacter}
+\textcmdh{act}
+\textcmdh{pause}
+\textcmdh{scene}
+\textcmdh{opensd}
+\textcmdh{dialog}
+\textcmdh{stage}
+\begin{lstlisting}
+% Класс stage
+\documentclass{stage} 
+\usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}%first paragraph indent
+
+\author{Александр Вампилов.}
+\title{Утиная охота}
+\begin{document}
+
+% Описание действующих лиц
+\addcharacter{Зилов}{Главный герой}
+\addcharacter{Мальчик}{Просто мальчик}
+% Действия
+\act 
+% Пауза
+\pause 
+% Картина
+\scene 
+
+% Введение
+\opensd{В дверях появляется венок. Это большой, дешёвый, 
+  с крупными бумажными цветами и длинной чёрной лентой 
+  сосновый венок.  Вслед за ним появляется несущий его 
+  мальчик лет двенадцати.  Он всерьёз озабочен исполнением 
+  возложенной на него миссии.}
+
+% Диалоги
+\dialog{Мальчик}{Здравствуйте. Скажите, вы Зилов?}
+
+\dialog{Зилов}{Ну я.}
+
+\dialog{Мальчик}{(поставил венок у стены). Вам.}
+
+\dialog{Зилов}{Мне?.. Зачем?}
+
+\stage{Мальчик молчит.}
+
+\end{document}
+\end{lstlisting}
+
+Подробности можно найти в документации к пакету
+\textfile{stage-documentation.pdf}.
+
+\section{Музыка}
+\label{sec:humanities:music}
+
+Отображение музыки с помощью нот или других знаков в каком-то смысле
+по сложности и своей логической стройности сравнимо с математической
+нотацией. Очень жаль, что использование \LaTeX{} в качестве нотного
+процессора не так популярно, ведь всё для этого есть.
+
+
+\subsubsection{guitar}
+\label{sec:humanities:guitar}
+
+\mindex{гитарные аккорды}
+
+Для записи текста песен и гитарных аккордов много не требуется. 
+Стилевой файл  \textpkg{guitar} это немногое и предоставляет.
+
+Пример использования класса \textpkg{guitar}:
+\smallskip
+
+\begin{examplenv}[0.54\linewidth]{guitar}
+\begin{guitar}
+Спа[Gm]сибо [Eb]вам, мои дожд[Gm]и
+[Eb]Спаси[D7]бо вам, мои осен[Gm]ние
+За всё, что [A7]вы во мне по[D7]сеяли
+Спа[Eb]сибо [D7]вам, мои дож[Gm]ди
+\end{guitar}
+\end{examplenv}
+\smallskip
+
+Одноимённое окружение \textenv{guitar} в представленном случае
+позволило естественно расставить аккорды над последним куплетом песни
+Вадима Егорова <<Дожди>>. В файле \textfile{guitar.dvi} можно найти
+дополнительную информацию о расстановке аккордов над текстом.
+
+
+\subsubsection{MusiX\TeX}
+\label{sec:humanities:musixtex}
+
+Пакет \textpkg{musixtex} пришёл на замену устаревшему пакету почти с
+таким же названием "--- \textpkg{musictex}. Там есть всё, что нужно для
+создания нотного стана и размещения на нём нот.
+
+В предисловии к документации пакета \textfile{musixdoc.pdf} есть явное
+предупреждение, что те, кто не знаком с \LaTeX, будут испытывать
+сложности при использовании \textpkg{musixtex}. Но если \LaTeX{} для
+читателя "--- естественная среда, то всё становится достаточно
+очевидно. Сто страниц документации  придётся проштудировать,
+но по сравнению с нотной грамотой, теорию которой, естественно,
+необходимо знать, "--- это просто. Основы MusiX\TeX{} также изложены в
+<<Путеводителе по пакету \LaTeX{} и его графическим расширениям>>
+\cite{Gussens-graphics}.
+
+Код, да-да, именно код, потому что иначе это никак не получается
+назвать, набирается в окружении \textenv{music}:
+\medskip
+
+\noindent\includegraphics[]{humanities/humanities-musixtex.eps}
+\smallskip
+
+Название нот кодируется с помощью букв латинского алфавита
+(стандартная нотация). Для коротких врезок нотный стан создаётся с
+помощью пары комплементарных макросов
+\textcmd{startextract}/\textcmd{endextract}. Такой подход "--- наследие
+\TeX"=овского прошлого. Между макросами \textcmd{notes} и
+\textcmd{enotes} можно набирать ноты. 
+%Ноты кодируются с помощью букв
+%латинского алфавита.
+
+Для набора композиций, имеющих более одной строки, нотный стан
+создаётся с помощью макросов
+\textcmd{startpiece}/\textcmd{endpiece}. При этом \LaTeX{} пытается
+самостоятельно разбивать ноты на строки. Это очень не простое занятие,
+поэтому при кодировании музыки приходится подгонять некоторые
+фрагменты вручную. 
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\textwidth]{humanities/humanities-musixtex-2.eps}  
+  \vspace*{-1.5em}
+  \caption{Фрагмент Прелюдии И.\,С.~Баха в переложении Андреса Сеговии,
+  набранный с использованием пакета \textpkg{musixtex}}
+  \label{fig:musixtex:Bach}
+\end{figure}
+На~рис.~\ref{fig:musixtex:Bach} изображены первые
+две строки Прелюдии И.\,С.~Баха в переложении Андреса Сеговии для
+гитары. Вот так эти ноты выглядят при наборе:
+\textcmdh{generalmeter}
+\textcmdh{generalsignature}
+\textcmdh{meterfrac}
+\textcmdh{startpiece}
+\textcmdh{notes}
+\textcmdh{enotes}
+\textcmdh{bar}
+\textenvh{music}
+\begin{lstlisting}
+\begin{music} % Фрагмент Прелюдии И.С.Баха 
+ \parindent=0pt% Запрещаем отступ 
+ \generalmeter{\meterfrac34}% Длительность такта 3/4
+ \generalsignature{-1}% Устанавливаем тональность 
+ % Определяем команду для вертикального сдвига аргумента
+ \newcommand*{\lift}[2]{\raise#1\Interligne#2}
+ \startpiece% Начинаем набор
+ \notes% Первый такт
+ \zql{d}\lift{1}{\qs}% Набор ноты ре и паузы друг над другом
+ \ibbu0s5\qb0{km}\tbu0\qb0{o}% Перебор
+ \ibbu0s0\zqb0{m}% Начало перебора 
+ \lift{-3}{\qp}% Набор паузы под первой нотой перебора
+ \qb0{km}\tbu0\qb0{k}% Конец перебора
+ \ibl0j{-6}\zqb0{h}% 
+ \lift{3}{\qs}\ccu{k}%
+ \tbl0\zqb0{f} \lift{2}{\qs} \ccu{k} %
+ \enotes% Первый такт окончен
+ \bar% Вертикальная черта
+           | Ещё три примерно таких же такта. |
+ \endpiece% Окончание набора
+\end{music}
+\end{lstlisting}
+
+
+
+\textpkg{musixtex} позволяет набирать музыку фактически любой степени
+сложности, но простым в использовании его назвать нельзя. С другой
+стороны основные правила набора осваиваются за вполне обозримый
+промежуток времени и формат MusiX\TeX{} можно использовать как вывод
+какой-либо визуальной программы для последующей качественной печати
+нотных записей.
+
+
+\subsubsection{musixlyr}
+\label{sec:humanities:musixlyr}
+
+\mindex{тексты песен}
+
+Пакет \textpkg{musixlyr} "--- расширение MusiX\TeX, которое можно
+использовать для наборов текстов песен совместно с мелодией. На
+рис.~\ref{fig:musixtex:Egorov} на примере первого куплета песни
+Вадима Егорова <<Друзья уходят как-то невзначай\ldots>> показан вывод
+кода, представленного далее:
+
+
+
+\textcmdh{generalmeter}
+\textcmdh{generalsignature}
+\textcmdh{meterfrac}
+\textcmdh{startpiece}
+\textcmdh{notes}
+\textcmdh{enotes}
+\textcmdh{bar}
+\textcmdh{setlyrics}
+\textcmdh{lyrraise}
+\textenvh{music}
+\begin{lstlisting}
+% Преамбула
+% необходимо загрузить до musixlyr
+\usepackage{musixtex}
+% У пакета musixlyr отсутствует стиль для |\LaTeX|
+\input{musixlyr}
+
+% Тело документа
+
+\begin{music} 
+ \parindent=0pt% Запрещаем отступ 
+ \generalmeter{\meterfrac44}% Длительность такта 4/4
+ \generalsignature{-1}% Устанавливаем тональность 
+ \nobarnumbers % Выключаем автоматическую нумерацию тактов
+ % Куплет из песни Вадима Егорова
+ \setlyrics{Egorov}{% Присваиваем текст переменной Egorov 
+   Дру-зья у-хо-дят как то не-взна-чай,
+   Дру-зья у-хо-дят {в про}-шло-е, как {в за}-мять.
+   А мы сме-ём-ся {с но}-вы-ми друзь-я-ми,
+   О ста-рых вспо-ми-на-ем по но-чам_
+   О ста-рых вспо-ми-на-ем по но-чам
+ }
+ \assignlyrics1{Egorov} % Добавляем текст к нотам
+ \startpiece% Начало нотного набора
+  % Немного опускаем текст, чтобы не цеплялся за ноты
+  \lyrraise{1}{b-1.5mm} 
+  \Notes\qp\ds\ca{acf}\en\bar
+  \Notesp\ca{hg}\qp\ca{fe}\ds\cca{de}\en\alaligne
+  % Возвращаем текст в позицию по умолчанию
+  \lyrraise{1}{b0mm}
+  \Notesp\ha{f}\ds\ca{def}\en\bar
+  \Notesp\ca{ji}\qp\ca{hgfe}\en\alaligne
+  \Notesp\ca{ef}\qp\ds\ca{hij}\en\bar
+  \Notesp\qa{kk}\ca{jejk}\en\alaligne
+  \Notesp\ca{jg}\qp\qp\ds\ca{j}\en\bar
+  \Notesp\ca{ji}\ds\cca{ii}\ca{hgfe}\en\alaligne
+  \NOtes\islurd0f\ha{f}\tslur0f\ca{f}\qp\ca{f}\en\bar
+  \Notesp\ca{ij}\qp\cca{hi}\ca{hgfe}\en\bar
+  \notesp\wh{d}\en
+  \setdoublebar
+ \endpiece% Конец нотного набора
+\end{music}
+\end{lstlisting}
+
+Текст добавляется к нотам автоматически в соответствие с разбивкой,
+указанной в команде \textcmd{setlyrics}. Знак минуса (\texttt{-})
+позволяет разбить слова на слоги. С помощью фигурных скобок
+(\texttt{\{\}}) символы группируются. Знак подчёркивания \mbox{(_)} позволяет
+продолжить слог на более чем одну ноту.  Документация к пакету
+\textfile{mxlyrdoc.dvi} достаточно подробна. 
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=\textwidth]{humanities/humanities-musixlyr.eps}  
+  \caption{Первый куплет песни Вадима Егорова, набранный с помощью
+    пакетов \textpkg{mysixtex} и \textpkg{mysixlyr}}
+  \label{fig:musixtex:Egorov}
+\end{figure}
+
+
+\section{Языкознание}
+\label{sec:humanities:linguistics}
+
+Для лингвиста необходимо уметь выводить на лист бумаги множество
+разнообразных символов: как обычных и не очень алфавитов, так и
+спецсимволов. \LaTeX{} предоставляет лингвисту впечатляющий набор
+разнообразных шрифтов и отдельных символов. Для просмотра имеющихся
+вариантов можно воспользоваться уже не раз упомянутым в этой книге
+документом The Comprehensive \LaTeX{} Symbol List
+(\textfile{symbols-a4.pdf}).
+
+
+\subsubsection{tipa}
+\label{sec:humanities:tipa}
+
+Для записи транскрипции Международной фонетической
+ассоциацией на основе латинского алфавита был разработан Международный
+фонетический алфавит (International Phonetic Alphabet или IPA).
+
+Пакет \textpkg{tipa} позволяет использовать символы IPA при наборе
+текста. Для доступа к символам можно использовать:
+\begin{itemize}
+\item команду с параметром \textcmd{textipa}\lstinline!{текст}!,
+\item декларативную команду \textcmd{tipaencoding},
+\item окружение \textenv{IPA}.
+\end{itemize}
+
+Для того чтобы напечатать символ, можно и просто его вызвать по имени,
+но можно и воспользоваться упомянутыми командами и окружениями:
+\textcmdh{textepsilon}
+\textcmdh{textschwa}
+\textcmdh{textprimstress}
+\textcmdh{textsci}
+\textcmdh{textesh}
+\textcmdh{textschwa}
+\begin{example}[0.5\textwidth]{tipa}
+ Можно просто набирать имена символов:
+ [\textepsilon kspl\textschwa%
+  \textprimstress ne%
+  \textsci\textesh\textschwa n]
+ 
+А можно воспользоваться сокращениями:
+  \textipa{[Ekspl@"neIS@n]}
+\end{example}
+Всегда можно выбрать из двух вариантов в зависимости от того, что
+удобнее. Все подробности и все символы подробно описаны в документации
+к этому пакету \textfile{tipaman.pdf}.
+
+
+% \begin{center}
+%   \begin{longtable}{Scll}\hline
+%     \multicolumn{3}{c}{Акценты и диакритические знаки}\\\hline
+%     \'a&\textcmd{'a}&\lstinline!\textipa{\'a}!\\
+%     \"a&\textcmd{"a}&\lstinline!\textipa{\"a}!\\
+%     \~a&\lstinline!\~a!&\lstinline!\textipa{\~a}!\\
+%     \r{a}&\textcmd{r}\lstinline!{a}!&\lstinline!\textipa{\r{a}}!\\
+%     \textsyllabic{m}&\textcmd{textsyllabic}\lstinline!{m}!&\lstinline!\textipa{\s{m}}!\\
+%     \textsubumlaut{a}&\textcmd{textsubumlaut}\lstinline!{a}!&\lstinline!\textipa{\"*a}!\\
+%     \textsubtilde{a}&\textcmd{textsubtilde}\lstinline!{a}!&\lstinline!\textipa{\~*a}!\\
+%     \textsubring{a}&\textcmd{textsubring}\lstinline!{a}!&\lstinline!\textipa{\r*a}!\\
+%     \textdotacute{a}&\textcmd{textdotacute}\lstinline!{a}!&\lstinline!\textipa{\.'a}!\\
+%     \textgravedot{a}&\textcmd{textgravedot}\lstinline!{a}!&\lstinline!\textipa{\'.a}!\\
+%     \textacutemacron{a}&\textcmd{textacutemacron}\lstinline!{a}!&\lstinline!\textipa{\'=a}!\\
+%     \textcircumdot{a}&\textcmd{textcircumdot}\lstinline!{a}!&\lstinline!\textipa{\^.a}!\\
+%     \texttildedot{a}&\textcmd{texttildedot}\lstinline!{a}!&\lstinline!\textipa{\~.a}!\\
+%     \textbrevemacron{a}&\textcmd{textbrevemacron}\lstinline!{a}!&\lstinline!\textipa{\u=a}!\\\hline
+%   \end{longtable}
+% \end{center}
+
+
+
+\subsubsection{Hiero\TeX}
+\label{sec:humanities:hierotex}
+
+\mindex{египтология}
+
+\begin{figure}[t]
+  \centering
+  \includegraphics[width=0.8\textwidth]{humanities/hierotex.eps}
+  \caption{Египетские иероглифы (Hiero\TeX)}
+  \label{fig:hierotex}
+\end{figure}
+
+\textpkgh{hierotex} Пакет Hiero\TeX{} отсутствует в дистрибутиве
+\TeXLive. Домашняя страничка проекта
+\url{http://www.iut.univ-paris8.fr/~rosmord/archives/} является и
+страничкой автора. На ней можно найти дистрибутив
+\textfile{HieroTeX-3.5.tgz} и Type1"=шрифты
+\textfile{HieroType1-3.1.4.tgz}. Всё это вместе предназначено для
+целей египтологии. Hiero\TeX{} позволяет писать иероглифами.
+
+Установка пакета представляет собой сборку программы"=транслятора
+\textprog{sesh}, копирование стилей и шрифтов в локальное texmf-дерево
+и обновление индексов с~помощью программы
+\textprog{texhash}. Подробнее об установке можно почитать в
+документации пакета \textfile{EGypto.pdf}. Далее создаётся файл (пусть
+будет \textfile{hierotex.htx}) вида:
+\textenvh{hieroglyph}
+\textcmdh{EnColonne}
+\begin{lstlisting}[escapechar=]
+% файл hierotex.htx
+% Пример взят из EGypto.tex пакета hierotex
+\documentclass{article}
+\usepackage{egypto}
+\usepackage{hiero}
+\begin{document}
+\EnColonne[1.2\Htm]{
+ \begin{hieroglyph}
+   G5 <S E1 D40 xa m R19*(t\s1:niwt\s1) >-!
+   nbty wAH sw*\!t\s1*\!i*i (ra:Z1)*mi m (p*t:pt)-! 
+   sxm*G8 F9*F9  Dsr-xa-Z2-!
+   (sw:t)*(bit:t) <ra-mn-xpr>-! zA*\!\!\!(ra:.)
+   <-G26-ms*nfr-xpr->-! O10 nb-t M-f (kA:t)*(N33:N33:N33) 
+   mr*i*i
+ \end{hieroglyph}}
+\end{document}
+\end{lstlisting}
+
+Этот файл преобразуется с помощью команды \textprog{sesh} в
+\LaTeX"=файл (пусть это будет \textfile{hierotex.tex}):
+\begin{lstlisting}[frame=]
+> sesh < hierotex.htx > hierotex.tex
+\end{lstlisting}
+
+Меняются символы только внутри окружения \textenv{hieroglyph}. Можно
+откомпилировать результат с помощью \textprog{pdflatex} или
+\textprog{latex} и получить то, что изображено 
+на~рис.~\ref{fig:hierotex}. Возможно, выглядит немного запутанно, но сами
+иероглифы не менее изощрённы, а прекрасная документация будет путеводной
+нитью для~египтолога. По отзывам  это очень качественный
+инструмент для специалиста.
+\bigskip
+
+\subsubsection{arcs}
+\label{sec:humanities:arcs}
+Иногда лингвисту нужно просто подчеркнуть какую"=то часть слова, и в
+этом ему поможет пакет \textpkg{arcs}: 
+
+\textcmdh{underarc}\textcmdh{overarc}
+\noindent\includegraphics[width=\textwidth]{humanities/humanities-arcs.eps}
+\bigskip
+
+\Note В заключение хотелось бы указать на специальный для лингвистов
+\LaTeX"=ресурс:
+\url{http://www.essex.ac.uk/linguistics/external/clmt/latex4ling/}, который так
+и называется <<The LaTeX for Linguists>>.
+
+
+
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../ctex"
+%%% End: 

@@ -1,0 +1,43 @@
+%  -*- coding: koi8-r -*-
+\input{../structheader}
+\usepackage[warn]{mathtext}
+\usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}%first paragraph indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{srcltx}
+\usepackage{textcomp}
+\usepackage{floatflt}
+\usepackage{wrapfig}
+\usepackage{afterpage}
+\usepackage{ccaption}
+\captiondelim{. }
+\usepackage{xspace}
+%научные символы и смайлики \smiley \frownie
+\usepackage{braket}
+\usepackage{../example}
+
+%backslash
+\newcommand{\bs}{\symbol{'134}}
+%degree
+\newcommand{\grad}{\ensuremath{{}^{\circ}}\xspace}
+\begin{document}
+\pagestyle{empty}
+\begin{example}[0.55\linewidth]{phys-braket}
+\[\mathbf{p}\psi(\mathbf{x}) 
+ \stackrel{\mathrm{def}}{=} 
+ \bra{\mathbf{x}} \mathbf{p} \ket{\psi} = 
+   -i \hbar \nabla \psi(x)\]
+\end{example}
+
+%\[\Braket{ \phi | \frac{\partial^2}{\partial t^2} | \psi }
+% \Set{ x\in\mathbf{R}^2 | 0<{|x|}<5 }\]
+
+%\begin{thebibliography}{9}
+%\bibitem{}
+%\newblock
+%\end{thebibliography}
+\end{document}

@@ -1,0 +1,49 @@
+%  -*- coding: koi8-r -*-
+\input{../structheader}
+\usepackage[warn]{mathtext}
+\usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}%first paragraph indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{srcltx}
+\usepackage{textcomp}
+\usepackage{floatflt}
+\usepackage{wrapfig}
+\usepackage{afterpage}
+\usepackage{ccaption}
+\usepackage{clrscode}
+\usepackage{../example}
+\captiondelim{. }
+\usepackage{xspace}
+%научные символы и смайлики \smiley \frownie
+\usepackage{wasysym}
+
+%backslash
+\newcommand{\bs}{\symbol{'134}}
+%degree
+\newcommand{\grad}{\ensuremath{{}^{\circ}}\xspace}
+\begin{document}
+\pagestyle{empty}
+\begin{example}[0.53\textwidth]{codebox}
+\begin{codebox}
+\Procname{
+     $\proc{Сортировка методом вставок}$}
+\li \For $j \gets 2$ \To $\id{length}[A]$
+\li \Do $\id{key} \gets A[j]$
+\li $i \gets j-1$
+\li \While $i > 0$ and $A[i] > \id{key}$
+\li \Do $A[i+1] \gets A[i]$
+\li $i \gets i-1$ \End
+\li $A[i+1] \gets \id{key}$ \End
+\end{codebox}
+\end{example}
+
+%\begin{thebibliography}{9}
+%\bibitem{}
+%\newblock
+%\end{thebibliography}
+\end{document}
+

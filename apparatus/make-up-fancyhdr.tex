@@ -1,0 +1,214 @@
+%  -*- coding: koi8-r -*-
+%\documentclass[a4paper,12pt]{memoir} 
+\documentclass[a4paper,12pt]{scrbook} 
+ \usepackage[warn]{mathtext}
+\usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+ \usepackage{indentfirst}%first paragraph indent
+ \usepackage{cmap}
+ \usepackage[unicode=true]{hyperref}
+ \usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{srcltx}
+\usepackage{textcomp}
+\usepackage{floatflt}
+\usepackage{wrapfig}
+\usepackage{afterpage}
+% \usepackage{layout}
+ \usepackage{layouts}
+\usepackage{ccaption}
+%\usepackage[columns=4]{typogrid}
+\usepackage{rotpages}
+\captiondelim{. }
+\usepackage{xspace}
+%научные символы и смайлики \smiley \frownie
+\usepackage{wasysym}
+\usepackage{calc}
+%\usepackage[pdftex]{lscape}
+%\usepackage{portland}
+%backslash
+%\newcommand{\bs}{\symbol{'134}}
+%degree
+\newcommand{\grad}{\ensuremath{{}^{\circ}}\xspace}
+
+\setlength{\textheight}{0.2\textheight}
+ \usepackage{fancyhdr} 
+
+\begin{document}
+
+\pagestyle{empty} 
+
+
+\setcounter{page}{112}
+ \pagestyle{empty} 
+ \pagestyle{fancy} 
+ \lhead{А.В.Тор} 
+ \chead[проба]{---~\arabic{page}~---} 
+ \rhead{Статья} 
+ \cfoot{---~\roman{page}~---} 
+ \lfoot{\hspace{0.7cm}Это просто демонстрация} 
+ \rfoot{возможностей \textbf{fancyheadings}} 
+
+
+
+ \begin{center}
+   {\Large Статья}
+
+   А.В.Тор
+ \end{center}
+
+%\textcolor{yellow}{
+текст текст текст текст текст текст текст текст текст
+текст текст текст текст текст текст текст текст текст
+текст текст текст текст текст текст текст текст текст
+текст текст текст текст текст текст текст текст текст
+текст текст текст текст текст текст текст текст текст
+текст текст текст текст текст текст текст текст текст
+текст текст текст текст текст текст текст текст текст
+текст текст текст текст текст текст текст текст текст
+текст текст текст текст текст текст текст текст текст%}
+\end{document}
+
+\newpage
+
+текст текст текст текст текст текст текст текст текст
+текст текст текст текст текст текст текст текст текст
+текст текст текст текст текст текст текст текст текст
+текст текст текст текст текст текст текст текст текст
+текст текст текст текст текст текст текст текст текст
+текст текст текст текст текст текст текст текст текст
+текст текст текст текст текст текст текст текст текст
+текст текст текст текст текст текст текст текст текст
+текст текст текст текст текст текст текст текст текст%}
+
+\end{document}
+
+% \renewcommand{\Headertext}{Верхний колонтитул}
+% \renewcommand{\Bodytext}{Тело текста}
+% \renewcommand{\Footertext}{Нижний колонтитул}
+% \renewcommand{\MarginNotestext}{\rotatebox{-90}{Поля или маргиналии}}
+% \renewcommand{\oneinchtext}{один дюйм}
+% % 24 \def\oneinchtext{one inch}
+% % 25 \def\notshown{not shown}
+% \pagestyle{empty}
+% \layout
+% \end{document}
+
+%\prntlen{\textwidth}
+%\drawmargin
+\pagestyle{empty}
+
+
+\end{document}
+
+%\landscape
+\begin{landscape}
+\textcolor{blue}{текст текст текст текст текст текст текст текст текст
+текст текст текст текст текст текст текст текст текст
+текст текст текст текст текст текст текст текст текст
+текст текст текст текст текст текст текст текст текст
+текст текст текст текст текст текст текст текст текст
+текст текст текст текст текст текст текст текст текст
+текст текст текст текст текст текст текст текст текст
+текст текст текст текст текст текст текст текст текст
+текст текст текст текст текст текст текст текст текст}
+\end{landscape}
+%\portrait
+
+
+%\begin{landscape}
+%\drawfontframelabel{\HUGE Ширина, высота и глубина.}
+%\end{landscape}
+
+
+% \makeatletter
+% \newcommand{\maxwidth}{%
+%  \ifdim\Gin@nat@width>\linewidth
+%     \linewidth
+%  \else
+%     \Gin@nat@width
+%  \fi
+% }
+% \makeatother
+
+% \includegraphics[width=\maxwidth]{wikitex.eps}
+
+\end{document}
+
+\newpage
+{
+\currentpage
+\pagediagram}
+\newpage
+{\currentpage\pagedesign}
+\newpage
+{\currentpage\pagevalues}
+
+{\printinunitsof{mm}
+\pagevalues}
+\newpage
+{Параграф
+\currentparagraph
+\paragraphdiagram
+
+\paragraphdesign
+
+\printinunitsof{mm}
+\paragraphvalues
+}
+\newpage
+{Плавающие объекты
+\currentfloatpage
+\trytotalnumber{3}
+\trytopnumber{2}
+\trytopfraction{0.7}
+\trytextfraction{0.2}
+\trybottomfraction{0.3}
+\trybottomnumber{1}
+\setlayoutscale{0.25}
+\floatpagediagram
+\floatpagedesign
+}
+\newpage
+{Списки 
+\currentlist
+\listdesign
+\listdiagram
+\listvalues
+}
+\newpage
+{Заголовки
+\currentheading
+\setlayoutscale{1} %размер картинки 
+\headingdiagram{ }
+\runinheadtrue
+\currentheading
+\headingdesign{ }
+}
+\newpage
+{Подстрочные примечания\footnote{проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба проба}
+\currentfootnote
+%\setlayoutscale{1} %размер картинки 
+\footnotediagram{ }
+\currentfootnote
+\footnotedesign{ }
+}
+\newpage
+{
+\currenttoc
+\tocdiagram
+\tocdesign
+}
+\newpage{
+\drawfontframe{{привет}}
+
+\drawfontframelabel{{\HUGE Длина Ширина Глубина}}}
+
+%\begin{thebibliography}{9}
+%\bibitem{}
+%\newblock
+%\end{thebibliography}
+\end{document}

@@ -1,0 +1,44 @@
+%  -*- coding: koi8-r -*-
+\documentclass[a4paper,12pt]{scrartcl} 
+\usepackage[warn]{mathtext}
+\usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}%first paragraph indent
+\usepackage{cmap}
+\usepackage[unicode=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{srcltx}
+\usepackage{textcomp}
+\usepackage{floatflt}
+\usepackage{wrapfig}
+\usepackage{makeidx}
+\usepackage{afterpage}
+\usepackage{ccaption}
+\captiondelim{. }
+\usepackage{xspace}
+%научные символы и смайлики \smiley \frownie
+\usepackage{wasysym}
+
+%backslash
+\newcommand{\bs}{\symbol{'134}}
+%degree
+\newcommand{\grad}{\ensuremath{{}^{\circ}}\xspace}
+\begin{document}
+\begin{theindex}
+\thispagestyle{empty}
+
+  \item \textit{MakeIndex}, \textbf{110}
+
+  \indexspace
+
+  \item Указатель, \hyperpage{110--111}
+    \subitem makeindex, \see{rumakeindex}{111}
+    \subitem rumakeindex, \hyperpage{110, 111}
+    \subitem xindy, \hyperpage{111}
+
+\end{theindex}
+\thispagestyle{empty}
+\end{document}

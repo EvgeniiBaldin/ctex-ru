@@ -1,0 +1,101 @@
+%  -*- coding: koi8-r -*-
+
+\fancyhead{}
+\fancyhead[RO,LE]{\pagemark}
+\fancyhead[LO]{\rightmark}
+\fancyhead[RE]{\leftmark}
+\fancyfoot{}
+
+\makeatletter
+\renewcommand*\idx@heading{%
+% \if@openright\cleardoublepage\else\clearpage\fi
+  \twocolumn[%
+  \vspace*{\TopHeaderSkip}%
+  \MyHeaderFont\indexname%
+  \vspace*{\AfterHeaderSkip}%
+  ]%
+  \@mkboth{\indexname}{\indexname}%
+%
+}
+\makeatother
+
+
+\begingroup % hold following extension local to this group
+\makeatletter % allow @ at macro names
+\extendtheindex% some changes of theindex environment
+{\pdfbookmark{Указатель команд и окружений}{ctex-cmd}}% changes before beginning
+{%\addcontentsline{toc}{section}{Указатель команд и окружений}
+%
+}% no change after beginning
+{}% no change before ending
+{}% no change after ending
+\makeatother % deactivate \makeatletter
+%\addcontentsline{toc}{section}{Указатель команд и окружений}
+\printindex[cmd] % print index
+\endgroup % end group with extended theindex environment
+\onecolumn
+%\printindex[cmd]
+
+
+% \begin{strip}\hspace{\parindent} 
+%   \Note{} Курсивом выделены номера страниц, которые ссылаются на
+%   <<Каталог пакетов \TeXLive{}>>.   
+% \end{strip} 
+
+\setindexpreamble[pkg]{
+
+% \begin{strip}\hspace{\parindent} 
+%   \Note{} Курсивом выделены номера страниц, которые ссылаются на
+%   раздел <<Каталог пакетов \TeXLive{}>>.\par
+% \end{strip} 
+
+}%\useindexpreamble{}
+
+%  \setchapterpreamble[u]{dddddddddddddddddddddddddddddddddd}%
+%  \chapter*{\indexname}
+
+
+\begingroup % hold following extension local to this group
+\makeatletter % allow @ at macro names
+\extendtheindex% some changes of theindex environment
+{}% deactivate \clearpage changes before beginning
+{\useindexpreamble{}
+%\pdfbookmark[0]{Список пакетов}{packageslist}
+%\addcontentsline{toc}{section}{Список пакетов}
+}% no change after beginning
+{}% no change before ending
+{}% no change after ending
+\makeatother % deactivate \makeatletter
+%\addcontentsline{toc}{section}{Список пакетов}
+%\twocolumn
+\phantomsection
+%\addcontentsline{toc}{section}{Список пакетов}
+\pdfbookmark{Список пакетов}{ctex-pkg}
+\printindex[pkg] % print index
+%\onecolumn
+\endgroup % end group with extended theindex environment
+
+\makeatletter
+\renewcommand*\bib@heading{%
+\pdfbookmark{\bibname}{ctex-bib}
+%\addcontentsline{toc}{section}{\bibname}% no change after beginning
+  {%
+    \vspace*{\TopHeaderSkip}%
+    \thispagestyle{empty}
+    \noindent\MyHeaderFont\bibname%
+    \vspace*{\AfterHeaderSkip}%
+  }%
+  \@mkboth{\bibname}{\bibname}%
+}
+\makeatother
+
+%Библиография
+\bibliographystyle{gost2008}
+\phantomsection
+\bibliography{ctex}
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "ctex"
+%%% End: 

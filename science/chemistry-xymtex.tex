@@ -1,0 +1,69 @@
+%  -*- coding: koi8-r -*-
+\input{../structheader}
+\usepackage[warn]{mathtext}
+\usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}%first paragraph indent
+\usepackage{cmap}
+\usepackage[unicode=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{srcltx}
+\usepackage{textcomp}
+\usepackage{floatflt}
+\usepackage{wrapfig}
+\usepackage{afterpage}
+\usepackage{ccaption}
+\captiondelim{. }
+\usepackage{xspace}
+\usepackage{cellspace}
+\usepackage{longtable}
+\usepackage{xtab}
+\usepackage{listings}
+\lstloadlanguages{bash,[LaTeX]TeX,MetaPost,Clean,lisp}
+\lstset{language=[LaTeX]TeX,frame=tlBR,
+  escapechar=|,extendedchars=true,
+  keywordstyle={},
+%  commentstyle=\itshape,
+  commentstyle=,
+%  stringstyle=\bfseries 
+}
+
+\usepackage{example}
+
+\usepackage{xymtexps}
+%\usepackage{chemist}
+\usepackage{chmst-ps}
+%\usepackage{xymman}
+
+%backslash
+\newcommand{\bs}{\symbol{'134}}
+%degree
+\newcommand{\grad}{\ensuremath{{}^{\circ}}\xspace}
+\begin{document}
+\pagestyle{empty}
+
+
+% \steroidchain[e]{3Su==HO;3Sd==H;8A==H;9A==H;{{10}B}==\lmoiety{H$_{3}$C};%
+% {{13}B}==\lmoiety{H$_{3}$C};{{14}B}==H;{{17}GA}==H;%
+% {{20}SB}==\lmoiety{H$_{3}$C};{{20}SA}==H}
+
+%адонитоксин
+
+\begin{XyMcompd}(2100,1800)(200,0){}{}
+\pyranose{1Sa==H;2Sb==H;2Sa==OH;3Sb==H;3Sa==OH;4Sb==HO;%
+4Sa==H;5Sb==H;5Sa==CH$_{3}$;%
+1Sb==\ryl(8==O){3==%
+\steroid{3==(yl);5A==H;8B==H;9A==H;{{10}B}==\lmoiety{OHC};{{14}A}==OH;%
+{{13}B}==\lmoiety{H$_{3}$C};{{16}B}==OH;%
+{{17}B}==\fiveheterov[e]{3==O}{4D==O;1==(yl)}}}}
+\end{XyMcompd}
+
+% \fivesugarh{5==O;1s==\WedgeAsSubst(0,0)(-3,-5){120};4s==\WedgeAsSubst(0,0)(3,-5){120};%
+% 3s==\psline[linewidth=2.8pt,linestyle=solid,linecolor=black](-17,0)(307,0)%
+% }{1Sa==H;2Sb==H;2Sa==OH;3Sb==H;3Sa==OH;4Sa==H;4Sb==HOC\rlap{H$_{2}$};
+% 1Sb==\fiveheterov[bd]{1==N;2==N;4==N}{1==(yl);3==CONH$_{2}$}%
+% }[abc]
+\end{document}

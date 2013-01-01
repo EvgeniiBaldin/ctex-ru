@@ -1,0 +1,69 @@
+%  -*- coding: koi8-r -*-
+%структура страницы
+\input{../structheader}
+% \usepackage[warn]{mathtext}
+% \usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}%first paragraph indent
+%\usepackage{cmap}
+%\usepackage[unicode=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{srcltx}
+\usepackage{textcomp}
+\usepackage{floatflt}
+\usepackage{wrapfig}
+\usepackage{afterpage}
+\usepackage{ccaption}
+\captiondelim{. }
+\usepackage{xspace}
+%научные символы и смайлики \smiley \frownie
+\usepackage{musixtex}
+\input{musixlyr}
+\usepackage{example}
+
+%backslash
+\newcommand{\bs}{\symbol{'134}}
+%degree
+\newcommand{\grad}{\ensuremath{{}^{\circ}}\xspace}
+\begin{document}
+\pagestyle{empty}
+
+
+%\begin{example}[0.5\linewidth]{musixtex-2}
+\begin{music}
+\parindent=0pt
+\generalmeter{\meterfrac44}
+\generalsignature{-1}
+\nobarnumbers % Нумерация тактов
+%\maxbarsinline2
+\setlyrics{Egorov}{%
+   Дру-зья у-хо-дят как то не-взна-чай,
+   Дру-зья у-хо-дят {в про}-шло-е, как {в за}-мять.
+   А мы сме-ём-ся {с но}-вы-ми друзь-я-ми,
+   О ста-рых вспо-ми-на-ем по но-чам_
+   О ста-рых вспо-ми-на-ем по но-чам
+}
+ \assignlyrics1{Egorov}
+ \startpiece%
+ \lyrraise{1}{b-1.5mm}
+ \Notes\qp\ds\ca{acf}\en\bar
+ \Notesp\ca{hg}\qp\ca{fe}\ds\cca{de}\en\alaligne
+ \lyrraise{1}{b0mm}
+ \Notesp\ha{f}\ds\ca{def}\en\bar
+ \Notesp\ca{ji}\qp\ca{hgfe}\en\alaligne
+ \Notesp\ca{ef}\qp\ds\ca{hij}\en\bar
+ \Notesp\qa{kk}\ca{jejk}\en\alaligne
+ \Notesp\ca{jg}\qp\qp\ds\ca{j}\en\bar
+ \Notesp\ca{ji}\ds\cca{ii}\ca{hgfe}\en\alaligne
+ \NOtes\islurd0f\ha{f}\tslur0f\ca{f}\qp\ca{f}\en\bar
+ \Notesp\ca{ij}\qp\cca{hi}\ca{hgfe}\en\bar
+ \notesp\wh{d}\en
+ \setdoublebar
+\endpiece%
+\end{music}
+
+
+\end{document}

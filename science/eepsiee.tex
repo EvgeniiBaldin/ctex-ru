@@ -1,0 +1,59 @@
+%  -*- coding: koi8-r -*-
+\documentclass[a4,12pt]{article} 
+\usepackage[warn]{mathtext}
+\usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}%first paragraph indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{floatflt}
+\usepackage{wrapfig}
+\usepackage{afterpage}
+\usepackage{srcltx}
+\usepackage{latexsym} 
+%\usepackage{sparticles}         %Package for displaying sparticle names. 
+\usepackage{feynmp}             %Package for feynman diagrams. 
+% : -> . in caption 
+\usepackage[centerlast,small]{caption2}
+\renewcommand{\captionlabeldelim}{.}
+\usepackage{xspace}
+
+%backslash
+\newcommand{\bs}{\symbol{'134}}
+%degree
+\newcommand{\grad}{\ensuremath{{}^{\circ}}\xspace}
+
+\newcommand{\ee}{\ensuremath{{e^{+}e^{-}}}\xspace}
+\newcommand{\mumu}{\ensuremath{{\mu^{+}\mu^{-}}}\xspace}
+\newcommand{\tautau}{\ensuremath{\tau^{+}\tau^{-}}\xspace}
+\newcommand{\pipi}{\ensuremath{\pi^{+}\pi^{-}}\xspace}
+\newcommand{\lele}{\ensuremath{\ell^{+}\ell^{-}}\xspace}
+\newcommand{\hadr}{\ensuremath{hadrons}\xspace}
+\newcommand{\JP}{\ensuremath{J/\psi\,}\xspace}
+\newcommand{\PP}{\ensuremath{\psi'}\xspace}
+\renewcommand{\epsilon}{\varepsilon}
+
+
+\begin{document}
+\thispagestyle{empty}
+\begin{fmffile}{ee-psi-ee}
+  \fmfframe(1,7)(1,7){ 
+   \begin{fmfgraph*}(110,62) %Sets size of Diagram
+    \fmfleft{ei,pi}     %Sets there to be 2 sources 
+    \fmfright{eo,po}    %Sets there to be 2  outputs
+    \fmflabel{$e^-$}{ei} %Labels one of the left sources
+    \fmflabel{$e^+$}{pi} %Labels one of the left sources
+    \fmflabel{$e^+$}{po} %Labels one of the right outputs
+    \fmflabel{$e^-$}{eo} %Labels one of the right outputs
+    \fmf{fermion}{ei,Ji,pi} %Connects the sources with a vertex.
+    \fmf{fermion}{po,Jo,eo} %Connects the outputs with a vertex.
+    \fmflabel{$\Gamma_{\ee}$}{Ji} %Labels 
+    \fmflabel{$\text{Br}_{\ee}$}{Jo} %Labels 
+    \fmf{heavy,label=$J/\psi$}{Ji,Jo} %Labels the conneting line.
+   \end{fmfgraph*}
+  }
+\end{fmffile}
+\end{document}
+

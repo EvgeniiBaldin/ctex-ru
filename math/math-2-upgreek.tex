@@ -1,0 +1,93 @@
+%  -*- coding: koi8-r -*-
+\input{../structheader}
+\usepackage[warn]{mathtext}
+\usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}%first paragraph indent
+\usepackage{cmap}
+%\usepackage[unicode=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{nccboxes}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{srcltx}
+\usepackage{textcomp}
+\usepackage{floatflt}
+\usepackage{wrapfig}
+\usepackage{afterpage}
+\usepackage{ccaption}
+\captiondelim{. }
+\usepackage{xspace}
+%научные символы и смайлики \smiley \frownie
+%\usepackage{wasysym}
+\usepackage{cellspace}
+\usepackage{longtable}
+\usepackage{upgreek}
+
+%backslash
+\newcommand{\bs}{\symbol{'134}}
+%degree
+\newcommand{\grad}{\ensuremath{{}^{\circ}}\xspace}
+
+%команда (бэкслэш в начале вставляет автоматически)
+\newcommand{\textcmde}[1]{{\normalfont\bs#1}}
+\newcommand{\textcmd}[1]{\textcmde{#1}}
+\newcommand{\textpkge}[1]{{\textbf{#1}}}
+\newcommand{\textpkg}[1]{\textpkge{#1}}
+
+\begin{document}
+\pagestyle{empty}
+
+%\hrule
+\begin{center}
+  \begin{longtable}{SclSclSclScl}\hline
+    \multicolumn{8}{c}{\cbox{Прямые греческие символы (\textpkg{upgreek})}}\\\hline
+    \(\upalpha\)&\textcmd{upalpha}&
+    \(\upbeta\)&\textcmd{upbeta}&
+    \(\upgamma\)&\textcmd{upgamma}&
+    \(\updelta\)&\textcmd{updelta}\\
+    \(\upepsilon\)&\textcmd{upepsilon}&
+    \(\upvarepsilon\)&\textcmd{upvarepsilon}&
+    \(\upzeta\)&\textcmd{upzeta}&
+    \(\upeta\)&\textcmd{upeta}\\
+    \(\uptheta\)&\textcmd{uptheta}&
+    \(\upvartheta\)&\textcmd{upvartheta}&
+    \(\upiota\)&\textcmd{upiota}&
+    \(\upkappa\)&\textcmd{upkappa}\\
+    \(\uplambda\)&\textcmd{uplambda}&
+    \(\upmu\)&\textcmd{upmu}&
+    \(\upnu\)&\textcmd{upnu}&
+    \(\upxi\)&\textcmd{upxi}\\
+    \(\uppi\)&\textcmd{uppi}&
+    \(\upvarpi\)&\textcmd{upvarpi}&
+    \(\uprho\)&\textcmd{uprho}&
+    \(\upvarrho\)&\textcmd{upvarrho}\\
+    \(\upsigma\)&\textcmd{upsigma}&
+    \(\upvarsigma\)&\textcmd{upvarsigma}&
+    \(\uptau\)&\textcmd{uptau}&
+    \(\upupsilon\)&\textcmd{upupsilon}\\
+    \(\upphi\)&\textcmd{upphi}&
+    \(\upvarphi\)&\textcmd{upvarphi}&
+    \(\upchi\)&\textcmd{upchi}&
+    \(\uppsi\)&\textcmd{uppsi}\\
+    \(\upomega\)&\textcmd{upomega}&
+    \(\Upgamma\)&\textcmd{Upgamma}&
+    \(\Updelta\)&\textcmd{Updelta}&
+    \(\Uptheta\)&\textcmd{Uptheta}\\
+    \(\Uplambda\)&\textcmd{Uplambda}&
+    \(\Upxi\)&\textcmd{Upxi}&
+    \(\Uppi\)&\textcmd{Uppi}&
+    \(\Upsigma\)&\textcmd{Upsigma}\\
+    \(\Upupsilon\)&\textcmd{Upupsilon}&
+    \(\Upphi\)&\textcmd{Upphi}&
+    \(\Uppsi\)&\textcmd{Uppsi}&
+    \(\Upomega\)&\textcmd{Upomega}\\\hline
+  \end{longtable}
+\end{center}
+
+%\begin{thebibliography}{9}
+%\bibitem{}
+%\newblock
+%\end{thebibliography}
+\end{document}

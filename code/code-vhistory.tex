@@ -1,0 +1,52 @@
+%  -*- coding: koi8-r -*-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% DON'T FORGET TO COPY THE FILES sets.sty AND
+% vhistory.sty IN THIS DIRECTORY, IF YOU TRY
+% TO COMPILE THIS EXAMPLE!!!!!!!!!!!!!!!!!!!!
+%
+
+\documentclass[10pt,pagesize]{scrartcl} 
+\setlength{\paperwidth}{170mm}
+\setlength{\paperheight}{240mm}
+\areaset{130mm}{194mm}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+%\usepackage[nochapter,owncaptions]{vhistory}
+\usepackage[owncaptions]{vhistory}
+%\usepackage{vhistory}
+%\usepackage{hyperref}
+\newcommand{\docTitle}{}
+
+% \usepackage{scrpage2}
+% \pagestyle{scrheadings}
+% \ifoot{Версия \vhCurrentVersion}
+% \cfoot[]{}
+% \ofoot[\thepage]{\thepage}
+
+\begin{document}
+
+\newcommand{\JW}{Jochen Wertenauer}
+\newcommand{\EMB}{Евгений М. Балдин}
+
+{\renewcommand{\setseparator}{ \and }
+\title{Пример использования пакета \textbf{vhistory}}
+\author{\vhListAllAuthorsLong}
+\date{Версия \vhCurrentVersion{} от \vhCurrentDate}
+\maketitle
+}
+
+\renewcommand{\vhhistoryname}{Журнал изменений}
+\renewcommand{\vhversionname}{Версия}
+\renewcommand{\vhdatename}{Дата}
+\renewcommand{\vhauthorname}{Автор(ы)}
+\renewcommand{\vhchangename}{Изменения}
+\thispagestyle{empty}
+
+
+\begin{versionhistory}
+  \vhEntry{1.0}{22/01/04}{JW}{Создание}
+  \vhEntry{1.1}{21/07/07}{JW}{Исправление бага с owncaptions}
+  \vhEntry{1.2}{29/09/07}{JW|EMB}{Проверка работоспособности}
+\end{versionhistory}
+
+\end{document}

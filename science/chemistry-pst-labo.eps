@@ -1,0 +1,2366 @@
+%!PS-Adobe-2.0 EPSF-2.0
+%%Creator: dvips(k) 5.96 Copyright 2005 Radical Eye Software
+%%Title: chemistry-pst-labo.dvi
+%%CreationDate: Sat Feb  2 22:12:44 2008
+%%BoundingBox: 37 571 380 700
+%%DocumentFonts: SFTT0900
+%%EndComments
+%DVIPSWebPage: (www.radicaleye.com)
+%DVIPSCommandLine: dvips chemistry-pst-labo.dvi -o
+%+ chemistry-pst-labo.eps -E
+%DVIPSParameters: dpi=600
+%DVIPSSource:  TeX output 2008.02.02:2212
+%%BeginProcSet: tex.pro 0 0
+%!
+/TeXDict 300 dict def TeXDict begin/N{def}def/B{bind def}N/S{exch}N/X{S
+N}B/A{dup}B/TR{translate}N/isls false N/vsize 11 72 mul N/hsize 8.5 72
+mul N/landplus90{false}def/@rigin{isls{[0 landplus90{1 -1}{-1 1}ifelse 0
+0 0]concat}if 72 Resolution div 72 VResolution div neg scale isls{
+landplus90{VResolution 72 div vsize mul 0 exch}{Resolution -72 div hsize
+mul 0}ifelse TR}if Resolution VResolution vsize -72 div 1 add mul TR[
+matrix currentmatrix{A A round sub abs 0.00001 lt{round}if}forall round
+exch round exch]setmatrix}N/@landscape{/isls true N}B/@manualfeed{
+statusdict/manualfeed true put}B/@copies{/#copies X}B/FMat[1 0 0 -1 0 0]
+N/FBB[0 0 0 0]N/nn 0 N/IEn 0 N/ctr 0 N/df-tail{/nn 8 dict N nn begin
+/FontType 3 N/FontMatrix fntrx N/FontBBox FBB N string/base X array
+/BitMaps X/BuildChar{CharBuilder}N/Encoding IEn N end A{/foo setfont}2
+array copy cvx N load 0 nn put/ctr 0 N[}B/sf 0 N/df{/sf 1 N/fntrx FMat N
+df-tail}B/dfs{div/sf X/fntrx[sf 0 0 sf neg 0 0]N df-tail}B/E{pop nn A
+definefont setfont}B/Cw{Cd A length 5 sub get}B/Ch{Cd A length 4 sub get
+}B/Cx{128 Cd A length 3 sub get sub}B/Cy{Cd A length 2 sub get 127 sub}
+B/Cdx{Cd A length 1 sub get}B/Ci{Cd A type/stringtype ne{ctr get/ctr ctr
+1 add N}if}B/CharBuilder{save 3 1 roll S A/base get 2 index get S
+/BitMaps get S get/Cd X pop/ctr 0 N Cdx 0 Cx Cy Ch sub Cx Cw add Cy
+setcachedevice Cw Ch true[1 0 0 -1 -.1 Cx sub Cy .1 sub]{Ci}imagemask
+restore}B/D{/cc X A type/stringtype ne{]}if nn/base get cc ctr put nn
+/BitMaps get S ctr S sf 1 ne{A A length 1 sub A 2 index S get sf div put
+}if put/ctr ctr 1 add N}B/I{cc 1 add D}B/bop{userdict/bop-hook known{
+bop-hook}if/SI save N @rigin 0 0 moveto/V matrix currentmatrix A 1 get A
+mul exch 0 get A mul add .99 lt{/QV}{/RV}ifelse load def pop pop}N/eop{
+SI restore userdict/eop-hook known{eop-hook}if showpage}N/@start{
+userdict/start-hook known{start-hook}if pop/VResolution X/Resolution X
+1000 div/DVImag X/IEn 256 array N 2 string 0 1 255{IEn S A 360 add 36 4
+index cvrs cvn put}for pop 65781.76 div/vsize X 65781.76 div/hsize X}N
+/p{show}N/RMat[1 0 0 -1 0 0]N/BDot 260 string N/Rx 0 N/Ry 0 N/V{}B/RV/v{
+/Ry X/Rx X V}B statusdict begin/product where{pop false[(Display)(NeXT)
+(LaserWriter 16/600)]{A length product length le{A length product exch 0
+exch getinterval eq{pop true exit}if}{pop}ifelse}forall}{false}ifelse
+end{{gsave TR -.1 .1 TR 1 1 scale Rx Ry false RMat{BDot}imagemask
+grestore}}{{gsave TR -.1 .1 TR Rx Ry scale 1 1 false RMat{BDot}
+imagemask grestore}}ifelse B/QV{gsave newpath transform round exch round
+exch itransform moveto Rx 0 rlineto 0 Ry neg rlineto Rx neg 0 rlineto
+fill grestore}B/a{moveto}B/delta 0 N/tail{A/delta X 0 rmoveto}B/M{S p
+delta add tail}B/b{S p tail}B/c{-4 M}B/d{-3 M}B/e{-2 M}B/f{-1 M}B/g{0 M}
+B/h{1 M}B/i{2 M}B/j{3 M}B/k{4 M}B/w{0 rmoveto}B/l{p -4 w}B/m{p -3 w}B/n{
+p -2 w}B/o{p -1 w}B/q{p 1 w}B/r{p 2 w}B/s{p 3 w}B/t{p 4 w}B/x{0 S
+rmoveto}B/y{3 2 roll p a}B/bos{/SS save N}B/eos{SS restore}B end
+
+%%EndProcSet
+%%BeginProcSet: pstricks.pro 0 0
+%!
+% PostScript prologue for pstricks.tex.
+% Version 1.01, 2006/01/11
+% For distribution, see pstricks.tex.
+%
+/tx@Dict 200 dict def tx@Dict begin
+/ADict 25 dict def
+/CM { matrix currentmatrix } bind def
+/SLW /setlinewidth load def
+/CLW /currentlinewidth load def
+/CP /currentpoint load def
+/ED { exch def } bind def
+/L /lineto load def
+/T /translate load def
+/TMatrix { } def
+/RAngle { 0 } def
+/Sqrt { dup 0 lt { pop 0 } { sqrt } ifelse } def  % return 0 for negative arguments 
+/Atan { /atan load stopped { pop pop 0 } if } def % return 0 if atan not known
+/ATAN1 {neg -1 atan 180 sub } def		% atan(x) (only one parameter)
+/Div { dup 0 eq { pop } { div } ifelse } def  	% control the division
+/NET { neg exch neg exch T } def	      	% change coordinate system to the negative one		
+/Pyth { dup mul exch dup mul add sqrt } def   	% Pythagoras, epects 2 parameter
+/PtoC { 2 copy cos mul 3 1 roll sin mul } def 	% Polar to Cartesian
+%----------------- hv added 20050516 ---------------
+/Pi 3.14159265359 def 
+/TwoPi 6.28318530718 def
+/Euler 2.71828182846 def 
+/RadtoDeg { 180 mul Pi div } bind def % convert from radian to degrees
+/DegtoRad { Pi mul 180 div } bind def % viceversa
+%----------------- hv end---------------------------
+/PathLength@ { /z z y y1 sub x x1 sub Pyth add def /y1 y def /x1 x def } def
+/PathLength { flattenpath /z 0 def 
+  { /y1 ED /x1 ED /y2 y1 def /x2 x1 def
+  }{ /y ED /x ED PathLength@ } {} { /y y2 def /x x2 def PathLength@ }
+  /pathforall load stopped { pop pop pop pop } if z } def
+/STP { .996264 dup scale } def
+/STV { SDict begin normalscale end STP  } def
+%
+%%-------------- DG begin patch 15 ---------------%%
+%/DashLine { dup 0 gt { /a .5 def PathLength exch div } { pop /a 1 def
+%PathLength } ifelse /b ED /x ED /y ED /z y x add def b a .5 sub 2 mul y
+%mul sub z Div round z mul a .5 sub 2 mul y mul add b exch Div dup y mul
+%/y ED x mul /x ED x 0 gt y 0 gt and { [ y x ] 1 a sub y mul } { [ 1 0 ]
+%0 } ifelse setdash stroke } def
+/DashLine {
+  dup 0 gt { /a .5 def PathLength exch div } { pop /a 1 def PathLength } ifelse
+  /b ED /x1 ED /y1 ED /x ED /y ED 
+  /z y x add y1 add x1 add def
+  /Coef b a .5 sub 2 mul y mul sub z Div round 
+    z mul a .5 sub 2 mul y mul add b exch Div def 
+  /y y Coef mul def 
+  /x x Coef mul def 
+  /y1 y1 Coef mul def 
+  /x1 x1 Coef mul def
+  x1 0 gt y1 0 gt or x 0 gt or y 0 gt and 
+    { [ y x y1 x1 ] 1 a sub y mul }
+    { [ 1 0 ] 0 } ifelse 
+  setdash stroke
+} def
+%%-------------- DG end patch 15 ---------------%%
+/DotLine { 
+  /b PathLength def 
+  /a ED /z ED /y CLW def 
+  /z y z add def 
+  a 0 gt { 
+    /b b a div def 
+  }{ 
+    a 0 eq { 
+      /b b y sub def 
+    }{ a -3 eq { 
+      /b b y add def } if 
+    } ifelse 
+  } ifelse 
+  [ 0 b b z Div round Div dup 0 le { pop 1 } if ] 
+  a 0 gt { 0 }{ y 2 div a -2 gt { neg }if } ifelse 
+  setdash 1 setlinecap stroke 
+} def
+%
+/LineFill { % hv ------------ patch 7 -------------
+  gsave 
+  abs /hatchWidthInc ED
+  abs /hatchSepInc ED
+  abs CLW add /a ED 
+  a 0 dtransform round exch round exch
+  2 copy idtransform 
+  exch Atan rotate 
+  idtransform pop /a ED 
+  .25 .25 itransform pathbbox 
+  /y2 ED 
+  a Div ceiling cvi /x2 ED /y1 ED 
+  a Div cvi /x1 ED /y2 y2 y1 sub def 
+  clip 
+  newpath 
+  2 setlinecap 
+  systemdict
+  /setstrokeadjust known { true setstrokeadjust } if 
+  x2 x1 sub 1 add { 
+    x1 a mul y1 moveto 0 y2 rlineto stroke 
+    /x1 x1 1 add 
+      hatchWidthInc 0 gt { CLW add } if 
+    def 
+    hatchSepInc 0 gt hatchWidthInc 0 gt or { 
+      /a a hatchSepInc add def
+      CLW hatchWidthInc add SLW 
+    } if
+  } repeat 
+  grestore 
+  pop pop } def
+%
+%gsave abs CLW add /a ED a 0 dtransform round exch round exch
+%2 copy idtransform exch Atan rotate idtransform pop /a ED .25 .25
+%% DG/SR modification begin - Dec. 12, 1997 - Patch 2
+%%itransform translate pathbbox /y2 ED a Div ceiling cvi /x2 ED /y1 ED a
+%itransform pathbbox /y2 ED a Div ceiling cvi /x2 ED /y1 ED a
+%% DG/SR modification end
+%Div cvi /x1 ED /y2 y2 y1 sub def clip newpath 2 setlinecap systemdict
+%/setstrokeadjust known { true setstrokeadjust } if x2 x1 sub 1 add { x1
+%% DG/SR modification begin - Jun.  1, 1998 - Patch 3 (from Michael Vulis)
+%% a mul y1 moveto 0 y2 rlineto stroke /x1 x1 1 add def } repeat grestore }
+%% def
+%a mul y1 moveto 0 y2 rlineto stroke /x1 x1 1 add def } repeat grestore
+%pop pop } def
+%% DG/SR modification end
+%
+/BeginArrow { ADict begin /@mtrx CM def gsave 2 copy T 2 index sub neg
+exch 3 index sub exch Atan rotate newpath } def
+/EndArrow { @mtrx setmatrix CP grestore end } def
+/Arrow { CLW mul add dup 2 div /w ED mul dup /h ED mul /a ED { 0 h T 1 -1
+scale } if w neg h moveto 0 0 L w h L w neg a neg rlineto gsave fill
+grestore } def
+/Tbar { CLW mul add /z ED z -2 div CLW 2 div moveto z 0 rlineto stroke 0
+CLW moveto } def
+/Bracket { CLW mul add dup CLW sub 2 div /x ED mul CLW add /y ED /z CLW 2
+div def x neg y moveto x neg CLW 2 div L x CLW 2 div L x y L stroke 0
+CLW moveto } def
+/RoundBracket { CLW mul add dup 2 div /x ED mul /y ED /mtrx CM def 0 CLW
+2 div T x y mul 0 ne { x y scale } if 1 1 moveto .85 .5 .35 0 0 0
+curveto -.35 0 -.85 .5 -1 1 curveto mtrx setmatrix stroke 0 CLW moveto }
+def
+/SD { 0 360 arc fill } def
+/EndDot { % DS is the dot size 
+  { /z DS def } { /z 0 def } ifelse 
+  /b ED 0 z DS SD b { 0 z DS CLW sub SD } if 
+  0 DS z add CLW 4 div sub moveto } def
+%
+/Shadow { [ { /moveto load } { /lineto load } { /curveto load } {
+  /closepath load } /pathforall load stopped { pop pop pop pop CP /moveto
+  load } if ] cvx newpath 3 1 roll T exec } def
+%
+/NArray { aload length 2 div dup dup cvi eq not { exch pop } if /n exch
+cvi def } def
+/NArray { % holds the coordinates and on top of stack the showpoints boolean
+  /f ED 
+  counttomark 2 div dup cvi /n ED 
+  n eq not { exch pop } if
+  f { ] aload /Points ED } { n 2 mul 1 add -1 roll pop } ifelse 
+} def
+/Line { 
+  NArray n 0 eq not 
+    { n 1 eq { 0 0 /n 2 def } if ArrowA /n n 2 sub def 
+      n { Lineto } repeat 
+      CP 4 2 roll ArrowB L pop pop 
+    } if 
+} def
+/Arcto { /a [ 6 -2 roll ] cvx def a r /arcto load stopped { 5 } { 4 }
+  ifelse { pop } repeat a } def
+/CheckClosed { dup n 2 mul 1 sub index eq 2 index n 2 mul 1 add index eq
+  and { pop pop /n n 1 sub def } if } def
+/Polygon { NArray n 2 eq { 0 0 /n 3 def } if n 3 lt { n { pop pop }
+  repeat } { n 3 gt { CheckClosed } if n 2 mul -2 roll /y0 ED /x0 ED /y1
+  ED /x1 ED x1 y1 /x1 x0 x1 add 2 div def /y1 y0 y1 add 2 div def x1 y1
+  moveto /n n 2 sub def n { Lineto } repeat x1 y1 x0 y0 6 4 roll Lineto
+  Lineto pop pop closepath } ifelse } def
+/Diamond { 
+  /mtrx CM def 
+  T rotate 
+  /h ED 
+  /w ED 
+  dup 0 eq { pop } { CLW mul neg 
+    /d ED 
+    /a w h Atan def 
+    /h d a sin Div h add def 
+    /w d a cos Div w add def } ifelse 
+  mark w 2 div h 2 div w 0 0 h neg w neg 0 0 h w 2 div h 2 div 
+  /ArrowA { moveto } def 
+  /ArrowB { } def 
+  false Line 
+  closepath mtrx setmatrix } def
+% DG modification begin - Jan. 15, 1997
+%/Triangle { /mtrx CM def translate rotate /h ED 2 div /w ED dup 0 eq {
+%pop } { CLW mul /d ED /h h d w h Atan sin Div sub def /w w d h w Atan 2
+%div dup cos exch sin Div mul sub def } ifelse mark 0 d w neg d 0 h w d 0
+%d /ArrowA { moveto } def /ArrowB { } def false Line closepath mtrx
+%setmatrix } def
+/Triangle { /mtrx CM def translate rotate /h ED 2 div /w ED dup
+CLW mul /d ED /h h d w h Atan sin Div sub def /w w d h w Atan 2
+div dup cos exch sin Div mul sub def mark 0 d w neg d 0 h w d 0
+d /ArrowA { moveto } def /ArrowB { } def false Line closepath mtrx
+% DG/SR modification begin - Jun.  1, 1998 - Patch 3 (from Michael Vulis)
+% setmatrix } def
+setmatrix pop } def
+% DG/SR modification end
+/CCA { /y ED /x ED 2 copy y sub /dy1 ED x sub /dx1 ED /l1 dx1 dy1 Pyth
+def } def
+/CCA { /y ED /x ED 2 copy y sub /dy1 ED x sub /dx1 ED /l1 dx1 dy1 Pyth
+def } def
+/CC { /l0 l1 def /x1 x dx sub def /y1 y dy sub def /dx0 dx1 def /dy0 dy1
+def CCA /dx dx0 l1 c exp mul dx1 l0 c exp mul add def /dy dy0 l1 c exp
+mul dy1 l0 c exp mul add def /m dx0 dy0 Atan dx1 dy1 Atan sub 2 div cos
+abs b exp a mul dx dy Pyth Div 2 div def /x2 x l0 dx mul m mul sub def
+/y2 y l0 dy mul m mul sub def /dx l1 dx mul m mul neg def /dy l1 dy mul
+m mul neg def } def
+/IC { /c c 1 add def c 0 lt { /c 0 def } { c 3 gt { /c 3 def } if }
+ifelse /a a 2 mul 3 div 45 cos b exp div def CCA /dx 0 def /dy 0 def }
+def
+/BOC { IC CC x2 y2 x1 y1 ArrowA CP 4 2 roll x y curveto } def
+/NC { CC x1 y1 x2 y2 x y curveto } def
+/EOC { x dx sub y dy sub 4 2 roll ArrowB 2 copy curveto } def
+/BAC { IC CC x y moveto CC x1 y1 CP ArrowA } def
+/NAC { x2 y2 x y curveto CC x1 y1 } def
+/EAC { x2 y2 x y ArrowB curveto pop pop } def
+/OpenCurve { 
+  NArray n 3 lt 
+    { n { pop pop } repeat } 
+    { BOC /n n 3 sub def n { NC } repeat EOC } ifelse 
+} def
+/AltCurve { { false NArray n 2 mul 2 roll [ n 2 mul 3 sub 1 roll ] aload
+/Points ED n 2 mul -2 roll } { false NArray } ifelse n 4 lt { n { pop
+pop } repeat } { BAC /n n 4 sub def n { NAC } repeat EAC } ifelse } def
+/ClosedCurve { NArray n 3 lt { n { pop pop } repeat } { n 3 gt {
+CheckClosed } if 6 copy n 2 mul 6 add 6 roll IC CC x y moveto n { NC }
+repeat closepath pop pop } ifelse } def
+/SQ { /r ED r r moveto r r neg L r neg r neg L r neg r L fill } def
+/ST { /y ED /x ED x y moveto x neg y L 0 x L fill } def
+/SP { /r ED gsave 0 r moveto 4 { 72 rotate 0 r L } repeat fill grestore }
+def
+/FontDot { DS 2 mul dup matrix scale matrix concatmatrix exch matrix
+rotate matrix concatmatrix exch findfont exch makefont setfont } def
+/Rect { x1 y1 y2 add 2 div moveto x1 y2 lineto x2 y2 lineto x2 y1 lineto
+x1 y1 lineto closepath } def
+/OvalFrame { x1 x2 eq y1 y2 eq or { pop pop x1 y1 moveto x2 y2 L } { y1
+y2 sub abs x1 x2 sub abs 2 copy gt { exch pop } { pop } ifelse 2 div
+exch { dup 3 1 roll mul exch } if 2 copy lt { pop } { exch pop } ifelse
+/b ED x1 y1 y2 add 2 div moveto x1 y2 x2 y2 b arcto x2 y2 x2 y1 b arcto
+x2 y1 x1 y1 b arcto x1 y1 x1 y2 b arcto 16 { pop } repeat closepath }
+ifelse } def
+/Frame { CLW mul /a ED 3 -1 roll 2 copy gt { exch } if a sub /y2 ED a add
+/y1 ED 2 copy gt { exch } if a sub /x2 ED a add /x1 ED 1 index 0 eq {
+pop pop Rect } { OvalFrame } ifelse } def
+/BezierNArray { /f ED counttomark 2 div dup cvi /n ED n eq not { exch pop
+} if n 1 sub neg 3 mod 3 add 3 mod { 0 0 /n n 1 add def } repeat f { ]
+aload /Points ED } { n 2 mul 1 add -1 roll pop } ifelse } def
+/OpenBezier { BezierNArray n 1 eq { pop pop } { ArrowA n 4 sub 3 idiv { 6
+2 roll 4 2 roll curveto } repeat 6 2 roll 4 2 roll ArrowB curveto }
+ifelse } def
+/ClosedBezier { BezierNArray n 1 eq { pop pop } { moveto n 1 sub 3 idiv {
+6 2 roll 4 2 roll curveto } repeat closepath } ifelse } def
+/BezierShowPoints { gsave Points aload length 2 div cvi /n ED moveto n 1
+sub { lineto } repeat CLW 2 div SLW [ 4 4 ] 0 setdash stroke grestore }
+def
+/Parab { /y0 exch def /x0 exch def /y1 exch def /x1 exch def /dx x0 x1
+sub 3 div def /dy y0 y1 sub 3 div def x0 dx sub y0 dy add x1 y1 ArrowA
+x0 dx add y0 dy add x0 2 mul x1 sub y1 ArrowB curveto /Points [ x1 y1 x0
+y0 x0 2 mul x1 sub y1 ] def } def
+/Grid { newpath /a 4 string def /b ED /c ED /n ED cvi dup 1 lt { pop 1 }
+if /s ED s div dup 0 eq { pop 1 } if /dy ED s div dup 0 eq { pop 1 } if
+/dx ED dy div round dy mul /y0 ED dx div round dx mul /x0 ED dy div
+round cvi /y2 ED dx div round cvi /x2 ED dy div round cvi /y1 ED dx div
+round cvi /x1 ED /h y2 y1 sub 0 gt { 1 } { -1 } ifelse def /w x2 x1 sub
+0 gt { 1 } { -1 } ifelse def b 0 gt { /z1 b 4 div CLW 2 div add def
+/Helvetica findfont b scalefont setfont /b b .95 mul CLW 2 div add def }
+if systemdict /setstrokeadjust known { true setstrokeadjust /t { } def }
+{ /t { transform 0.25 sub round 0.25 add exch 0.25 sub round 0.25 add
+exch itransform } bind def } ifelse gsave n 0 gt { 1 setlinecap [ 0 dy n
+div ] dy n div 2 div setdash } { 2 setlinecap } ifelse /i x1 def /f y1
+dy mul n 0 gt { dy n div 2 div h mul sub } if def /g y2 dy mul n 0 gt {
+dy n div 2 div h mul add } if def x2 x1 sub w mul 1 add dup 1000 gt {
+pop 1000 } if { i dx mul dup y0 moveto b 0 gt { gsave c i a cvs dup
+stringwidth pop /z2 ED w 0 gt {z1} {z1 z2 add neg} ifelse h 0 gt {b neg}
+{z1} ifelse rmoveto show grestore } if dup t f moveto g t L stroke /i i
+w add def } repeat grestore gsave n 0 gt
+% DG/SR modification begin - Nov. 7, 1997 - Patch 1
+%{ 1 setlinecap [ 0 dx n div ] dy n div 2 div setdash }
+{ 1 setlinecap [ 0 dx n div ] dx n div 2 div setdash }
+% DG/SR modification end
+{ 2 setlinecap } ifelse /i y1 def /f x1 dx mul
+n 0 gt { dx n div 2 div w mul sub } if def /g x2 dx mul n 0 gt { dx n
+div 2 div w mul add } if def y2 y1 sub h mul 1 add dup 1000 gt { pop
+1000 } if { newpath i dy mul dup x0 exch moveto b 0 gt { gsave c i a cvs
+dup stringwidth pop /z2 ED w 0 gt {z1 z2 add neg} {z1} ifelse h 0 gt
+{z1} {b neg} ifelse rmoveto show grestore } if dup f exch t moveto g
+exch t L stroke /i i h add def } repeat grestore } def
+/ArcArrow { /d ED /b ED /a ED gsave newpath 0 -1000 moveto clip newpath 0
+1 0 0 b grestore c mul /e ED pop pop pop r a e d PtoC y add exch x add
+exch r a PtoC y add exch x add exch b pop pop pop pop a e d CLW 8 div c
+mul neg d } def
+/Ellipse { /mtrx CM def T scale 0 0 1 5 3 roll arc mtrx setmatrix } def
+%
+/ArcAdjust { %%%% Vincent Guirardel
+% given a target length (targetLength) and an initial angle (angle0) [in the stack],
+% let  M(angle0)=(rx*cos(angle0),ry*sin(angle0))=(x0,y0).
+% This computes an angle t such that (x0,y0) is at distance 
+% targetLength from the point M(t)=(rx*cos(t),ry*sin(t)).
+% NOTE: this an absolute angle, it does not have to be added or substracted to angle0
+% contrary to TvZ's code.
+% To achieve, this, one iterates the following process: start with some angle t,
+% compute the point M' at distance targetLength of (x0,y0) on the semi-line [(x0,y0) M(t)].
+% Now take t' (= new angle) so that (0,0) M(t') and M' are aligned.
+%
+% Another difference with TvZ's code is that we need d (=add/sub) to be defined.
+% the value of d = add/sub is used to know on which side we have to move.
+% It is only used in the initialisation of the angle before the iteration.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Input stack:  1: target length 2: initial angle
+% variables used : rx, ry, d (=add/sub)
+%
+  /targetLength ED /angle0 ED
+  /x0 rx angle0 cos mul def
+  /y0 ry angle0 sin mul def
+% we are looking for an angle t such that (x0,y0) is at distance targetLength 
+% from the point M(t)=(rx*cos(t),ry*sin(t)))
+%initialisation of angle (using 1st order approx = TvZ's code)
+  targetLength 57.2958 mul
+  angle0 sin rx mul dup mul
+  angle0 cos ry mul dup mul
+  add sqrt div 
+% if initialisation angle is two large (more than 90 degrees) set it to 90 degrees
+% (if the ellipse is very curved at the point where we draw the arrow, %
+% the value can be much more than 360 degrees !)
+% this should avoid going on the wrong side (more than 180 degrees) or go near
+% a bad attractive point (at 180 degrees)
+  dup 90 ge { pop 90 } if 
+  angle0 exch d % add or sub
+% maximum number of times to iterate the iterative procedure:
+% iterative procedure: takes an angle t on top of stack, computes a 
+% better angle (and put it on top of stack)
+  30 { dup
+% compute distance D between (x0,y0) and M(t)
+    dup cos rx mul x0 sub dup mul exch sin ry mul y0 sub dup mul add sqrt
+% if D almost equals targetLength, we stop
+    dup targetLength sub abs 1e-5 le { pop exit } if
+% stack now contains D t
+% compute the point M(t') at distance targetLength of (x0,y0) on the semi-line [(x0,y0) M(t)]:
+% M(t')= ( (x(t)-x0)*targetLength/d+x0 , (y(t)-y0)*targetLength/d+y0 )
+    exch dup cos rx mul x0 sub  exch sin ry mul y0 sub
+% stack contains:  y(t)-y0, x(t)-x0, d
+    2 index Div targetLength mul y0 add ry Div exch
+    2 index Div targetLength mul x0 add rx Div
+% stack contains x(t')/rx , y(t')/ry , d
+% now compute t', and remove D from stack
+    atan exch pop
+  } repeat
+% we don't look at what happened... in particular, if targetLength is greater 
+% than the diameter of the ellipse...
+% the final angle will be around /angle0 + 180. maybe we should treat this pathological case...
+% after iteration, stack contains an angle t such that M(t) is the tail of the arrow
+% to give back the result as a an angle relative to angle0 we could add the following line:
+% angle0 sub 0 exch d
+%
+% begin bug fix 2006-01-11
+% we want to adjust the new angle t' by a multiple of 360 so that  | t'-angle0 | <= 180
+%(we don't want to make the ellipse turn more or less than it should)...
+dup angle0 sub dup abs 180 gt { 180 add 360 div floor 360 mul sub } { pop } ifelse
+% end bug fix
+} def
+%
+/EllipticArcArrow {
+  /d ED      % add/sub
+  /b ED      % arrow procedure
+  /a1 ED     % angle
+  gsave
+  newpath
+  0 -1000 moveto
+  clip                  % Set clippath far from arrow.
+  newpath
+  0 1 0 0 b             % Draw arrow to determine length.
+  grestore
+% Length of arrow is on top of stack. Next 3 numbers are junk.
+%
+  a1 exch ArcAdjust   % Angular position of base of arrow.
+  /a2 ED
+  pop pop pop
+  a2 cos rx mul x add
+  a2 sin ry mul y add
+  a1 cos rx mul x add
+  a1 sin ry mul y add
+% Now arrow tip coor and base coor are on stack.
+  b pop pop pop pop       % Draw arrow, and discard coordinates.
+  a2 CLW 8 div
+% change value of d (test it by looking if  `` 1 1 d '' gives 2 or not )
+  1 1 d 2 eq { /d { sub } def } { /d { add } def } ifelse
+  ArcAdjust
+% resets original value of d
+  1 1 d 2 eq { /d { sub } def } { /d { add } def } ifelse  % Adjust angle to give overlap.
+} def
+%%------------------ tvz/DG/hv (2004-05-10) end -------------------%%
+%
+/Rot { CP CP translate 3 -1 roll neg rotate NET  } def
+/RotBegin { tx@Dict /TMatrix known not { /TMatrix { } def /RAngle { 0 }
+def } if /TMatrix [ TMatrix CM ] cvx def /a ED a Rot /RAngle [ RAngle
+dup a add ] cvx def } def
+/RotEnd { /TMatrix [ TMatrix setmatrix ] cvx def /RAngle [ RAngle pop ]
+cvx def } def
+/PutCoor { gsave CP T CM STV exch exec moveto setmatrix CP grestore } def
+/PutBegin { /TMatrix [ TMatrix CM ] cvx def CP 4 2 roll T moveto } def
+/PutEnd { CP /TMatrix [ TMatrix setmatrix ] cvx def moveto } def
+/Uput { /a ED add 2 div /h ED 2 div /w ED /s a sin def /c a cos def /b s
+abs c abs 2 copy gt dup /q ED { pop } { exch pop } ifelse def /w1 c b
+div w mul def /h1 s b div h mul def q { w1 abs w sub dup c mul abs } {
+h1 abs h sub dup s mul abs } ifelse } def
+/UUput { /z ED abs /y ED /x ED q { x s div c mul abs y gt } { x c div s
+mul abs y gt } ifelse { x x mul y y mul sub z z mul add sqrt z add } { q
+{ x s div } { x c div } ifelse abs } ifelse a PtoC h1 add exch w1 add
+exch } def
+/BeginOL { dup (all) eq exch TheOL eq or { IfVisible not { Visible
+/IfVisible true def } if } { IfVisible { Invisible /IfVisible false def
+} if } ifelse } def
+/InitOL { /OLUnit [ 3000 3000 matrix defaultmatrix dtransform ] cvx def
+/Visible { CP OLUnit idtransform T moveto } def /Invisible { CP OLUnit
+neg exch neg exch idtransform T moveto } def /BOL { BeginOL } def
+/IfVisible true def } def
+end
+% END pstricks.pro
+
+%%EndProcSet
+%%BeginProcSet: pst-dots.pro 0 0
+%!
+%% PostScript prologue for pstricks.tex.
+%% Version 2.00,                                    Suggestion of 2006/12/19
+%% For distribution, see pstricks.tex.
+%%
+%% Timothy Van Zandt <tvz@Princeton.EDU>
+%%
+%% Modified by Etienne Riga  - Dec. 16, 1999
+%% Modified by Herbert Voss (hv) - 2004/12/27 
+%% Modified by Etienne Riga  - 2005/01/01 (er)
+%% to add /Diamond, /SolidDiamond and /BoldDiamond
+%
+10 dict dup begin
+  /FontType 3 def
+  /FontMatrix [.001 0 0 .001 0 0] def
+  /FontBBox [-571.5 -742.5 571.5 742.5] def
+%  /FontBBox [-1000 -1000 1000 1000] def
+%                See end of file in /BuildGlyph
+  /Encoding 256 array def
+  0 1 255 {Encoding exch/.notdef put} for
+  Encoding
+    dup (b) 0 get /Bullet put
+    dup (c) 0 get /Circle put
+    dup (C) 0 get /BoldCircle put
+    dup (u) 0 get /SolidTriangle put
+    dup (t) 0 get /Triangle put
+    dup (T) 0 get /BoldTriangle put
+    dup (r) 0 get /SolidSquare put
+    dup (s) 0 get /Square put
+    dup (S) 0 get /BoldSquare put
+    dup (q) 0 get /SolidPentagon put
+    dup (p) 0 get /Pentagon put
+    dup (P) 0 get /BoldPentagon put
+%%%		  
+    dup (k) 0 get /Asterisk put
+    dup (K) 0 get /BoldAsterisk put
+    dup (J) 0 get /SolidAsterisk put
+    dup (h) 0 get /Hexagon put
+    dup (H) 0 get /BoldHexagon put
+    dup (G) 0 get /SolidHexagon put
+    dup (a) 0 get /Add put
+    dup (A) 0 get /BoldAdd put
+    dup (x) 0 get /Mul put
+    dup (X) 0 get /BoldMul put
+    dup (m) 0 get /Oplus put
+    dup (M) 0 get /BOplus put
+    dup (e) 0 get /SolidOplus put
+    dup (n) 0 get /Otimes put
+    dup (N) 0 get /BOtimes put
+    dup (E) 0 get /SolidOtimes put
+    dup (i) 0 get /Bar put
+    dup (I) 0 get /BoldBar put
+    dup (l) 0 get /SolidDiamond put
+    dup (d) 0 get /Diamond put
+        (D) 0 get /BoldDiamond put
+%%%  
+/CharProcs 47 dict def
+  CharProcs begin
+    /CirclePath {0 0 500 0 360 arc closepath} def
+      /Bullet {CirclePath fill} def
+	  /Circle {CirclePath .9 .9 scale CirclePath eofill} def
+	  /BoldCircle {CirclePath .8 .8 scale CirclePath eofill} def
+    /TrianglePath {0 660 moveto -571.5 -330 lineto 571.5 -330 lineto
+		closepath} def
+	  /SolidTriangle {TrianglePath fill} def
+      /Triangle {TrianglePath .85 .85 scale TrianglePath eofill} def
+      /BoldTriangle {TrianglePath .7 .7 scale TrianglePath eofill} def
+    /SquarePath {-450 450 moveto 450 450 lineto 450 -450 lineto -450 -450 lineto
+		closepath} def
+      /SolidSquare {SquarePath fill} def
+      /Square {SquarePath .89 .89 scale SquarePath eofill} def
+      /BoldSquare {SquarePath .78 .78 scale SquarePath eofill} def
+    /PentagonPath {-337.8 -465 moveto 337.8 -465 lineto 546.6 177.6 lineto
+		0 574.7 lineto -546.6 177.6 lineto closepath} def
+      /SolidPentagon {PentagonPath fill} def
+      /Pentagon {PentagonPath .89 .89 scale PentagonPath eofill} def
+      /BoldPentagon {PentagonPath .78 .78 scale PentagonPath eofill} def
+%-------------- hv begin 2004/07/25   from: er 2003/03/24
+    /HexagonPath {0 550 moveto -476 275 lineto -476 -275 lineto
+		0 -550 lineto 476 -275 lineto 476 275 lineto closepath} def
+      /SolidHexagon {HexagonPath fill} def
+      /Hexagon {HexagonPath .89 .89 scale HexagonPath eofill} def
+      /BoldHexagon {HexagonPath .79 .79 scale HexagonPath eofill} def
+	/AsteriskPath {20 0 moveto 10 250 180 500 0 500 curveto
+		-180 500 -10 250 -20 0 curveto closepath} def
+      /Asterisk {AsteriskPath 60 rotate AsteriskPath 60 rotate AsteriskPath
+	    60 rotate AsteriskPath 60 rotate AsteriskPath 60 rotate AsteriskPath 
+		fill} def
+	/Basterp {50 250 220 500 0 500 curveto
+        -220 500 -50 250 -50 30 cos 100 mul curveto} def
+	/BoldAsteriskPath {50 30 cos 100 mul moveto  Basterp
+                     60 rotate Basterp 60 rotate Basterp
+                     60 rotate Basterp 60 rotate Basterp
+                     60 rotate Basterp closepath} def
+      /BoldAsterisk {BoldAsteriskPath fill} def
+	  /SolidAsterisk {CirclePath .9 .9 scale BoldAsteriskPath eofill} def
+    /CrossPath {40 550 moveto -40 550 lineto -40 40 lineto -550 40 lineto
+        -550 -40 lineto -40 -40 lineto -40 -550 lineto 40 -550 lineto 
+		40 -40 lineto 550 -40 lineto 550 40 lineto 40 40 lineto closepath} def
+    /BoldCrossPath {80 550 moveto -80 550 lineto -80 80 lineto -550 80 lineto
+        -550 -80 lineto -80 -80 lineto -80 -550 lineto 80 -550 lineto 
+		80 -80 lineto 550 -80 lineto 550 80 lineto 80 80 lineto closepath} def
+      /Add {CrossPath fill} def
+      /Mul {45 rotate CrossPath fill} def
+      /BoldAdd {BoldCrossPath fill} def
+      /BoldMul {45 rotate BoldCrossPath fill} def
+	  /Oplus {CirclePath .9 .9 scale CirclePath eofill
+		.775 .775 scale CrossPath  fill} def 
+	  /SolidOplus {CirclePath .775 .775 scale BoldCrossPath eofill} def 
+	  /BOplus {CirclePath .8 .8 scale CirclePath eofill
+		.775 .775 scale BoldCrossPath fill} def 
+	  /Otimes {CirclePath .9 .9 scale CirclePath eofill
+		45 rotate .775 .775 scale CrossPath fill} def 
+	  /BOtimes {CirclePath .8 .8 scale CirclePath eofill
+		45 rotate .775 .775 scale BoldCrossPath  fill } def 
+	  /SolidOtimes {CirclePath 45 rotate .775 .775 scale BoldCrossPath eofill} def 
+    /BarPath {40 660 moveto -40 660 lineto -40 -660 lineto 40 -660 lineto
+		closepath} def
+      /Bar {BarPath fill} def
+    /BoldBarPath {80 660 moveto -80 660 lineto -80 -660 lineto 80 -660 lineto
+		closepath} def
+      /BoldBar {BoldBarPath fill} def
+    /DiamondPath {0 742.5 moveto -428.5 0 lineto 0 -742.5 lineto 
+		428.5 0 lineto closepath} def
+      /SolidDiamond {DiamondPath fill} def
+      /Diamond {DiamondPath .865 .865 scale DiamondPath eofill} def
+      /BoldDiamond {DiamondPath .73 .73 scale DiamondPath eofill} def
+%%%
+    /.notdef { } def
+  end
+  /BuildGlyph {
+    exch
+    begin
+%      Metrics 1 index get exec 0
+       0 0
+%      BBoxes 3 index get exec
+      -1000 -1000 1000 1000
+%     -571.5 -742.5 571.5 742.5
+      setcachedevice
+      CharProcs begin load exec end
+    end
+  } def
+  /BuildChar {
+    1 index /Encoding get exch get
+    1 index /BuildGlyph get exec
+  } bind def
+end
+/PSTricksDotFont exch definefont pop
+
+
+%%EndProcSet
+%%BeginProcSet: pst-grad.pro 0 0
+%!
+% PostScript prologue for pst-grad.tex.
+% Version 1.05, 2006/11/04 
+% prepared by Herbert Voss
+% For copying restrictions, see pstricks.tex.
+%
+% For the PSTricks gradient fillstyle.%
+% Based on some EPS files by leeweyr!bill@nuchat.sccsi.com (W. R. Lee).%
+% Syntax:% D.G. modification begin - Apr.  9, %1998
+%%%%%% R0 G0 B0 R1 G1 B1 NumLines MidPoint Angle GradientFill
+%   ifGradientCircle GradientScale %GradientPosX GradientPosY
+%     R0 G0 B0 R1 G1 B1 NumLines MidPoint %Angle GradientFill
+% D.G. modification end
+%
+/tx@GradientDict 40 dict def
+tx@GradientDict begin
+/GradientFill {
+ rotate
+ /MidPoint ED
+ /NumLines ED
+ /LastBlue ED
+ /LastGreen ED
+  /LastRed ED
+  /FirstBlue ED
+  /FirstGreen ED
+/FirstRed ED
+% D.G. modification begin - Apr.  9, 1998
+/GradientPosY ED
+/GradientPosX ED
+  /GradientScale ED
+  /ifGradientCircle ED
+% D.G. modification end
+  % This avoids gaps due to rounding errors:
+    clip
+  pathbbox           %leave llx,lly,urx,ury on stack
+% D.G. modification begin - Apr. 10, 1998
+  4 copy /ury ED /urx ED /lly ED /llx ED
+% D.G. modification end
+  /y ED /x ED
+% D.G. modification begin - Apr. 10, 1998
+ifGradientCircle
+   {0 GradientPosX eq
+    {0 GradientPosX eq {2 copy translate} if} if}
+   {2 copy translate} ifelse
+% D.G. modification end
+    y sub neg /y ED
+  x sub neg /x ED  % This avoids gaps due to rounding errors:
+  LastRed FirstRed add 2 div
+   LastGreen FirstGreen add 2 div
+  LastBlue FirstBlue add 2 div
+    setrgbcolor
+% D.G. modification begin - Jul. 23, 1997 / Apr.  9, 1998
+  ifGradientCircle
+   {/YSizePerLine y NumLines div def
+    /CurrentY y 2 div def
+    /MidLine NumLines 2 div 1 MidPoint sub mul abs cvi def}
+       {fill
+    /YSizePerLine y NumLines div def
+        /CurrentY 0 def
+    /MidLine NumLines 1 MidPoint sub mul abs cvi def} ifelse
+% DG modification end
+  MidLine NumLines 2 sub gt
+    { /MidLine NumLines def }
+  { MidLine 2 lt { /MidLine 0 def } if }
+   ifelse
+    MidLine 0 gt
+      {
+    /Red FirstRed def
+       /Green FirstGreen def
+           /Blue FirstBlue def
+    /RedIncrement LastRed FirstRed sub MidLine 1 sub div def
+    /GreenIncrement LastGreen FirstGreen sub MidLine 1 sub div def
+    /BlueIncrement LastBlue FirstBlue sub MidLine 1 sub div def
+    MidLine { GradientLoop } repeat
+      } if
+       MidLine NumLines lt
+         {
+    /Red LastRed def
+       /Green LastGreen def
+       /Blue LastBlue def
+    /RedIncrement FirstRed LastRed sub NumLines MidLine sub 1 sub div def
+    /GreenIncrement FirstGreen LastGreen sub NumLines MidLine sub 1 sub div def
+    /BlueIncrement FirstBlue LastBlue sub NumLines MidLine sub 1 sub div def
+    NumLines MidLine sub { GradientLoop } repeat  }
+     if
+     } def/GradientLoop {
+% D.G. modification begin - Jul. 23, 1997 / Apr.  9, 1998
+  ifGradientCircle
+   {CurrentY 0 gt {
+% The default center used is the center of the bounding box of the object
+      0 GradientPosX eq        {0 GradientPosX eq
+           {/GradientPosX urx llx sub 2 div def
+            /GradientPosY ury lly sub 2 div def} if} if
+      GradientPosX GradientPosY CurrentY GradientScale mul 0 360 arc
+      Red Green Blue setrgbcolor fill
+      /CurrentY CurrentY YSizePerLine sub def
+      /Blue Blue BlueIncrement add def
+      /Green Green GreenIncrement add def
+      /Red Red RedIncrement add def} if}   {0 CurrentY moveto    x 0 rlineto
+    0 YSizePerLine rlineto    x neg 0 rlineto    closepath
+    Red Green Blue setrgbcolor fill    /CurrentY CurrentY YSizePerLine add def
+    /Blue Blue BlueIncrement add def    /Green Green GreenIncrement add def
+    /Red Red RedIncrement add def} ifelse% D.G. modification end
+    }def
+%
+/GradientFillHSB { %	hv 2006-11-04
+  rotate
+  /MidPoint ED
+  /NumLines ED
+  /LastBrightness ED
+  /LastSaturation ED
+  /LastHue ED
+  /FirstBrightness ED
+  /FirstSaturation ED
+  /FirstHue ED
+  % This avoids gaps due to rounding errors:
+  clip
+  pathbbox           %leave llx,lly,urx,ury on stack
+  /y ED /x ED
+  2 copy translate
+  y sub neg /y ED
+  x sub neg /x ED
+  % This avoids gaps due to rounding errors:
+  LastHue FirstHue add 2 div
+  LastSaturation FirstSaturation add 2 div
+  LastBrightness FirstBrightness add 2 div
+  sethsbcolor
+  fill
+  /YSizePerLine y NumLines div def
+  /CurrentY 0 def
+  /MidLine NumLines 1 MidPoint sub mul abs cvi def
+  MidLine NumLines 2 sub gt
+  { /MidLine NumLines def }
+  { MidLine 2 lt { /MidLine 0 def } if }
+  ifelse
+  MidLine 0 gt
+  {
+    /Hue FirstHue def
+    /Saturation FirstSaturation def
+    /Brightness FirstBrightness def
+    /HueIncrement LastHue FirstHue sub MidLine 1 sub div def
+    /SaturationIncrement LastSaturation FirstSaturation sub MidLine 1 sub
+                         div def
+    /BrightnessIncrement LastBrightness FirstBrightness sub MidLine 1 sub
+                         div def
+    MidLine { GradientLoopHSB } repeat
+  } if
+  MidLine NumLines lt
+  {
+    /Hue LastHue def
+    /Saturation LastSaturation def
+    /Brightness LastBrightness def
+    /HueIncrement FirstHue LastHue sub NumLines MidLine sub 1 sub div def
+    /SaturationIncrement FirstSaturation LastSaturation sub
+                         NumLines MidLine sub 1 sub div def
+    /BrightnessIncrement FirstBrightness LastBrightness sub
+                         NumLines MidLine sub 1 sub div def
+    NumLines MidLine sub { GradientLoopHSB } repeat
+  } if
+} def
+/GradientLoopHSB {
+  0 CurrentY moveto
+  x 0 rlineto
+  0 YSizePerLine rlineto
+  x neg 0 rlineto
+  closepath
+  Hue Saturation Brightness sethsbcolor fill
+  /CurrentY CurrentY YSizePerLine add def
+  /Brightness Brightness BrightnessIncrement add def
+  /Saturation Saturation SaturationIncrement add def
+  /Hue Hue HueIncrement add def
+} def
+%
+end
+%
+% END pst-grad.pro
+
+%%EndProcSet
+%%BeginProcSet: cm-super-t2a.enc 0 0
+% This file is generated from `T2Auni.map' and `glyphlist.txt', `gl-other.txt'
+%
+% LIGKERN hyphen hyphen =: endash ; endash hyphen =: emdash ;
+% LIGKERN quoteleft quoteleft =: quotedblleft ;
+% LIGKERN quoteright quoteright =: quotedblright ;
+% LIGKERN comma comma =: quotedblbase ; less less =: guillemotleft ;
+% LIGKERN greater greater =: guillemotright ;
+% LIGKERN f f =: ff ; f i =: fi ; f l =: fl ; ff i =: ffi ; ff l =: ffl ;
+%
+% LIGKERN space {} * ; * {} space ; zero {} * ; * {} zero ;
+% LIGKERN one {} * ; * {} one ; two {} * ; * {} two ;
+% LIGKERN three {} * ; * {} three ; four {} * ; * {} four ;
+% LIGKERN five {} * ; * {} five ; six {} * ; * {} six ;
+% LIGKERN seven {} * ; * {} seven ; eight {} * ; * {} eight ;
+% LIGKERN nine {} * ; * {} nine ;
+%
+/T2AEncoding [
+% 0x00
+/grave
+/acute
+/circumflex
+/tilde
+/dieresis
+/hungarumlaut
+/ring
+/caron
+/breve
+/macron
+/dotaccent
+/cedilla
+/ogonek
+/uni04C0
+/angleleft
+/angleright
+% 0x10
+/quotedblleft
+/quotedblright
+/cyrflex
+/dblgrave
+/cyrbreve
+/endash
+/emdash.cyr % CYRILLIC EM DASH
+/afii61664
+/perthousandzero % PERTHOUSAND ZERO
+/dotlessi
+/dotlessj
+/ff
+/fi
+/fl
+/ffi
+/ffl
+% 0x20
+/uni2423
+/exclam
+/quotedbl
+/numbersign
+/dollar
+/percent
+/ampersand
+/quoteright
+/parenleft
+/parenright
+/asterisk
+/plus
+/comma
+/hyphen
+/period
+/slash
+% 0x30
+/zero
+/one
+/two
+/three
+/four
+/five
+/six
+/seven
+/eight
+/nine
+/colon
+/semicolon
+/less
+/equal
+/greater
+/question
+% 0x40
+/at
+/A
+/B
+/C
+/D
+/E
+/F
+/G
+/H
+/I
+/J
+/K
+/L
+/M
+/N
+/O
+% 0x50
+/P
+/Q
+/R
+/S
+/T
+/U
+/V
+/W
+/X
+/Y
+/Z
+/bracketleft
+/backslash
+/bracketright
+/asciicircum
+/underscore
+% 0x60
+/quoteleft
+/a
+/b
+/c
+/d
+/e
+/f
+/g
+/h
+/i
+/j
+/k
+/l
+/m
+/n
+/o
+% 0x70
+/p
+/q
+/r
+/s
+/t
+/u
+/v
+/w
+/x
+/y
+/z
+/braceleft
+/bar
+/braceright
+/asciitilde
+/hyphen.alt % HANGING HYPHEN
+% 0x80
+/afii10050
+/uni0492
+/afii10051
+/afii10060
+/uni04BA
+/uni0496
+/uni0498
+/afii10058
+/afii10056
+/uni049A
+/uni04A0
+/uni049C
+/uni04D4
+/uni04A2
+/uni04A4
+/afii10054
+% 0x90
+/uni04E8
+/uni04AA
+/afii10062
+/uni04AE
+/uni04B0
+/uni04B2
+/afii10145
+/uni04B8
+/uni04B6
+/afii10053
+/uni04D8
+/afii10059
+/afii10023
+/afii61352
+/currency
+/section
+% 0xA0
+/afii10098
+/uni0493
+/afii10099
+/afii10108
+/uni04BB
+/uni0497
+/uni0499
+/afii10106
+/afii10104
+/uni049B
+/uni04A1
+/uni049D
+/uni04D5
+/uni04A3
+/uni04A5
+/afii10102
+% 0xB0
+/uni04E9
+/uni04AB
+/afii10110
+/uni04AF
+/uni04B1
+/uni04B3
+/afii10193
+/uni04B9
+/uni04B7
+/afii10101
+/afii10846
+/afii10107
+/afii10071
+/quotedblbase
+/guillemotleft.cyr
+/guillemotright.cyr
+% 0xC0
+/afii10017
+/afii10018
+/afii10019
+/afii10020
+/afii10021
+/afii10022
+/afii10024
+/afii10025
+/afii10026
+/afii10027
+/afii10028
+/afii10029
+/afii10030
+/afii10031
+/afii10032
+/afii10033
+% 0xD0
+/afii10034
+/afii10035
+/afii10036
+/afii10037
+/afii10038
+/afii10039
+/afii10040
+/afii10041
+/afii10042
+/afii10043
+/afii10044
+/afii10045
+/afii10046
+/afii10047
+/afii10048
+/afii10049
+% 0xE0
+/afii10065
+/afii10066
+/afii10067
+/afii10068
+/afii10069
+/afii10070
+/afii10072
+/afii10073
+/afii10074
+/afii10075
+/afii10076
+/afii10077
+/afii10078
+/afii10079
+/afii10080
+/afii10081
+% 0xF0
+/afii10082
+/afii10083
+/afii10084
+/afii10085
+/afii10086
+/afii10087
+/afii10088
+/afii10089
+/afii10090
+/afii10091
+/afii10092
+/afii10093
+/afii10094
+/afii10095
+/afii10096
+/afii10097
+] def
+
+%%EndProcSet
+%%BeginProcSet: texps.pro 0 0
+%!
+TeXDict begin/rf{findfont dup length 1 add dict begin{1 index/FID ne 2
+index/UniqueID ne and{def}{pop pop}ifelse}forall[1 index 0 6 -1 roll
+exec 0 exch 5 -1 roll VResolution Resolution div mul neg 0 0]FontType 0
+ne{/Metrics exch def dict begin Encoding{exch dup type/integertype ne{
+pop pop 1 sub dup 0 le{pop}{[}ifelse}{FontMatrix 0 get div Metrics 0 get
+div def}ifelse}forall Metrics/Metrics currentdict end def}{{1 index type
+/nametype eq{exit}if exch pop}loop}ifelse[2 index currentdict end
+definefont 3 -1 roll makefont/setfont cvx]cvx def}def/ObliqueSlant{dup
+sin S cos div neg}B/SlantFont{4 index mul add}def/ExtendFont{3 -1 roll
+mul exch}def/ReEncodeFont{CharStrings rcheck{/Encoding false def dup[
+exch{dup CharStrings exch known not{pop/.notdef/Encoding true def}if}
+forall Encoding{]exch pop}{cleartomark}ifelse}if/Encoding exch def}def
+end
+
+%%EndProcSet
+%%BeginProcSet: special.pro 0 0
+%!
+TeXDict begin/SDict 200 dict N SDict begin/@SpecialDefaults{/hs 612 N
+/vs 792 N/ho 0 N/vo 0 N/hsc 1 N/vsc 1 N/ang 0 N/CLIP 0 N/rwiSeen false N
+/rhiSeen false N/letter{}N/note{}N/a4{}N/legal{}N}B/@scaleunit 100 N
+/@hscale{@scaleunit div/hsc X}B/@vscale{@scaleunit div/vsc X}B/@hsize{
+/hs X/CLIP 1 N}B/@vsize{/vs X/CLIP 1 N}B/@clip{/CLIP 2 N}B/@hoffset{/ho
+X}B/@voffset{/vo X}B/@angle{/ang X}B/@rwi{10 div/rwi X/rwiSeen true N}B
+/@rhi{10 div/rhi X/rhiSeen true N}B/@llx{/llx X}B/@lly{/lly X}B/@urx{
+/urx X}B/@ury{/ury X}B/magscale true def end/@MacSetUp{userdict/md known
+{userdict/md get type/dicttype eq{userdict begin md length 10 add md
+maxlength ge{/md md dup length 20 add dict copy def}if end md begin
+/letter{}N/note{}N/legal{}N/od{txpose 1 0 mtx defaultmatrix dtransform S
+atan/pa X newpath clippath mark{transform{itransform moveto}}{transform{
+itransform lineto}}{6 -2 roll transform 6 -2 roll transform 6 -2 roll
+transform{itransform 6 2 roll itransform 6 2 roll itransform 6 2 roll
+curveto}}{{closepath}}pathforall newpath counttomark array astore/gc xdf
+pop ct 39 0 put 10 fz 0 fs 2 F/|______Courier fnt invertflag{PaintBlack}
+if}N/txpose{pxs pys scale ppr aload pop por{noflips{pop S neg S TR pop 1
+-1 scale}if xflip yflip and{pop S neg S TR 180 rotate 1 -1 scale ppr 3
+get ppr 1 get neg sub neg ppr 2 get ppr 0 get neg sub neg TR}if xflip
+yflip not and{pop S neg S TR pop 180 rotate ppr 3 get ppr 1 get neg sub
+neg 0 TR}if yflip xflip not and{ppr 1 get neg ppr 0 get neg TR}if}{
+noflips{TR pop pop 270 rotate 1 -1 scale}if xflip yflip and{TR pop pop
+90 rotate 1 -1 scale ppr 3 get ppr 1 get neg sub neg ppr 2 get ppr 0 get
+neg sub neg TR}if xflip yflip not and{TR pop pop 90 rotate ppr 3 get ppr
+1 get neg sub neg 0 TR}if yflip xflip not and{TR pop pop 270 rotate ppr
+2 get ppr 0 get neg sub neg 0 S TR}if}ifelse scaleby96{ppr aload pop 4
+-1 roll add 2 div 3 1 roll add 2 div 2 copy TR .96 dup scale neg S neg S
+TR}if}N/cp{pop pop showpage pm restore}N end}if}if}N/normalscale{
+Resolution 72 div VResolution 72 div neg scale magscale{DVImag dup scale
+}if 0 setgray}N/psfts{S 65781.76 div N}N/startTexFig{/psf$SavedState
+save N userdict maxlength dict begin/magscale true def normalscale
+currentpoint TR/psf$ury psfts/psf$urx psfts/psf$lly psfts/psf$llx psfts
+/psf$y psfts/psf$x psfts currentpoint/psf$cy X/psf$cx X/psf$sx psf$x
+psf$urx psf$llx sub div N/psf$sy psf$y psf$ury psf$lly sub div N psf$sx
+psf$sy scale psf$cx psf$sx div psf$llx sub psf$cy psf$sy div psf$ury sub
+TR/showpage{}N/erasepage{}N/setpagedevice{pop}N/copypage{}N/p 3 def
+@MacSetUp}N/doclip{psf$llx psf$lly psf$urx psf$ury currentpoint 6 2 roll
+newpath 4 copy 4 2 roll moveto 6 -1 roll S lineto S lineto S lineto
+closepath clip newpath moveto}N/endTexFig{end psf$SavedState restore}N
+/@beginspecial{SDict begin/SpecialSave save N gsave normalscale
+currentpoint TR @SpecialDefaults count/ocount X/dcount countdictstack N}
+N/@setspecial{CLIP 1 eq{newpath 0 0 moveto hs 0 rlineto 0 vs rlineto hs
+neg 0 rlineto closepath clip}if ho vo TR hsc vsc scale ang rotate
+rwiSeen{rwi urx llx sub div rhiSeen{rhi ury lly sub div}{dup}ifelse
+scale llx neg lly neg TR}{rhiSeen{rhi ury lly sub div dup scale llx neg
+lly neg TR}if}ifelse CLIP 2 eq{newpath llx lly moveto urx lly lineto urx
+ury lineto llx ury lineto closepath clip}if/showpage{}N/erasepage{}N
+/setpagedevice{pop}N/copypage{}N newpath}N/@endspecial{count ocount sub{
+pop}repeat countdictstack dcount sub{end}repeat grestore SpecialSave
+restore end}N/@defspecial{SDict begin}N/@fedspecial{end}B/li{lineto}B
+/rl{rlineto}B/rc{rcurveto}B/np{/SaveX currentpoint/SaveY X N 1
+setlinecap newpath}N/st{stroke SaveX SaveY moveto}N/fil{fill SaveX SaveY
+moveto}N/ellipse{/endangle X/startangle X/yrad X/xrad X/savematrix
+matrix currentmatrix N TR xrad yrad scale 0 0 1 startangle endangle arc
+savematrix setmatrix}N end
+
+%%EndProcSet
+%%BeginProcSet: color.pro 0 0
+%!
+TeXDict begin/setcmykcolor where{pop}{/setcmykcolor{dup 10 eq{pop
+setrgbcolor}{1 sub 4 1 roll 3{3 index add neg dup 0 lt{pop 0}if 3 1 roll
+}repeat setrgbcolor pop}ifelse}B}ifelse/TeXcolorcmyk{setcmykcolor}def
+/TeXcolorrgb{setrgbcolor}def/TeXcolorgrey{setgray}def/TeXcolorgray{
+setgray}def/TeXcolorhsb{sethsbcolor}def/currentcmykcolor where{pop}{
+/currentcmykcolor{currentrgbcolor 10}B}ifelse/DC{exch dup userdict exch
+known{pop pop}{X}ifelse}B/GreenYellow{0.15 0 0.69 0 setcmykcolor}DC
+/Yellow{0 0 1 0 setcmykcolor}DC/Goldenrod{0 0.10 0.84 0 setcmykcolor}DC
+/Dandelion{0 0.29 0.84 0 setcmykcolor}DC/Apricot{0 0.32 0.52 0
+setcmykcolor}DC/Peach{0 0.50 0.70 0 setcmykcolor}DC/Melon{0 0.46 0.50 0
+setcmykcolor}DC/YellowOrange{0 0.42 1 0 setcmykcolor}DC/Orange{0 0.61
+0.87 0 setcmykcolor}DC/BurntOrange{0 0.51 1 0 setcmykcolor}DC
+/Bittersweet{0 0.75 1 0.24 setcmykcolor}DC/RedOrange{0 0.77 0.87 0
+setcmykcolor}DC/Mahogany{0 0.85 0.87 0.35 setcmykcolor}DC/Maroon{0 0.87
+0.68 0.32 setcmykcolor}DC/BrickRed{0 0.89 0.94 0.28 setcmykcolor}DC/Red{
+0 1 1 0 setcmykcolor}DC/OrangeRed{0 1 0.50 0 setcmykcolor}DC/RubineRed{
+0 1 0.13 0 setcmykcolor}DC/WildStrawberry{0 0.96 0.39 0 setcmykcolor}DC
+/Salmon{0 0.53 0.38 0 setcmykcolor}DC/CarnationPink{0 0.63 0 0
+setcmykcolor}DC/Magenta{0 1 0 0 setcmykcolor}DC/VioletRed{0 0.81 0 0
+setcmykcolor}DC/Rhodamine{0 0.82 0 0 setcmykcolor}DC/Mulberry{0.34 0.90
+0 0.02 setcmykcolor}DC/RedViolet{0.07 0.90 0 0.34 setcmykcolor}DC
+/Fuchsia{0.47 0.91 0 0.08 setcmykcolor}DC/Lavender{0 0.48 0 0
+setcmykcolor}DC/Thistle{0.12 0.59 0 0 setcmykcolor}DC/Orchid{0.32 0.64 0
+0 setcmykcolor}DC/DarkOrchid{0.40 0.80 0.20 0 setcmykcolor}DC/Purple{
+0.45 0.86 0 0 setcmykcolor}DC/Plum{0.50 1 0 0 setcmykcolor}DC/Violet{
+0.79 0.88 0 0 setcmykcolor}DC/RoyalPurple{0.75 0.90 0 0 setcmykcolor}DC
+/BlueViolet{0.86 0.91 0 0.04 setcmykcolor}DC/Periwinkle{0.57 0.55 0 0
+setcmykcolor}DC/CadetBlue{0.62 0.57 0.23 0 setcmykcolor}DC
+/CornflowerBlue{0.65 0.13 0 0 setcmykcolor}DC/MidnightBlue{0.98 0.13 0
+0.43 setcmykcolor}DC/NavyBlue{0.94 0.54 0 0 setcmykcolor}DC/RoyalBlue{1
+0.50 0 0 setcmykcolor}DC/Blue{1 1 0 0 setcmykcolor}DC/Cerulean{0.94 0.11
+0 0 setcmykcolor}DC/Cyan{1 0 0 0 setcmykcolor}DC/ProcessBlue{0.96 0 0 0
+setcmykcolor}DC/SkyBlue{0.62 0 0.12 0 setcmykcolor}DC/Turquoise{0.85 0
+0.20 0 setcmykcolor}DC/TealBlue{0.86 0 0.34 0.02 setcmykcolor}DC
+/Aquamarine{0.82 0 0.30 0 setcmykcolor}DC/BlueGreen{0.85 0 0.33 0
+setcmykcolor}DC/Emerald{1 0 0.50 0 setcmykcolor}DC/JungleGreen{0.99 0
+0.52 0 setcmykcolor}DC/SeaGreen{0.69 0 0.50 0 setcmykcolor}DC/Green{1 0
+1 0 setcmykcolor}DC/ForestGreen{0.91 0 0.88 0.12 setcmykcolor}DC
+/PineGreen{0.92 0 0.59 0.25 setcmykcolor}DC/LimeGreen{0.50 0 1 0
+setcmykcolor}DC/YellowGreen{0.44 0 0.74 0 setcmykcolor}DC/SpringGreen{
+0.26 0 0.76 0 setcmykcolor}DC/OliveGreen{0.64 0 0.95 0.40 setcmykcolor}
+DC/RawSienna{0 0.72 1 0.45 setcmykcolor}DC/Sepia{0 0.83 1 0.70
+setcmykcolor}DC/Brown{0 0.81 1 0.60 setcmykcolor}DC/Tan{0.14 0.42 0.56 0
+setcmykcolor}DC/Gray{0 0 0 0.50 setcmykcolor}DC/Black{0 0 0 1
+setcmykcolor}DC/White{0 0 0 0 setcmykcolor}DC end
+
+%%EndProcSet
+%%BeginFont: SFTT0900
+%!PS-AdobeFont-1.0: SFTT0900 0.3
+%%Title: SFTT0900
+%Version: 0.3
+%%CreationDate: Sat Aug 11 20:23:23 2007
+%%Creator: baldin,,,
+%Copyright: Copyright (c) 2001 Vladimir Volovich <vvv@vsu.ru>.
+%Copyright: See the file COPYING (GNU General Public License) for
+%Copyright: license conditions.
+%Copyright: Converted from METAFONT EC/TC and LH fonts:
+%Copyright: ectt0900, tctt0900, latt0900, lbtt0900, lctt0900, rxtt0900.
+% Generated by FontForge 20061019 (http://fontforge.sf.net/)
+%%EndComments
+FontDirectory/SFTT0900 known{/SFTT0900 findfont dup/UniqueID known{dup
+/UniqueID get 5124734 eq exch/FontType get 1 eq and}{pop false}ifelse
+{save true}{false}ifelse}{false}ifelse
+11 dict begin
+/FontType 1 def
+/FontMatrix [0.001 0 0 0.001 0 0 ]readonly def
+/FontName /SFTT0900 def
+/FontBBox {-210 -359 1376 844 }readonly def
+/UniqueID 5124734 def
+/PaintType 0 def
+/FontInfo 7 dict dup begin
+/version (0.3) readonly def
+/Notice (Copyright \050c\051 2001 Vladimir Volovich <vvv@vsu.ru>.\012See the file COPYING \050GNU General Public License\051 for license conditions.\012Converted from METAFONT EC/TC and LH fonts:\012ectt0900, tctt0900, latt0900, lbtt0900, lctt0900, rxtt0900.) readonly def
+% Copyright (c) 2001 Vladimir Volovich <vvv@vsu.ru>.
+% See the file COPYING (GNU General Public License) for license conditions.
+% Converted from METAFONT EC/TC and LH fonts:
+% ectt0900, tctt0900, latt0900, lbtt0900, lctt0900, rxtt0900.
+/FullName (Computer Modern Typewriter) readonly def
+/FamilyName (Computer Modern) readonly def
+/Weight (Medium) readonly def
+/ItalicAngle 0 def
+/isFixedPitch false def
+end readonly def
+/Encoding StandardEncoding def
+currentdict end
+currentfile eexec
+D9D66F633B846AB284BCF8B0411B772DE5CE3C05EF98F858322DCEA45E0874C5
+45D25FE192539D9CDA4BAA46D9C431465E6ABF4E4271F89EDED7F37BE4B31FB4
+7934F62D1F46E8671F6290D6FFF601D4937BF71C22D60FB800A15796421E3AA7
+72C500501D8B10C0093F6467C553250F7C27B2C3D893772614A846374A85BC4E
+BEC0B0A89C4C161C3956ECE25274B962C854E535F418279FE26D8F83E38C5C89
+974E9A224B3CBEF90A9277AF10E0C7CAC8DC11C41DC18B814A7682E5F0248674
+11453BC81C443407AF56DCA20EFC9FA776EB9A127B6FD7269555EBC32D89BAE0
+4B9799799ABEB0270F362A30F09EC8C7BF92C482879979DC09A88767F3C5F589
+03119D12F15843D2ACCF31B4C9193425A488EE58F242721BC673123007DADB6E
+7B115D68D9CDC5500B55489E2D9B70BE95BF914622FBFFAA90DA4DA56A74A352
+EBBD5B6FB51B00C496D868F5BDFF84F7477583462B651C1BA9043CC76B59AC75
+31E638E127FC6BA8E05AB2DBFA5932CA1E91A5F836F926EC45606475A28DA123
+CE0DE84F362B96F7040565B7553C3EA04C1E8BF6021926AFF341FC3911D523DE
+4253748404CB7E6C96E03F4034C6AD3F2F85A822A9A1C22C7FA6F948169DFC5D
+AF133E559C9BCFDE6EE2255BA3EBF4EC5AD1AAD965DCDC39EC70CC08AD400C5B
+DA324537E2485547B4F55A7E408D82DA68ABD328D8927C6AF1B0864AA2ABDEBF
+944E32CBE58169ACA0B986AB734B6B2A76701AE458E014A5B253D463DA869AB7
+155FAD3833406055F846E69F3656217537A11E55597654B424C64DA3D9EFABFC
+F74745760FEED7AD0DD27A467FDBFDDA0492C51AE333FECB5B3FC571F8C24BF7
+185459074890E7736893B3DEA18C4B672CF2204B9DA4BC674CAF02A9CB7F4957
+BA73574F0BAE730309BE762DCB5D865744F4CAB8E973831B0EFA0D8BBF042D1B
+FE91050B336098AD8F7924BEC26BEEDA5FB4E0DEA1A2A3DDD884A5BB31D8E50E
+55CA59BE636287DB3592F2ECD7D42AA6C211D39C66D3BFD546F205AFBD07E21D
+DAA61B5CC76DD51ACBFAD1109525FAD65A6F26F25805D2869A0D0140CDCFC363
+85DB08BD6B691F3B51CC0A5055BD189507FDE4355F88717317F2235675B70ED6
+C7D1AFD5D034F76A30D3E50441EF2F23A7CEA70B531BEA2FA55ED69ACC71BA8F
+E2606ACDA680B986B2A81720DA1682FA961B28E2D2C40113958D45B46C923FDB
+9CA28FE7D4CB3C5F324F6E968CA734E93E9C7430D3331F2BAE21A8F5693E13C4
+F07F9ED177A7138CECBF792E858F984449F75DFF26B5CFFF6DD71772208475F1
+6B1ABC250EBD0499F39B9DE1C01CB88AECE6C49DF5B27A2F5EA8E5936118C82C
+EFE45C0F9A9CE84DBA983A57ED6E87C6050515C926AC4B5FD2FAD8DB80B363C1
+5EADB97D2D2821A6E143EE82660D0A3E55536F7EE7F2BE5D037A816A32B60738
+CF6ABC198C1CD8BE05717E477A80C12420C7B980499762EFEBC863B517D0FAE9
+58B1AE22F42CB1309617112BF97FCAA61357D313250F99FCA9749AB90EA9E9BB
+F480B3789198EA9D7AE549D07BDE33CAAE7D910CAA9B8DE6EDB8AE9E5F1E1A46
+96A6CB3D3AA7AA19A6BC69E4AE10CD7F47F8898404A5F1235B1FE08E599EC4DE
+F6D85E5EFB46A4BF1D1363830B08798381D4EFCAB66EDC741FF82ADFFA73FB88
+284D6DBFF8488FEC4BF77DF28FB54A0B7960E6CE6FE891EBEDB544A8AAC9501B
+F24F09603F59505D508E4B23158CE23B1F3CC92712A30D148BE81B90AC8C1921
+8A7312F7CF8FDE844079A29C7F1AF9596D79D1021F0548EA015DB743767665A6
+F9CCBFB579C7D646D5456D7BAAC243563D772C01412D78BCB1AE5C286480C11D
+C794A68183BFFCFE67A43C74251D59564720D8618C0248CC0E917C0A37052156
+1C129EE46068B2F9A3E3127304F61496FAAB1C516BC69F9AAE073BF6D2044176
+1A346C5B789C09DC52BFB828DA696755221B8F4EDA6891AC6C904BC672B1C2B0
+5A2A8C4D93C65ADCFF9E62613F0B45ED09FA1C06EA7694428406EEC55C55F66E
+EA6EB88B27A99E72034B13850871F2D8DEC1C58C964A55168C5B633F74983F64
+6235159FB2CBAD184B30DA0E85BF8B5AD33EDE2AA8601FF1E8581D35847880DD
+C425A05C0693C54E1D81CFB1ED40B86139C5BF8C2DF5E03AA36A2DA547986659
+B6E9DB28AB7AFD86243B8695525E96EA3FC5083A659B08B394D7B2AB46D32E78
+64028667523AEA15B93388A09158D172E552BDE027C587B67E30EABA2CC7AC55
+0604F989F8BA8188388A22DBE2BC5F9189B82BA11702DB49D07413F0AA5AEA63
+1E3F33F01354FD76E3665258E592377001D07F910609A269989FB1D05E1051A0
+191BD7CE1C5F329C8D79F21F286DB2720D1E5C20031B54FD182D5B7AA65FBBB8
+EE160C5A880FEDFD6A9F52A55A96477496090A1E8EA193E433887FDDFCD8C0B9
+5623D41D063D1053E4E6C9413BD1329EB9697E31B5860C1C8AEC16AEB07BB4B4
+5B48CEE3C772D28AA613AE6939CEFA2334E18D3E3A6F630C2794B6F9E8064FD8
+284B342AB817966ECD04906EC6032F5A50ADC76081D6AFC51106DE8F93B584C0
+9E2A552C7E273E297646EF66251309151F49ACD9B41AF73CF76D67AF6AD8067A
+C1E2C59FF70BC37E5D1EAF4290EC07B87E7932FDD6B0AFEF918EE87AFD667F31
+330DBDCA505F147E943240835F1DF915E3EE1449E14321DE0F52B88C424CA518
+368A69BCAF3542A5E1A1ABF83EDD398FB64292931B4EE916A11EC82D3D7B793E
+943DA6E432DD90DF6627E272C96E6CFE7F319F6BE23E2BDCBDCE752E0BB11AAA
+E5D1C84E1541DEBBC69E66A8B8747F1E23A268F6E9FDFB64C5B8FF6BBB1A0DC2
+95F185BD50F47821BA7228402B07355636A050AB2405848D48535131597993A0
+4EA5A7423565EA5CAFD899BD2EB9FDE08E223AEA0B983D307FC7F32C6B5A5468
+8943AAA862496DFDB585EF2F734E19A5612E52F6A56F1DF97DFF141A13B4CBD5
+4EA43D5DF9FA8131D6FC5CADD6159B8A369CD0FBAA1F7953446D02215EBBB834
+31A39A419D02110744650ED27C36E1B3A91445A68313118ABAD01DE52D25D0D4
+BCBD0A6B603C3EB33A972B7074ED1D91FEDF65108B7F624B664E687318442672
+1C5DA06403D71AF2F4DDA249CFF0F704D48154B552C426E92433B667FF0CAFEE
+647F1F956F983EF63A619FF476151D5E496487C433AD96A8D78DF7D6D6F574FC
+73EE8321ABC38C8367A72816BD0AC1D53769B0AAFFB43ABEACA554793C52901B
+D0B3ACCEFE81B15D0F9D745A11476D9EDED1B749AAEE737E1F08A668D10D23BB
+4E1224860E42FDAE3D82BE2ADECA0E7DD2D614AFA229EB5B876D8F508A6E0DC6
+A99F3FEA3B81510CDC8B83ABA7C99CF6C86DD73269A2D7E4A3B40AF3C135980F
+AAD50984CE0057CC9E9E38304B24690CC0C77A48C4C47666A768E032F019CFDE
+BDA07202862E5820B2BEAAB5C222840348B9F0F551C7321C0A4B96D027EC3248
+F029EF66923810D739E0B8E6F046767755C6CCCF1A18FE77A4EF1823AB5420A3
+3A304E221FCDAEEC87479170E63A33CA09252272A510E9338B943B8B70544BF4
+7E29EE538540F028E7A1AB8605A0588109090DC2F3427C037A8E11B600108743
+8C732BE0A4A207CCA3D57E7D0B9F515B3BE991CDBED53C70C22EA45742FE86CC
+922CD55AF17EAE871FE9429371452529E9C18DD375FDA056C79426E2D2A4A4FB
+26AA849F826E6A5A332D908AE54ECC409E29BF6BA9EDCC1A9A7B7859E09E26B1
+C42F6A8793EF3052EB21AD0090C7FE4478A0287ECF84ED1F31297F946B399D71
+229DB1CC4AA4364E5CDB1ED7EE7BCE1DC493E121F7527D57B5AD69E7B7491F51
+33135D8E6980EC641F96BAA7F4949DE91C12DEE7D75D8859D6BB9BAE46D2285C
+332B0DA948B28C136C35A7B01FA2FC7AE34977A3CE5A1BEF7B07437BCA9CF6B7
+34BD5DE5C16AD292676B6B6F3E4A1DD0EAB097C1D08B7AF6746AE14CF03ADD9C
+05D61849B6CFCA0C6CC611484CF96881C9DE8E35E4DFC1ECCB72FF06868C85A1
+E498F68F23771A614A2B775699112B37A335ABCB253E32CF36EE4587A389E953
+C69C0FF4503D96904E0FC10EAB717F018770E63B49DCB0A7B02EFC9018C8AAA4
+5536B1BE420D7BBB54C54299F87337FF1004CD7FEDEB32DA629530931792E1ED
+997FEC34045F480B7DC06B0A3F746C4B4FD49180DA9120DE8342867638992945
+6D8C5FF3E1D6F92429213C5D514D0E022A28219A566011A696952F86326B2FAD
+7F5343DE3DC356A38F99E829EC1ECD06153E02E3CBB53F90E8C45F467C74532C
+3942FEFE4FB2F5CFA1A48057A9AFD9E398E2CE08A321FA17BC6771D05CBBB354
+DFA8AA23C6D26468A98C3DEE8201DA4BD452FFD796D7233953AAA169865A3A8A
+772FDCA0AAB2D0A79C69266EFA18F05909C0C3FD6295999D26CC5AC256461B4C
+D27F79543218A0B72F9E525A591164A34A3D2A06005F0B1449B6071267779F54
+B366DCEFB9C2E638A2FDFBC1600F8CBE8A2B4D4EDBF5EED6F6556B9358CF7CA1
+5E19845541939161D556F4D76C837E8BCAF96DB74A1FF2365BB8B4D98179D741
+47B10E0C15BB9E75E7CC2D89BCFC0AD02E76C6F3C6D5FBBFD839A3BF9FBCE8ED
+F3708838ABA2015B2BDA2F53B5FBCEB2FBE411C3D514ACB277A32F66F7D67159
+0745F6C7F75E7F999C3A3B589C084097F8B0123EF11BCFCB88356F8E30F50618
+EEF09379E0D22D927EB739FEDE524B626DE3E7CFA3813627C9C95EDC9224B1A6
+61C49FF0DB96D4D8CC68EAAB082B6BD1834CC9C126EA7CABA3D64651D2EA2A37
+E69163A094BFEAD673C0547ECCEE160D5D43DE90928A5C209F1BF2258509B96C
+871DF292F21E65862DC6BAA9A1CFC669178BED04DA5D46944804151588171BB3
+C46FC248B492FE87118CCD401169EB626F06906107000D106B4316639BEDD9B7
+5D12CC6D254258F030E6B1E2B15572D6DE69A5104B88CD402A78A1CFC2ADF38B
+E7D8CF7A47F0F0F06407616B67377AFCE54ED9CEE418AD1D871496635D40C5D1
+6B2748F7AA11ECEB09516E48BDA0B6345012C6B2A266AFC69216ED88AF21E793
+5A60ABDC18C8437D6D3127124A696266ACC6E79A4C8029A1604DED48F9DCFF78
+0F4A4DEA279E9BB4692815A1D66C2445F23BE6AB371B84733FD1F6D827D027F9
+C6169CEE1DEB92B65F5F38528DC642E79A87C6CBC6799EDB74FA19844E75A555
+6F4485178AF9CE52C264AB7FF655515F69C45B3E595A1A18FB82DFABB1D4CEAC
+6B67BFB4A765424AE67B6C4BEE97B82D98C92018A9DF74CDDA395B182E54F91A
+C5A3DD5751534B98B48CAA484F3D8BA213A5920EB49C47231DABBEC13EA8EA94
+0624C213B81B38FB10CE1710244A3C9B40FE83E370C18754A072A9F50927843A
+4121DCB208D2950CA2403B5ED72FEE807E1C39C0DCCF5DC37FA3615B0C65D62F
+29006869A9ECCEB47EFA01442314E888B4858BC9D808AA5F143E514CCAC037C5
+7497B9DE618D89BE0AD2E7DEF9157DB72BA770EAAA030FB00E90193ABEA818E4
+5E4C76E75326CA0F4722EEA331E1290EB2E523C77D35509DDA22FAA429E9EECF
+0BA4159478F6673FDFB4C15BB8FBE32E947194B3BC640DEC6DC85453180C05C9
+4A831E32B454C5336FD22731E973B247A45537BEB627DBAB2B1CD10296A45032
+BEDF70DA3D18F58485292034A323C4FE565A23DDA884846749A44C46DEAC0902
+57E37EA09D203DA5880401F65BCE82327DE9FB425D83E2E9279E26FFEEA568A4
+4228934E7CE8FB0C4C461B53540D1E364B669D1E89D91832003DC29E3F55E91A
+956D2BEA2E3388B7669E9DFDC5CAB015FFC68C2777A20B04F72766E40F40252F
+CF5F1E0F84FA45CE49DCF978409C875ED81257332D695DA4099B3E9C45E83BBE
+BB38B49B64354AF1BE675DD3706EFD8663E377756F2524E15616C89064E85D9D
+E2ECFD9E90DCAAF525B4F122ED7242E5EC49B9F05DBACED3EB64C327FD664AE1
+2D18412C665DC548F3D49370B107DF4CDFB35E12A97979FA3E9697AA2286AD21
+5A3A0F87A4F3D01D7D241CFF97AECD368CF4C5A37CC7A5755F32219AC4CC5A9A
+83AB186AAFBCA381461620E9798340695E371E7D25F37F13ABDC5468F9F93CA6
+FE960690F1179D2A448C89F78B95997DFDD4214B29CD07CD16B84274A2EBBE33
+A9D38B856D7A4043424A33F8536E1A71F9C683613A71B78FA84776C8E73DB6FC
+E153D59091EA3A0CDDA97A3E94FDF2A734C2A57D6F74CBCEDB2F155B364D6CCC
+819C2B9205A2FB2C9E51F317F66EF50384E996B2091CC3A4501D2DEB35B9B77E
+F6DCEA23B908782A7A90F6CE8947E30942813C427DCEF76992BB0563112B981D
+F35652A717F7C85B7ADCC84CC66FB122E9165F1DAE9590E95E9553939EA78C93
+CFDA6D41C8906394051EE21A5B8F369D04862075A7B0B9FBA6ECD5EB18E1674B
+5A595246F0504828CABE534F691EAB9C15CF4961A0B01EF54985B6D547371CAE
+AE3357C6ADE80CD1B45AE87AFC8344A595D8C7DC3A90EC29A9EB44611A5AEC8F
+917DCBD017977C164C02A63E6427B3261641535ADEC326FDAA1CDB5DA1379B93
+6A27CA750408F3B1538571E54B088E1DF6C733653200E37C01B32405703CBBCB
+D54FF389CBED4B6DA1C16C1A8850765186B7CBA1B9E15A2791BC6BAFAA9DBC26
+62FBFC054BF2BDD539D18599F7C7DF42825A6D7EC6EBFA4628993160466A97E7
+457C152408C5D3B0A9BBA985240E224E75F9D0B381ED280F47EC7AC4F681F25C
+8BD5F511368B8CF0EEF3CAD7CF813A1AADD7AB8E4A00A2789D0139AD178B51E3
+67B2FEC832F7025DB9FB07DCC47D0F5E713279F6A55E41CFCE9EC06DBF801D59
+BD712C3D197C2BB6D0BA8F7CE6064BD5B4B021305D890A7A84E0D16872FCE17C
+78F6104919DB780E08CBD7AD000453E8D9A3C6F5A6C494134E5EE71477A8BCF7
+97E6262193E484B189FEF5B52E25F1C61266D69BB9B5602CC7A6A194CC0EE9A0
+8E93A5EBFC43EAECA17A7661579614B774A5172B30FECF39088073F54B050AF7
+677965936B76AEE1095EC2D3928655686C9223FD391C602F9AC2A96BA1027B16
+74A6E750F1043C9355B260DEDBE421D07DA770A2C521318376B9F7F7D5C83D50
+FA5B19BCBAD7683E0FCAA1F3168B172D8D0DF5F2755CE27764F48B5C0EB93E02
+78512C731EB51E416CFDFA1BE3494E28C0B5A3FCA56D0FB2DB39563170CC0AFB
+22A473FD9AD315F5D0AED491F5A9AF89A8E5FA58C37507FAC44B9D52EAB266D7
+BECD920077A5AAB913B37851198D850204A75C500D846460800A96FC059F80AF
+414EB0910331C95536DA6CF6E6C568E43A836336049C16095D8BB91B6DE418B0
+6BA5D7CB356CCC0A773A305E73140E649679BB2BBD6B3746F0DEFD1A13E8F2EE
+CA308B3944CF5DBAE39BD4F527263A4E79DDCC1CD01DCFBB503DA2F72BA0D6B3
+7996471367972FA36DAB16FEF26346BD6BF4279B262782323CB8F4D5B9C84D19
+DD5D5192C3202A0BED111F6E71BF1B92DEF389137DB9C12D82E363C222DA5A25
+A364D04F32E21E3DE2D491C0977C97B1C42E765491F6D8810E756AB42CFAEB3A
+A0481FA2B6DF15A841C36F8F24092FD64D8B0B9EE92A09EBA7CCF85EDC7A3B82
+2D7FBE0B866280FC381431B657812873B7801767082A6D6B606A0414A29ACDB7
+C396965ED85EDE84A61357A57D75CC76393F4766056995EADF254682DF217949
+CB35C4CAF0B0F36856A6E63D1098B7AF17C5778CA0031CC2EF890147D6A5FE2B
+1F7954F2E0246293E922E0C8F49E17E23863ED40D5E528E453147B7B20AF0020
+E1BE8745EEAFF84349E3F2C1F1DBEBD8E9476564BEF9F513ABA8337D11BC4F82
+2015C0B610044CA8F2402B358EC6CE0FE5E5C4EA29E5ADF10850C5BA9726F9FC
+85CDA07C5838831AE0ECAE6574C47548CD31F6023F85E1E4E993073263659BBD
+109420C68C35283BD2B2232F94123C187EE532F45FE6CD98BD743A19C6C86AF8
+88484EB267F1C0B014E2B65B5E8050165ADC4C9388DC7DDF4D7C8273210D6663
+A6444ABDAB8AD44CC6663B1B1D866FA197A055EFDADC9BA1939D65DE95D81DF8
+AB287F2CA6A8D321FC39236969621B7B86948DEB47FC6641F2DE49AC73813C1C
+9F0ED2693DF79BDC40B3D51C6A3F722B2F6C2CC39F68B050D58F9145643572C7
+41F526E634208E6D5C5FCEDF60462FA7B127755278B8231698EC0294271C4DC6
+58037300F1E113F7F59FA888ABF24129CD78BC48D4C4F811CAAFE4284078964E
+3A13FC6F94636839CF10752861D69BB8123DED8CF7913BAA24DE7583D27A5283
+4C1052D0F06F4864EAC69C588609A4BFA41FF8F44172D2EF5523597275369166
+F32451DAA179A02F9EBCFA1387594F6D8E7D37FCC33D67BCEF377B9C8FEE1DBF
+D0239222A4E19A8C19D99183436FB27AA07B82D0B950C964A768507BD8813B20
+E099A6F28C893C9B3740E54910F76E2EE8D20B98DEFD92B8171555B8066340F2
+0A782776BA214C821C93447BE2129D577BD8E0D6A70A9A6E149D6A9587D636A0
+FDD2D813AB436D71D06C2F55D4630FD97B5EE4B04E0B4799F3248FF295AD6372
+1BA69D895CBC66B7C1C54870A213CF09105FEFDA9A31D6E8675F569097540E89
+0C2C693B5E51D15A9B58010C94CD87A026993C9C3B873F2050025DD297F619A0
+511605A9D1D5A3653DBA3BA2DCB64F4AD5A1031F9FE827DFA3C487FBAEBE1565
+8BA2E8AA6A8FA47F1AB1477AB32752C312FCA418D20D88ACE727F2E8F0032886
+DD27F38802EDFFB5E3BAAA4AA7CD8A238130E6CFA525E3B9557B154D50CC20D9
+4E2ACC5696155ADDA8FC8ADB15BCE78F8DE275F876335218CE4D4C66C5988D92
+91828004BAFB7B0D395E158F5AD72C7EB3C42AA356E071E63CD2ECF4FFD7EF52
+8214F30327AA8E1199F222ADED0EDDBE3FBC8272FF827EFBA4AF9606859F901F
+174AB176D508B9793D2EE713B1A5F225C73FF4178CA4DBEE8729D843A5A18DE6
+4BA2C19D04EF925650F375EAE6677AC6AEEB12685D7D153D09606FC5825DBC10
+63DB2B939722382F837F4A4926432ECFDE8CACCEFD0E0C654D9E97727A3B9E7B
+08C675B57D8B96F9181ECE959BA7204565B58F38ACA52EFC8D9D95FBB46A1642
+6F00021E7720DA1F577FEB3FA5D85CB00904E0E912CFFD896562FB568CFE3D6F
+F9E8E691AB14CD7577F10EAE1ED416C43461A4FAED447E008AA667881F7CA534
+E44902D3DC2EF0E1ED924FC62ECA4C3EF29948A6B0BFDAE26BADE0BD5B5C6CBE
+BDBD569AA2774EC8BC9687541FD9DEF9F2F8521C291662867ABE42566A325A81
+5A6BAFEDC399CBDA48731A5F5B55A926C1F42BEEAD417F80EA659192C58B00F8
+F01F591763F16FE1D501600CD9A100CC59024FA740C5E867BF2957056B497EB0
+9A8D6D1A429EFC799DDB57D07CCA59A563B4A59CEC7737F9D9CC853717D9D8DF
+3F331619ED26203A2B353C3C98242CCE4D93546A32E8BB426574719FF18BDC6C
+38A4554FAEBF4DE790CDDCB68CC6737AC262250CDE48768A25850FA383485261
+0E4AEEBCEF943451362A11E0BF7854BF4C62494DDFF3D8C38A555F0E9ED4FC26
+425B1B3C75875E95661B0A404272B8F384934E535288FDB00A1F8412E2606804
+90FEA4A63F8C449E3AA3082DEE93246DC5D6C0E5F9DF2D39B9D3A902240ECFB5
+C62C42B8B0B6ED1D0EA05E5B55FBEB320BC9B919A212FD2F61615232E12A42DC
+702E8F840292DFF77E0D2C8B318E8D29C75D758E668485BD06F2CF2A4A7A73B4
+0233B000DA6224A2584FF6FDBEA819EB8F59466232DD51BDE9E8510212DB574A
+6133BD6200033392BBDB3D0DE847FA2E38BEFB1CB3A46FFB3CFE695C7859A4EB
+3C63A26C507400FC27E0BADD73CE2632DD65FC5F9B5FA2D57748460EBA113792
+706B5D8503188D084AD5229FCBF7E30C4FE25D727637A722B4E2012FE5806735
+A97146E3CDA3D88B80D79C7D48B5A11B07D918655BD346019D306147A10C05A9
+672D21A7A879C3EFAFEE14E79C4C60FC2937DD63EA4C923A6805FA1CB37969C2
+356F93886BBDEB6F424977CF93A7926D1A05FDB2436FEDD2F3BC578D0119E2D0
+9016E1AB71D7C747F3FC3312E0CBAC4DB17DA98F338822A064FAE111FD6F8982
+DBC1A8E3BB231F9B21F49BBBC628F318087BA9F1FC00D98E345442129638E0B1
+8AEF86833EEC02FC813149FBCFF9B1B825835DE4718BEE8D58B32C010F4AA164
+3FD07D94F9510557EAA9071AF7442DBB7F2AD3895D53658D1A5A6FA65454A1E4
+CBEA5EC1475CA61BBCCDA82A29730DB7F47328F6AE8A334C591584F1896B5F98
+55F87660183E68D90535BEBA631C1B785C7CEF9A92103BDE885AD40E10979FD7
+47353F033446476E8D4E958A80FA14221F9AC75E2E7B1E7BB6D8B46A3CA47F0F
+2383A6052E734E79FCAE1DA5E0B222ABDF7DC3B76EEDA374BF4D2C4F6A762E42
+5EBA2FCB5BCE94E2B1BF69771FC67E56CEA69AFD141242589D049A0BFD3B9D2C
+861D8D052DEB37AB594D2A1D7C6AA02151D90FBDAC8494A80BDB1FCB3ECFCBE3
+8000C9F508DE7F5D91FA20CF96E4D87CD9A5AC3596210E0C08DE439F64EDA6CE
+61D11494709CE3C88E4DBF4B6BB96893386573F84EEF9F9437CAD68D68F5E9C3
+58F5300E46BC14137B7DACCE3F579179DD63F00985881E81E97685E5FE5770AD
+F70048728D0EE1112BCA83C3D9191441189CD7822A9589595B841E836C90A7B8
+F1CCA6A45E615E64359C00C372BD31C84A1564CD8376585094B9437176290ED2
+FF138FFDC15DEC2AF1F839DD161168565E00056FDEE1B7D8D042D01C6B883608
+35226123B9138C1C86B522751EE056CEE265838696F8AEA9B98038407EBEBE67
+3D424112ED9EC7351B2010CDF0ACBCF6FF898787A43C1B428B8A11767F5CC4C5
+89974CD2EF2DD0599C23720E6423DCB212B4315DC7B9ADA3A7F8445ACA65DA7C
+E951FA547844F40F5E88DA68BA2530589783DBA37FFE0A7E9B54C39B461DA073
+DC1BE4A9D08248E24A92B3AB02465D50C5D1DF71C76C826F7C46C02E3D1C5A4B
+4AA0E78957C95F4E3EAC4C04C331CD7A584E1B6102C1BD6794797791A2531771
+53272CB74F740579C8460FA674A9AA1D52FF08DAB3E30B56D88F2DB4AAA1C8A8
+1EDFFEED7D4FBC136202623EFF3B3871DC14DF1DBF27F59CABF63001186121ED
+29020CA4F55420B3903161284647ABF2CB16651727C977E3B11B551AF77A5360
+273F9D31AE448A48AA4858E5B4D68232F56994BCD74EBFFF394647CB8685EEA1
+48C38EB82CF68A50A7528096291FF05D09183F3A20D0D955F69FD83F006393DB
+BC3B09DA619120E08EB1F262505F233586B7F25A32DA1180D57C1365CF9E6F98
+662F653EE9AEBBE0CB443AA946A7630D18741F93377A494C70B6494F2AE6120E
+BDD79275E415097D5B119EC69B690BDE2D5DCAB19AF5268ABFCC3B98128FD562
+B19B5C686FB6738207F7E9737CEF27E62A51ABFE4DE5DF820F1C4993636C039B
+663EC4CC99B6A1051D63F6CA97943169F8BA8FBF0ECAE0432930CFC34EF4FD31
+BE983DDB7FC6B952CC6047885F4105DD6507DA9EA37879A646C17B55516CF425
+6C19CF472A0BC86A7787F4D143212C7D0BE9DD100DBAE19A2893B59E9A9151A1
+053F96BD81DCCC545F38B4FB01CEDD4CBBF03DE6C212FBD94F4162D37A442524
+E60A175FB46282023C506BCC7DF34CCFA5490A4E92659245514FB4863A86AAD0
+9CE071C368C3384E76924D0A6D9863794DEAB1A483ED5B0082606C7F1BB4B340
+980EDEF899076CB5C231425C5E1F37426ADE8FCA96F9F3DD6C73DE2DB52466AF
+31CDD0B7DEC7F9D5E170C47AFFA0BDFDDF66CDC5D476CC1051D5D154F98FF7F5
+9B8EBE03E1147E9B5CA6A239E6FCB7C933F94FC02C79B3E9EAAC2C90CCF0C8ED
+A14655B90AD8EDED8B840CBDAE57FEB8B49DE285FC42B2380F9DA77BDA7D2964
+91206EA73EF02D77AEA448765D626DE910310E2DFE4D5CC6F5C04DD99D4FA6EA
+AF63F6736A78D495156D4D317B47BE42354627EC72B19EF76A724D7F5A3F04F3
+96CE83F054988DBF279056B6E5B9A41774A46336B100F563ED70B813003E8130
+F855C0575EAF4EBEA0BFA1568D34CB9800A88B16F166A4AD0D7458B8430E9C42
+B49774F83C533A0528C013A3BF82C8B12B9C865C8B6D6512B98F8F6684D7361F
+18A57CB421E1FE2A5F6B8EE9211460C2E734C4E4FDA6125F36422C2A6C3105BD
+FCCA4B1030FE8344E4A5B6C8DB9731E6155BE79E19EF3AE645D669E908774E1F
+DB26DBE389CED1905CFFDB9AE705C6818CE41E131C730D6B88236E1F6B6A6C84
+5E2362FF1C17DA3D4B6BCA89BDB69068C7811E1DBD847828EF874F28F2999ADC
+F450657BA98D82D944561F1DEB1CA295EA0DF7F875BAB14B9ACC271208DE7087
+0D97AAFE0123F2DF9ADAE02CA78642C4A5614E062E13C08786E9FA9361B61EB3
+8EF3A1DD23AA96462134911CF7AF06002F91C3255FD92C00805DD0F503CB1D43
+8C758410E7D1179567B49140976C71FFD26EC1E2CD3069E821015303B6BC1B70
+01D9C7EA99FBB736DA74068843264009453675F645512464B39CB56007BF7CC5
+824A53EE695F3FD5F84E7C207A140B2DE643FA2F7F9D809C71C95DC037D6B41B
+D233860FE8C3A0C3C96B0A9687C397D456E05B2BE7BE4691FB35ECA28E110B11
+8F4BFE20CD51190D47CAE8B7A7D086CD9DDEC2C0A1F90C1F4FF4432C02A5B865
+8C35C399187ACC0F680A66AA864A27A8392046EAB1DCF57F7A60DFBA63F35DAB
+B1B85D64B79E490021C7456CA3DFA6FBC07F81F7647FED0AE4FA1E1DCF959B81
+11544AA09D346672481FDC933C94C99D13E74F199643F1A7283B2D61626D014A
+560CDB431364690A24092257AD919EE3DF54B83FCBDA79DFAE35C03364B8D305
+00B23F8FBACF1E5FFBE99E21ACEAB5E3AABD3E4B0586BD44046D11F67CE33E37
+4EDEE61F0CE5DD50FFC2FCDAB714EF888CCEDC778ED26325F828B4B2DB8F0E5E
+1D5EE1CBED328F393EB5687E293F49E5F6E07D35B77DDB81F669A78640D82C0B
+FCEE123AFD921DB36731EE263639B138BC5CAC9AB89FA58AB4D30148E8DD71BD
+481A526F5680F6A67FFCF7C84BDCAB24298B2E7A2F78DE222F693EE7DECA273F
+61F8876AFE1E5A4F1E267E7F43D1965ED8B5690C408FCEF12C4E988752ACC132
+4BDC18434A48F25E9EE81724A19ABB7CF44E2C1137910E616F67106F1577A93E
+12C616B87E53F1BEC82D9F975EFEA333972193D801E93B58F8A46B2C5F69C630
+18054CB8AE7BF8E21F28DCB2FF1917ECB75AC97158A7C9007E1D949111CC1700
+C142A71CDD4F4AF7C9582511D908F51784DA384C26509E5A8414F1D93514AB2B
+387D01E4EE0C7EEACFDAE42D3F9B53A855FA4B7CB450B29D27604F3F841AE34F
+6D572BCB13C49E7E2FB0BABA662175C52E526398F58E1EA327F5FFD71ACB0EFB
+065D71A9AAB575FF846DAFD33224751DB340CCEC2DDD4C6B07E9E009D49BC45D
+1C76077A53626EC61D781994621395759D3C5A9923AA703FDE1676138795B09F
+EF1E93BDF0BB7011FBEA53A649E823CD9D86095BFDA143A330D02BF42181AD4A
+3F9E164C369C3891E004CEE7220A24C71D1BC057445277C8829563C206E7044D
+5342740CF930B0DF36A89950096EF07C38BA3E683317097D5B119EC69B690BDE
+2D5DCAB19AF6D119C14CD65FF1C7F3060772F8E547CFEDDD3DB46FEB7A3A825B
+663353457EDC3EE66D9D49AC92089AA23560F0374172ED0EC22A11B17E87590D
+CCF7086C70C54A4A49847E7FE2AD1282A92AB988DB624F484908FF78EC89C3C6
+6E9B4A6CA8696DD768CEC0622533CD5D4DE73AC630342CA07170EB5722A4CD1D
+F2EFBC6287B8ECF4CDC15AC1DDE2AF7C8824D328722BF32E653EE9AEBBE0CB44
+3AA946A7630D1877A486AA07732D18A9AFEF6E08F7C9334D3291EB0E89D71527
+A71C2B4D6443467C61CDFEC9B10966EF490278F0603A63E3B2BE941FAD5E537D
+F27E9B319C38CFB5E6587DA67A23B9AB8B5913874D098E200A7174ABCF4EBF02
+28316D862455B44EDDC1F48F29D9BD6D7ACB8A144999C91142320E3F978192A7
+EF6EFE726C531DE81DBED9EBC22A4E08D61C1A6E98311D9C30501E4F01156666
+DC8ED43C956761169D965CA3B9327BB50ACF942C9C68868890B42D92F6C180D9
+2CB9B06D2AD8515C6ACAA51EE95F03983B30C56B189C30DDD4C97FC79E42BBD2
+1021D4C7FE653105B528D425BD33474212954ED1871ABD7C377A356D6D656FDD
+D63D07ADD21EF5DAB0FB1954CABA39733F2268AFE2F77E6C1D114D14533A8BE1
+13B7EB8AED2B53A6F2E26542EAD41155020ED3432F7B87CFC3379E3A645C7469
+1CD7303D151D5804A2BA7B5A84935539B58656CC0888FE625B78D24A351FD620
+03D0600F5E53BBF5F6DFD2433F824560A69655D6EF0BB8B55936205C149539C6
+5903469E62149534A0AFA57C6A7DBBA7AAA1EA72855B208748B6992144A9746A
+07B72611970971BF684AF3E2254C9E747A6DC53B8E5BDE537CC9F8147A7C3F74
+FBCA043EDFC6D8C401909FFCC4E8CD6CCD3CAF63F44AE1BE95542B39C6076A7A
+1025DE6CCFA5F3E2B6128E6C913C88111EE1E8E74EC8F08683920A51D75CD3E3
+F6CB244F557100D187162C3112861B21924A08FC2F4C014C16F19E61B612E0F4
+2F74121F7B3854FE184DA03B11EC94540E5FD5896EF16E2C6DA9D1EB549416BD
+A3AA9FB8E0045BC9DE9B0A4EDAA171C78C4EF45CD8CA02B50E4D020FC6E86772
+524560289F419528B2986E83FC0D04CA55D141B1B74840B8D0586FB764CF6C39
+C230A6A9FD5509068730C5056CC4DE04BD898A1A9271B002873F5A2C91A8524B
+9E14731135956DDDCA162094A9A78E407D155D260A96273B951CE02952EABF90
+5440E0B6ADCC67517C05D3140EA89F30DD664535D3C9518C3969E35AA9F2B31D
+1CB9078F7A17D42D9EEE8B0C3320926A15432D7EA03809179637A57C2909F2E6
+40F9928475FBECC2D786CB554F536B4F63EE567925CBFF0AC5CF0E93122220D7
+7D530694FCC1F9F2ED95AA6AD5321BF549BC6BE9D26AB98315DD85499121E65A
+88DED14DECFD2719FECBF9FA093FCE3598B6AAC97DAA690B4FD774FA68D37BFA
+F2322A8A21C6BC2A99354DAF3705C42338339EF92849EFFBAC380AF2B0923053
+13289EBC9CEF261C3CE1C99995C82AD193195E843B552961A3213886C65D3ECC
+A28ABF0E5BDBA577FDD4A04F847F506986982BCCC976E50F57A4FCA15AC3CC55
+BBF9B28A6D6DC57E79B6D68CA8D37038E0B9D9C7A88717350CB70A82F39A9CA4
+F326D85EEE2E3BB5E3FA79D748B8F8222E93B18927331E648A2DF1EE5BE69DF2
+B4E90B582060391D13C269996993DBBC3B09DA619120E08EB1F262505C9DA24A
+65B13CC9216B3EC419CC471B55FD83A7C0C8E02CB025D5E07D5BCEE30EC3FE52
+FC06C040F97D332DB4122200B62FD55335982519B050DA91147FE9040899F20E
+FFA823A8EE266EF8AB9F641AD4DAC0BE39C9E243742CC03A76005F682696A035
+E2B1A15300BB08D982B2CEFE5A803047AA40005207EE7676D8ABC17D33DF1659
+5E3567026AC59608F55AF52A74216ACBA20064C5EF603B07946AF750F7C23C86
+D62F080CA756B091412153E8B87D7FE416BF5E6CD2A5EF82D26170A04D8682D0
+AE03DDBEEFF52F801E4AF888E8415C0FE2858FBA0E842A538CB8C82CC9BFB358
+10B23AEF6DB433E66B44925555EBF49D578F330ADE722A907FD9CD0FD8362183
+5E45EF8E8F1399304DEFA7B8552B11F437908D8923BA31178CC497C2AB48AFB4
+9ADFFBAA77695359701E97A57C400F062C70584C175A270FB3F341DDB160BE6C
+C01F83FB61228D6FCB285FBEB03A0AF394E19A0E56FC74E893E1E54D621FC9EF
+09FB04124570D2771D6CF8A363411DFAF8849A73B9D49874E01EB29FEA779584
+F2729DB28C9EBC83E3C89F20349F376A889395FC9D6AC49CDF27B0F24A4CBD43
+7B95210E59CB69180F1374F8B233A668D33739D89B49C41035C0B4508DDDFCB0
+2205C2962B0D0805FE8E151D784EF671B66937069BF58ED1F304AFD42A49649B
+9FF8C8C497ABCBCA83A56FB7E1C015EA7C070E8ACB4E2810A8582F2489CB63B6
+620D6C844DEAD4039DB0DC2764E1713123546BF0088D73BE4323E8F7B43A98AE
+33A6AD840148FC8B098DEC863F584F1FFABFAAA8C76C52D5B8C597BC6D2B4CE0
+108583463B9AEE2504E5F7A3C346265773A5E86A17A41F229F87194E137774E1
+22A0043B001FE5C898E12E4F81C99C45011460A9CA10CBF667B8F2F135DA7F80
+F89660DB0DBA9A840E37A7D4CFCF762BC452BFC0B41429452D507C04521B4190
+7055649C7F9164820953700663A852293904F7D4C345F2E433D40F9ABABC6BA8
+BF0A917782F6E6D29711B64E8CAD70441769D98F90D98BD7D2E0558C96BC6ECF
+CB1D91887A61CB3DC4084FEAB622786305E2D68AD288EC56005F6D223A829635
+0CBF6C0582F6DF048C0035E25135C6823903981EC1384F92AEFFB9514324DA1C
+FFBC3165C3539ABA1D5BF00773410C7B33E72A265AC2F2036FFF496B106857BA
+932682FF5D7845887AB44CA276E4EB0C6234F5160C044EB9A908E4988B935D1A
+346C5B78CB5073E018D57E3C2B59F94655F14D1AEFB4EA69372E1AB1EC420A6A
+207F2426CE0CBC97FCC717C445DE855B473321A77AF3F5F79161A70B55D32099
+22A57534FFBE3AD517E8C75202417B2C51A6E677F0B5475B1ABE516106FEA7F8
+B56E4132E15124DED8F764C2C694137ADC4B843E338679C95244AF56FE2F1E5B
+056EED86F75C5700959EF524B8BE47F16C08B018F4FC27662EDD230C6E7BFCF2
+9481B0E3161825EBBE4F647921828BF269ECC8695AC10A708EB3655108ECA6B4
+9A6E98ECD98946A29101FD949890B1C7C6E71D9931AB11EB559097540E890C2C
+693B5E51D15A9B58005E0FD6928073AD9783F958F98B5D411933139CAE0D058A
+0355BA9C978FA088E79ED81534942154E9A99FB82D5483196C149DAEC4602B2A
+0DE597EC2C2FF1926E8733151D3FDA0B39DFAADD10196EF2417E3D347430A1B8
+92550755414CE7855A52123F3E64ADABB89CE842EA7F842A959179FCDE4AE037
+80803A4FF311D52B3D692EC86393594F08D6CA0E890CF427C0D99556D580892D
+9E01625DCA254C16904F717FE6CB88284C56D4B1328284068B2AB05CE92AA25D
+A4ABC84FE18C5AD643139C7A103980ED4A8CDE087210CE39628AF18546E746ED
+2F6C9AC839C5D54F47266C8A500C6E34DE1ABE55DCA83E14EF447D65ADF417AA
+BEAD370621D02267A9271E6811281E8B90C4BBE8F5F6F78203D81DD13D8F5405
+C578B5B9A4E1A8F60EF3059F273E20BBCD59F47F30452D5F272EDC9B2C3EE3F3
+BC91F687B919C0E0944D0E294F4C612193A07F5CB043739752426640589F5E88
+8519401956C911998D581825CBAEEB79A1B13FC81602F2728456A87586562F7E
+AF7EE05BC061AF6B77A4F4BFA957171B12AF2E7528D80F145EF39CBC57C9B5E7
+74464120A2090426AC0F8AD7B135C32B8A08B03D8BB576E97C4705417E1E745C
+B4597F25592E2E45B8C16D2BAE448FD50F4B6EFD4D5A8D0C3299FD3771E0AFC2
+2977D188075A3356345AE60787DB3C25513BD89466F1B89469EF2C286DAB56E3
+21F5094589228C6844498C7C8ED352E0A1E6DE7E3E6582AA6415ECB1DBD1B70D
+7A5E03B4F6FDAB6A8C150D82EEB20E482FE86137C7DE72790557B0DF02284638
+1AFF5F39222BC8F307E4939E47A33EA29CA54DE359480E5EFB6D30C2E3542CE6
+EA1FBF8CE522ED2810C5CB192F11EC408F65C94FE0609F99828AE51D6655704E
+02295563A200CDB00F23A5EBF94C4754EE577B979A7DFBC1B3BD3B2F41285EAB
+4720FDA7DEA88D0407B39D2F21DEF42A0ACB73580FE0DA965897FDF7918C3F45
+D707240C8DCA804ECA9312854D1E7561510237B819027F631F90709E67ADE304
+1881DD8865845DE5781CB5512EA377DC120969D195E98D32C976F94487D478A4
+F62AACF2D321C1CEAF96B4581E1C956BE231294A78712F5D658551DA940B4655
+CADF8CE7800AB8D41D7D165DBFF17AB9A8B5803AB9EA737C2234DFFD77806A19
+730C97F54D5F31EA5D6D1ED1E39A418C5E78FD0770E03E60AA5DA03C454B128D
+5933E0247210E75077844DB088B5AF48F88F9A461ECCB66125A0252D2B01E62B
+273B7B1B15967F7F4DECD492A78F6688E2040C150F9459CB155111FF2286A92A
+9557CF9D8098FFC592E77A34193CD294FF429E781345AD02A0031CC984E555FD
+C1F94A12687BCCDE0FF82A5878121E81C52370272EACEB31294A78712F5D6585
+51DA940B4655CADEDF3A3499943D7636C1943613DA22475987D7A59E2CFE4D8F
+7FEFAE4CF7FB4DB60AF26D4AD7ACFA464548444FCAC6DC0E627F795EFBC73D43
+49AB300B3991ADAB633C3C64A7C34EE8AB049EE46B01B63FF127B32BBE1E0912
+7E5ABA774E9714324B96330AF03C9FF17B97345E722BE9ED5DCB9E1A21194FDC
+3908E7CFEDC0CCD22CAF755437940D9376498206C4A54EA8CE2A5CBFA3B7CB0B
+299254E4639C5A9C3391D9AAFDE28FBD408BD9C0E8653A847E852C1D6A1227CB
+307405D06144D250E350E8C35F0AC2A5B36B9165A67C3B6481CF7F0B2B7900FD
+8CE5BA1AA9691F651E0B0956824E1F7FB82E90683655BD43E2110E483CAB7EE5
+67A273AE040297C812E871889B5EDFA8FF2D96FDFD708F81DFDE37BF9E3D71D3
+69639D1FB466228DBC0440F5883689F66F0216EC6996627B873959072ABA03B0
+75D4754A82A584D9BB71BE531D44ED0157C503AEB5A3AF02446AB9B9CBAE731D
+19B465BA46C73AD77C07BA8205FECAC1A10DD5F4E087D9C2843A426FD7304C6B
+40A62AF269312777C0000EB1DB705C73529D71446B27A88910781E25465E34B0
+E51E262822CC1C7A93EC8496B6C8FBA9A8C1BED6084611D89FADFEF445565367
+36F4A79DAAC75A6434EF79AEC531AF77F4D74F7A9052961FE7DBBEAE1CE453A7
+BD9DF60B75AFE80A3F9A9E893A7588271A42C5AA7254E72150CE745A7EA9BC90
+872D90CF7F01D55454CC24DE67F19D8CD1904B4BD121053C0E475579A4C94BE1
+050070D0DEF71CD30C8DDFAB311A129D4EB0B6A9D6F239D58961372A349B8AB7
+B3BDBC505F50D5D9A3BA4388B2E97917C37315BF6F90239E4FB37757E92EB9F6
+96EDE54CDD8A7B0E59282D889DE54FE6A0FC5358F9F242AE84AE2D95E24E5718
+7D622E768B984FEEFE58A20D832374D6CFD2D1F1439F6D34A59C86F056194891
+53A983F5EFCA120041A15DA1CC5B0C2C09B9A3F97BCFC64D2F68CBDD2FDE1033
+6D1EE2A3ED13A05F50F1CBB6B3300494DD4516E7E57805B8934AB5B87309AECC
+9FFCD5654928D9BCD89D4423E1AD899358AD1C43A146B950B02CE7CE111FF1EB
+C2531BDE3D9762A11AA9A8AFB1B259A7B19DC09DA3A8A7BCAD23DF0A99DFE472
+196A930F7E576A14BAC31EE13216186C21A9454E2578A3ABF8D6C60C044C4A3E
+1869A7EA72F47FFD8C8A16FB380CC7670BF6EBA00EBA508E0971C2051B2B0927
+83DD6FEDD45B3ECC976BAAC2AB5C814BB4E8566FBC28774DC58E77955082C22B
+CD325C183E502BB20C1E738E9688F918D8B3FE3AB2B1636C39B38D599569AA63
+808AE3403C11DFFF1852B12EA0349690CA67FD00E04F4ED32E8DDA2F65EC78BC
+DB656DD0E087A7F9DB2F8C90BEDA80A20AFD4151B2C1C38617C4CEA56009CC15
+F634DB2D856B2CDE8E8B60FD2AE7541F3D0F3F53A73F1A49C62628A24A2FC36B
+0423AD92DDF40D12C0CD00085D24ED6C4682EC67CA5EFEF36FBB0CE1BFF2CF9A
+0430CB4BE743B42CFB3C879DDEA2BE7A2FFFE59642F96677364BDC18434A48F2
+5E9EE81724A19ABB7A1497737A05A1E27829034237F25540F71DFD1C7134B9F7
+C38D849BFED5C9ED874D51401C8C2EB3D6894CAA4ACC0553729B37E4FFFAD443
+D4A91D539A584A2C2460DA6B95BBDE9D3E40F6B4BFD0752ED2F3A4E2A66056BB
+18F8C34814F4FFD469EF4E7998B6C3AC7C4D1C66A0050B0CCF3BB2BE6187052C
+608E5F3B8DECC76C9BCB20A9586198A835B83EEF5CCA51B26404506A7131AB3A
+61FB27696A48C832F41C5C22984E00EF25B18BCBB70374CBF69FDC1496A2732D
+C6CB2FF0E40D5AC1202789F2D3A59EFBE16BCB9D55660B34ECD1871E2258729A
+176026C6C38F54948E65B8C57EB125B805EAE78AE99427120E01EEE432FC9E8F
+65A9C2E41A352EDF6219F85612E66F3DC17B132D471EDCAE38607E8DB3025038
+8C71D544E8CB6E3454EA9EC477E4D1FF2157773EF67C10B47377A99EBCFF4D28
+51F5A474C9AC4E26AF9E5B79B6895D5782560AA2C146A05B292718FFA56E5DAE
+5E432AE1D1DD6E0378BA5005D654E490867BBED5F22E8AB9EA6C706CBF0E1F41
+1F5D3BEFA034D2A89661842AADF30F953F7CDA16AC001D3B175CA2B69853C9B4
+AC3AC0463DFF17803EC154CE96C239CDF768B600B47DE8304204C61DC87D7053
+D4CD9FEEB842DF3BDD7FAAE6B2BE754C1D13335BFA551C7AA8F390E07B110592
+254C9ABAA47E056ECFE5A3CCE208B17E16E8456A6681C171D46EA42C4652500C
+C79E895723FEF6D42B6348C350DA6033085080D9DD6FC43498A8D04FAFBA52F6
+FB6ED6201591DCB4700778FAC2634B098C234B58C6C342E72B4726CA47DED35E
+01A90D1C0F990DEBDE56CD36F3DFF228833AB18C9DA9FFB1C36A129407F94F39
+E781DD82FF0A79906669DF4145FAE20D89D46B3BA876CEF987F12014212A1CAC
+911A9AF9D8DC052566AB25EC53EC5DAAAA0A3CF68D327F68F2B3769B666626CF
+9EC7C334FDFB7D48BDDD4204AF60D5E0DBB2FAB3C45D2AF862A9500A1409F8EB
+B481A32C7C607072E0843EE42F28E28537840EDF645E96BC88B3DE3C8C0567E7
+0FB8EB765D586BC1C0132B44953E285FD626E103E3AB70AFA92506AE3627AA53
+1DD73640FCA20599359ADB22EBE8CB3C4B4F800A961B83F41BFFCB9F68B30CF9
+F9DBA8FD7D46B7F2E8DFFC14EFF1361919D0247F2A1CE8BD18134185C31ACB19
+BEBB59D8B3319E4B6829D2DC0C80497E7F3A24386BA71D8ED845AB8A40C5BF0D
+1E403BB81EEDEF8A14552BEFAD6AECAF3A5F860226603D6AD584E87B9BFD0739
+569338CFC28427A451103E26FF92F51AD6152683D4E5BAAF98F469068B96F2A1
+DDEFB94C7F84D1ABC4031CF24EAF3629896BFB5D65BE229F352998FE9EEAB4E3
+C8B1BB30C2D52BBA16A354C3FD70975E3A0C72D37773304266BAE08982031E45
+6E34ED01C6865AFFED7749177FBBF1C1BA603E03194E76D374C5579DC14E6609
+CBEF3260B7800347C89FDA98860E677A163F958F730638DA6B918A381F7380CD
+0B1031E55348A756B02E839A6105021D54881D2165300687227CB8352F41F4CD
+AD67F7A3980DC8A72A3F23E10DF33A73F76A7419D7FDE85A01FC3464C31226AE
+347EBBECBAD80117D53AB0EE3F57E109DBEFD2C4E57B6EE2745405FEB27E6075
+6FA1C1D0DF8B24B99321AB55087CD2A36B6B58FA61A2810016F665CB8ED988C1
+23A4D24FC28BCE7A16B3A67C4BC5587E7168B20E14DC06904F068592B4A1A0EC
+26ED659A19F4D26416C3F9BAF673DB390CB581D7F497A95F3973DFEFFFA71B3A
+6877C4AAF32BA016939520A6EE299A4FDAD14AF4D3FAF7B6017D106E98B256E2
+29329E8A8A5A9793FCA362A7D818C86819DA7A0A6BD0F6D7721B7A9C7B8E7D0D
+B913F1BBF8A7B4A4DD97B5D5CDF53E59C5EEDD3B474825105E64428C77A0323B
+8C05876B4A1C44BDD9790D28A6CBECF2C108C0680CAF97F7903D02461AB5CAAD
+76F58CB303AF604CF50A91A79372FDB6D0BCE9545B1CE2CAB4D7E01D9B524A26
+52C19C8D31C93638E060F94128E1F2AD48E657C5FDEBD8E87124F0E787428F13
+346A1E2E21135C3279D61C98B6E227241CB35C76263AC74FDF6C838CF82D9116
+CAEF6B64CDC70B80B724E4E1C6BBF97AE73D5613FFB3CFCE7BF8421D93DC3C26
+16B63A2F28EC323D249214023D5BB357EB733885E787577815FA914C1ED1B237
+EB7476C343569A024711B476EB3E88CF2D274E67A6A86D31ADBFCF367E729F22
+8F5177E12FFC3635167541AA37521E58AAA2B1C95D822B1BDB3F55A64850DEE5
+F6C7B7F02D193B05EFC7FCD556CF3724C06DB506AAF203479BC757E9E7DB9043
+20ABEC466F56A4614EDEA750A44D255D1F4332A2AC048C04EC131FAEC499D7B9
+3D815E7372B6E53E3B08E110CFCC59DE090CD032C4E9723095B2E72760EFF224
+D79081B9C6C9B860B73242A0727D59A4F979EF0BB62788643769201F22DE178E
+7FDD6A0FF8510DAA7E7CBC8E67D2D0BCEBFCAE78AD36B3037FB099403D093CDC
+72278B3FFC45D174931E6C3B489FCA9CA40DDA019BD5489AA6C4A327D2913A85
+935859BD404883880F7EB34666A72C7E212D175B2CA54C0253EB5859CDC79166
+6C9A948E8E2C8B7BD16887379E81A1F0E02D0686E0B17F8640CC735DE0412DD9
+329A7D90FAC6847DCBE36FF9FEF1F125868DA24AC1FCFB1DCED372D6D0EEA909
+F47B8C02705FD312C38F5A79B8EDD1F84C2EFE05240819616BF25BA153C08ABA
+48EB0C8A72EA389E4C8482150946CD5AF2A04C2059A3CB2AA969BD4859F87F1B
+5267E4592C9FFC92436083B92B3491E7F591AD166036F2450FA8A745A9A63A7C
+5FDF2064ACAB283920BF0AB8DF5B42284AD880BA68BC7295D9AA9F6292671EE7
+CB3801A181976C14FA07FBEC0BECCA58280262F7069879ABC1886A78B6336370
+EC926D550FE6ADF292B293085BE5795C3A84C45E5A089DEDD66DCA5D1B1399D7
+871DDFC3EF8EF74F54D12F35DC3C5AECD4349E9EF9CA02A4C0E1662E7EFC6DBF
+EBFB01B22EF85C99E5CBCDCB5683FB7C30FF3D0592E23D7DA056B2D4D40F802F
+24F626F18E4374D1C7094E04243CCED7DAED0C5F36B77B1F9B7A8135A49064E5
+3BBC87EAEC872098BB7F061F52DBDD450030766A8E4EE723C5F9DD721965C3BD
+1CAB5EDD73D43D38EBC420F98839DFBE8B3FA02331A8ABE5DA3832EFC1CE6CBA
+F8140A9D39D9F777C755C9B545096A84CCD5A9AC2E357488724353A4C8D828DF
+B7401FEDD88F69E202B447D41A64F7A3BC42D3C1793252A283A4ECD079D2D15E
+967289486E8A94CE02EF19157B5EEA8423D3891BD9F9DAF740E96CF1C372971F
+CACB558D799A9967905A1E7B6066E42D0F30050B6F40C6EE9071F990405D4A1E
+B6C788A2154B2D78C66E3423DBED3E9B1BF1CFBCD87E5D32AA415881EBEA28BC
+6A0AB0BC4C75E216090F1526193BFCE4F15F58D15BF905977ABA1FC4015CB582
+3843123E0A99F7A21F9A462BB48FA55E2F577B2EF6A0510E1AB6407B0136A5F3
+5941BF90B316A27DD2F3814F14A41847ED36240A3089BFA6DCF3944AF9EFCEDD
+C34015C1B76CA511587C8AC65360C573CA3A997E7988B56E7FBB585F70815F3C
+06E833DA2814381B3F75F681497EB2728D646B480C73432A2822DD051286C2F3
+12F7A6E19A79CC0F2ACA7AF5B2120EC25A1EFBC574D5CF083CE27D0E38A70F48
+14E93599D1B51AD3CF65A7C2DDADCA8E007B8ED83A96DE18C2D7B77E38CB772E
+F1D7EB950FAEDE08757BA3499D334D143949E4EB17ED5DB9A0A4CDC8A4DB4D42
+4B90655FD2635DCAE3716C53FC7DF24CBB6854C5EABFB6CEDD0B617C5D157606
+E9F67A35F079A9B66487EA13503F06BE97B5F944BDA2D41EACDA1435D86C3937
+AD1FE6A6CFE8D99ED9BC16FADE4CA2B966A61C1688FCEEDAFE107CEFCD9E03F1
+DD0D2C55EC7DF6C14AC1F6459C0B1C63F00BAB0DA437E372110D7F3076B4C056
+B81826B66C4F3FE02F2EA3CED14EDF6819C52A9FC1A0A0F4E9293701C3E208E4
+D5653D8FA025EB050AD8A7F652B10DDBDA1D380F64E03209B7376B5EA413181F
+D8DAA94AB4EF6D50C8EF59A4DCD7F02A986B2C73F059A0440D893195B7893A5E
+11182E6AC7E8C72E8F34E6F17ECAD02251C7A4FEFBD2868CC4880D07E4F742F2
+4159A0D83CDD48FD1048157C6B1EB6E9CFCD1CA1692D385CDD8344B165C39EA6
+9836D79ABC9A5AC1D47458581A42AC8BA8DD70C40BA226647FD809C6539394F5
+91909BB04FE7771174E60DCB9EC19560A5A1906F3F19AD094E0E792D435DEF3E
+AFDBFA705568EC383E0C53707348340914F185967DA1127BED96339B009C5BD6
+56D43FAAEE9E286E5C61961CB6DAEA7D07C79E414B3C8FA76AE692519BB72E8B
+F1C6CA96C6820213B7816D97D3946FE8B0CDAE615EAC9DDC9D668DFE53994A6D
+F5FD63C70622EB9DFDB45A63DB3783C32D2C9EF1B45845A2F93BA075CC35A4B6
+7B52714CF7D815DAD7163BF75839D50C056DE84710422C78E06C198E77B2F9EE
+0CBAC9A5E41200DF570412B57BCF8BAB3A9D86F34149C4303500C74906E11CE4
+322B45DDF57AEAF79FA189444AF7C971CA003A5A0F77037997F9B3A1AD4D491E
+90AD7C7DD7699B5EB7D89D5CCF43145F1A1B0ED5FB5803DEC86CBA11B026A743
+F79184378091C54EAB25A69B8CAB85CBDC89992022BEB685510524C404B4FC88
+E4D91EA9D927670E1CC6C85B0530F2BC44409829974D5DB1AAB77A4D1010CC10
+F907D5D0A9D6F90F1A5C09C0FACD41646856BDCE981D433B0AD2ADCE5F739DD3
+4922C5C3E086ADB19219DC8822302314CEF4945A5358FE68805A26F9043795CE
+2404D601A7B0825CCE731FB617253424E41BD72E978D58556EE0C81C5D8B385F
+46E74CF3B5592889DDAE21F0AA2A78A8BB9EAE8C12B406B04A73570812910EE3
+D063D704A826871609DAC51CBEC2B3931BEC2F7AF92C513CC60C6C2A83F59DF5
+FB94E7BC2AB40660B9D3DE87C35582C51E82E39D84F75159425ABCDAE0E8B749
+B64A25FD6668E39BF5CED4D35206A954D7C48DF312110F84FDD1ACEA5BDC26C6
+4C9A27D821FDD5F64DB76577B4AFAE5750CC2BFE8FAF6EA4B5DAD66666D9E2B8
+6F122A7BA0B293C5E33E75B16EE6251DF1B40701128BBFB0E68C60FF59A4FE9F
+D0BAC2B048659D4530CBF9E1EBD0F8DC372327AA234FDC19599E3085E681EE6C
+97FD818F6D3C0966DE20CDBC700E3DF51F4E2A6DD5245AFF340BB6B2EB4EDE91
+6E379757256631EE1A6E021B1421E3573A75E78AE5150FE5AE69D293CD422DCB
+8AF269BD462E1F9037282982F81893287143EEF8AC344A5F1E1754ADFB898385
+EE7200FFBF22BDF7B4DEE8BBB500D736B6260F180D9411585AB602C5CDE35834
+D4901DCE86AF954F00A175657B80A9C3097251FE9D9DC77CD4C7262CE6695274
+1A2AAEE6EB5367A09FCE8E8B807268A91D56FF9D2E68A17FEB485F8C882A122C
+C4CDBA4178E08722DC757E53D8178BF0BCAA82F0271F651FC06BDEB33F580276
+917C25978DF1C34BB88E0EED3A7B60CDEAF37DAFFE1378C04E3CD6E9C342E956
+E8B54400F8B526E82847ABDA7BD3975052E7CBFC24FDB433E4BBC75B35B110F7
+4E450DBB6C3D756698A16B6A6E09217713188E302842A79358A1FA85FDA064AE
+D7CE4EE63ECF5E935771066DE62CFD1C7BAA90F3883696FFDE034146A69CF4CF
+3D6028D76E5E13CA29125A8DD2B256D154B588D8C52FBA03BFDDC0CA2A38FDDB
+DD1234735376CB348422CF457DB4266377363490AB615ED19DD8EE044572CB04
+D1A7A2FA1723474D934431357EDFED49F256E246FA32561FDFA821B5A45A682A
+502DCB1083BBD85AFA62C6621BB6E7ABB370F882FEB779F10BABFF9FFA282701
+24762BF3C9CC888C9CD6A992CC04C7473FC2F9F97B55222F9D7295AA3E70A916
+DC191E09DDB2C8A37E269384D18708EBED69322EE86CA6879BFAEA469E1713AB
+DF2A354F8BD34FBF8F7405BB6CC3BD6188F665C459AF90E40D6AE79C26BE170F
+8DE8AC65D8FF432B3203C1C4804A23F407C9E149F6F1B1625338BAAD14602ADD
+312563B52FEC3A9E7D7FE2A4307F9ACC4B4CCA7987FB60DC71C5B4B5700DB2D0
+29B1F53F8013D16779150C08EAEB032352EEA8DAE585E6B7300EF8D0837E973E
+2E1A97C0B26715842A95E84DCC28679F45928694FA5838FB4888F8F8DCEEBC09
+1037EF8EB2291CABCE358034EB052B4602D8A91AFD2260CF77E4FAEFCBB5670F
+E299C4E76C23A29832F091238A8236C617FDE4076AEC7E7F24E45978ADDE9305
+05B8A444F869AAB86A40629B6C7223810FBEFE188967711397ED215BCE0B6EF9
+1C4DF7E4259804C8F98B083810F3E9CE25C0F3DD8BE31D993EE15D96F7EF38FB
+30595D34527D00627B8B22565310141829F0B35F09D67D3E66F4E2F84F915E98
+F31F067AC788C3FC187B2DD342B39F72C885260B4471506187F8496460862545
+6D44FF68F5F083B83FEE76F6790343B4F0496F21E41CCE465221A4CBF124349D
+595789CB90C29990A70AB78FB96AA4864C8B85109F422116DFF87B453F87CD0C
+7835BFFC083CF9ED17CF85559D0872EB3B51BB0E756D3F492EFA86EE5AFFD7C5
+B4C7C68077080E01B05FB0E474B3C62801949EEBC242A64480D1BC3777984030
+51660E35C98E61D95DFA76A2FE9792A7E44F7BD008479C8361AD544E14D84C3F
+C6E6411F10BC656DD67F35DC3C3AB2DB65F4FACB20B898F2C554B61627884996
+D35A3075A0FD46BD922A97A4622F2FFE085C3E73576B1E20CAB61D0AC412967D
+9B6398641307A00C87829FF49F399956C8D9686C2ACFC8788D4AC79E364B8F6C
+5AF35CB75E07B850E0E615E7B221C2BED05086224256B9CFD9A24FAC90018E2F
+A29ABFA7C4A7BA8A69C6995F7D3439B7D87BFC7E9DACCA00A040D50B24917B7C
+3C5F3E3245EB33B8C71A5FF1C253DD34CB19D1D41C44850EF598BF643E3984BA
+167E411B7A48B94B83DE3771A436C75EA83462AF093226F43E575D215D1509D0
+27CD8F75B967014898250FDDDFC14A05C9BF7A4BEBD974AA7347BF63DC6C32F7
+A618E0078BB16C36D1D649C9074C7D362D1F6B0A90537DFFE231326E739BF958
+92831AF9F00DB1A27C1C59BF00AFA16549B9C6646019586E047A2BF8DDB46CB3
+64CFDD91FE56DEE8F7319B781D5781BE035FF4503183D3918DC59C13CECD8509
+B69884C53D2A7424623E084937C502AADDB3A1ED26B0E4F9095C8695FE8DB76E
+7CB477906506FA3D15208C0DC27070F27A0119C75F07C8322AFA9E422FCAED78
+A013B58F83E0EE66A4E8B1962A4EC8AF7CD495156DEC53143A845127FD12597E
+0EACCBC015DB6CAA01BD4B5FCE6921D5623F5B26FED3D9336914D6795A45A6E3
+24A289492335AE3E6E11E1FD4ABF51B748382786E2AA71AFC473B250C86D02C5
+EDF424635DF80B1DB1CCE66259F7B14E61941A42D509F8C906B22380116FD725
+304DAA9607A2DCC9063A7E111449FCB7B4223799DEFBBE5B663F537471565B2A
+FD30B731DD96AD496B9ABD71EDC993C36140B38628F35DA9AF86117A3CB70087
+A85369C58D514130CC406E7A846154196F5AEDC886D653046A92CEB720324488
+FD6B9DB295847DA87ABAF25E1FE31E86A4C76BB496A4BA1B1F
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+0000000000000000000000000000000000000000000000000000000000000000
+cleartomark
+{restore}if
+%%EndFont 
+TeXDict begin 40258437 52099154 1000 600 600 (chemistry-pst-labo.dvi)
+@start /Fa 130[39 1[39 1[39 3[39 39 39 39 1[39 39 39
+39 39 2[39 39 39 39 39 1[39 39 39 3[39 39 39 6[39 16[39
+39 4[39 7[39 4[39 1[39 1[39 44[{T2AEncoding ReEncodeFont}31
+74.7198 /SFTT0900 rf end
+%%EndProlog
+%%BeginSetup
+%%Feature: *Resolution 600dpi
+TeXDict begin
+ end
+%%EndSetup
+TeXDict begin 1 0 bop 0 TeXcolorgray Black 0 TeXcolorgray
+0 TeXcolorgray 0 TeXcolorgray -285 428 a Fa(\\psset{glassType=ballon,)
+-11 519 y(unit=0.5cm,)-11 611 y(becBunsen,)-11 702 y(pince=true})-285
+793 y(\\pstChauffageTube[becBunsen,)460 884 y(barbotage])p
+0 TeXcolorgray 0 TeXcolorgray 1416 579 a
+ tx@Dict begin { 35.5659 35.5659 } PutCoor PutBegin  end
+ 1416 579 a 1120
+816 a
+ tx@Dict begin { 0.0 0.0 } PutCoor PutBegin  end
+ 1120 816 a 1120 816 a
+ tx@Dict begin -60.  RotBegin  end
+ 1120 816 a 1120 816 a
+ tx@Dict begin /mtrxc CM def CP CP T STV newpath 0.8 SLW 0  setgray  0.8 SLW 0  setgray  0.8 SLW 0  setgray  0.7539 SLW 0  setgray  /ArrowA { /lineto load stopped { moveto } if } def /ArrowB { } def -9.9584 48.36954 /y ED /x ED /r 2.84521 def /c 57.2957 r Div def /angleA 90. 0.0 c mul 2 div sub def /angleB 0. 0.0 c mul 2 div add def x y r angleA angleB arcn  0.7539 SLW 0  setgray  /ArrowA { /lineto load stopped { moveto } if } def /ArrowB { } def [ -7.11317 34.14317 -7.11317 48.36954  /currentpoint load stopped pop /Lineto /lineto load def false Line  0.7539 SLW 0  setgray  /ArrowA { /lineto load stopped { moveto } if } def /ArrowB { } def 0.0 17.78294 /y ED /x ED /r 17.78294 def /c 57.2957 r Div def /angleA 113. 0.0 c mul 2 div add def /angleB 67. 0.0 c mul 2 div sub def x y r angleA angleB arc  0.7539 SLW 0  setgray  /ArrowA { /lineto load stopped { moveto } if } def /ArrowB { } def [ 7.11317 48.36954 7.11317 34.14317  /currentpoint load stopped pop /Lineto /lineto load def false Line  0.7539 SLW 0  setgray  /ArrowA { /lineto load stopped { moveto } if } def /ArrowB { } def 9.9584 48.36954 /y ED /x ED /r 2.84521 def /c 57.2957 r Div def /angleA 180. 0.0 c mul 2 div sub def /angleB 90. 0.0 c mul 2 div add def x y r angleA angleB arcn  0.7539 SLW 0  setgray  0 360 9.9584 1.42271 0.0 51.215 Ellipse closepath clip newpath mtrxc setmatrix moveto 0 setgray end
+ 1120
+816 a 1120 816 a
+ tx@Dict begin RotEnd  end
+ 1120 816 a 1120 816 a
+ tx@Dict begin PutEnd  end
+ 1120 816 a 1120
+816 a
+ tx@Dict begin /mtrxc CM def CP CP T STV newpath 0.8 SLW 0  setgray  0. true -42.6791 -14.22636  5 3 50 mul 100 div -60 cos mul 14.22636 mul exch 14.22636 mul exch 0 Frame  clip newpath mtrxc setmatrix moveto 0 setgray end
+ 1120 816 a @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray  [  5 3 50 mul 100 div -60 cos mul 14.22636 mul exch 14.22636 mul exch 71.13182 -14.22636 -56.90546 -14.22636  -4 3 50 mul 100 div -60 cos mul 14.22636 mul exch 14.22636 mul exch  /Lineto /lineto load def false Polygon  gsave 1 0 0 0  setcmykcolor fill grestore end
+ @endspecial
+1120 816 a
+ currentpoint initclip moveto
+ 1120 816 a 1120 816 a
+ tx@Dict begin { 0.0 0.0 } PutCoor PutBegin  end
+ 1120 816 a 1120 816
+a
+ tx@Dict begin -60.  RotBegin  end
+ 1120 816 a @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.7539 SLW 0  setgray  /ArrowA { moveto } def /ArrowB { } def -9.9584 48.36954 /y ED /x ED /r 2.84521 def /c 57.2957 r Div def /angleA 90. 0.0 c mul 2 div sub def /angleB 0. 0.0 c mul 2 div add def x y r angleA angleB arcn  gsave 0.7539 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial @beginspecial
+@setspecial
+ tx@Dict begin STP newpath 0.7539 SLW 0  setgray  /ArrowA { moveto } def /ArrowB { } def [ -7.11317 34.14317 -7.11317 48.36954  /Lineto /lineto load def false Line  gsave 0.7539 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.7539 SLW 0  setgray  /ArrowA { moveto } def /ArrowB { } def 0.0 17.78294 /y ED /x ED /r 17.78294 def /c 57.2957 r Div def /angleA 113. 0.0 c mul 2 div add def /angleB 67. 0.0 c mul 2 div sub def x y r angleA angleB arc  gsave 0.7539 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial
+@beginspecial @setspecial
+ tx@Dict begin STP newpath 0.7539 SLW 0  setgray  /ArrowA { moveto } def /ArrowB { } def [ 7.11317 48.36954 7.11317 34.14317  /Lineto /lineto load def false Line  gsave 0.7539 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.7539 SLW 0  setgray  /ArrowA { moveto } def /ArrowB { } def 9.9584 48.36954 /y ED /x ED /r 2.84521 def /c 57.2957 r Div def /angleA 180. 0.0 c mul 2 div sub def /angleB 90. 0.0 c mul 2 div add def x y r angleA angleB arcn  gsave 0.7539 SLW 0  setgray 0 setlinecap stroke  grestore end
+
+@endspecial @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.7539 SLW 0  setgray  0 360 9.9584 1.42271 0.0 51.215 Ellipse closepath gsave 0.7539 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial 1120
+816 a
+ tx@Dict begin { 0.0 49.79227 } PutCoor PutBegin  end
+ 1120 816 a @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.4 SLW 0  setgray  /ArrowA { moveto } def /ArrowB { } def [ 0.71135 0.0 0.71135 -14.22636  /Lineto /lineto load def false Line  gsave 0.4 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial
+@beginspecial @setspecial
+ tx@Dict begin STP newpath 0.4 SLW 0  setgray  /ArrowA { moveto } def /ArrowB { } def [ -0.71135 0.0 -0.71135 -14.22636  /Lineto /lineto load def false Line  gsave 0.4 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray  0 360 5.69044 1.42271 0.0 -4.26794 Ellipse closepath gsave 0.8 0.8 0.8  setrgbcolor fill grestore gsave 0.8 SLW 0  setgray 0 setlinecap stroke  grestore end
+
+@endspecial @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray  [ 5.69044 -4.26794 8.5359 7.11317 -8.5359 7.11317 -5.69044 -4.26794  /Lineto /lineto load def false Polygon  gsave 0.8 0.8 0.8  setrgbcolor fill grestore gsave 0.8 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial @beginspecial
+@setspecial
+ tx@Dict begin STP newpath 0.99594 SLW 0  setgray  0 360 5.69044 1.42271 .5 CLW mul dup 4 -1 roll sub neg 3 1 roll sub 0.0 -4.26794 Ellipse closepath gsave 0.8 0.8 0.8  setrgbcolor fill grestore end
+ @endspecial @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray  0 360 8.5359 1.42271 0.0 7.11317 Ellipse closepath gsave 0.8 0.8 0.8  setrgbcolor fill grestore gsave 0.8 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial
+@beginspecial @setspecial
+ tx@Dict begin STP newpath 0.99594 SLW 0  setgray  /ArrowA { moveto } def /ArrowB { } def [ 7.11317 0.0 0.0 -0.99594 -7.11317 0.0  1. 0.1 0.  /c ED /b ED /a ED false OpenCurve  gsave 0.99594 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.4 SLW 0  setgray  [ 0.71135 7.11317 0.71135 27.03 113.81091 27.03 113.81091 28.45273 -0.71135 28.45273 -0.71135 7.11317  /r 0.71135 def /Lineto { Arcto } def false Polygon  gsave 1  setgray fill grestore gsave 0.4 SLW 0  setgray 0 setlinecap stroke  grestore end
+
+@endspecial @beginspecial @setspecial
+ tx@Dict begin STP newpath 1.99167 SLW 1  setgray  /ArrowA { moveto } def /ArrowB { } def [ 114.52226 28.45273 113.09955 27.03  /Lineto /lineto load def false Line  gsave 1.99167 SLW 1  setgray 0 setlinecap stroke  grestore end
+ @endspecial 1120
+816 a
+ tx@Dict begin PutEnd  end
+ 1120 816 a 1120 816 a
+ tx@Dict begin { 0.0 45.5243 } PutCoor PutBegin  end
+ 1120 816 a @beginspecial
+@setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray  0.8 SLW 0  setgray  /ArrowA { /lineto load stopped { moveto } if } def /ArrowB { } def [ -7.11317 0.0 0.0 -1.42271 7.11317 0.0  /currentpoint load stopped pop 1. 0.1 0.  /c ED /b ED /a ED false OpenCurve  0.8 SLW 0  setgray  /ArrowA { /lineto load stopped { moveto } if } def /ArrowB { } def [ -11.38113 0.0 -7.11317 0.0  /currentpoint load stopped pop /Lineto /lineto load def false Line  0.8 SLW 0  setgray  /ArrowA { /lineto load stopped { moveto } if } def /ArrowB { } def -7.11317 0.0 /y ED /x ED /r 4.26794 def /c 57.2957 r Div def /angleA 180. 0.0 c mul 2 div add def /angleB 270. 0.0 c mul 2 div sub def x y r angleA angleB arc  0.8 SLW 0  setgray  /ArrowA { /lineto load stopped { moveto } if } def /ArrowB { } def [ 7.11317 0.0 14.22636 0.0 34.14317 -2.84521 35.5659 -4.26794 -7.11317 -4.26794  /currentpoint load stopped pop /Lineto /lineto load def false Line  gsave 0 0.2 0.4 0  setcmykcolor fill grestore gsave 0.8 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray  0.8 SLW 0  setgray  /ArrowA { /lineto load stopped { moveto } if } def /ArrowB { } def [ -11.38113 -4.26794 -11.38113 0.0  /currentpoint load stopped pop /Lineto /lineto load def false Line  0.8 SLW 0  setgray  /ArrowA { /lineto load stopped { moveto } if } def /ArrowB { } def -7.11317 -4.26794 /y ED /x ED /r 4.26794 def /c 57.2957 r Div def /angleA 180. 0.0 c mul 2 div add def /angleB 270. 0.0 c mul 2 div sub def x y r angleA angleB arc  0.8 SLW 0  setgray  /ArrowA { /lineto load stopped { moveto } if } def /ArrowB { } def [ -7.11317 -4.26794 35.5659 -4.26794 35.5659 -8.5359 -7.11317 -8.5359  /currentpoint load stopped pop /Lineto /lineto load def false Line  0.8 SLW 0  setgray  /ArrowA { /lineto load stopped { moveto } if } def /ArrowB { } def -7.11317 0.0 /y ED /x ED /r 4.26794 def /c 57.2957 r Div def /angleA -90. 0.0 c mul 2 div sub def /angleB 180. 0.0 c mul 2 div add def x y r angleA angleB arcn  gsave 0 0.2 0.4 0  setcmykcolor fill grestore gsave 0.8 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial
+@beginspecial @setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray  0.8 SLW 0  setgray  /ArrowA { /lineto load stopped { moveto } if } def /ArrowB { } def [ -11.38113 0.71135 -7.11317 0.71135  /currentpoint load stopped pop /Lineto /lineto load def false Line  0.8 SLW 0  setgray  /ArrowA { /lineto load stopped { moveto } if } def /ArrowB { } def -7.11317 0.71135 /y ED /x ED /r 3.55658 def /c 57.2957 r Div def /angleA 180. 0.0 c mul 2 div sub def /angleB 90. 0.0 c mul 2 div add def x y r angleA angleB arcn  0.8 SLW 0  setgray  /ArrowA { /lineto load stopped { moveto } if } def /ArrowB { } def [ -7.11317 0.71135 -7.11317 4.26794  /currentpoint load stopped pop /Lineto /lineto load def false Line  gsave 0 0.2 0.4 0  setcmykcolor fill grestore gsave 0.8 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray  0.8 SLW 0  setgray  /ArrowA { /lineto load stopped { moveto } if } def /ArrowB { } def [ 7.11317 4.26794 7.11317 0.0 14.22636 0.0 71.13182 2.84521 69.70909 4.26794 7.11317 4.26794  /currentpoint load stopped pop /Lineto /lineto load def false Line  gsave 0 0.2 0.4 0  setcmykcolor fill grestore gsave 0.8 SLW 0  setgray 0 setlinecap stroke  grestore end
+
+@endspecial @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray  0.8 SLW 0  setgray  /ArrowA { /lineto load stopped { moveto } if } def /ArrowB { } def [ 14.22636 0.0 28.45273 -2.84521 71.13182 0.0 71.13182 2.84521 7.11317 0.0  /currentpoint load stopped pop /Lineto /lineto load def false Line  gsave 0 0.3 0.5 0.3  setcmykcolor fill grestore gsave 0.8 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial @beginspecial
+@setspecial
+ tx@Dict begin STP newpath 1.2 SLW 0  setgray  0 360 4.26794 1.42271 14.22636 0.0 Ellipse closepath gsave 1.2 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial @beginspecial @setspecial
+ tx@Dict begin STP newpath 1.2 SLW 0  setgray  /ArrowA { moveto } def /ArrowB { } def [ 5.69044 -8.5359 5.69044 -4.26794 9.9584 0.0  /Lineto /lineto load def false Line  gsave 1.2 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial
+1120 816 a
+ tx@Dict begin PutEnd  end
+ 1120 816 a 1120 816 a
+ tx@Dict begin RotEnd  end
+ 1120 816 a 1120 816
+a
+ tx@Dict begin PutEnd  end
+ 1120 816 a 709 w @beginspecial @setspecial
+ tx@Dict begin STP newpath end
+ @endspecial
+1416 579 a
+ tx@Dict begin PutEnd  end
+ 1416 579 a 1416 579 a
+ tx@Dict begin { 116.65613 -42.6791 } PutCoor PutBegin  end
+ 1416 579 a 1547 816
+a
+ tx@Dict begin { 0.0 0.0 } PutCoor PutBegin  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin 30.  RotBegin  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin /mtrxc CM def CP CP T STV newpath 0.8 SLW 0  setgray  0.8 SLW 0  setgray  0.7539 SLW 0  setgray  /ArrowA { /lineto load stopped { moveto } if } def /ArrowB { } def [ -7.11317 7.11317 -7.11317 49.79227  /currentpoint load stopped pop /Lineto /lineto load def false Line  0.7539 SLW 0  setgray  /ArrowA { /lineto load stopped { moveto } if } def /ArrowB { } def 0.0 7.11317 /y ED /x ED /r 7.11317 def /c 57.2957 r Div def /angleA 180. 0.0 c mul 2 div add def /angleB 0. 0.0 c mul 2 div sub def x y r angleA angleB arc  0.7539 SLW 0  setgray  /ArrowA { /lineto load stopped { moveto } if } def /ArrowB { } def [ 7.11317 49.79227 7.11317 7.11317  /currentpoint load stopped pop /Lineto /lineto load def false Line  1.13812 SLW 0  setgray  0 360 7.11317 1.42271 0.0 49.79227 Ellipse closepath clip newpath mtrxc setmatrix moveto 0 setgray end
+ 1547 816
+a 1547 816 a
+ tx@Dict begin RotEnd  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin PutEnd  end
+ 1547 816 a 1547 816
+a
+ tx@Dict begin /mtrxc CM def CP CP T STV newpath 0.8 SLW 0  setgray  0. true -42.6791 -14.22636  5 3 70 mul 100 div 30 cos mul 14.22636 mul exch 14.22636 mul exch 0 Frame  clip newpath mtrxc setmatrix moveto 0 setgray end
+ 1547 816 a @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray  [  5 3 70 mul 100 div 30 cos mul 14.22636 mul exch 14.22636 mul exch 71.13182 -14.22636 -56.90546 -14.22636  -4 3 70 mul 100 div 30 cos mul 14.22636 mul exch 14.22636 mul exch  /Lineto /lineto load def false Polygon  gsave 0.96 0.96 0.86  setrgbcolor fill grestore end
+ @endspecial 1547
+816 a
+ tx@Dict begin { 0.0 0.0 } PutCoor PutBegin  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin 30.  RotBegin  end
+ 1547 816 a @beginspecial
+@setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray   0.8059 1.95222 70 mul 100 div 14.22636 mul exch 14.22636 mul exch 1.95222 0 CLW mul sub 0 360 arc closepath gsave 0.8 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial 1547 816 a
+ tx@Dict begin RotEnd  end
+ 1547 816 a 1547 816
+a
+ tx@Dict begin PutEnd  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin { 0.0 0.0 } PutCoor PutBegin  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin 30.  RotBegin  end
+ 1547 816
+a @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray   0.0894 0.48218 70 mul 100 div 14.22636 mul exch 14.22636 mul exch 0.48218 0 CLW mul sub 0 360 arc closepath gsave 0.8 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial 1547 816 a
+ tx@Dict begin RotEnd  end
+ 1547
+816 a 1547 816 a
+ tx@Dict begin PutEnd  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin { 0.0 0.0 } PutCoor PutBegin  end
+ 1547 816 a 1547
+816 a
+ tx@Dict begin 30.  RotBegin  end
+ 1547 816 a @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray   0.61209 0.95335 70 mul 100 div 14.22636 mul exch 14.22636 mul exch 0.95335 0 CLW mul sub 0 360 arc closepath gsave 0.8 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial
+1547 816 a
+ tx@Dict begin RotEnd  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin PutEnd  end
+ 1547 816 a 1547 816
+a
+ tx@Dict begin { 0.0 0.0 } PutCoor PutBegin  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin 30.  RotBegin  end
+ 1547 816 a @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray   -0.84015 0.58836 70 mul 100 div 14.22636 mul exch 14.22636 mul exch 0.58836 0 CLW mul sub 0 360 arc closepath gsave 0.8 SLW 0  setgray 0 setlinecap stroke  grestore end
+
+@endspecial 1547 816 a
+ tx@Dict begin RotEnd  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin PutEnd  end
+ 1547 816
+a 1547 816 a
+ tx@Dict begin { 0.0 0.0 } PutCoor PutBegin  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin 30.  RotBegin  end
+ 1547 816 a @beginspecial
+@setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray   -0.94057 0.83311 70 mul 100 div 14.22636 mul exch 14.22636 mul exch 0.83311 0 CLW mul sub 0 360 arc closepath gsave 0.8 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial 1547 816 a
+ tx@Dict begin RotEnd  end
+ 1547 816 a 1547 816
+a
+ tx@Dict begin PutEnd  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin { 0.0 0.0 } PutCoor PutBegin  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin 30.  RotBegin  end
+ 1547 816
+a @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray   0.35555 1.50986 70 mul 100 div 14.22636 mul exch 14.22636 mul exch 1.50986 0 CLW mul sub 0 360 arc closepath gsave 0.8 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial 1547 816 a
+ tx@Dict begin RotEnd  end
+ 1547
+816 a 1547 816 a
+ tx@Dict begin PutEnd  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin { 0.0 0.0 } PutCoor PutBegin  end
+ 1547 816 a 1547
+816 a
+ tx@Dict begin 30.  RotBegin  end
+ 1547 816 a @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray   -0.29245 1.07019 70 mul 100 div 14.22636 mul exch 14.22636 mul exch 1.07019 0 CLW mul sub 0 360 arc closepath gsave 0.8 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial
+1547 816 a
+ tx@Dict begin RotEnd  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin PutEnd  end
+ 1547 816 a 1547 816
+a
+ tx@Dict begin { 0.0 0.0 } PutCoor PutBegin  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin 30.  RotBegin  end
+ 1547 816 a @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray   0.64734 1.20477 70 mul 100 div 14.22636 mul exch 14.22636 mul exch 1.20477 0 CLW mul sub 0 360 arc closepath gsave 0.8 SLW 0  setgray 0 setlinecap stroke  grestore end
+
+@endspecial 1547 816 a
+ tx@Dict begin RotEnd  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin PutEnd  end
+ 1547 816
+a 1547 816 a
+ tx@Dict begin { 0.0 0.0 } PutCoor PutBegin  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin 30.  RotBegin  end
+ 1547 816 a @beginspecial
+@setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray   0.43076 1.33212 70 mul 100 div 14.22636 mul exch 14.22636 mul exch 1.33212 0 CLW mul sub 0 360 arc closepath gsave 0.8 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial 1547 816 a
+ tx@Dict begin RotEnd  end
+ 1547 816 a 1547 816
+a
+ tx@Dict begin PutEnd  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin { 0.0 0.0 } PutCoor PutBegin  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin 30.  RotBegin  end
+ 1547 816
+a @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray   0.84138 0.44872 70 mul 100 div 14.22636 mul exch 14.22636 mul exch 0.44872 0 CLW mul sub 0 360 arc closepath gsave 0.8 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial 1547 816 a
+ tx@Dict begin RotEnd  end
+ 1547
+816 a 1547 816 a
+ tx@Dict begin PutEnd  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin { 0.0 0.0 } PutCoor PutBegin  end
+ 1547 816 a 1547
+816 a
+ tx@Dict begin 30.  RotBegin  end
+ 1547 816 a @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray   0.35036 0.17596 70 mul 100 div 14.22636 mul exch 14.22636 mul exch 0.17596 0 CLW mul sub 0 360 arc closepath gsave 0.8 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial
+1547 816 a
+ tx@Dict begin RotEnd  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin PutEnd  end
+ 1547 816 a 1547 816
+a
+ tx@Dict begin { 0.0 0.0 } PutCoor PutBegin  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin 30.  RotBegin  end
+ 1547 816 a @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray   0.3158 1.23946 70 mul 100 div 14.22636 mul exch 14.22636 mul exch 1.23946 0 CLW mul sub 0 360 arc closepath gsave 0.8 SLW 0  setgray 0 setlinecap stroke  grestore end
+
+@endspecial 1547 816 a
+ tx@Dict begin RotEnd  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin PutEnd  end
+ 1547 816
+a 1547 816 a
+ tx@Dict begin { 0.0 0.0 } PutCoor PutBegin  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin 30.  RotBegin  end
+ 1547 816 a @beginspecial
+@setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray   -0.56557 1.2894 70 mul 100 div 14.22636 mul exch 14.22636 mul exch 1.2894 0 CLW mul sub 0 360 arc closepath gsave 0.8 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial 1547 816 a
+ tx@Dict begin RotEnd  end
+ 1547 816 a 1547 816
+a
+ tx@Dict begin PutEnd  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin { 0.0 0.0 } PutCoor PutBegin  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin 30.  RotBegin  end
+ 1547 816
+a @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray   0.8252 0.31738 70 mul 100 div 14.22636 mul exch 14.22636 mul exch 0.31738 0 CLW mul sub 0 360 arc closepath gsave 0.8 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial 1547 816 a
+ tx@Dict begin RotEnd  end
+ 1547
+816 a 1547 816 a
+ tx@Dict begin PutEnd  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin { 0.0 0.0 } PutCoor PutBegin  end
+ 1547 816 a 1547
+816 a
+ tx@Dict begin 30.  RotBegin  end
+ 1547 816 a @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray   -0.86734 1.55836 70 mul 100 div 14.22636 mul exch 14.22636 mul exch 1.55836 0 CLW mul sub 0 360 arc closepath gsave 0.8 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial
+1547 816 a
+ tx@Dict begin RotEnd  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin PutEnd  end
+ 1547 816 a 1547 816
+a
+ tx@Dict begin { 0.0 0.0 } PutCoor PutBegin  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin 30.  RotBegin  end
+ 1547 816 a @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray   0.9694 1.94054 70 mul 100 div 14.22636 mul exch 14.22636 mul exch 1.94054 0 CLW mul sub 0 360 arc closepath gsave 0.8 SLW 0  setgray 0 setlinecap stroke  grestore end
+
+@endspecial 1547 816 a
+ tx@Dict begin RotEnd  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin PutEnd  end
+ 1547 816
+a 1547 816 a
+ tx@Dict begin { 0.0 0.0 } PutCoor PutBegin  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin 30.  RotBegin  end
+ 1547 816 a @beginspecial
+@setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray   -0.38802 1.08134 70 mul 100 div 14.22636 mul exch 14.22636 mul exch 1.08134 0 CLW mul sub 0 360 arc closepath gsave 0.8 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial 1547 816 a
+ tx@Dict begin RotEnd  end
+ 1547 816 a 1547 816
+a
+ tx@Dict begin PutEnd  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin { 0.0 0.0 } PutCoor PutBegin  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin 30.  RotBegin  end
+ 1547 816
+a @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray   0.08801 1.2878 70 mul 100 div 14.22636 mul exch 14.22636 mul exch 1.2878 0 CLW mul sub 0 360 arc closepath gsave 0.8 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial 1547 816 a
+ tx@Dict begin RotEnd  end
+ 1547
+816 a 1547 816 a
+ tx@Dict begin PutEnd  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin { 0.0 0.0 } PutCoor PutBegin  end
+ 1547 816 a 1547
+816 a
+ tx@Dict begin 30.  RotBegin  end
+ 1547 816 a @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray   -0.19688 1.37479 70 mul 100 div 14.22636 mul exch 14.22636 mul exch 1.37479 0 CLW mul sub 0 360 arc closepath gsave 0.8 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial
+1547 816 a
+ tx@Dict begin RotEnd  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin PutEnd  end
+ 1547 816 a 1547 816
+a
+ tx@Dict begin { 0.0 0.0 } PutCoor PutBegin  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin 30.  RotBegin  end
+ 1547 816 a @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.8 SLW 0  setgray   -0.29599 1.7517 70 mul 100 div 14.22636 mul exch 14.22636 mul exch 1.7517 0 CLW mul sub 0 360 arc closepath gsave 0.8 SLW 0  setgray 0 setlinecap stroke  grestore end
+
+@endspecial 1547 816 a
+ tx@Dict begin RotEnd  end
+ 1547 816 a 1547 816 a
+ tx@Dict begin PutEnd  end
+ 1547 816
+a 1547 816 a
+ currentpoint initclip moveto
+ 1547 816 a 1547 816 a
+ tx@Dict begin { 0.0 0.0 } PutCoor PutBegin  end
+ 1547 816 a 1547 816
+a
+ tx@Dict begin 30.  RotBegin  end
+ 1547 816 a @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.7539 SLW 0  setgray  /ArrowA { moveto } def /ArrowB { } def [ -7.11317 7.11317 -7.11317 49.79227  /Lineto /lineto load def false Line  gsave 0.7539 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial @beginspecial
+@setspecial
+ tx@Dict begin STP newpath 0.7539 SLW 0  setgray  /ArrowA { moveto } def /ArrowB { } def 0.0 7.11317 /y ED /x ED /r 7.11317 def /c 57.2957 r Div def /angleA 180. 0.0 c mul 2 div add def /angleB 0. 0.0 c mul 2 div sub def x y r angleA angleB arc  gsave 0.7539 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.7539 SLW 0  setgray  /ArrowA { moveto } def /ArrowB { } def [ 7.11317 49.79227 7.11317 7.11317  /Lineto /lineto load def false Line  gsave 0.7539 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial
+@beginspecial @setspecial
+ tx@Dict begin STP newpath 1.13812 SLW 0  setgray  0 360 7.11317 1.42271 0.0 49.79227 Ellipse closepath gsave 1.13812 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial 1547 816 a
+ tx@Dict begin RotEnd  end
+ 1547
+816 a 1547 816 a
+ tx@Dict begin PutEnd  end
+ 1547 816 a 118 w @beginspecial @setspecial
+ tx@Dict begin STP newpath end
+
+@endspecial 1416 579 a
+ tx@Dict begin PutEnd  end
+ 1416 579 a 1416 579 a
+ tx@Dict begin { 14.22636 -71.13182 } PutCoor PutBegin  end
+ 1416 579
+a @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.7539 SLW 0  setgray  0. true -17.78294 0.0 17.78294 3.55658 0 Frame  gsave 0.7539 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial @beginspecial
+@setspecial
+ tx@Dict begin STP newpath 0.7539 SLW 0  setgray  0. true -7.11317 17.78294 7.11317 32.00931 0 Frame  gsave 0.7539 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.7539 SLW 0  setgray  -4.26794 24.89613 1.42271 0 CLW mul sub 0 360 arc closepath gsave 0.7539 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial
+@beginspecial @setspecial
+ tx@Dict begin STP newpath 0.7539 SLW 0  setgray  0.0 24.89613 1.42271 0 CLW mul sub 0 360 arc closepath gsave 0.7539 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.7539 SLW 0  setgray  4.26794 24.89613 1.42271 0 CLW mul sub 0 360 arc closepath gsave 0.7539 SLW 0  setgray 0 setlinecap stroke  grestore end
+
+@endspecial @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.7539 SLW 0  setgray  0. true -3.55658 32.00931 3.55658 60.46204 0 Frame  gsave 0.7539 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial @beginspecial
+@setspecial
+ tx@Dict begin STP newpath 0.7539 SLW 0  setgray  /ArrowA { moveto } def /ArrowB { } def [ 17.78294 3.55658 3.55658 7.11317 3.55658 17.78294  /Lineto /lineto load def false Line  gsave 0.7539 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.7539 SLW 0  setgray  /ArrowA { moveto } def /ArrowB { } def [ -3.55658 10.66977 -3.55658 7.11317 -17.78294 3.55658  /Lineto /lineto load def false Line  gsave 0.7539 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial
+@beginspecial @setspecial
+ tx@Dict begin STP newpath 0.7539 SLW 0  setgray  /ArrowA { moveto } def /ArrowB { } def [ -3.55658 10.66977 -32.00931 10.66977  /Lineto /lineto load def false Line  gsave 0.7539 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.7539 SLW 0  setgray  /ArrowA { moveto } def /ArrowB { } def [ -3.55658 14.22636 -32.00931 14.22636  /Lineto /lineto load def false Line  gsave 0.7539 SLW 0  setgray 0 setlinecap stroke  grestore end
+
+@endspecial @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.7539 SLW 0  setgray  0 360 1.42271 1.77829 -3.55658 12.44806 Ellipse closepath gsave 0.7539 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial @beginspecial
+@setspecial
+ tx@Dict begin STP newpath 0.7539 SLW 0  setgray  0. true -32.00931 10.66977 -3.55658 14.22636 0 Frame  gsave 1  setgray fill grestore end
+ @endspecial @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.7539 SLW 0  setgray  /ArrowA { moveto } def /ArrowB { } def [ -3.55658 10.66977 -32.00931 10.66977  /Lineto /lineto load def false Line  gsave 0.7539 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial
+@beginspecial @setspecial
+ tx@Dict begin STP newpath 0.7539 SLW 0  setgray  /ArrowA { moveto } def /ArrowB { } def [ -3.55658 17.78294 -3.55658 14.22636 -32.00931 14.22636  /Lineto /lineto load def false Line  gsave 0.7539 SLW 0  setgray 0 setlinecap stroke  grestore end
+ @endspecial @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.7539 SLW 0  setgray  /ArrowA { moveto } def /ArrowB { } def [ 3.55658 7.11317 0.0 5.69044 -3.55658 7.11317  1. 0.1 0.  /c ED /b ED /a ED false OpenCurve  gsave 0.7539 SLW 0  setgray 0 setlinecap stroke  grestore end
+
+@endspecial 1416 579 a
+ tx@Dict begin { 0.0 60.46204 } PutCoor PutBegin  end
+ 1416 579 a 1416 579 a
+ tx@Dict begin /mtrxc CM def CP CP T STV newpath 0.7539 SLW 0  setgray  /ArrowA { moveto } def /ArrowB { } def [ 0.0 0.0 3.55658 0.0 4.97931 7.11317 5.69044 10.66977 4.97931 14.22636 3.55658 21.33954 7.11317 28.45273 -3.55658 21.33954 -4.97931 14.22636 -5.69044 10.66977 -4.97931 7.11317 -3.55658 0.0  false OpenBezier  gsave false 1 0.0 0.0  gsave 0 0.2 0.4 0  setcmykcolor currentrgbcolor grestore gsave 0 0 1 0  setcmykcolor currentrgbcolor grestore 300 0. 0. tx@GradientDict begin GradientFill end grestore clip newpath mtrxc setmatrix moveto 0 setgray end
+ 1416 579
+a @beginspecial @setspecial
+ tx@Dict begin STP newpath 0.7539 SLW 0  setgray  [ 0.0 14.22636 3.55658 0.0 -3.55658 0.0  /Lineto /lineto load def false Polygon  gsave false 1 0.0 0.0  gsave 1 0 0 0  setcmykcolor currentrgbcolor grestore gsave 1  setgray currentrgbcolor grestore 300 0. 0. tx@GradientDict begin GradientFill end grestore end
+ @endspecial 1416 579 a
+ currentpoint initclip moveto
+ 1416
+579 a 1416 579 a
+ tx@Dict begin PutEnd  end
+ 1416 579 a 1416 579 a
+ tx@Dict begin PutEnd  end
+ 1416 579 a 2597
+1170 a @beginspecial @setspecial
+ tx@Dict begin STP newpath end
+ @endspecial 0 TeXcolorgray
+0 TeXcolorgray eop end
+%%Trailer
+
+userdict /end-hook known{end-hook}if
+%%EOF

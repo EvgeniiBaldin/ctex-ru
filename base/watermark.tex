@@ -1,0 +1,71 @@
+%  -*- coding: koi8-r -*-
+\documentclass[a4paper,12pt]{scrartcl} 
+\usepackage[warn]{mathtext}
+\usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}%first paragraph indent
+\usepackage{cmap}
+\usepackage[unicode=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{srcltx}
+\usepackage{textcomp}
+\usepackage{floatflt}
+\usepackage{wrapfig}
+\usepackage{afterpage}
+\usepackage{ccaption}
+\captiondelim{. }
+\usepackage{xspace}
+%научные символы и смайлики \smiley \frownie
+\usepackage{wasysym}
+\usepackage{draftwatermark}
+%\usepackage{everypage}
+\SetWatermarkLightness{0.3}
+\SetWatermarkText{\textbf{Рабочая версия}}
+\SetWatermarkScale{2.3}
+\deffootnote[2.5em]{1.5em}{1em}{\textsuperscript{\thefootnotemark}}
+\setkomafont{sectioning}{\bfseries}
+\setkomafont{descriptionlabel}{\bfseries}
+%\TeX-имена
+\usepackage{texnames}
+
+%backslash
+\newcommand{\bs}{\symbol{'134}}
+%degree
+\newcommand{\grad}{\ensuremath{{}^{\circ}}\xspace}
+\begin{document}
+\begin{titlepage}
+
+\bigskip
+  \bigskip
+  \bigskip
+
+  \begin{center}
+    \Huge \LaTeX{}, Linux и русский стиль.
+  \end{center}
+  \bigskip
+
+
+   \begin{center}
+     \renewcommand{\thefootnote}{\fnsymbol{footnote}}  
+    \Large\textcopyright\, Е.М.\,Балдин\footnote[1]{e-mail: E.M.Baldin@inp.nsk.su}
+  \bigskip
+  \bigskip
+  \bigskip
+
+    \includegraphics[width=\textwidth]{../title.eps}
+    \footnotetext{Эмблемы \TeX{} и  \METAFONT{},
+      созданные Дуайном Бибби, взяты со странички Д.Э.\,Кнута.}
+   \end{center}
+
+% \vfill
+
+% \begin{center}
+%   Новосибирск, 2006
+% \end{center}
+  
+\end{titlepage}
+
+\end{document}

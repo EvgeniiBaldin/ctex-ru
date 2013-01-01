@@ -1,0 +1,100 @@
+%  -*- coding: koi8-r -*-
+\input{../structheader}
+\usepackage[warn]{mathtext}
+\usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}%first paragraph indent
+\usepackage{cmap}
+\usepackage[unicode=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{srcltx}
+\usepackage{textcomp}
+\usepackage{floatflt}
+\usepackage{wrapfig}
+\usepackage{afterpage}
+\usepackage{ccaption}
+\captiondelim{. }
+\usepackage{xspace}
+\usepackage[version=3]{mhchem}
+\usepackage{cellspace}
+\usepackage{longtable}
+\usepackage{xtab}
+\usepackage{nccboxes}
+\usepackage{listings}
+\lstloadlanguages{bash,[LaTeX]TeX,MetaPost,Clean,lisp}
+\lstset{language=[LaTeX]TeX,frame=tlBR,
+  escapechar=|,extendedchars=true,
+  keywordstyle={},
+%  commentstyle=\itshape,
+  commentstyle=,
+%  stringstyle=\bfseries 
+}
+
+\usepackage{example}
+
+%backslash
+\newcommand{\bs}{\symbol{'134}}
+%degree
+\newcommand{\grad}{\ensuremath{{}^{\circ}}\xspace}
+\begin{document}
+\pagestyle{empty}
+
+\begin{center}
+  \begin{longtable}{SclScl}\hline
+    \multicolumn{4}{c}{\cbox{Простые соединения}}\\\hline
+    \ce{H2O}&\lstinline!\ce{H2O}!&
+    \ce{Sb2O3}&\lstinline!\ce{Sb2O3}!\\
+    \ce{H+}&\lstinline!\ce{H+}!&
+    \ce{CrO4^2-}&\lstinline!\ce{CrO4^2-}!\\
+    \ce{AgCl2-}&\lstinline!\ce{AgCl2-}!&
+    \ce{[AgCl2]-}&\lstinline!\ce{[AgCl2]-}!\\
+    \ce{Y^{99}+}&\lstinline!\ce{Y^{99}+}!&
+    \ce{Y^{99+}}&\lstinline!\ce{Y^{99+}}!\\
+    \ce{H2_{(aq)}}&\lstinline!\ce{H2_{(aq)}}!&
+    \ce{NO3-}&\lstinline!\ce{NO3-}!\\
+    \ce{(NH4)2S}&\lstinline!\ce{(NH4)2S}!&
+    &\\\hline
+    \multicolumn{4}{c}{\cbox{Спецсимволы}}\\\hline
+     \ce{KCr(SO4)2*12H2O}&\lstinline!\ce{KCr(SO4)2*12H2O}!&
+     &\\
+     \ce{KCr(SO4)2.12H2O}&\lstinline!\ce{KCr(SO4)2.12H2O}!&
+     &\\
+     \ce{RNO2^{-.}}&\lstinline!\ce{RNO2^{-.}}!&
+     &\\
+     \ce{$\mu\hyphen$Cl}&\lstinline!\ce{$\mu\hyphen$Cl}!&
+     &\\\hline
+    \multicolumn{4}{c}{\cbox{Множители}}\\\hline
+    \ce{2H2O}&\lstinline!\ce{2H2O}!&
+    \ce{1/2H2O}&\lstinline!\ce{1/2H2O}!\\\hline
+    \multicolumn{4}{c}{\cbox{Изотопы}}\\\hline
+    \ce{^{227}_{90}Th+}&\lstinline!\ce{^{227}_{90}Th+}!&
+    &\\\hline
+    \multicolumn{4}{c}{\cbox{Связи}}\\\hline
+     \ce{C6H5-CHO}&\lstinline!\ce{C6H5-CHO}!&
+     \ce{X=Y#Z}&\lstinline!\ce{X=Y#Z}!\\\hline
+  \end{longtable}
+\end{center}
+
+
+%     \multicolumn{4}{c}{Формулы}\\\hline
+%     \ce{CO2 + C -> 2CO}&\lstinline!\ce{CO2 + C -> 2CO}!&
+%     &\\
+%     \ce{CO2 + C <- 2CO}&\lstinline!\ce{CO2 + C <- 2CO}!&
+%     &\\
+%     \ce{H+ + OH- <=>> H2O}&\lstinline!\ce{H+ + OH- <=>> H2O}!&
+%     \ce{xxx}&\lstinline!\ce{xxx}!\\
+%     \ce{xxx}&\lstinline!\ce{xxx}!&
+%     \ce{xxx}&\lstinline!\ce{xxx}!\\
+%     \ce{xxx}&\lstinline!\ce{xxx}!&
+%     \ce{xxx}&\lstinline!\ce{xxx}!\\
+
+% \cf{[Cd\{SC(NH2)2\}2].[Cr(SCN)4(NH3)2]2}\\
+% \ce{[Cd\{SC(NH2)2\}2].[Cr(SCN)4(NH3)2]2}
+%\begin{thebibliography}{9}
+%\bibitem{}
+%\newblock
+%\end{thebibliography}
+\end{document}

@@ -1,0 +1,63 @@
+%  -*- coding: koi8-r -*-
+\input{../structheader}
+\usepackage[warn]{mathtext}
+\usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}%first paragraph indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{srcltx}
+\usepackage{textcomp}
+\usepackage{floatflt}
+\usepackage{wrapfig}
+\usepackage{afterpage}
+\usepackage{ccaption}
+\captiondelim{. }
+\usepackage{xspace}
+\usepackage[basic,box,gate,oldgate,ic,optics,physics]{circ}
+\usepackage{../example}
+
+%backslash
+\newcommand{\bs}{\symbol{'134}}
+%degree
+\newcommand{\grad}{\ensuremath{{}^{\circ}}\xspace}
+\begin{document}
+\pagestyle{empty}
+\begin{example}[0.65\linewidth]{phys-cyrc}
+\begin{circuit}0
+\npn1 {?} B l  % Транзистор.
+\frompin npn1C % Рисуем от коллектора
+\- 1 u         % проводок вверх.
+\nl\A1 {$I_C$} u % Амперметр, измеряющий ток коллектора A1.
+\atpin npn1B     % Рисуем от базы транзистора
+\- 1 l           % проводок влево.
+\R1 {510 кОм} l  % Сопротивление R1.
+\- 1 l           % Кусочек провода влево.
+\centerto A1     % Выравниваем элемент по A1.
+\nl\A2 {$I_B$} u % Второй амперметр A2.
+\frompin A2b % Рисуем линию от A2 (снизу)
+\vtopin R1l  % до сопротивления R1 (слева).
+\frompin A1t % Рисуем линию от A2 (сверху)
+\- 1 u       % вверх.
+\.1          % Создаём соединение (жирная точка).
+\frompin A2t % Проводок от A2
+\vtopin .1   % до соединения.
+\htopin .1   % От соединения
+\- 1 u       % проводок вверх для подвода
+\cc\connection1 {$U_b$} c u % напряжения.
+\frompin npn1E % Рисуем от эмиттера
+\- 1 d         % проводок вниз
+\GND1          % и заземляем его.
+\end{circuit}
+\end{example}
+
+%\[\Braket{ \phi | \frac{\partial^2}{\partial t^2} | \psi }
+% \Set{ x\in\mathbf{R}^2 | 0<{|x|}<5 }\]
+
+%\begin{thebibliography}{9}
+%\bibitem{}
+%\newblock
+%\end{thebibliography}
+\end{document}

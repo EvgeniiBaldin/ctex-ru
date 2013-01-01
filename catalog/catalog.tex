@@ -1,0 +1,2588 @@
+%  -*- coding: koi8-r -*-
+\chapter{Каталог пакетов \TeXLive}
+\label{cha:catalog}
+
+
+%Все пакеты в этом разделе будут отмечены в указателе наклонным
+%шрифтом страницы
+%----------------------------------------------
+% Алфавитный указатель по пакетам
+%\renewcommand{\textpkge}[1]{{\textbf{#1}}}
+\renewcommand{\textpkgh}[1]{\protect\sindex[pkg]{#1|textit}}
+\renewcommand{\textpkg}[1]{\textpkge{#1}\textpkgh{#1}}
+%выделение жирным (статья посвящена этому термину)
+%\renewcommand{\textpkghemph}[1]{\textpkgh{#1}}
+%\renewcommand{\textpkgemph}[1]{\textpkge{#1}\textpkghemph{#1}}
+%----------------------------------------------
+
+Наиболее эффективный способ решения возникшей проблемы после её
+осознания "--- это поиск уже готового решения. Прежде чем решать
+проблему самому "--- лучше потратить некоторое время на просмотр каталога и
+найти готовое или похожее  решение и довести его до нужного
+состояния. \emph{Нет} необходимости всё делать с нуля.
+
+
+\TeXLive "--- довольно большой дистрибутив и содержит значительную
+часть CTAN"=архива\footnote{Лучшим кратким путеводителем по CTAN
+  является созданный Грэхамом Вильямсом (Graham Williams) <<TeX
+  Catalogue>>, который постоянно обновляется и доступен по адресу
+  \url{http://texcatalogue.sarovar.org} в html-формате.}. 
+
+В этой главе предпринята попытка кратко упомянуть почти все пакеты
+\LaTeX, которые входят в \TeXLive и не вызывают проблем при
+использовании. 
+
+
+Часть  пакетов описаны в книге более подробно, о чём даёт знать
+специальный значок \FullVersionSign{} в начале абзаца. 
+
+\section{Набор текста}
+\label{sec:catalog:base}
+
+Текст может походить на плавный поток равнинной реки, но может быть
+похожим и на горную речку с её неповторимыми особенностями. Для этого
+тексту нужны разнообразные средства выражения.
+
+\subsection{Интернационализация и локализация}
+\label{sec:catalog:i18n}
+
+\FullVersion\textpkg{fontenc} "--- стандартный пакет для выбора
+внутренней кодировки \LaTeX.
+
+\FullVersion\textpkg{inputenc} "--- стандартный пакет для указания, в
+какой кодировке набран текст.
+
+\FullVersion\textpkg{babel} "--- стандартный пакет локализации или
+выбора языка документа. Пакет поддерживает сорок три языка без учёта
+диалектов. Список поддерживаемых языков приведён в
+разделе~\ref{sec:base2:i18n} на стр.~\pageref{sec:base2:i18n}.
+% африкаанс (\textopt{afrikaans}), английский (\textopt{english},
+% \textopt{USenglish}, \textopt{american}, \textopt{UKenglish},
+% \textopt{british}, \textopt{canadian}, \textopt{australian},
+% \textopt{newzealand}), баскский (\textopt{basque}), болгарский
+% (\textopt{bulgarian}), бретонский (\textopt{breton}), венгерский
+% (\textopt{magyar}), (\textopt{hungarian}), верхнелужицкий
+% (\textopt{uppersorbian}), галисийский (\textopt{galician}),
+% голландский (\textopt{dutch}), греческий (\textopt{greek},
+% \textopt{polutonikogreek}), датский (\textopt{danish}), еврейский
+% (\textopt{hebrew}), интерлингва (\textopt{interlingua}), ирландский
+% (\textopt{irish}), исландский (\textopt{icelandic}), испанский
+% (\textopt{spanish}), итальянский (\textopt{italian}), каталанский
+% (\textopt{catalan}), латинский (\textopt{latin}), малайский
+% (\textopt{bahasa}), немецкий (\textopt{austrian}, \textopt{german},
+% \textopt{germanb}, \textopt{ngerman}, \textopt{naustrian}),
+% нижнелужицкий (\textopt{lowersorbian}), норвежский (\textopt{norsk}),
+% (\textopt{nynorsk}), польский (\textopt{polish}), португальский
+% (\textopt{portuges}, \textopt{portuguese}, \textopt{brazilian}),
+% (\textopt{brazil}), русский (\textopt{russian}), румынский
+% (\textopt{romanian}), северносаамский (\textopt{samin}), сербский
+% (\textopt{serbian}), словацкий (\textopt{slovak}), словенский
+% (\textopt{slovene}), турецкий (\textopt{turkish}), украинский
+% (\textopt{ukrainian}), уэльский (\textopt{welsh}), финский
+% (\textopt{finnish}), французский (\textopt{french},
+% \textopt{francais}, \textopt{canadien}, \textopt{acadian}),
+% хорватский (\textopt{croatian}), чешский (\textopt{czech}), шведский
+% (\textopt{swedish}), шотландский (\textopt{scottish}), эсперанто
+% (\textopt{esperanto}) и эстонский (\textopt{estonian}).
+
+
+Кроме языков, поддерживаемых пакетом \textpkg{babel}, отдельно
+существуют пакеты для набора в \LaTeX{} (не полный список) на арабском
+(\textpkg{arabtex}), армянском (\textpkg{armtex}), бенгальском
+(\textpkg{arosgn}, \textpkg{bangtex}), бирманском (\textpkg{burmese}),
+вьетнамском (\textpkg{vntex}), гурмукхи (\textpkg{gurmukhi}),
+деванагари (\textpkg{devanagari}), дравидийском
+(\textpkge{ma\-la\-ya\-lam}\textpkgh{malayalam}), индийском
+(\textpkg{itrans}), инуитском (\textpkg{oinuit}), ирокезском языке
+племени чероки (\textpkg{ocherokee}), китайском (\textpkg{cjk}),
+корейском (\textpkg{cjk}), маньчжурском (\textpkg{manjutex}),
+монгольском (\textpkg{montex}), санскритском (\textpkg{sanskrit}),
+сингальском (\textpkg{sinhala}), тамильском (\textpkg{adami}),
+тибетском (\textpkg{ctib4tex}, \textpkg{pecha}), эфиопском
+(\textpkg{enthiop}), сомали (\textpkge{os\-ma\-ni\-an}\textpkgh{osmanian}),  телугу
+(\textpkg{telugu}) и японском (\textpkg{cjk}) языках.
+
+\textpkg{ucs} "--- поддержка Unicode.
+
+\textpkg{braille} "--- поддержка набора с помощью шрифта Брайля (для
+слепых).
+
+
+\subsection{Русификация}
+\label{sec:catalog:russian}
+
+\FullVersion\textpkg{anttor} "--- инициализация шрифтов Antykwa
+Tor\'unska. В шрифтах есть кириллица.
+
+\FullVersion\textpkg{concrete} "--- инициализация
+шрифтов \textpkg{concrete} (для текста) и \textpkg{euler} (для
+математики). Шрифт использовался Д.\,Э.~Кнутом для набора книги
+Конкретная математика. Полностью русифицирован. 
+
+\textpkg{cyrillic} "--- поддержка кириллицы в \LaTeX. Включает набор
+кириллических кодировок для \textpkg{inputenc}.
+
+
+\FullVersion\textpkg{lh} "--- набор кириллических шрифтов базового
+семейства Computer Modern. Доступны в векторном формате Type1 в составе
+пакета \textpkg{cm-super}.
+
+\FullVersion\textpkg{indentfirst} "--- после инициализации этого стиля
+первый параграф раздела начинается с красной строки.
+
+\FullVersion\textpkg{t2} "--- набор макросов и вспомогательных
+программ для поддержки набора кириллицы. В пакет входят стили
+\textpkg{misccorr} (при загрузке исправляет некоторые несоответствия с
+правилами отечественной полиграфии), \textpkg{mathtext} (позволяет
+набирать русский текст в математической моде) и \textpkg{citehack}
+(кириллические метки для \BibTeX).
+ 
+\FullVersion\textpkg{eskdx} "--- реализация стандарта ЕСКД.
+
+\FullVersion\textpkg{gost780u} и \textpkg{gost71u} из пакета
+\textpkg{gost} "--- поддержка ГОСТ~7.80-00 и ГОСТ~7.1-84 для \BibTeX.
+
+
+
+\subsection{Пунктуация}
+\label{sec:catalog:punctuation}
+
+\textpkg{extdash} из пакета \textpkg{ncctools} "--- простые псевдонимы
+для команд дефисов, тире и пробелов.
+
+
+\FullVersion\textpkg{ncccomma} из пакета \textpkg{nctools} "---
+позволяет использовать запятую вместо точки для отделения целой части
+числа от дробной. Схожей функциональностью обладает стиль
+\textpkg{icomma} из пакета \textpkg{was}.
+
+\FullVersion\textpkg{underscore} "--- позволяет набирать знак подчёркивания (<<_>>) в
+текстовой моде.
+
+
+\subsection{Выделение текста}
+\label{sec:catalog:emph}
+
+\textpkg{contour} "--- возможность добавление цветного контура вокруг
+букв. Эмуляция контурных шрифтов.
+
+
+\textpkg{nccstretch} из пакета \textpkg{ncctools} "--- разрядка
+текста.
+
+\FullVersion\textpkg{soul} "--- печать в разрядку, подчёркивание, перечёркивание
+текста и многое другое.
+
+\textpkg{truncate} "--- урезает текст до необходимой длины.
+
+\textpkg{ulem} "--- разные способы подчёркивания и перечёркивания
+текста.
+
+\textpkg{umoline} "--- определяет макросы для подчёркивания текста с
+возможностью переноса.
+
+\subsection{Разделительные линии}
+\label{sec:catalog:hfill}
+
+\textpkg{dashrule} "--- пунктирные разделительные линии.
+
+
+\FullVersion\textpkg{mboxfill} из пакета \textpkg{ncctools} "---
+заполнение пространства указанными симво\-лами.
+
+
+\FullVersion\textpkg{nccrules} из пакета \textpkg{ncctools} "---
+различные типы разделительных линий.
+
+\subsection{Форматирование параграфа}
+\label{sec:catalog:paragraph}
+
+\FullVersion\textpkg{lineno} "--- добавляет номер строки на полях. 
+
+\FullVersion\textpkg{ragged2e} "--- выравнивание абзаца по правому или
+левому краю без выключения механизма переносов.
+
+\textpkg{hanging} "--- управление отступами внутри параграфа.
+
+\FullVersion\textpkg{comment} "--- определяет одноимённое окружение,
+позволяющее закомментировать текст внутри него.
+
+\textpkg{shapepar} "--- печать параграфа любой заданной формы. Полезен,
+если нужно напечатать что-то в форме сердечка или тыквы.
+
+\subsection{Перечни}
+\label{sec:catalog:list}
+
+\FullVersion\textpkg{desclist} из пакета \textpkg{ncctools} "---
+улучшенный аналог окружения \textenv{description}.
+
+\textpkg{engrec} "--- нумерация перечня производится с помощью
+заглавных и строчных греческих букв.
+
+\textpkg{enumerate} "--- добавляет необязательный аргумент к окружению
+\textenv{enumerate} для определения стиля нумерации перечня.
+
+\textpkg{enumitem} "--- задание макета перечня.
+
+\FullVersion\textpkg{eqlist} "--- определяет одноимённое окружение,
+похожее на \textenv{description}, но с одинаковым отступом для текста
+перечня.
+
+\textpkg{etaremune} "--- определяет нумерованный перечень с обратной
+нумерацией.
+
+\textpkg{expdlist} "--- расширение окружения \textenv{description}.
+
+\textpkg{multenum} "--- многоколоночный перечень.
+
+\FullVersion\textpkg{paralist} "--- формирование внутриабзацного
+перечня.
+
+
+\subsection{Неформатированный текст}
+\label{sec:catalog:verbatim}
+
+\FullVersion\textpkg{alltt} "--- вывод неформатированного текста с
+возможностью исполнения команд \LaTeX{} внутри одноимённого окружения.
+
+\textpkg{fancyvrb} "--- определяет множество изощрённых способов по
+работе с неформатированным текстом.
+
+\textpkg{moreverb} "--- расширение возможностей пакета \textpkg{verbatim}.
+
+\FullVersion\textpkg{verbatim} "--- вывод неформатированного текста.
+
+
+\subsection{Цитирование}
+\label{sec:catalog:quote}
+
+
+\textpkg{balancedquotes} "--- заменяет симметричные "кавычки"{}  на
+сбалансированные, например, <<ёлочки>>.  
+
+
+\textpkg{csquotes} "--- пакет для создания цитат. Локализован для
+некоторых европейских языков. Русский язык в наличии.
+
+\FullVersion\textpkg{epigraph} "--- формирование эпиграфа.
+
+\textpkg{quotchap} "--- добавление эпиграфов к главам.
+
+
+
+\subsection{Рубрикация}
+\label{sec:catalog:section}
+
+
+\textpkg{alnumsec} "--- буквенная нумерация разделов. 
+
+\textpkg{chappg} "--- страницы для каждой новой главы опять начинают
+нумероваться с~единицы.
+
+\textpkg{fncychap} "--- шесть дополнительных нестандартных способов
+оформления заголовков глав. В этой книге используется определённый в
+данном пакете стиль \textopt{Lenny}.
+
+\textpkg{nccsect} из пакета \textpkg{ncctools} "--- альтернативный
+механизм рубрикации.
+
+\textpkg{sectionbox} "--- помещает разделы в причудливо оформленные
+боксы.  Возможно, сгодится для создания постера.
+
+\textpkg{titlesec} "--- альтернативный способ формирования заголовков
+разделов, сильно отличающийся от стандартной схемы. Для работы с
+оглавлением в том же стиле следует использовать пакет \textpkg{titletoc}.
+
+\textpkg{appendix} "--- дополнительные возможности по
+работе с приложением.
+
+
+\subsection{Титульный лист}
+\label{sec:catalog:titlepage}
+
+\textpkg{authblk} из пакета \textpkg{preprint} "--- переопределяет
+команду \textcmd{author}, позволяя вводить имя автора и организацию, к
+которой он принадлежит, более естественным образом.
+
+
+\textpkge{coverpage} "--- включает стиль \textpkg{CoverPage}, который
+определяет шаблон для создания обложки для научной статьи.
+
+\textpkg{titling} "--- улучшение стандартной команды
+\textcmd{maketitle}.
+
+\textpkg{abstract} "--- доступ к параметрам, отвечающим за оформление
+аннотации.
+
+
+\subsection{Перекрёстные ссылки}
+\label{sec:catalog:crossreferences}
+
+
+
+\textpkg{crossreference} "--- создание специального списка
+перекрёстных ссылок.
+
+\textpkg{lastpage} "--- создаёт метку, при ссылке на которую получаешь
+последнюю страницу документа.
+
+\FullVersion\textpkg{prettyref} "--- позволяет форматировать ссылки в
+зависимости от префикса метки.
+
+\textpkg{refcheck} "--- печатает имена метки на полях, выделяя те из
+них, на которые ссылок нет.
+
+\FullVersion\textpkg{showkeys} "--- визуализирует имена меток. Это
+может оказаться полезным в процессе подготовки документа.
+
+\textpkg{typedref} "--- заменяет команду \textcmd{ref} командами
+\textcmd{figureref}, \textcmd{sectionref} и  \textcmd{eqref}. Команда
+\textcmd{label} запоминает тип метки и не позволяет неправильно на
+себя ссылаться.
+
+\textpkg{varioref} из пакета \textpkg{tools} "--- ссылки на страницы с
+учётом их положения относительно текущей.
+
+
+\FullVersion\textpkg{xr} "--- возможность ссылок на внешний документ.
+
+
+\subsection{Сноски}
+\label{sec:catalog:footnotes}
+
+
+
+
+\textpkg{fixfoot} "--- позволяет использовать одно и то же подстрочное
+примечание несколько раз в пределах одной страницы.
+
+\FullVersion\textpkg{footmisc} "--- предоставляет множество управляемых
+параметров для влияния на вид и формат сносок.
+
+\textpkg{footnpag} "--- при окончании каждой страницы номер сноски
+обнуляется.
+
+\FullVersion\textpkg{ftnright} из пакета \textpkg{tools} "---
+размещение подстрочных примечаний при двухколоночной вёрстке в конце
+правой колонки.
+
+\textpkg{manyfoot} из пакета \textpkg{ncctools} "--- многоуровневые
+сноски.
+
+\FullVersion\textpkg{nccfoots} из пакета \textpkg{ncctools} "---
+ручная нумерация сносок.
+
+\FullVersion\textpkg{savefnmark} "--- позволяет сохранять и
+использовать заново знаки сноски. Это работает и при переходе от
+обычного текста к таблице и обратно.
+
+\textpkg{yafoot} "--- содержит стилевые файлы \textpkg{pfnote} (на
+новой странице нумерация сносок опять начинается с начала),
+\textpkg{fnpos} (позволяет контролировать вертикальное положение
+сноски) и \textpkg{dblfnote} (печать подстрочных примечаний в две
+колонки).
+
+
+\subsection{Затекстовые примечания}
+\label{sec:catalog:endnotes}
+
+
+\textpkg{endheads} "--- обеспечивает в разделе затекстовых примечаний
+<<бегущий заголовок>> для быстрой ориентации при поиске.
+
+\FullVersion\textpkg{endnotes} "--- размещает все сноски в конце
+текста.
+
+\FullVersion\textpkg{pagenote} "--- позволяет организовать затекстовые
+комментарии в конце каждой главы.
+
+
+\subsection{Заметки на полях}
+\label{sec:catalog:marginnotes}
+
+\FullVersion\textpkg{marginnote} "--- позволяет создавать заметки на
+полях без использования плавающего объекта.
+
+\FullVersion\textpkg{mparhack} "--- исправление ошибки \LaTeX{} с
+возможно неправильным размещением заметок на полях.
+
+\FullVersion\textpkg{changebar} "--- метки в виде полосы на
+полях документа. Используется для индикации изменений в тексте.
+
+
+
+
+\subsection{WWW-элементы}
+\label{sec:catalog:WWW}
+
+\FullVersion\textpkg{breakurl} "--- перенос гиперссылки на другую
+строку.
+
+\FullVersion\textpkg{hyperref} "--- поддержка гиперссылок.
+
+\textpkg{typehtml} из пакета \textpkg{carlisle} "--- печатает HTML
+прямо из \LaTeX. Поддерживает почти все теги HTML2 и большинство
+математических фрагментов из HTML3.
+
+\FullVersion\textpkg{url} "--- ввод гиперссылки без необходимости
+экранирования специальных символов.  
+
+\textpkg{cooltooltips} "--- позволяет создавать всплывающие подсказки
+над гиперссылками. Работает с \textprog{Adobe Reader} начиная с 7
+версии.
+
+
+\subsection{PDF}
+\label{sec:catalog:pdf}
+
+%рассказать?
+%pdfcrop - Crop PDF graphics - скрипт
+
+\textpkg{cmap} "--- добавляет возможность поиска и копирования текста
+в pdf-документ.
+
+\textpkg{pdfcrypt} из пакета \textpkg{oberdiek} "--- позволяет
+зашифровать pdf-файл и выставить ограничения на печать
+документа.
+
+
+
+
+\subsection{Боксы}
+\label{sec:catalog:box}
+
+\textpkg{boites} "--- определяет окружения, формирующие боксы, которые
+могут частично переноситься на другую страницу.
+
+
+\textpkg{boxedminipage} "--- определяет одноимённое окружение,
+создающее мини"=страницу с рамкой вокруг неё.
+
+\textpkg{boxhandler} "--- именованные боксы.
+
+\textpkg{dashbox} "--- рисует пунктирную рамку вокруг бокса.
+
+\textpkg{eqparbox} "--- создаёт группу боксов одинаковой ширины, равной
+максимальной ширине среди ширин аргументов.
+
+\textpkg{fancybox} "--- создание боксов с разнообразными рамочками и фоном.
+
+
+\textpkg{nccboxes} из пакета \textpkg{ncctools} "--- дополнительные
+способы создания боксов. Пакет ориентирован на работу с таблицами. В
+частности предоставляет набор команд для создания невидимых подпорок
+определённой высоты.
+
+\textpkg{pst-fr3d} "--- 3D-боксы.
+
+\FullVersion\textpkg{shadow} "--- макрос \textcmd{shabox}, создающий
+бокс с рамкой и тенью.
+
+
+% \section{Сборка документа}
+% \label{sec:catalog:documentcombining}
+
+
+\subsection{Процесс подготовки документа}
+\label{sec:catalog:vc}
+
+
+\FullVersion\textpkg{draftwatermark} "--- печатает по диагонали через
+всю страницу слово <<DRAFT>> или какое-либо ещё выражение. Этот пакет
+полностью перекрывает возможности более старого пакета
+\textpkg{draftcopy}.
+
+
+\FullVersion\textpkg{fixme} "---  пояснительные комментарии и заметки
+о ходе выполнения работы над документом в теле текста. 
+
+\textpkg{prelim2e} "--- при инициализации внизу каждой страницы
+появляется временная метка и текстовая строка, которая может
+задаваться пользователем.
+
+\textpkg{progress} "--- предоставляет одноимённую команду для
+индикации степени завершённости документа и создаёт HTML-файл,
+показывающий этапы подготовки документа. Пакет может быть полезен при
+командной работе над большим документом.
+
+
+%\fxnote{рассказать в рассказе про pdf - AUcTeX поддерживает}
+\textpkg{pdfsync} "--- синхронизация кода и
+pdf-файла. Позволяет попасть в соответствующее место кода на
+основании pdf-фрагмента и обратно. Поддерживает текстовые редакторы
+\textprog{iTeXMac}, \textprog{iTeXMac2}, \textprog{TeXShop} и
+\textprog{emacs} (\textprog{AucTeX}) и программы просмотра pdf
+\textprog{iTeXMac}, \textprog{iTeXMac2}, \textprog{TeXShop},
+\textprog{TeXniscope} и  \textprog{PDFView}.
+
+%\fxnote{рассказать в рассказе про xdvi} 
+\textpkg{srcltx} "--- синхронизация кода и
+dvi-файла. Поддерживается программами просмотра DVI
+\textprog{xdvi} и \textprog{yap}.
+
+\textpkg{snapshot} "--- позволяет получить версии всех пакетов, от
+которых зависит документ, и гарантировать, что документ будет собираться
+только с пакетами именно этих версий. Это позволяет <<заморозить>>
+результат компиляции.
+
+
+\FullVersion Пакеты \textpkg{svn} и \textpkg{svninfo} облегчают
+контроль версий исходных текстов \LaTeX{} при использовании
+\textprog{svn}. В случае если применяется система контроля версий
+\textprog{cvs}, следует воспользоваться аналогичными пакетами
+\textpkg{rcs} и \textpkg{rcsinfo}.
+
+\textpkg{svnkw} или \textpkg{svn-multi} "--- ещё одна поддержка
+\textprog{svn}.
+
+
+\FullVersion\textpkg{vhistory} "--- пакет для ведения журнала изменений
+документа.
+
+
+%\fxnote{рассказать в рассказе про pdf - AUcTeX поддерживает}
+\textpkg{vpe} "--- аналог \textpkg{srcltx} для
+PDF. Требует наличия исполняемого файла \textprog{vpe} в~системе.
+
+\subsection{Составные документы}
+\label{sec:catalog:complex}
+
+Для комбинации нескольких документов в один следует обратить внимание
+на~пакеты \textpkg{combine} и \textpkg{pdfpages}.
+
+
+\FullVersion\textpkg{askinclude} "--- интерактивное подключение частей
+документа с помощью инструкции \textcmd{include}.
+
+\FullVersion\textpkg{excludeonly} "--- определяет одноимённый макрос,
+который позволяет указывать, какие файлы не следует включать с помощью
+инструкции \textcmd{include}.
+
+
+\textpkg{chapterfolder} "--- предоставляет набор макросов для
+описания директорий, в~которых лежат исходные тексты глав и разделов, и
+подключения их без указания полного пути.
+
+\textpkg{import} "--- аналог \textcmd{input}, позволяющий загруженному
+файлу использовать свою директорию как базовую при подключении других
+фрагментов текста и картинок.
+
+\textpkg{volumes} "--- усовершенствование механизма, предоставляемого
+стандартной командой \textcmd{includeonly}.
+
+\subsection{Всякая всячина}
+\label{sec:catalog:documentstructure:misc}
+
+
+\textpkg{crop} "--- создаёт угловые метки (cropmark) для обрезки
+страницы или  вклейки фотографий. Схожую функциональность
+предоставляет \textpkg{ncccropmark} из пакета \textpkg{ncctools}.
+
+
+
+\textpkg{fixltx2e} "--- исправление некоторых ошибок \LaTeXe.
+
+
+% The file mylatex.ltx permits you to create a format that pre-loads a
+% set of package files (and/or other macros) that you regularly
+% use. In some circumstances, this can be a great advantage (though on
+% an ordinarily fast modern computer on the desktop, gains will be
+% limited).
+                                                                                 
+%  The general scheme is to initialise your usage by a command of the form:      
+%  latex -ini mylatex.ltx <document>                                             
+%  whick will create a format file mylatex.fmt, which you then use as:           
+%  latex &mylatex <document>          
+
+\textpkg{mylatex} из пакета \textpkg{carlisle} "--- содержит файл
+\textfile{mylatex.ltx}, позволяющий сгенерировать свой форматный файл, в
+который встроены часто используемые пакеты. Полезно для ускорения
+компиляции, хотя для современных компьютеров не особо актуально.
+
+\textpkg{morse} "--- представление текста с помощью азбуки Морзе
+(английская версия).
+
+\textpkg{pagesel} из пакета \textpkg{oberdiek} "--- предоставляет
+возможность выбирать, какие страницы следует вывести. Позволяет
+указывать конкретные страницы, диапазоны  и чётные/нечётные страницы.
+
+\textpkg{totpages} "--- предоставляет информацию о числе страниц,
+получившихся в результате компиляции.
+
+\textpkg{wordlike} "--- формирует структуру заголовков, разметку
+страницы и подставляет шрифты, для того чтобы результат выглядел <<как
+в ворде>>. Пакет на любителя. С кириллицей, скорее всего, заставить
+работать не получится.
+  
+
+
+
+\section{Точные науки}
+\label{sec:catalog:science}
+
+\LaTeX{} создавался под математику, а так как математика "--- язык
+всех точных наук, то любая из них легко может быть изложена с помощью
+\LaTeX.
+
+
+
+
+\subsection{Математика}
+\label{sec:catalog:math}
+
+
+\FullVersion\textpkg{amsmath} "--- базовый стиль \AMS-\LaTeX. Определяет
+дополнительные окружения для выключенных формул.  При загрузке
+автоматически подгружает пакеты \textpkg{amsbsy} (жирные
+математические символы), \textpkg{amsopn} (создание новых
+математических операторов) и \textpkg{amstext} (определяет команду
+\textcmd{text}, которая позволяет набирать обычный текст в
+математическом режиме). Если в документе есть формулы, то этот стиль
+обязателен для использования.
+
+\FullVersion\textpkg{amssymb} "--- даёт имена всем символам из шрифтов
+семейства \AMS. Автоматически загружает пакет \textpkg{amsfonts}
+(дополнительные математические символы и шрифты). Входит в коллекцию \AMS.
+
+\FullVersion\textpkg{amscd} "--- коммутативные диаграммы. Входит в коллекцию \AMS.
+
+\textpkg{amsthm} "--- улучшенные теоремы. Определяет окружение
+\textenv{proof}. Входит в коллекцию \AMS.
+
+\FullVersion\textpkg{mh} "--- множество улучшений и дополнений для
+пакета \textpkg{amsmath}. Пакет содержит стили \textpkg{mathtools}
+"--- улучшение вывода формул, \textpkg{ntheorem} "--- улучшение
+для окружения \textenv{theorem} и \textpkg{empheq} "--- дополнительные
+средства визуализации для выключенных формул.
+
+
+\textpkg{mhequ} "--- печать формул в несколько колонок.
+
+
+Пакет \textpkg{bezos} состоит из стилей \textpkg{accents} (определение
+новых акцентов и создание их сложных комбинаций),  \textpkg{tensind}
+(улучшенные тензорные индексы), \textpkg{dotlessi} (макросы
+\textcmd{dotlessi} и \textcmd{dotlessj}), \textpkg{esindex},
+\textpkg{checkend} (более подробное предупреждение об ошибке при
+наличии не закрытого окружения) и \textpkg{arabicfront} (нумерация
+начинается с первой страницы).
+
+\textpkg{breqn} "--- автоматический перенос в многострочных
+выключенных формулах. Одно из решений проблемы открывающей и
+закрывающей скобок при переносах формулы. При взаимодействии с другими
+пакетами случаются коллизии.
+
+\FullVersion\textpkg{cancel} "--- определяет макросы \textcmd{cancel},
+\textcmd{bcancel} и \textcmd{xcancel}, рисующие линии,
+перечёркивающие аргумент команды.
+ 
+\FullVersion\textpkg{cases} "--- определяет окружения \textenv{numcases} и
+\textenv{subnumcases} для отображения условных конструкций.
+
+%  \begin{numcases}{left_side}
+%   case_1 & explanation_1 \\
+%   case_2 & explanation_2 \\
+%   ...
+%   case_n & explanation_n
+%  \end{numcases}
+
+
+\FullVersion\textpkg{commath} "--- улучшенное отображение
+дифференциалов, частных производных, пределов.
+
+
+\textpkg{complexity} "--- позволяет набирать тексты для теории
+сложности вычислений.
+
+\textpkg{dcpic} "--- коммутативные диаграммы средствами \LaTeX. 
+
+\textpkg{deleq} "--- предоставляет гибкий способ нумерации выражений.
+
+\textpkg{easy} "--- коллекция <<простых>> математических макросов.
+Состоит из стилей \textpkg{easy} (загружает все easy-расширения),
+\textpkg{easyeqn} (определяет окружение для выключенных уравнений),
+\textpkg{easymat} (описание матриц), \textpkg{easybmat} (описание
+блочных матриц), \textpkg{easytabl} (набор таблиц),
+\textpkg{easyvector} (C-подобный синтаксис для отображения векторов и
+матриц), \textpkg{easybib} (дополнительные настройки для отображения
+библиографии).
+
+\textpkg{egameps} "--- позволяет рисовать средствами
+\textpkg{pstricks}  развёрнутую форму игры (extensive games).
+
+
+\textpkg{eqname} "--- определяет команду \textcmd{eqname} для замены
+числовой метки уравнения символьной.
+
+\FullVersion\textpkg{esdiff} "--- макросы для представления производных.
+
+
+\textpkg{esvect} "--- разнообразные и более чёткие, чем используемые
+по умолчанию, знаки вектора над символами.
+
+\textpkg{eulervm} "--- загрузка математических шрифтов Euler.
+
+\textpkg{extarrows} и \textpkg{extpfeil} "--- дополнительные типы стрелок. 
+
+\textpkg{faktor} "--- определяет одноимённый макрос \textcmd{faktor},
+который формирует дробь вида \(\faktor{A}{B}\). Требует
+\textpkg{amsmath}.
+
+\textpkg{flagderiv} "--- логические доказательства с использованием
+флаг"=нотации (flag notation).
+
+\textpkg{gauss} "--- визуализация решения системы линейных уравнений
+методом Гаусса.
+
+\textpkg{hhtensor} "--- дополнительные типы представления имён
+векторов, матриц и тензоров.
+
+\textpkg{karnaugh} "--- отрисовка <<Karnaugh Maps>>, также известных
+как  <<Veitch diag\-ram>>.
+
+
+\textpkg{maybemath} "--- определяет макросы \textcmd{maybebm} и
+\textcmd{maybeit}. В зависимости от контекста текст становится жирным
+или наклонным.
+
+\textpkg{nath} "--- акроним от \emph{na}tural ma\emph{th}
+notation. Переопределяет многие математические команды для целей
+автоматизации процесса вёрстки. В частности размер скобок в уравнении
+выбирается автоматически в зависимости от контекста, а размер
+квадратного корня не зависит от наличия индекса у подкоренного
+выражения.
+
+
+\textpkg{nccthm} из пакета \textpkg{ncctools} "--- улучшение
+стандартного набора команд генерации математических утверждений
+(теорем).
+
+\textpkg{onlyamsmath} "--- при инициализации этого пакета
+пользователю остаётся доступна только математическая нотация, принятая
+в \LaTeX{} в ущерб низкоуровневой \TeX"=нотации. Полезно для
+избавления от дурных привычек.
+
+\FullVersion\textpkg{pb-diagram} "--- коммутативные диаграммы.
+
+\textpkg{pst-3dplot} "--- графики трёхмерных математических
+функций. Возможна загрузка данных из внешнего файла для печати
+трёхмерных поверхностей.
+
+\textpkg{pst-bar} "--- рисование гистограмм.
+
+\textpkg{pst-eucl} "--- построение простых и не очень геометрических
+чертежей.
+
+\textpkg{pst-func} "--- построение математических функций. В пакете
+предусмотрены полиномы, суммы Фурье, функции Бесселя, гауссовское
+распределение и многое другое. 
+
+\textpkg{qobitree} "--- простые древесные диаграммы.
+
+
+\textpkg{sobolev} "--- операции с пространствами Соболева и Гильберта.
+
+\textpkg{sseq} "--- позволяет рисовать диаграммы спектральных
+последовательностей, или spectral sequence charts.
+
+\textpkg{subeqn} "--- определяет окружение \textenv{subequations} для
+создания ещё одного уровня нумерации формул.
+
+\textpkg{t-angles} "--- рисования диаграмм для алгебры Хопфа (Hopf
+algebra).
+
+\FullVersion Пакеты \textpkg{tableaux}, \textpkg{tabvar} и
+\textpkg{variations} созданы для исследования области определения и
+поведение функции. Пригодится при изучении или написании методички по
+началам матанализа.
+
+\FullVersion\textpkg{tensor} "--- представление тензоров.
+
+\textpkg{vector} "--- представление векторов.
+
+
+
+\textpkg{venn} "--- создание диаграмм Эйлера"--~Венна (\mpost). 
+
+
+\FullVersion\textpkg{was} "--- состоит из стилевых файлов \textpkg{fixmath}
+(меняет прямые начертания заглавных греческих букв на наклонные),
+\textpkg{gensymb} (делает доступными в текстовой моде некоторые из
+часто используемых символов, например, знак градуса), \textpkg{icomma}
+(обеспечивает правильные пробелы в текстовой моде для чисел с дробной
+частью), \textpkg{upgreek} (обеспечивает доступ к прямым начертаниям
+греческих символов через приставку \textbf{up} в их именах).
+
+
+\FullVersion\textpkg{wasysym} "--- дополнительные символы. Загрузка
+пакета с опцией \textopt{integrals} переопределяет символы интегралов
+с наклонных на прямые.
+
+
+%\FullVersion\textpkg{xfrac} "--- оформления дробей вида 1/2 - не
+%работает с TeX Live 2007
+
+\subsection{Информатика}
+\label{sec:catalog:code} 
+
+\textpkg{ascii} "--- шрифты IBM ASCII.
+
+\FullVersion Стандартные пакеты \textpkg{algorithms},
+\textpkg{algorithmic}, \textpkg{algorithmicx}, \textpkg{algorithm2e},
+\textpkg{clrscode} и \textpkg{pseudocode} специализируются на
+представлении алгоритмов.
+
+\textpkg{basix} "--- интерпретатор языка BASIC, написанный на
+\TeX. Пакет доступен по~адресу: \CTANpath{/macros/generic/basix/}. В
+дистрибутиве \TeXLive отсутствует.
+
+\FullVersion\textpkg{bytefield} "--- диаграммы для описания бинарных
+протоколов передачи данных.
+
+
+\textpkg{cursor} "--- рисует L-образный курсор в математической моде.
+
+\textpkg{examplep} "--- печать примеров кода на \LaTeX{} и на
+\mpost. Пакет состоит из~стилей \textpkg{codep} (определяет окружение
+\textenv{code}, позволяющее выводить код слева, а результат компиляции
+справа) и \textpkg{examplep} (определяет окружения и команды для
+печати и вывода в файл неформатированного текста). Значительная часть
+функциональности, обещанной в документации, в коде отсутствует.
+
+
+\textpkg{keystroke} "--- изображение клавиш
+клавиатуры. PostScript-изображения создаются не очень корректно и при
+преобразовании в pdf возникают <<артефакты>>.
+
+\FullVersion\textpkg{lcd} "--- эмуляция вывода текста на маленьком LCD-дисплее.
+
+
+\FullVersion\textpkg{listings} "--- оформление программного кода.
+
+\textpkg{method} "--- формальное описание функции.
+
+  
+\textpkg{pst-dbicons} "--- описание и прототипирование баз данных с
+помощью ER"=диаграмм.
+
+
+\textpkg{pst-uml} "--- создание не сильно сложных UML-диаграмм.
+
+
+\textpkg{semantic} "--- нотация для описания семантического разбора и
+компиляции программного кода, включая T-диаграммы.
+
+
+
+\subsection{Физика}
+\label{sec:catalog:phys}
+
+Пакеты шрифтов \textpkg{astro} и \textpkg{cmastro} предоставляют доступ
+к астрономическим символам, включая знаки зодиака. 
+
+\textpkg{braket} "--- бра-кет нотация Дирака.
+
+\FullVersion\textpkg{circ} "--- создание не сильно сложных электрических схем
+средствами \LaTeX{} и \METAFONT.
+
+\FullVersion\textpkg{feyn} "--- простые фейнмановские диаграммы.
+
+\FullVersion\textpkg{feynmf} "--- набор макросов для создания сложных 
+фейнмановских диаграмм средствами \LaTeX{} и \METAFONT/\mpost.
+
+\FullVersion\textpkg{hepparticles} "--- набор макросов для печати
+названий частиц для Физики высоких энергий. 
+
+\FullVersion\textpkg{isotope} "--- макрос для печати названий изотопов
+химических элементов.
+
+\textpkg{pst-circ} "--- простые электрические схемы.
+
+\FullVersion\textpkg{pst-optic} "--- создание иллюстрации для
+геометрической оптики.
+
+\FullVersion\textpkg{pst-osci} "--- иллюстрации осциллограмм.
+
+\FullVersion\textpkg{SIstyle} "--- единицы физических величин по
+правилам СИ. Схожую функциональность предоставляет пакет \textpkg{SIunits}. 
+
+\textpkg{slashed} из пакета \textpkg{carlisle} "--- слэш-нотация
+Фейнмана. Пакет определяет макрос \textcmd{slashed}, который перечёркивает
+переданный ему символ в математической моде, например:
+\(\slashed{A}\stackrel{\text{def}}{=}\gamma^{\mu}A_{\mu}\).
+
+\textpkg{timing} "--- рисование простых временных диаграмм средствами \LaTeX{}
+и \METAFONT.
+
+
+
+\textpkg{units} "--- печать единиц физических
+величин. Есть альтернативный способ представления дроби, а также
+проблемы со шрифтами.
+
+\textpkg{unitsdef} "--- печать единиц физических величин в том
+числе и по правилам СИ.
+
+
+
+
+\subsection{Химия}
+\label{sec:catalog:chemistry}
+
+
+
+
+\textpkg{bpchem} "--- печать химических элементов, названий, формул и
+нумерация химических соединений.
+
+\textpkg{chemarr} из пакета \textpkg{oberdiek} "--- дополнительный
+набор стрелок для химиков.
+
+\textpkg{chemarrow} "--- ещё один дополнительный набор стрелок.
+
+\textpkg{chemcompounds} "--- простая последовательная нумерация
+химических соединений. Возможно присвоение соединению своего
+уникального имени.
+
+\textpkg{chemcono} "--- нумерация химических соединений по принципу
+организации библиографических ссылок.
+
+\textpkg{cryst} "--- набор символов для описания типа симметрии в
+кристаллографии.
+
+\FullVersion\textpkg{mhchem} "--- продвинутый пакет для печати названий химических
+элементов, формул и значков для маркировки опасных химических
+соединений (возможна локализация).
+
+% * ppchtex - A separate module of the context macro package for TeX
+% that can be used to typeset chemical formulas
+
+\FullVersion\textpkg{pst-labo} "--- создание иллюстраций для лабораторных работ с
+помощью пакета \textpkg{pstricks}.
+
+
+\textpkg{r-und-s} "--- маркировка опасных химических соединений
+(возможна локализация).
+
+
+\FullVersion\textpkg{xymtex} "--- пакет для отображения средствами \LaTeX{}
+множества химических структурных формул. Превосходит устаревший пакет
+\textpkg{chemtex} со схожей функциональностью по всем параметрам.
+Последнюю версию пакета следует брать по адресу
+\url{http://homepage3.nifty.com/xymtex/fujitas3/xymtex/indexe.html}. 
+В дистрибутиве \TeXLive-2007 отсутствует.
+
+
+\subsection{Биология}
+\label{sec:catalog:biology}
+
+\textpkg{biocon} "--- создание коротких имён для биологических видов. 
+
+\textpkg{dichokey} "--- создание дихотомических идентификационных
+ключей для целей классификации вида.
+
+\textpkg{dnaseq} "---  вывод простых ДНК-последовательностей.
+
+\textpkg{pst-pdgr} "--- родословное дерево для нужд медиков.
+
+\FullVersion\textpkg{texshade} "--- выделение одинаковых
+последовательностей нуклеотидов и пептидов (nucleotide and peptide
+alignments).
+
+\textpkg{textopo} "--- расцветка и подписи для рисунков, отображающих
+геометрическую структуру структурных белков (membrane protein topology
+plots).
+
+\textpkg{labbook} "--- класс для создания рабочего журнала для
+биологов с хронологическими метками о проведении эксперимента.
+
+
+\section{Школа и университет}
+\label{sec:catalog:school}
+
+
+\textpkg{answers} "--- совместный набор простых задач и их решений с
+возможностью их разнесения в разные места текста.
+
+\textpkg{assignment} "--- для создания объявлений о занятиях в университете.
+
+\textpkg{courseoutline} и \textpkg{coursepaper} "--- создание
+программы курса предположительно для университета.
+
+\textpkg{eCards} "--- электронные интерактивные карточки с подсказкой
+для запоминания каких-либо фактов. Для просмотра pdf необходим
+\textprog{Adobe Reader}.
+
+\FullVersion\textpkg{exam} "--- предоставляет одноимённый класс,
+позволяющий подготовить экзаменационные билеты и формы для проведения
+тестов.
+
+\textpkg{examdesign} "--- подготовка тестов.
+
+%\fxnote{добавить текст по exercise}
+\textpkg{exercise} "--- набор макросов для добавления упражнений по
+пройденному материалу. 
+
+\textpkg{flashcards} "--- двусторонние карточки для запоминания
+иностранных слов.
+
+\textpkg{interactiveworkbook} "--- подготовка интерактивного
+pdf-вопросника. Для просмотра pdf необходим \textprog{Adobe Reader}.
+
+%\fxnote{добавить текст по probsoln}
+\textpkg{probsoln} "--- создание банка заданий с
+возможностью вывода всех упражнений или какого-то подмножества, в том
+числе и в случайном порядке.
+
+\textpkg{qcm} "--- класс для создания вопросников с вариантами выборов
+ответов. 
+
+\section{Гуманитарные направления}
+\label{sec:catalog:hymanitarian}
+
+Не только точными науками живёт человечество. Гуманитарии тоже
+используют \LaTeX.
+
+
+\subsection{Поэзия,  пьесы и критика}
+\label{sec:catalog:poetry}
+
+
+
+\textpkg{dramatist} "--- вывод пьесы в стихах или прозе. 
+
+\textpkg{ednotes} "--- печать комментариев.
+
+
+\textpkg{ledmac} "--- набор макросов для формирования
+издания с комментариями. Базируется на \TeX-пакете \textpkg{edmac}.
+Имеется расширение в виде пакета \textpkg{ledpar} для печати
+параллельного текста.
+
+\textpkg{play} "---  простой набор окружений и макросов для набора пьес.
+
+\textpkg{parrun} "--- пакет, позволяющий печатать текст и его перевод
+один над другим.
+
+\textpkg{poemscol} "--- пакет, ориентированный на создание сборников
+стихов и критических заметок. 
+
+\textpkg{sides} "--- класс с небольшим набором специализированных
+макросов для оформления текста пьесы. Базируется на более простом
+классе \textpkg{plari}.
+
+\FullVersion\textpkg{stage} "--- класс для создания пьес.
+
+\textpkg{verse} "--- сочиняем стихи.
+
+
+\subsection{Языкознание}
+\label{sec:catlog:linguistics}
+
+Для рисования различного вида деревьев имеет смысл взглянуть на
+\textpkg{pst-tree} "--- набор макросов для \textpkg{pstricks}.
+
+% \textpkg{ipa} "--- предоставляет доступ к международному фонетическом
+% алфавиту (International Phonetic Alphabet). Шрифты предоставляются
+% пакетом \textpkg{wsuipa}
+
+% \overarc puts an arc above the text given as argument.
+% \underarc puts the arc below the text.
+
+%\FullVersion
+\textpkg{arcs} "--- позволяет рисовать дуги под (\textcmd{underarc}) и над
+(\textcmd{overarc}) текстом.  
+
+\textpkg{cbcoptic} "--- набор текстов на коптском.
+
+\textpkg{covington} "--- набор макросов, позволяющих создавать сложные
+множественные акценты, трансляцию текста слово-в-слово, нумерацию
+текстовых примеров, описывать структуру предложения и множество других
+мелких, но полезных для лингвиста вещей.
+
+\textpkg{engpron} "--- набор макросов, позволяющих набирать
+транскрипцию слов, как это сделано в словаре Даниэля Джонса (Daniel
+Jones <<English Pronouncing Dic\-ti\-ona\-ry>>)
+
+\textpkg{lexikon} "--- набор простых макросов для создания двуязычного
+словаря.
+
+\textpkg{linguex} "--- оформление примеров.
+
+\textpkg{phonetic} "--- дополнительные фонетические символы.
+
+
+\textpkg{rst} "--- анализ структуры речи.
+
+\textpkg{synttree} "--- синтаксическое дерево.
+
+
+\FullVersion\textpkg{tipa} "--- шрифты и набор макросов для
+отображения международной фонетической транскрипции (International
+Phonetic Alphabet).
+
+\textpkg{teubner} "--- расширение \textpkg{babel}, загруженного с
+опцией \textopt{greek} для набора на~классическом греческом.
+
+\textpkg{xytree} "--- формирование лингвистического синтаксического
+дерева.
+
+
+\subsection{Музыка}
+\label{sec:catalog:music}
+
+\textpkg{abc} "---  поддержка \LaTeX{} ABC-нотации (запись музыки
+ASCII-символами). Требует установки сторонней программы \textprog{abcm2ps}.
+
+\textpkg{ConcProg} "--- класс для написания концертных
+программ. Класс входит в состав пакета \textpkge{concprog}.
+
+\textpkg{cd} и \textpkg{cd-cover} "--- классы для создания обложек CD"=дисков.
+
+
+\FullVersion\textpkg{guitar} "--- подпись гитарных аккордов над текстом песен.
+
+
+\textpkg{musictex} или Music\TeX{} "--- очень мощный пакет, ориентированный
+на набор нот средствами \LaTeX. 
+
+\FullVersion\textpkg{musixtex} или MusiX\TeX{} "--- современная замена
+Music\TeX{} со множеством улучшений.
+
+\FullVersion\textpkg{musixlyr} "--- расширение \textpkg{musixtex} для добавления
+текстов песен.
+
+\textpkg{songbook} "--- формирование песенных сборников с возможностью
+добавления аккордов над текстом.
+
+
+\section{Делу время "--- потехе час}
+\label{sec:catalog:hobby}
+
+Для кого-то игры "--- это хобби, а для кого-то "--- профессия.
+
+\subsection{Рецепты}
+\label{sec:catalog:recipes}
+
+Первый набор \TeX-макросов для формирования книги рецептов написал сам
+Дональд Э.\,Кнут по просьбе своей жены. Подробнее об этих макросах
+можно прочитать в статье <<Макро, написанные для Джил>>,
+опубликованной в сборнике <<Компьютерная типография>>. %~\cite{Knuth-typography}
+
+\textpkg{cooking} "--- несколько простых макросов для оформления
+сборника рецептов. Ингредиенты описываются рядом с действием по их
+использованию.
+
+\textpkg{cuisine} "--- чуть более современный аналог
+\textpkg{cooking}.
+
+
+\subsection{Шахматы}
+\label{sec:catalog:chess}
+
+
+%    * bdfchess - Typeset correspondence chess games
+
+\textpkg{cchess} "--- китайские шахматы.
+
+ %   * cheq - Adobe chess font
+
+\textpkg{chess} "--- шрифты для оформления шахматных диаграмм. 
+
+\textpkg{skak} "--- пакет позволяет печатать шахматные партии с
+использованием PGN"=нотации (Portable Game Notation) и визуализировать
+шахматные  позиции. Пакет \textpkg{skaknew} содержит векторные шрифты,
+полученные из шрифтов \textpkg{skak}.
+
+%\fxnote{рассказать про texmate} 
+\textpkg{texmate} "--- печать партий с возможностью
+аннотаций и отображением шахматных позиций.
+
+\subsection{Игры, в которые играют люди}
+\label{sec:catalog:games}
+
+\textpkg{backgammon} "--- визуализация позиции при игре в нарды. 
+
+\textpkg{crosswrd} "--- простой кроссворд. Схожую функциональность
+предоставляет пакет \textpkg{cwpuzzle}.
+
+\textpkg{dice} "--- изображение игральных костей, в том числе и
+трёхмерные. Если нужны векторные изображения граней костей, то следует
+использовать пакет \textpkg{epsdice}.
+
+\textpkg{othello} "--- реверси.
+
+
+\textpkg{psgo} "--- доски и позиции для игры в Го.
+
+\textpkg{sudoku} "--- головоломка sudoku.
+
+
+\subsection{Время}
+\label{sec:catalog:calendar}
+
+\textpkg{advdate} из пакета \textpkg{ltxmisc} "--- набор макросов,
+позволяющий добавить несколько дней к текущему времени, что влияет,
+например, на вывод команды \textcmd{today}.
+
+\textpkg{calendar} "--- пакет с примерами создания не сильно сложных расписаний.
+
+\textpkg{calxxxx} "--- шаблон для печати календарика за любой
+год. Годится для примера.
+
+\textpkg{china2e} "--- доступ к символам китайского лунного календаря.
+
+%\fxnote{рассказать где-нибудь об этом} 
+\textpkg{clock} "--- рисует часовой циферблат и показывает заказанное
+время.
+
+
+\textpkg{datetime} "--- управление форматом вывода даты и
+времени. Аналогичный сервис предоставляет пакет \textpkg{isodate}.
+
+\textpkg{weekday} "--- вычисление дня недели по дате.
+
+\subsection{Карточки и визитки}
+\label{sec:catalog:bizcard}
+
+\textpkg{bizcard} "--- визитки.
+
+\textpkg{labels} "--- множество простых карточек-заметок на одном
+листе.
+
+%\fxnote{описать стиль ticket. } 
+
+\textpkg{ticket} "--- создание визиток, стандартных
+заметок и записок, которые могут пригодиться при организации большого
+собрания или конференции.
+
+
+
+\section{Плавающие объекты}
+\label{sec:catalog:float}
+
+Текст "--- сущность, как правило, непрерывная, но иллюстрации вполне можно
+отпустить в <<свободное плавание>> по книге. Надо только за ними
+присматривать.
+
+\subsection{Создание  плавающих объектов}
+\label{sec:catalog:float:new}
+
+%\fxnote{описать поподробнее} 
+\textpkg{float} "--- создание новых типов плавающих
+объектов. Схожую функциональность имеет пакет \textpkg{floatraw}.
+
+\textpkg{rotfloat} "--- расширяет возможности пакета \textpkg{float},
+добавляя возможность вращения объектов.
+
+
+
+\subsection{Типы  плавающих объектов}
+\label{sec:catalog:float:type}
+
+\textpkg{boxhandler} "--- альтернатива стандартным окружениям
+\textenv{figure} и \textenv{table}.
+
+\textpkg{dpfloat} "--- определяет новый тип плавающего окружения,
+занимающего сразу две страницы. Двойные иллюстрации на развороте.
+
+\FullVersion\textpkg{floatflt} "--- полноценный плавающий объект,
+обтекаемый текстом. 
+
+\textpkg{nccfloats} из пакета \textpkg{ncctools} "--- набор макросов
+для формирования плавающих объектов.
+
+\textpkg{sidecap} "--- определяет ещё один тип плавающих объектов,
+позволяющий размещать подпись к нему сбоку. 
+
+
+\FullVersion\textpkg{wrapfig} "--- создаёт прямоугольник для
+размещения рисунка, который обтекается текстом.
+
+
+
+\FullVersion\textpkg{miniplot} "--- делает то же, что и пакет
+\textpkg{subfig}, хоть и менее изощрённо.
+
+\textpkg{photo} "--- плавающее окружение для вставки фотографий.
+
+\textpkg{picinpar} "--- ещё один способ разметить объект внутри
+абзаца. В отличие от~пакета \textpkg{wrapfig} позволяет разместить объект
+по центру. Документация на немецком, но разобрать примеры можно и без
+знания немецкого.
+
+\textpkg{plates} "--- определяет плавающее окружение для создания
+картинок, которые печатаются отдельно от документа, а затем
+вклеиваются в него (наклейки). Полезно, если иллюстрации в отличие от
+текста цветные.
+
+\FullVersion\textpkg{subfig} "--- организует группы из множества
+картинок. Относительно современный пакет.
+
+
+
+\subsection{Подписи к плавающим объектам}
+\label{sec:catalog:float:caption}
+
+
+\textpkg{capt-of} "--- простой способ сформировать подпись  для
+плавающих объектов вне плавающих окружений.
+
+
+\textpkg{captcont} "--- замораживает номер иллюстрации по желанию.
+
+\FullVersion\textpkg{caption} "--- управление подписями к плавающим
+объектам, возможность формирования подписей за пределами плавающих
+окружений. Схожую функциональность предоставляет пакет \textpkg{ccaption}.
+
+
+\FullVersion\textpkg{mcaption} "--- размещение подписи к плавающим
+объектам на полях.
+
+\textpkg{subfloat} "--- добавляет дополнительный уровень нумерации для
+плавающих объектов, позволяя объединять несколько объектов в одну
+группу.
+
+\FullVersion\textpkg{topcapt} "--- определяет макрос
+\textcmd{topcaption}, полностью аналогичный \textcmd{caption}, но
+правильно размещающий подпись над плавающим объектом.
+
+\subsection{Размещение  плавающих объектов}
+\label{sec:catalog:float:where}
+
+
+
+
+\FullVersion\textpkg{endfloat} "--- размещение плавающих объектов в
+конце документа.
+
+\textpkg{figcaps} из пакета \textpkg{preprint} "--- при инициализации
+этого пакета картинки и таблицы  из печатного документа убираются, а
+их названия печатаются в конце на~отдельной странице. Полезно при
+подготовке статьи к печати, где иллюстрации идут отдельно.
+
+%\fxnote{упомянуть про hvfloat}
+\textpkg{hvfloat} "--- позволяет вращать и размещать плавающий объект
+и подпись к нему как угодно относительно друг к другу.
+
+\FullVersion\textpkg{placeins} "--- позволяет выставлять <<барьеры>>,
+за пределы которых плавающие объекты не перемещаются.
+
+
+
+\section{Графика}
+\label{sec:catalog:graphics}
+
+Есть много книг без картинок. Но с картинками, чаще всего, они были бы
+гораздо интереснее.
+ 
+
+\subsection{Добавление иллюстраций}
+\label{sec:catalog:graphics:add}
+
+
+%\fxnote{добавить в раздел про вставку графики}
+% При использовании этого пакета нет необходимости в использовании
+% отдельного файла с размерами при подключении растрового изображения.
+\textpkg{bmpsize} из пакета \textpkg{oberdiek} "--- стиль для анализа
+и вычисления размера растрового изображения. При использовании этого
+пакета нет необходимости в отдельном файле с размерами
+при подключении растрового изображения.
+
+\textpkg{figsize} "--- специализируется на автоматическом
+вычислении размеров картинок для размещения их в указанных пределах.
+
+\FullVersion\textpkg{graphicx} "--- добавление иллюстраций в документ.
+
+\textpkg{epstopdf} из пакета \textpkg{oberdiek} "--- позволяет
+подключать eps-файлы при компиляции с помощью \textpkg{pdflatex},
+вызывая  внешнюю программу \textpkg{epstopdf}.
+
+
+%\fxnote{упомянуть в разделе про вставку графики стр 208 от Роженко}
+\textpkg{nccpic} из пакета \textpkg{ncctools} "---
+расширение возможности пакета \textpkg{graphicx} при работе с
+растровыми изображениями.
+
+\textpkg{hilowres} "--- позволяет определить при вставке два файла для
+одного и того же рисунка, например, с низким и высоким разрешением. В
+зависимости от выбора опций при компиляции подключается либо один,
+либо другой файл.
+
+
+\textpkg{rotating} "--- позволяет поворачивать любые боксы.
+
+
+
+
+% \fxnote{упомянуть в разделе про создание водяных знаков стр 333 от
+%   Роженко}
+
+\textpkg{watermark} из пакета \textpkg{ncctools} "--- создание
+<<водяных знаков>>, иначе говоря, вывод графических объектов или
+текста на подложке страницы. Схожую функциональность предоставляют
+пакеты \textpkg{bophook}, \textpkg{eso-pic} и \textpkg{wallpaper}.
+
+
+
+\subsection{Управление цветом}
+\label{sec:catalog:graphics:color}
+
+\textpkg{aurora} "--- заголовочные файлы для \textprog{dvips} для целей
+цветоотделения. Лицензия позволяет производить цветоотделение только
+для некоммерческого использования.
+
+\FullVersion\textpkg{color} "--- управление цветом текстовых элементов.
+
+\textpkg{colorinfo} "--- извлечение информации об используемой цветовой
+модели и значений цветовой переменной.
+
+%\fxnote{добавить в главу про оттенки}
+
+\textpkg{xcolor} "--- интерфейс к определению цветов.
+
+\subsection{Графика средствами LaTeX}
+\label{sec:catalog:graphics:pic}
+
+
+%\fxnote{рассказать} 
+\textpkg{bardiag} "--- создание простых диаграмм на основе
+пакета PSTricks.
+
+\textpkg{bez123} "--- кривые Безье.
+
+
+%\fxnote{рассказать}
+\textpkg{coordsys} "--- позволяет рисовать и подписывать
+оси координат и решётки, в том числе и логарифмические. Расширение для
+окружения \textenv{picture}.
+
+\textpkg{curve2e} "--- расширение \textpkg{pict2e}.
+
+\textpkg{curves} "--- рисование парабол и других кривых. Расширение
+для окружения \textenv{picture}.
+
+\textpkg{ebezier} "--- кривые Безье. Расширение для окружения
+\textenv{picture}.
+
+\textpkg{ecltree} "--- рекурсивные деревья. Расширение для окружения
+\textenv{picture}.
+
+
+\textpkg{epic} "--- расширение и улучшение команд из окружения
+\textenv{picture}. Доступен также расширенный набор команд для
+\textpkg{epic} в виде пакета \textpkg{eepic}.
+
+\textpkg{histogr} "--- простые гистограммы. Расширение для окружения
+\textenv{picture}.
+
+%\fxnote{рассказать}
+
+\textpkg{pdftricks} "--- поддержка возможностей \textpkg{pstricks} при
+компиляции файла с помощью \textprog{pdflatex}.
+
+%\fxnote{рассказать}
+\textpkg{pict2e} "--- улучшенная версия окружения
+\textenv{picture}, лишённая многих ограничений.
+
+%\fxnote{рассказать}
+\textpkg{pgf} "--- <<A \textbf{P}ortable \textbf{G}raphic
+\textbf{F}ormat for \TeX>>. Мощный инструмент подготовки встроенной
+графики в \LaTeX, поддерживающий все наиболее популярные
+tex"=компиляторы.
+
+
+% \fxnote{сказать что это надо, так как pstricks использует PostScript
+%   арифметику}
+
+%\fxnote{создать главу про PSTricks}
+\textpkg{pstricks} "--- доступ к инструкциям языка Postcript из
+\LaTeX. В базовый пакет входят стилевые файлы 
+\textpkg{pst-node} (размещение и соединение вершин),
+\textpkg{pst-plot} (построение диаграмм), \textpkg{pst-tree}
+(построения деревьев). 
+
+
+\textpkg{pst-3d} "--- псевдо-3D, тени, трёхмерный текст и тому подобное.
+
+%\fxnote{показать в главе про pstricks}
+\textpkg{pst-barcode} "--- печать штрихового кода.
+
+\textpkg{pst-blur} "--- создание размытых теней.
+
+
+\textpkg{pst-coil} "--- витые и зигзагообразные объекты.
+
+
+\textpkg{pst-eps} "--- экспорт объектов непосредственно в eps"=файл.
+
+
+\textpkg{pst-fill} "--- заливка областей.
+
+
+\textpkg{pst-geo} "--- отрисовка картографической информации в
+различных проекциях. 
+
+\textpkg{pst-gr3d} "--- 3D-решётка.
+
+\textpkg{pst-grad} "--- заливка области RGB- и HSB-градиентами.
+
+%\fxnote{показать в главе про pstricks}
+\textpkg{pst-infixplot} "--- позволяет набирать формулы в
+привычной инфиксной нотации.
+
+%\fxnote{показать в главе про pstricks}
+\textpkg{pst-lens} "--- эффект линзы на любой картинке или тексте.
+
+\textpkg{pst-light3d} "--- 3D-тени для текста, линий и кривых.
+
+\textpkg{pst-math} "--- расширение стандартных математических функций,
+встроенных в~PostScript.
+
+\textpkg{pst-pdf} "--- экспорт объектов в pdf-файл.
+
+\textpkg{pst-poly} "--- изображение многоугольников. 
+
+\textpkg{pst-text} "--- набор текста вдоль траектории.
+
+    
+\textpkg{pst-slpe} "--- разные градиенты.
+
+\textpkg{pst-vue3d} "--- простые 3D-объекты в перспективе. 
+
+\textpkg{pst-xkey} из пакета \textpkg{xkey} "--- разбор пар
+<<ключ-значение>> для пакета \textpkg{pstricks}.
+
+
+\textpkg{scalebar} "--- рисует масштабные линейки.
+
+
+\textpkg{xypic} "--- графики и диаграммы средствами \TeX.
+
+
+\section{Всё о таблицах}
+\label{sec:catalog:table}
+
+Случается, что данные проще передавать в виде таблицы. Таблица
+"--- это особая форма передачи содержания, и для её правильного
+оформления следует многое учитывать.
+
+\FullVersion\textpkg{booktabs} "--- набор макросов для тонкой
+настройки параметров таблиц. Цель пакета "--- помочь автору напечатать
+идеальную таблицу.
+
+
+
+\subsection{К вопросу о разделительных линиях}
+\label{sec:catalog:tabline}
+
+
+\FullVersion\textpkg{arydshln} "--- пунктирные разделительные линии.
+
+\textpkg{delarray} "--- разделители (скобки и тому подобное) вокруг
+окружения \textenv{array}.
+
+
+
+\FullVersion\textpkg{hhline} "--- набор разделительных линий для
+таблицы.
+
+
+\subsection{Клетки}
+\label{sec:catalog:tubs}
+
+\FullVersion\textpkg{cellspace} "--- гарантирует, что между текстом и
+горизонтальной разделительной линией всегда будет промежуток.
+
+\FullVersion\textpkg{colortbl} "--- раскраска строк, колонок и клеток
+таблицы.
+
+\FullVersion\textpkg{makecell} "--- пакет для тонкой настройки
+параметров и структуры таблицы. Для создания клеток, занимающих
+несколько строк, в пакете определена команда \textcmd{makecell}.
+
+\FullVersion\textpkg{multirow} "--- клетки, занимающие несколько
+строк. В пакет также входят стилевые файлы \textpkg{bigdelim}
+(разделители высотой в несколько строк) и \textpkg{bigstrut} (высокие подпорки).
+
+
+
+\FullVersion\textpkg{slashbox} "--- формирование клетки на перекрестии
+заголовка и боковика, разделённой косой чертой.
+
+
+\subsection{Выравнивание чисел}
+\label{sec:catalog:tabnub}
+
+
+\FullVersion\textpkg{dcolumn} из пакета \textpkg{tools}
+"--- выравнивание по разделителю целой и дробной частей. Схожую
+функциональность предоставляют пакеты \textpkg{rccol} и
+\textpkg{warpcol}.
+
+\FullVersion\textpkg{numprint} "--- позволяет вставлять разделитель через каждые
+три цифры или менять само написание цифр, чтобы не сбиться при
+вычислении порядков.
+
+
+\subsection{Клоны tabular}
+\label{sec:catalog:tabular}
+
+
+\textpkg{array} "--- расширение \textenv{tabular} и \textenv{array} от
+Франка Миттельбаха. Тонкая настройка параметров таблицы и
+разделителей.
+
+\textpkg{blkarray} из пакета \textpkg{carlisle} "--- определяет
+окружение \textenv{blockarray}, которое в математической моде
+ведёт себя как \textenv{array}, а в текстовой как
+\textpkg{tabular}.
+
+\textpkg{tabularht} из пакета \textpkg{oberdiek} "--- окружение типа
+\textenv{tabular} с параметром, определяющим высоту таблицы.
+
+\FullVersion\textpkg{tabularx} из коллекции
+\textpkg{tools} "--- расширение \textenv{tabular} с
+ограничением ширины таблицы.
+
+\FullVersion\textpkg{tabulary} "--- расширение \textenv{tabular}
+с автоматическим вычислением ширины колонок.
+
+\FullVersion\textpkg{ctable} "--- легко определяемые выровненные по
+центру таблицы.
+
+
+\subsection{Многостраничные таблицы}
+\label{sec:catalog:longtable}
+
+\FullVersion\textpkg{longtable} "--- многостраничная таблица с
+заголовками по умолчанию. Не работает при многоколоночной вёрстке.
+
+\textpkg{ltxtable} из пакета \textpkg{carlisle} "--- <<смесь>>
+\textpkg{longtable} и \textpkg{tabularx}.    
+
+\FullVersion\textpkg{supertabular} "--- чуть более сложный в
+использовании и менее гибкий аналог \textpkg{longtable}, зато можно
+применять в случае многоколоночной вёрстки.
+
+\FullVersion\textpkg{xtab} "--- современное расширение возможностей
+пакета \textpkg{supertabular} с оглядкой на \textpkg{longtable}.
+
+\subsection{Вывод}
+\label{sec:catalog:emptytab}
+
+
+\FullVersion\textpkg{listliketab} "--- печатает перечисление с
+оформлением в виде таблицы.
+
+\subsection{Доступ к данным}
+\label{sec:catalog:tabledata}
+
+\FullVersion\textpkg{csvtools} "--- чтение CSV-данных.
+
+
+\section{Вёрстка}
+\label{sec:catalog:make-up}
+
+Вёрстка "--- составление страниц (полос) газеты, журнала, книги
+определённого размера из набранных строк, заголовков, иллюстраций и
+тому подобного в соответствие с разметкой или макетом. \LaTeX{} умеет многое,
+но ему нужно сказать, что именно следует сделать.
+
+\FullVersion\textpkg{afterpage}  "--- откладывание исполнения команды
+до перехода на следующую страницу.
+
+
+\textpkg{everypage} "--- исполнение команд в начале каждой страницы.
+
+
+\textpkg{microtype} "--- интерфейс к микротипографическому
+расширению \textprog{pdftext}. Мощный механизму улучшения общего
+впечатления от текста. На текущий момент не работает с кириллицей
+(кодировка T2A). Автор это осознаёт и всячески приветствует
+исправление данного недостатка.
+
+\subsection{Ориентация страницы}
+\label{sec:catalog:landscape}
+
+
+\FullVersion\textpkg{lscape} "--- определяет окружение \textenv{landscape},
+позволяющее часть помещённого в~него текста разместить в альбомной ориентации.
+
+\FullVersion\textpkg{portland} "--- смена портретной ориентации на
+альбомную и наоборот.
+
+\FullVersion\textpkg{pdflscape} из пакета \textpkg{oberdiek} "--- аналог
+\textpkg{lscape}. При просмотре pdf-файла страница, повёрнутая с помощью
+\textenv{landscape},  показывается в альбомной ориентации независимо
+от ориентации остальных страниц документа.
+
+\FullVersion\textpkg{rotpages} "--- позволяет поворачивать указанные
+страницы вверх тормашками и переставляет их так, чтобы эти страницы
+можно было нормально читать, перевернув книгу. Полезно в случае, если
+печатается сборник задач, где необходимо немного затруднить чтение
+ответов.
+
+
+
+\subsection{Макет}
+\label{sec:catalog:layout}
+
+
+\textpkg{chngpage} "--- смена макета страницы по месту в тексте.
+
+\FullVersion\textpkg{geometry} "--- мощный и  гибкий  интерфейс для
+установки размеров макета документа.
+
+\FullVersion\textpkg{layout} "--- информация о текущем макете.
+
+\textpkg{pdfscreen} "--- создание pdf-документа для чтения текста с
+экрана монитора. 
+
+\FullVersion\textpkg{pgfpages} из пакета \textpkg{pgf} "--- 
+определяет набор макросов, позволяющих автору разместить несколько
+страниц текста на одной без использования сторонних программ.
+
+
+%\fxnote{Обязательно рассказать в главе про pdf} 
+
+\textpkg{pdfpages} "--- вставка и манипуляции с 
+pdf-страницами из внешних  pdf"=документов.
+
+
+\FullVersion\textpkg{twoup} "--- создание буклета. Для корректной
+реорганизации страниц требуется пакет \textpkg{booklet}.
+
+
+\textpkg{rmpage} "--- тонкая настройка макета.
+
+\textpkg{typearea} из пакета \textpkg{KOMA-Script} "--- управление
+полями.
+
+\textpkg{fullpage} из пакета \textpkg{preprint} "--- все поля
+выставляются равными 1.5\,см.
+
+\textpkg{savetrees} "--- максимально плотная упаковка текста на
+страницу. Использование этого пакета спасает деревья, но что он делает
+с глазами?
+
+\textpkg{stdpage} "--- гарантирует, что на странице будет определённое
+число строк, а в~каждой строке не больше определённого числа символов.
+
+\FullVersion\textpkg{typogrid} "--- наносит типографскую
+решётку. Может быть удобно при формировании макета.
+
+
+\FullVersion\textpkg{vmargin} "--- определяет размер полей.
+
+ 
+\subsection{Вертикальные расстояния между элементами текста}
+\label{sec:catalog:layoutspacing}
+
+
+\FullVersion\textpkg{setspace} "--- устанавливает вертикальное
+расстояние между строк.
+
+%\fxnote{упомянуть в разделе про списки стр 332 от Роженко}
+\textpkg{nccparskip} из пакета \textpkg{ncctools} "---
+управляет вертикальными промежутками между абзацами и устраняет
+избыточные вертикальные отступы в списках.
+
+
+
+\subsection{Многоколоночная вёрстка}
+\label{sec:catalog:multicolumn}
+
+% В пакете \textpkg{fixltx2e} исправлено некоторое количество
+% неприятностей связанных с двухколоночной вёрсткой. В частности
+% исправлена ошибка формирования колонтитулов (по умолчанию колонтитул
+% определяется второй колонкой, а не первой) и решена проблема нумерации
+% иллюстраций когда широкая иллюстрация оказывалась позади
+% одноклоночной.
+%  - ensure one-column floats don't get ahead of two-column floats;              
+%   - correct page headers in twocolumn documents;                                
+%   - stop spaces disappearing in moving arguments;  
+% - allowing \fnysmbol to use text symbols;                                     
+% - allow the first word after a float to hyphenate;                            
+% - \emph can produce caps/small caps text;                                     
+% - bugs in \setlength and flushbottom.       
+
+\FullVersion\textpkg{balance} из пакета \textpkg{preprint} "--- выравнивает
+текст в колонках на последней странице при двухколоночной печати.
+
+\textpkg{dblfloatfix} "--- исправляет ошибку с размещением широкой
+иллюстрации (аналог \textpkg{midfloat} из пакета \textpkg{sttools}) и
+ошибку с нумерацией иллюстраций (исправлено в пакете
+\textpkg{fixltx2e}).
+
+\FullVersion\textpkg{multicol} из пакета \textpkg{tools} "---
+позволяет совмещать на одной странице многоколоночную и одноколоночную
+вёрстку.
+
+\FullVersion\textpkg{parallel} "--- параллельная печать двух фрагментов
+текста. Обычно используется для представления оригинального текста и
+его перевода.
+
+\textpkg{parcolumns} из пакета \textpkg{sauerj} "--- параллельная
+печать текста во многих колонках.
+
+
+\FullVersion\textpkg{sttools} "--- пакет, специализирующийся на
+решении проблем, возникающих при двухколоночной вёрстке. Пакет
+содержит стилевые файлы \textpkg{stfloats} (управление размещением
+плавающих объектов), \textpkg{floatpag} (переопределение стиля
+страницы, на которой размещены только плавающие объекты),
+\textpkg{flushend} (балансировка колонок текста на последней странице),
+\textpkg{cuted} (переключение между одноколоночным/двухколоночным
+стилями посередине страницы), \textpkg{marginal} (дополнительные
+возможности для работы с заметками на полях) и \textpkg{midfloat}
+(размещение широкой иллюстрации при двухколоночной вёрстке посередине
+страницы).
+
+
+
+ 
+\section{Путеводитель по классам \LaTeX}
+\label{sec:catalog:classes}
+
+Стандартные классы \textpkg{article} (статья), \textpkg{book} (книга),
+\textpkg{report} (отчёт), \textpkg{proc} (доклад), \textpkg{letter}
+(письмо) и \textpkg{slides} (слайды для презентации) прибывают в
+замороженном состоянии по причине того, что на них базируется и от их
+настроек зависит множество других пакетов. Поэтому использовать следует
+отличные от~стандартных классы документов. Благо превосходные замены в наличии
+име\-ются.
+
+
+\FullVersion  Набор классов \textpkg{KOMA-Script} является отличной
+заменой стандартным классам. Базовая функциональность пакета
+обеспечивается классами \textpkg{scrartcl} (статья),
+\textpkg{scrreprt} (отчёт), \textpkg{scrbook} (книга) и
+\textpkg{scrlttr2} (письмо).
+
+
+\FullVersion Пакет \textpkg{ncclatex}, автором которого является
+Александр Роженко, предоставляет класс \textpkg{ncc}. В зависимости от
+опций, передаваемых классу, его можно использовать для написания
+статей, препринтов, монографий и отчётов. \NCC{} \cite{Rozhenko-2005}
+создавался с оглядкой на русские традиции вёрстки.
+
+
+Набор классов \textpkg{hc} основывается на \textpkg{KOMA-Script} и
+содержит классы \textpkg{hcart} (статья), \textpkg{hcreport} (отчёт),
+\textpkg{hcletter} (письмо). Кроме перечисленного в набор входит
+простой класс для создания презентационных слайдов \textpkg{hcslides}.
+
+
+Набор \textpkg{ntgclass} состоит из переписанных с нуля
+немецкоговорящими голландцами классов для набора статей
+(\textpkg{artikel1}, \textpkg{artikel2} и \textpkg{artikel3}), книг
+(\textpkg{boek} и \textpkg{boek3}), писем (\textpkg{brief}) и отчётов
+(\textpkg{rapport1} и \textpkg{rapport3}). Классы создавались 
+с~оглядкой на европейские традиции вёрстки.
+
+
+Набор \textpkg{extsizes} "--- небольшая модификация стандартных
+классов, добавляющая к стандартным 10pt, 11pt и 12pt размерам шрифта
+8pt, 9pt, 14pt, 17pt и 20pt. Состоит из классов \textpkg{extarticle},
+\textpkg{extbook}, \textpkg{extletter}, \textpkg{extproc},
+\textpkg{extreport}.
+
+
+\FullVersion\textpkg{minimal} "--- этот класс используется в случае,
+если критична скорость инициализации, а оформление не нужно совсем. 
+
+
+\subsection{Поддерживаем стандарты}
+\label{sec:catalog:cls:standart}
+
+\FullVersion\textpkg{eskdx} "--- реализация стандарта ЕСКД от
+Константина Корикова. Основу коллекции составляют классы:
+\textpkg{eskdtext} (для текстовой документации), \textpkg{eskdbtab}
+(для чертежей и схем) и \textpkg{eskdgraph} (для документов, разбитых
+на графы).
+
+Пакет \textpkg{isostds} содержит набор макросов для создания
+документации по ISO (\textpkg{iso}) и реализацию ISO~10303
+(\textpkg{iso10303}).
+
+\subsection{Пишем письма и отсылаем факсы}
+\label{sec:catalog:cls:letters}
+
+Базовый класс для написания писем \textpkg{letter} можно заменить
+\textpkg{scrlttr2} из набора классов \textpkg{KOMA-Script} или из
+других аналогичных наборов.
+
+\textpkg{adrconv} и \textpkg{directory} "--- наборы стилей, позволяющих
+держать адреса в базе данных \BIBTEX{} и оперировать с ними.
+
+\textpkg{adrlist} "--- позволяет организовать простой цикл по
+специально сформированному списку адресов.
+
+\FullVersion\textpkg{akletter} "--- полноценная превосходная замена
+стандартного класса \textpkg{letter}.
+
+\textpkg{beletter} "--- бельгийские письма.
+
+
+\FullVersion\textpkg{cdpbundl} "--- деловые письма в итальянском стиле.
+
+\textpkg{envlab} "--- разметка конвертов по правилам US Postal
+Service. 
+
+\textpkg{dinbrief} и \textpkg{g-brief} "--- немецкие письма. Специально
+для класса \textpkg{dinbrief} была написана программа
+\textprog{dinbrief-gui} на Tcl/Tk.
+
+\textpkg{facsimile} и \textpkg{fax} "--- оформление сообщений для
+отсылки через факс.
+
+\textpkg{formlett} и \textpkg{mailing} "--- рассылка стандартных писем
+по множеству адресов.
+
+\textpkg{lettre} "--- французские письма.
+
+\FullVersion\textpkg{newlfm} "--- изощрённый класс, позволяющий легко
+создавать свои стандарты писем. Интегрирует в себя пакеты
+\textpkg{fancyhdr} и \textpkg{geometry}.
+
+
+
+
+\subsection{Верстаем книги}
+\label{sec:catalog:cls:books}
+
+Вместо стандартного класса \textpkg{book} в обязательном порядке
+необходимо использовать более современную замену, например,
+\textpkg{scrbook} из набора \textpkg{KOMA-Script}.
+
+\FullVersion\textpkg{memoir} "--- исключительно полно
+документированный класс для создания книг, в том числе и сильно
+ориентированных на математику.
+
+\FullVersion\textpkg{octavo} "--- абсолютно всё для создания книг: от
+гибкого структурирования, до~формирования геометрии страницы и
+форматирования обложки.
+
+\FullVersion\textpkg{sffms} "--- быстрый способ сделать распечатку
+текста через два интервала на дешёвом принтере.
+
+
+\subsection{Создаём отчёты}
+\label{sec:catalog:cls:report}
+
+Базовый класс отчётов \textpkg{report}, как правило, заменяется более
+современным из~стандартных наборов, например, \textpkg{scrreprt} из
+\textpkg{KOMA-Script}.
+
+\FullVersion\textpkg{hitec} "--- отчёт в стиле HiTech.
+
+Пакет \textpkg{refman} содержит классы \textpkg{refart} и
+\textpkg{refrep}, предназначенные для создания отчётов и документации
+с широкими полями для заметок по примеру документации, традиционно
+распространяемой Adobe.
+
+\subsection{Делаем презентации}
+\label{sec:catalog:presentation}
+\FullVersion Базовый класс для создания слайдов для презентаций 
+\textpkg{slides} до сих пор может оказаться востребован в силу своей
+исключительной простоты.
+
+\textpkg{a0poster} "--- создание текста на очень большом листе бумаги.
+
+\FullVersion\textpkg{beamer} "--- современный пакет для подготовки
+компьютерных презентаций с~большим количеством стандартных
+презентационных стилей.
+
+\textpkg{powerdot} "--- современный презентационный класс с долгой
+историей.
+
+\textpkg{prosper} "--- более современный аналог \textpkg{seminar} и
+соответственно \textpkg{slides}. Вспомогательный класс
+\textpkg{ppr-prv} позволяет получить печатную версию слайдов,
+подготовленных с помощью класса \textpkg{prosper}.
+
+
+\textpkg{sciposter} "--- наиболее функциональный на текущий момент
+класс для подготовки постеров.
+
+\FullVersion\textpkg{seminar} "--- чуть более современный аналог
+\textpkg{slides} с оверлеями и разными эффектами.
+
+\textpkg{talk} "--- альтернатива \textpkg{beamer} с возможностью смены
+оформления слайдов. На~сегодня есть только один предопределённый тип
+слайда. 
+
+
+\textpkg{texpower} "--- презентационный пакет, ориентированный на
+визуальные эффекты. Содержит класс \textpkg{powersem}.
+
+
+Кроме перечисленных классов можно обратить внимание на совместимый 
+с~классическим \textpkg{seminar} пакет \textpkg{ifmslide} "--- презентации с
+использованием \textprog{pdflatex}. Схожую функциональность
+обеспечивает \textpkg{pdfslide}.
+
+Для создания эффектов перехода между слайдами может оказаться полезным
+и пакет \textpkg{ppower4}, который является постпроцессором
+для создания эффектов в~PDF"=презентациях.
+
+
+\subsection{Защищаем диссертации}
+\label{sec:catalog:cls:disser}
+ 
+Классов для написания диссертаций великое множество. Не зачем
+создавать ещё один подобный класс с нуля "--- есть куча примеров, на
+которые можно опереться.
+
+\FullVersion\textpkg{disser} "--- в помощь русскоязычным студентам и
+аспирантам для написания работ для защиты звания бакалавра, магистра,
+кандидата и доктора наук. Спасибо Станиславу Кручинину.  К сожалению,
+пакет отсутствует в составе дистрибутива \TeXLive-2007, поэтому его
+следует взять на любом CTAN"=архиве в директории
+\CTANpath{/macros/latex/contrib/disser}.
+
+
+\textpkg{ebsthesis} "--- оформление диссертации в соответствие с
+правилами European Business School.
+
+\textpkg{hepthesis} "--- пакет общего назначения. Начинался как класс
+для PhD в области физики высоких энергий (HEP).
+
+\textpkg{pittetd} "--- University of Pittsburgh.
+
+\textpkg{gatech-thesis} "--- Georgia Institute of Technology.
+
+\textpkg{muthesis} "---  University of Man. 
+
+%\textpkg{toptesi} "--- оформление диссертаций в Италии
+
+\textpkg{uaclasses} "--- University of Arizona.
+
+\textpkg{ucthesis} "--- UC Berkeley.
+
+%\textpkg{ut-thesis} и \textpkg{utorontothesis} "--- University of Toronto 
+
+\textpkg{uiucthesis} "---  University of Illinois.
+
+\textpkg{umich-thesis} "--- University of Michigan.
+
+\textpkg{uwthesis} "--- University of Washington. 
+
+\textpkg{york-thesis} "---  York University (Канада).
+
+\subsection{Организуем резюме}
+\label{sec:catalog:cls:cv}
+
+
+\FullVersion\textpkg{curve} "--- класс CurVe позволяет
+поддерживать несколько разных резюме в одном основном файле.
+
+\textpkg{europecv} "--- неофициальный класс для подготовки
+резюме по стандартам, рекомендованным Европейской комиссией.
+
+ \textpkg{moderncv}"--- для создания резюме с современным
+дизайном.
+
+
+В той или иной степени резюме можно создавать с помощью классов
+\textpkg{vita}, \textpkg{currvita} или  \textpkg{cv}.
+
+\subsection{Журнальные и конференционные классы}
+\label{sec:catalog:cls:journal}
+
+У многих конференций и журналов свои правила оформления статей, но в
+основном конференционные и журнальные классы "--- это небольшие
+модификации базовых.
+
+\textpkg{aaai} "--- конференции AAAI (American Association for
+Artificial Intelligence).
+
+\textpkg{aastex} или AASTeX "--- стиль для представления публикаций в
+журналах Ame\-rican Astronomical Society.
+
+\textpkg{abstbook} "--- быстрый способ <<сляпать>> сборник из
+конференционных <<абстрактов>>.
+
+\textpkg{acmconf} "--- конференционный класс для  ACM
+(Association for Computing Ma\-chi\-nery). Для подготовки списка
+литературы следует использовать стиль \textpkg{acm}.
+
+\textpkg{active-conf} "--- конференции  ACTIVE (Австралия).
+
+\textpkg{aguplus} "--- класс AGUTeX для AGU (Ame\-ri\-can Geophysical
+Union).
+
+\textpkg{aiaa-tc} "---  класс для конференций,
+проводимых AIAA (Ame\-ri\-can Institute of Aero\-na\-utics and
+Astronautics). Имеет также свой библиографический стиль
+\textpkg{aaai-named}.
+
+
+\FullVersion\AMS-классы включают в себя \textpkg{amsart} (статья),
+\textpkg{amsbook} (книга) и \textpkg{amsproc} (доклад).
+
+\textpkg{apa} "--- American Psychological Association. Для приведения
+в соответствие с требованиями ассоциации оформления ссылок на
+литературу используется пакет \textpkg{apacite} и стили \textpkg{apa}
+или \textpkg{apalike}.
+
+\textpkg{asaetr} "--- American Society for Agricultural Engineers
+(ASAE).
+
+\textpkg{ascelike} "--- American Society of Civil
+Engineers. Одноимённый библиографический стиль прилагается.
+
+\textprog{cc} "--- класс из пакета \textpkg{computational-complexity}
+для журнала Computational Complexity.
+
+\FullVersion\textpkg{combine} "--- подготовка трудов
+конференции. Объединение множества докладов в один документ.
+
+\FullVersion\textpkg{elsart} "--- класс, обязательный при подготовке
+журнальных публикаций в издательстве Elsevier.
+
+\textpkg{jpsj2} "--- Journal of the Physical Society of Japan.
+
+\textpkg{iagproc} "--- IAG (International Association of Geodesy).
+
+\textprog{IEEEconf} и \textpkg{IEEEtran} "--- классы для IEEE
+(Institute of Electrical and Electro\-nics Engineers).
+
+\textpkg{mtn} "--- Maple Technical Newsletter.
+
+\textpkg{nature} "--- класс, позволяющий подготовить pdf-файл
+для редакции журнала Nature. К~нему прилагается одноимённый стиль для
+подготовки библиографии.
+
+\FullVersion\textpkg{nccproc} "--- труды конференций, проводящихся под эгидой
+Института вычислительной математики и математической геофизики.
+
+\textpkg{nrc1} и \textpkg{nrc2} "--- классы из пакета \textpkg{nrc}
+для National Research Council (Канада).
+
+  
+\FullVersion\textpkg{revtex4} "--- один из самых популярных журнальных
+классов. В частности, он используется при оформлении статей для
+журналов МАИК <<Наука/Интерпериодика>>
+(\url{http://www.maik.ru/pub/tex/}).
+
+\textpkg{ptptex} "--- PTPTeX (Progress of Theoretical Physics), Япония.
+
+
+\FullVersion\textpkg{sibjnm} "--- <<Сибирский журнал вычислительной
+математики>>. 
+
+\textpkg{siggraph} "--- конференции Siggraph.
+
+\textpkg{smfart} и \textpkg{smfbook}  "--- классы французского
+математического общества.
+
+
+\textpkg{spie} "--- конференции SPIE.
+
+
+\subsection{Делаем газеты и буклеты}
+\label{sec:catalog:cls:newspaper}
+
+Создание газет не являются сильной стороной \LaTeX, но ничто не
+запрещает попробовать и это.
+
+
+\FullVersion\textpkg{papertex} "--- верстаем газету с помощью \LaTeX. 
+
+\textpkg{leaflet} "--- подготовка буклетов"=раскладушек в шесть
+страниц на одном листе.
+
+
+\section{Справочно-поисковый аппарат издания}
+\label{sec:catalog:apparatus}
+
+Написать любую книгу безумно тяжело. Сделать её полезной почти
+невозможно. Справочно-поисковый аппарат издания "--- это хорошее
+подспорье на этом пути.
+
+
+\subsection{Оглавление}
+\label{sec:catalog:toc}
+
+\FullVersion\textpkg{minitoc} "--- позволяет создавать своё оглавление
+в каждой главе.
+
+\textpkg{multitoc} "--- позволяет сформировать оглавление в несколько колонок.
+
+\FullVersion\textpkg{shorttoc} "--- позволяет создать ещё одно
+оглавление другой глубины.
+
+\FullVersion\textpkg{tocbibind} "--- добавляет ссылки на
+библиографию, алфавитный указатель, списки таблиц и рисунков в
+оглавление.
+
+\FullVersion\textpkg{tocloft} "--- позволяет управлять параметрами,
+отвечающими за форматирование оглавления, списков таблиц, рисунков и
+тому подобного.
+
+\textpkg{tocvsec2} "--- предоставляет дополнительные возможности по
+формированию записей оглавления и нумерации разделов.
+
+\subsection{Колонтитулы}
+\label{sec:catalog:headings}
+
+
+\FullVersion\textpkg{fancyhdr} "--- полный контроль над колонтитулами.
+
+\FullVersion\textpkg{nccfancyhdr} из пакета \textpkg{ncctools} "---
+улучшенная реализация пакета \textpkg{fancyhdr}.
+
+\FullVersion\textpkg{technics} "--- пример того, как с помощью
+\textpkg{fancyhdr} нарисовать стандартную табличку на каждой странице
+сверху. Сам по себе стиль не рабочий "--- нужен напильник.
+
+
+
+\subsection{Библиография}
+\label{sec:catalog:bib}
+
+
+\textpkg{amsrefs} "--- альтернатива  \BibTeX{} от \AMS.
+
+\textpkg{authorindex} "--- помогает создать список авторов всех
+цитируемых документов.
+
+\textpkg{backref} из пакета \textpkg{hyperref} "--- создаёт
+интерактивную гиперссылку, позволяющую попасть из библиографического
+списка к месту ссылки.
+
+\textpkg{babelbib} "--- позволяет создавать и поддерживать
+библиографические ссылки на множестве языков с использованием пакета
+\textpkg{babel}. Русский язык пока не поддерживается.
+
+
+\textpkg{bibcheck} из пакета \textpkg{ltxmisc} "--- проверяет, на все
+ли элементы стандартного окружения \textenv{thebibliography} есть
+ссылки в документе.
+
+
+\textpkg{bibtopic} "--- включение нескольких файлов с
+библиографическими данными в~один документ.
+
+\textpkg{bibunits} "--- создание нескольких библиографических списков
+для различных структурных единиц документа, например, для частей
+\textcmd{part}.
+
+
+\FullVersion\textpkg{breakcites} из пакета \textpkg{ltxmisc} "---
+позволяет цитате \textcmd{cite} переноситься на другую строку. Полезно
+при громоздких множественных ссылках.
+
+
+\textpkg{camel} "--- ещё одна альтернатива \BibTeX{} в управлении
+библиографией.
+
+
+
+
+% cite.sty       Compressed, sorted lists of numerical citations: [8,11-16]
+% overcite.sty   Compressed, sorted lists of superscript numerical citations:
+%                "word [12,16,11,13,14,15]."  -->  "word.$^{11-16}$"
+% drftcite.sty   Print the tags instead of the numbers for \cite and \bibitem.
+% chapterbib.sty Do multiple bibliographies--one for each \include file.
+
+\textpkg{cite} "--- набор улучшающих стилей, состоящий из
+\textpkg{cite} (автоматически группирует ссылки), \textpkg{overcite}
+(автоматически группирует ссылки и формирует их как верхние индексы),
+\textpkg{drftcite} (вместо номеров выводит метки "--- удобно при
+подготовке) и \textpkg{chapterbib} (подключение нескольких файлов с
+библиографической информацией).
+
+\FullVersion\textpkg{citehack} из пакета \textpkg{t2} "--- позволяет
+использовать кириллицу в метках для команды цитирования \textcmd{cite}.
+
+\textpkg{citeref} "--- формирует список ссылок на библиографию.
+
+\FullVersion\textpkg{compactbib} "--- позволяет использовать
+окружение \textenv{thebibliography} несколько раз.
+
+\textpkg{custom-bib} "--- облегчает создание своего библиографического
+стиля.
+
+\textpkg{doipubmed} "--- дополнительные полезные команды
+(\textcmd{doi}, \textcmd{pubmed} и \textcmd{citeurl}) для формирования
+библиографического списка.
+
+\textpkg{footbib} "--- размещение библиографической информации в виде
+подстрочных примечаний.
+
+
+\textpkg{harvard} "--- семейство библиографических стилей Harvard.
+
+\textpkg{multibbl} "--- создание нескольких параллельных
+библиографических списков.
+
+\textpkg{multibib} "--- помогает оформить несколько библиографических
+списков.
+
+\textpkg{natbib} "--- дополнительные библиографические стили. В
+основном для формирования ссылок вида <<автор--год>>.
+
+\textpkg{notoccite} "--- исправление стандартного механизма
+цитирования библиографии при использовании цитат, появляющихся в
+оглавлениях или списках таблиц/рисунков при использовании
+\BibTeX-стиля \textpkg{unsrt}.
+  
+
+
+\subsection{Указатель}
+\label{sec:catalog:index}
+
+
+\FullVersion\textpkg{gloss} "--- создание глоссария с использованием
+\BIBTEX.
+
+\textpkg{index} "--- расширение стандартного механизма создания
+предметных указателей. 
+
+\FullVersion\textpkg{makeidx} "--- стандартный пакет \LaTeX{} для
+создания предметных указателей.
+
+\FullVersion\textpkg{makeglos} "--- создание глоссария.
+
+\FullVersion\textpkg{nomencl} "--- создание списка используемых
+символов. Иными словами "--- создание номенклатуры или списка
+обозначений.
+
+\textpkg{robustindex} "--- автоматическое переопределение номеров
+страниц в алфавитном указателе при изменении числа страниц
+документа. Позволяет в случае, если не добавляется дополнительной
+индексной ссылки, не пересоздавать указатель.
+
+\FullVersion\textpkg{splitindex} "--- ещё один пакет для возможного
+увеличения числа указателей до~бесконечности.
+
+\FullVersion\textpkg{varindex} "--- задание нескольких индексных элементов одной
+командой. Полезно, когда хочется, чтобы одновременно были пункты и
+<<Теорема Пикара>>, и <<Пикар "--- теорема>>.
+
+
+
+\section{Программирование в среде \LaTeX}
+\label{sec:catalog:program}
+
+Лучше всего по возможности найти уже готовое решение, но иногда
+приходится делать что-то новое. Для создания своих пакетов полезно
+воспользоваться уже имеющимися инструментами, чтобы не изобретать
+велосипед заново.
+
+
+%\fxnote{Рассказать где-нибудь об этом}
+\textpkg{perltex} "--- Perl\TeX. Позволяет использовать
+ perl в среде \LaTeX.
+
+\subsection{Счётчики и другие переменные}
+\label{sec:catalog:program:count}
+
+\textpkg{arrayjob} "--- добавляет массивы в \LaTeX{} и операции с ними.
+
+
+\textpkg{binhex} "--- перевод из десятичной системы счисления в
+двоичную, восьмеричную и шестнадцатеричную системы счисления.
+
+
+\FullVersion\textpkg{chngcntr} "--- позволяет добавить или убрать
+зависимость после определения счётчика.
+
+
+\textpkg{clefval} "--- позволяет создавать связанные пары
+<<ключ/значение>> с доступом к~значению по ключу. В какой-то мере это
+аналог хэша.
+
+\textpkg{engord} из пакета \textpkg{oberdiek} "--- добавляет
+правильные английские суффиксы к~числительным.
+
+\textpkg{dcounter} из пакета \textpkg{ncctools} "--- счётчики с
+понятием стиля нумерации, или динамические счётчики.
+
+\textpkg{fmtcount} "--- представляет различные форматы (двоичный,
+восьмеричный, шестнадцатеричный и так далее)  отображения счётчиков.
+
+\textpkg{sublabel} из пакета \textpkg{preprint} "--- позволяет
+счётчикам иметь дополнительную поднумерацию, то есть 4a, 4b, 4c и тому
+подобное.
+
+\textpkg{zahl2string} из пакета \textpkg{sauerj} "--- при передаче
+числа формирует соответствующую строку текста на немецком.
+
+
+
+\subsection{Вычисления с использованием \LaTeX}
+\label{sec:catalog:program:calc}
+
+\FullVersion\textpkg{calc} "--- позволяет выполнять арифметические
+операции с длинами и счётчи\-ками.
+
+\textpkg{fltpoint} "--- вычисления с плавающей точкой.
+
+\textpkg{refcount} из пакета \textpkg{oberdiek} "--- предоставляет
+набор макросов, позволяющих выполнять операцию присваивания между
+счётчиками.
+
+\textpkg{fp} "---  набор функций, включающий тригонометрические,  и
+операторов для вычислений с фиксированной запятой с высокой точностью. 
+
+\subsection{Условные выражения и циклы}
+\label{sec:catalog:program:ifthen}
+
+\textpkg{ifdraft} из пакета \textpkg{oberdiek} "--- предоставляет
+набор условных выражений для определения моды draft/final.
+
+\textpkg{ifmtarg} из пакета \textpkg{ltxmisc}  "---
+условный оператор для определения существования аргумента. Аргумент
+отсутствует, если представляет собой ноль или более пробелов.
+
+
+\textpkg{ifpdf} из пакета \textpkg{oberdiek} "--- предоставляет
+условное выражение \textcmd{ifpdf} для определения факта использования
+ при компиляции \textprog{latex} или \textprog{pdflatex}.
+
+
+\FullVersion\textpkg{ifthen} "--- макропакет, в котором определены
+команды \textcmd{ifthenelse} (условный переход) и \textcmd{whiledo}
+(цикл).  Имеет смысл присмотреться к усовершенствованной версии этого
+пакета \textpkg{xifthen}.
+
+\textpkg{labelcas} "--- проверка существования метки в документе.  
+
+\textpkg{multido} "--- определяет оператор цикла \textcmd{multido}.
+
+\textpkg{stdclsdv} "--- набор условных выражений для определения
+используемого класса.
+
+
+
+\subsection{Создание новых команд}
+\label{sec:catalog:program:newcommand}
+
+\textpkg{acronym} "--- простой способ создания сокращений или акронимов.
+
+
+\textpkg{makecmds} "--- определяет новые макросы
+\textcmd{makecommand}, \textcmd{makeenvironment} и
+\textcmd{provideenvironment}, позволяющие задать новую команду,
+если она до этого отсутствовала, или переопределить, если уже ранее она
+была определена.
+
+\textpkg{optparams} из пакета \textpkg{sauerj} "--- создание новой
+команды с необязательными параметрами. Число необязательных параметров
+может доходить до девяти.
+
+\textpkg{robustcommand} "--- создание <<не хрупких>> команд.
+
+\textpkg{toolbox} "--- пакет для создания новых типов предметных
+указателей, глоссариев и макросов.
+
+\textpkg{twoopt} из пакета \textpkg{oberdiek} "--- позволяет создавать
+новые команды с двумя необязательными параметрами, которые имеют значение
+по умолчанию.
+
+\subsection{Разбор параметров}
+\label{sec:catalog:program:param}
+
+
+\textpkg{coolstr} "--- работа со строками. Под строкой понимается
+набор ASCII"=символов, то есть кириллица не работает. В пакете
+определена команда \textcmd{substr}, извлекающая подстроку от и до
+указанных позиций символов из строки, переданной в~качестве параметра.
+
+\textpkg{keyval} "--- разбор списков вида <<ключ=значение>>.
+
+
+\textpkg{processkv} из пакета \textpkg{sauerj} "--- разбор списка пар
+<<ключ=значение>>. При этом на каждой паре при разборе может
+выполняться определённый пользователем  макрос.  
+
+
+\FullVersion\textpkg{tokenizer} "--- позволяет разбивать текстовые списки на
+элементы.
+
+
+
+\textpkg{xkeyval} "--- улучшенная версия пакета
+\textpkg{keyval}. Пакет позволяет передавать и принимать в качестве
+параметра список пар <<ключ=значение>>.
+
+
+
+\subsection{Работа с файлами}
+\label{sec:catalog:program:file}
+
+\textpkg{attachfile2} из пакета \textpkg{oberdiek} "--- прикрепить
+файл к документу PDF.
+
+\textpkg{fink} "--- доступ к имени файла, который компилируется на
+момент исполнения команды \textcmd{finkfile}.
+
+\textpkg{embedfile} из пакета \textpkg{oberdiek} "--- внедрить файл в
+документ PDF.
+
+\textpkg{extract} "--- в пакете определены окружения, позволяющие
+записать при компиляции указанный текст в файл.
+
+\textpkg{filecontents} "--- запись \LaTeX-кода в файл с возможностью
+включить этот файл с помощью команды \textcmd{include}.
+
+\textpkg{newfile} "--- пользовательский интерфейс к чтению/записи
+файлов.
+
+\FullVersion\textpkg{optional} "--- предоставляется возможность
+интерактивно указать при компиляции, какая часть документа будет
+использована, а какая пропущена.
+
+\textpkg{versions} "--- набор макросов, позволяющих
+пометить часть текста и выкинуть её при компиляции.
+
+\subsection{Пакеты  \LaTeX}
+\label{sec:catalog:program:doc}
+
+\textpkg{afterpackage} из пакета \textpkg{ncctools} "--- добавляет
+команды к пакету, после того как он уже загружен.
+
+
+\FullVersion\textpkg{doc} "--- пакет для создания новых
+пакетов. Включение кода и документации в~один файл. 
+
+\FullVersion\textpkg{docstrip} "---  подготовка к использованию кода и документации,
+созданных с помощью пакета \textpkg{doc}.
+
+
+\textpkg{blindtext} "--- предоставляет для целей тестирования
+искусственно сгенерированный текст на английском или немецком языках.  Схожую
+функциональность имеет пакет \textpkg{lipsum}.
+
+\textpkg{diagnose} "--- набор макросов для диагностирования ошибок.
+
+\textpkg{dialogl} "--- набор макросов для создания интерактивных
+\LaTeX"=скриптов.
+
+% \textpkg{everyshi} "--- хук для команды \textcmd{shipout}, которая
+% пишет во внешние файлы. 
+
+% \textpkg{everysel} "--- хук для команды \textcmd{selectfont}, которая
+% отвечает за загрузку шрифтов. 
+
+\textpkg{export} "---  экспорт/импорт переменных \LaTeX{} во внешний файл.
+
+\textpkg{makedtx} "--- автоматизация создания пакетных
+dtx-файлов.
+
+\textpkg{msg} "--- пакет для локализации сообщений других
+пакетов. Иногда пользователю проще понять сообщение об ошибке, если
+оно выдаётся на его родном языке.
+
+\textpkg{xdoc} "--- расширение стандартного, но постепенно
+устаревающего, пакета \textpkg{doc}.
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../ctex"
+%%% End: 
+

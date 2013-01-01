@@ -1,0 +1,46 @@
+%  -*- coding: koi8-r -*-
+\input{../structheader}
+\usepackage[warn]{mathtext}
+\usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}%first paragraph indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{srcltx}
+\usepackage{textcomp}
+\usepackage{floatflt}
+\usepackage{wrapfig}
+\usepackage{afterpage}
+\usepackage{ccaption}
+\captiondelim{. }
+\usepackage{xspace}
+%научные символы и смайлики \smiley \frownie
+%\usepackage[integrals]{wasysym}
+\usepackage{../example}
+\usepackage{tensor}
+
+%backslash
+\newcommand{\bs}{\symbol{'134}}
+%degree
+\newcommand{\grad}{\ensuremath{{}^{\circ}}\xspace}
+\begin{document}
+\pagestyle{empty}
+\begin{example}[0.57\linewidth]{math-2-whidehat}
+\[\begin{split}
+  &M\indices{^a_b^{cd}_e}\quad
+  \tensor[^a_b^c_d]{M}{^a_b^c_d}\\
+  &\tensor*[^*_*]{\prod\nolimits}{^*_*}\quad
+  \tensor*{M}{*^{i_1}_{m_1}^{i_2}_{m_2}
+               ^{i_3}_{m_3}^{i_4}_{m_4}}\\
+  &\tensor*[^{14}_6]{\mathrm{C}}{}\quad
+  \nuclide[14][6]{C}   
+\end{split}\]
+\end{example}
+
+%\begin{thebibliography}{9}
+%\bibitem{}
+%\newblock
+%\end{thebibliography}
+\end{document}

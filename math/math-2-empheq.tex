@@ -1,0 +1,45 @@
+%  -*- coding: koi8-r -*-
+\input{../structheader}
+\usepackage[warn]{mathtext}
+\usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}%first paragraph indent
+\usepackage{cmap}
+\usepackage[unicode=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{srcltx}
+\usepackage{textcomp}
+\usepackage{floatflt}
+\usepackage{wrapfig}
+\usepackage{afterpage}
+\usepackage{ccaption}
+\captiondelim{. }
+\usepackage{xspace}
+%научные символы и смайлики \smiley \frownie
+%\usepackage[integrals]{wasysym}
+\usepackage{../example}
+\usepackage{empheq}
+\usepackage{fancybox}
+
+%backslash
+\newcommand{\bs}{\symbol{'134}}
+%degree
+\newcommand{\grad}{\ensuremath{{}^{\circ}}\xspace}
+\begin{document}
+
+\pagestyle{empty}
+\begin{example}[0.6\linewidth]{math-2-whidehat}
+\begin{empheq}[box=\shadowbox*]{align}
+E&=mc^2 \tag{*}\\
+Y&= \sum_{n=1}^\infty \frac{1}{n^2}\notag
+\end{empheq}
+\end{example}
+%>>
+%\begin{thebibliography}{9}
+%\bibitem{}
+%\newblock
+%\end{thebibliography}
+\end{document}

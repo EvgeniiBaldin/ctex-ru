@@ -1,0 +1,61 @@
+%  -*- coding: koi8-r -*-
+%структура страницы
+\input{../structheader}
+\usepackage[warn]{mathtext}
+\usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}%first paragraph indent
+%\usepackage{cmap}
+%\usepackage[unicode=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{srcltx}
+\usepackage{textcomp}
+\usepackage{floatflt}
+\usepackage{wrapfig}
+\usepackage{afterpage}
+\usepackage{ccaption}
+\captiondelim{. }
+\usepackage{xspace}
+%научные символы и смайлики \smiley \frownie
+\usepackage{sistyle}
+\usepackage{verse}
+\usepackage{../example}
+
+%backslash
+\newcommand{\bs}{\symbol{'134}}
+%degree
+\newcommand{\grad}{\ensuremath{{}^{\circ}}\xspace}
+\begin{document}
+\pagestyle{empty}
+
+
+\begin{example}[0.485\linewidth]{arcs}
+\renewcommand{\poemtoc}{subsection}
+\poemtitle{Анчар}
+\settowidth{\versewidth}{Стоит "--- 
+        один во всей вселенной.}
+\begin{verse}[\versewidth]
+В пустыне чахлой и скупой,\\
+На почве, зноем раскаленной,\\
+Анчар, как грозный часовой,\\
+Стоит "--- один во всей вселенной.
+
+\vin Природа жаждущих степей\\
+\vin Его в день гнева породила\\
+\vin И зелень мертвую ветвей,\\
+\vin И корни ядом напоила.
+
+Яд каплет сквозь его кору,\\
+К полудню растопясь от зною,\\
+И застывает ввечеру\\
+Густой, прозрачною смолою.\\
+
+\ldots
+
+\emph{А.\,С. Пушкин} 
+\end{verse}
+\end{example}
+\end{document}

@@ -1,0 +1,55 @@
+%  -*- coding: koi8-r -*-
+\input{../structheader}
+\usepackage[warn]{mathtext}
+\usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}%first paragraph indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{srcltx}
+\usepackage{textcomp}
+\usepackage{floatflt}
+\usepackage{wrapfig}
+\usepackage{afterpage}
+\usepackage{ccaption}
+\captiondelim{. }
+\usepackage{xspace}
+%научные символы и смайлики \smiley \frownie
+\usepackage{hepparticles}
+\usepackage{../example}
+
+%backslash
+\newcommand{\bs}{\symbol{'134}}
+%degree
+\newcommand{\grad}{\ensuremath{{}^{\circ}}\xspace}
+\begin{document}
+\pagestyle{empty}
+
+
+\begin{example}[0.58\linewidth]{phys-hepparticles}
+\begin{itemize}
+\item Элементарные частицы:  
+ \HepParticle{B}{d}{0}, 
+ \HepAntiParticle{B}{d}{0}
+\item Действительно элементарные частицы: 
+ \HepGenParticle{q}{d}{}, 
+ \HepGenAntiParticle{\ell}{\mu}{}
+\item SUSY"=частицы:    
+ \HepSusyParticle{\chi}{1}{}, 
+ \HepGenSusyParticle{q}{2}{}
+\item Резонансы: 
+ \HepParticleResonance{J\!/\psi}{1S}{}{\star}
+\item Процессы: 
+ \HepProcess{\HepParticle{B}{d}{0} \HepTo 
+  \HepParticle{K}{}{-}\HepParticle{\pi}{}{+}}.
+\end{itemize}
+\end{example}
+
+
+%\begin{thebibliography}{9}
+%\bibitem{}
+%\newblock
+%\end{thebibliography}
+\end{document}

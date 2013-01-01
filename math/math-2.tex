@@ -1,0 +1,1642 @@
+%  -*- coding: koi8-r -*-
+\chapter{Математика}
+\label{cha:math-2}{%\setlength{\epigraphwidth}{0.4\textwidth}
+  \epigraph{\hfill Математика "--- это королева наук.}{\emph{Карл Фридрих Гаусс}}
+}
+
+Все точные науки говорят на языке математики. Многое из входящего в
+этот язык было реализовано в пакетах \AMS, поэтому первое, что следует
+сделать,  "--- это загрузить \textpkg{amsmath}:
+\begin{lstlisting}[]
+\usepackage{amsmath} 
+
+\end{lstlisting}
+
+В дальнейшем по умолчанию считается, что этот стилевой файл
+загружен.
+
+
+% <<Математическая формула не может быть чьей-то ,,собственностью''! Она
+% принадлежит Богу.>> "--- Д.Э.\,Кнут.
+
+
+% Стр 465 путеводителя 2 - оно и есть 
+
+\section{Математические символы}
+\label{sec:math-2:symbol}
+
+В этом разделе предполагается, что кроме \textpkg{amsmath} также
+загружены пакеты \textpkg{amsfonts} и \textpkg{amssymb}.
+
+\subsection{Типы символов}
+\label{sec:math-2:symboltype}
+
+\LaTeX{} сам расставляет пробелы внутри формул. При этом он
+руководствуется классом символов. При желании класс символа можно
+поменять, передав его в~качестве обязательного аргумента командам.
+\begin{eqlist}
+\item[$\bullet$] Операторы:
+  \begin{eqlist}
+  \item[\textcmd{mathbin}] "--- бинарные операторы. В этот класс
+    входят знаки сложения (\(+\)), вычитания (\(-\)), умножения
+    (\(\times\) или \(\cdot\));
+  \item[\textcmd{mathrel}] "--- операторы отношения. В этот класс
+    входят знаки больше (\(>\)), меньше (\(<\)), равенства (\(=\));
+  \item[\textcmd{mathop}] "--- математические операторы. К этому
+    классу относятся такие команды, как \textcmd{sin} (\(\sin\)),
+    \textcmd{sum} (\(\sum\)), \textcmd{lim} (\(\lim\)).
+  \end{eqlist}
+\item[$\bullet$] Символы:
+  \begin{eqlist}
+  \item[\textcmd{mathord}] "--- класс обычных символов. Включает в
+    себя простые символы a~(\(a\)), \textcmd{zeta} (\(\zeta\)),
+    \textcmd{to} (\(\to\)).
+  \end{eqlist}
+\item[$\bullet$] Математическая пунктуация:
+  \begin{eqlist}
+  \item[\textcmd{mathopen}] "--- открывающие скобки;
+
+  \item[\textcmd{mathclose}] "--- закрывающие скобки;
+
+  \item[\textcmd{mathinner}] "--- внутренние элементы. В этот класс
+    входит многоточие (\(\ldots\)); 
+
+  \item[\textcmd{mathpuct}] "--- символы пунктуации. Этот класс
+    включает обычные пунктуационные знаки.
+  \end{eqlist}
+
+\end{eqlist}
+
+
+
+\subsection{Список символов}
+\label{sec:math-2:symbollist}
+
+Многие символы, которые существуют и используются в \LaTeX,
+перечислены в титаническом труде <<The Comprehensive LATEX Symbol
+List>>. В стандартном дистрибутиве этот достойный восхищения талмуд
+доступен в виде исходников и pdf"=файла \textfile{symbols-a4.pdf}.
+\vspace{-3mm}
+
+\begin{center}
+  \begin{longtable}{SclSclScl}\hline
+    \multicolumn{6}{c}{\cbox{Математические символы}}\\\hline
+    \(\aleph\)&\textcmd{aleph}&
+    \(\angle\)&\textcmd{angle}&
+    \(\backslash\)&\textcmd{backslash}\\
+    \(\Box\)&\textcmd{Box}&
+    \(\bot\)&\textcmd{bot}&
+    \(\clubsuit\)&\textcmd{clubsuit}\\
+    \(\Diamond\)&\textcmd{Diamond}&
+    \(\diamondsuit\)&\textcmd{diamondsuit}&
+    \(\ell\)&\textcmd{ell}\\
+    \(\emptyset\)&\textcmd{emptyset}&
+    \(\exists\)&\textcmd{exists}&
+    \(\flat\)&\textcmd{flat}\\
+    \(\forall\)&\textcmd{forall}&
+    \(\hbar\)&\textcmd{hbar}&
+    \(\heartsuit\)&\textcmd{heartsuit}\\
+    \(\Im\)&\textcmd{Im}&
+    \(\imath\)&\textcmd{imath}&
+    \(\in\)&\textcmd{in}\\
+    \(\infty\)&\textcmd{infty}&
+    \(\jmath\)&\textcmd{jmath}&
+    \(\mho\)&\textcmd{mho}\\
+    \(\nabla\)&\textcmd{nabla}&
+    \(\natural\)&\textcmd{natural}&
+    \(\neg\)&\textcmd{neg}\\
+    \(\ni\)&\textcmd{ni}&
+    \(\partial\)&\textcmd{partial}&
+    \(\prime\)&\textcmd{prime}\\
+    \(\Re\)&\textcmd{Re}&
+    \(\sharp\)&\textcmd{sharp}&
+    \(\spadesuit\)&\textcmd{spadesuit}\\
+    \(\surd\)&\textcmd{surd}&
+    \(\top\)&\textcmd{top}&
+    \(\triangle\)&\textcmd{triangle}\\
+    \(\wp\)&\textcmd{wp}&
+    &\\\hline
+    \multicolumn{6}{c}{\cbox{Текстовые символы в математической моде}}\\\hline
+    \(\mathdollar\)&\textcmd{mathdollar}&
+    \(\mathellipsis\)&\textcmd{mathellipsis}&
+    \(\mathparagraph\)&\textcmd{mathparagraph}\\
+    \(\mathsection\)&\textcmd{mathsection}&
+%    \(\mathsterling\)&\textcmd{mathsterling}& % в рамках борьбы с
+%    уменьшением числа матшрифтов
+    \includegraphics{math/math-2-mathsterling.eps}&\textcmd{mathsterling}& 
+    \(\mathunderscore\)&\textcmd{mathunderscore}\\\hline
+    \multicolumn{6}{c}{\cbox{Дополнительные математические символы (\textpkg{amssymb})}}\\\hline
+    \(\backprime\)&\textcmd{backprime}&
+    \(\Bbbk\)&\textcmd{Bbbk}&
+    \(\beth\)&\textcmd{beth}\\
+    \(\bigstar\)&\textcmd{bigstar}&
+    \(\blacklozenge\)&\textcmd{blacklozenge}&
+    \(\blacksquare\)&\textcmd{blacksquare}\\
+    \(\blacktriangle\)&\textcmd{blacktriangle}&
+    \(\blacktriangledown\)&\textcmd{blacktriangledown}&
+    \(\circledR\)&\textcmd{circledR}\\
+    \(\circledS\)&\textcmd{circledS}&
+    \(\complement\)&\textcmd{complement}&
+    \(\daleth\)&\textcmd{daleth}\\
+    \(\diagdown\)&\textcmd{diagdown}&
+    \(\diagup\)&\textcmd{diagup}&
+    \(\eth\)&\textcmd{eth}\\
+    \(\Finv\)&\textcmd{Finv}&
+    \(\Game\)&\textcmd{Game}&
+    \(\gimel\)&\textcmd{gimel}\\
+    \(\hslash\)&\textcmd{hslash}&
+    \(\lozenge\)&\textcmd{lozenge}&
+    \(\measuredangle\)&\textcmd{measuredangle}\\
+    \(\nexists\)&\textcmd{nexists}&
+    \(\sphericalangle\)&\textcmd{sphericalangle}&
+    \(\square\)&\textcmd{square}\\
+    \(\triangledown\)&\textcmd{triangledown}&
+    \(\varnothing\)&\textcmd{varnothing}&
+    \(\vartriangle\)&\textcmd{vartriangle}\\\hline
+    \multicolumn{6}{c}{\cbox{Дополнительные математические символы (\textpkg{wasysym})}}\\\hline
+    \(\Box\)&\textcmd{Box}&
+    \(\Diamond\)&\textcmd{Diamond}&
+    \(\varangle\)&\textcmd{varangle}\\
+    \(\wasytherefore\)&\textcmd{wasytherefore}&
+    &&
+    &\\\hline
+  \end{longtable}
+\end{center}
+\vspace{-10mm}
+
+\subsubsection{Комплексная арифметика}
+\label{sec:math-2:symbol:complex}
+
+По западной традиции действительная ($\text{Re}$) и мнимая
+($\text{Im}$) части комплексного числа набираются как \(\Re\)
+(\textcmd{Re}) и \(\Im\)  (\textcmd{Im}) соответственно. Для правильного
+набора следует переопределить стандартные команды:
+\begin{lstlisting}[]
+\renewcommand{\Re}{\text{Re}}
+\renewcommand{\Im}{\text{Im}}
+
+\end{lstlisting}
+
+
+
+\subsection{Греческие символы}
+\label{sec:math-2:greek}
+Латинских букв часто не хватает для обозначения всех понятий, поэтому
+греческий алфавит и востребован для написания математических
+формул. 
+
+По умолчанию строчные греческие символы имеют наклонное начертание, а
+прописные в отличие от них прямые. Стилевой файл \textpkg{fixmath} из
+пакета \textpkg{was} при загрузке меняет прямые начертания заглавных
+греческих букв на наклонные.  В~пакете \textpkg{was} также определён
+стиль \textpkg{upgreek}, обеспечивающий доступ к прямым начертаниям
+строчных греческих букв.
+\vspace{-3mm}
+\begin{center}
+  \begin{longtable}{SclSclSclScl}\hline
+    \multicolumn{8}{c}{\cbox{Греческий алфавит}}\\\hline
+    \(\alpha\)&\textcmd{alpha}&
+    \(\beta\)&\textcmd{beta}&
+    \(\gamma\)&\textcmd{gamma}&
+    \(\delta\)&\textcmd{delta}\\
+    \(\epsilon\)&\textcmd{epsilon}&
+    \(\varepsilon\)&\textcmd{varepsilon}&
+    \(\zeta\)&\textcmd{zeta}&
+    \(\eta\)&\textcmd{eta}\\
+    \(\theta\)&\textcmd{theta}&
+    \(\vartheta\)&\textcmd{vartheta}&
+    \(\iota\)&\textcmd{iota}&
+    \(\kappa\)&\textcmd{kappa}\\
+    \(\lambda\)&\textcmd{lambda}&
+    \(\mu\)&\textcmd{mu}&
+    \(\nu\)&\textcmd{nu}&
+    \(\xi\)&\textcmd{xi}\\
+    \(o\)&\texttt{o}&
+    \(\pi\)&\textcmd{pi}&
+    \(\varpi\)&\textcmd{varpi}&
+    \(\rho\)&\textcmd{rho}\\
+    \(\varrho\)&\textcmd{varrho}&
+    \(\sigma\)&\textcmd{sigma}&
+    \(\varsigma\)&\textcmd{varsigma}&
+    \(\tau\)&\textcmd{tau}\\
+    \(\upsilon\)&\textcmd{upsilon}&
+    \(\phi\)&\textcmd{phi}&
+    \(\varphi\)&\textcmd{varphi}&
+    \(\chi\)&\textcmd{chi}\\
+    \(\psi\)&\textcmd{psi}&
+    \(\omega\)&\textcmd{omega}&
+    \(\Gamma\)&\textcmd{Gamma}&
+    \(\Delta\)&\textcmd{Delta}\\
+    \(\Theta\)&\textcmd{Theta}&
+    \(\Lambda\)&\textcmd{Lambda}&
+    \(\Xi\)&\textcmd{Xi}&
+    \(\Pi\)&\textcmd{Pi}\\
+    \(\Sigma\)&\textcmd{Sigma}&
+    \(\Upsilon\)&\textcmd{Upsilon}&
+    \(\Phi\)&\textcmd{Phi}&
+    \(\Psi\)&\textcmd{Psi}\\
+    \(\Omega\)&\textcmd{Omega}&
+    &&
+    &&
+    &\\\hline
+    \multicolumn{8}{c}{\cbox{Дополнительные греческие символы (\textpkg{amssymb})}}\\\hline
+    \(\digamma\)&\textcmd{digamma}&
+    \(\varkappa\)&\textcmd{varkappa}&
+    &&
+    &\\\hline
+  \end{longtable}
+
+  \includegraphics{math/math-2-upgreek.eps}
+\textpkgh{upgreek}
+\textcmdh{upalpha}
+\textcmdh{upbeta}
+\textcmdh{upgamma}
+\textcmdh{updelta}
+\textcmdh{upepsilon}
+\textcmdh{upvarepsilon}
+\textcmdh{upzeta}
+\textcmdh{upeta}
+\textcmdh{uptheta}
+\textcmdh{upvartheta}
+\textcmdh{upiota}
+\textcmdh{upkappa}
+\textcmdh{uplambda}
+\textcmdh{upmu}
+\textcmdh{upnu}
+\textcmdh{upxi}
+\textcmdh{uppi}
+\textcmdh{upvarpi}
+\textcmdh{uprho}
+\textcmdh{upvarrho}
+\textcmdh{upsigma}
+\textcmdh{upvarsigma}
+\textcmdh{uptau}
+\textcmdh{upupsilon}
+\textcmdh{upphi}
+\textcmdh{upvarphi}
+\textcmdh{upchi}
+\textcmdh{uppsi}
+\textcmdh{upomega}
+\textcmdh{Upgamma}
+\textcmdh{Updelta}
+\textcmdh{Uptheta}
+\textcmdh{Uplambda}
+\textcmdh{Upxi}
+\textcmdh{Uppi}
+\textcmdh{Upsigma}
+\textcmdh{Upupsilon}
+\textcmdh{Upphi}
+\textcmdh{Uppsi}
+\textcmdh{Upomega}
+
+  % \begin{longtable}{SclSclSclScl}\hline
+  %   \multicolumn{8}{c}{\cbox{Прямые греческие символы (\textpkg{upgreek})}}\\\hline
+  %   \(\upalpha\)&\textcmd{upalpha}&
+  %   \(\upbeta\)&\textcmd{upbeta}&
+  %   \(\upgamma\)&\textcmd{upgamma}&
+  %   \(\updelta\)&\textcmd{updelta}\\
+  %   \(\upepsilon\)&\textcmd{upepsilon}&
+  %   \(\upvarepsilon\)&\textcmd{upvarepsilon}&
+  %   \(\upzeta\)&\textcmd{upzeta}&
+  %   \(\upeta\)&\textcmd{upeta}\\
+  %   \(\uptheta\)&\textcmd{uptheta}&
+  %   \(\upvartheta\)&\textcmd{upvartheta}&
+  %   \(\upiota\)&\textcmd{upiota}&
+  %   \(\upkappa\)&\textcmd{upkappa}\\
+  %   \(\uplambda\)&\textcmd{uplambda}&
+  %   \(\upmu\)&\textcmd{upmu}&
+  %   \(\upnu\)&\textcmd{upnu}&
+  %   \(\upxi\)&\textcmd{upxi}\\
+  %   \(\uppi\)&\textcmd{uppi}&
+  %   \(\upvarpi\)&\textcmd{upvarpi}&
+  %   \(\uprho\)&\textcmd{uprho}&
+  %   \(\upvarrho\)&\textcmd{upvarrho}\\
+  %   \(\upsigma\)&\textcmd{upsigma}&
+  %   \(\upvarsigma\)&\textcmd{upvarsigma}&
+  %   \(\uptau\)&\textcmd{uptau}&
+  %   \(\upupsilon\)&\textcmd{upupsilon}\\
+  %   \(\upphi\)&\textcmd{upphi}&
+  %   \(\upvarphi\)&\textcmd{upvarphi}&
+  %   \(\upchi\)&\textcmd{upchi}&
+  %   \(\uppsi\)&\textcmd{uppsi}\\
+  %   \(\upomega\)&\textcmd{upomega}&
+  %   \(\Upgamma\)&\textcmd{Upgamma}&
+  %   \(\Updelta\)&\textcmd{Updelta}&
+  %   \(\Uptheta\)&\textcmd{Uptheta}\\
+  %   \(\Uplambda\)&\textcmd{Uplambda}&
+  %   \(\Upxi\)&\textcmd{Upxi}&
+  %   \(\Uppi\)&\textcmd{Uppi}&
+  %   \(\Upsigma\)&\textcmd{Upsigma}\\
+  %   \(\Upupsilon\)&\textcmd{Upupsilon}&
+  %   \(\Upphi\)&\textcmd{Upphi}&
+  %   \(\Uppsi\)&\textcmd{Uppsi}&
+  %   \(\Upomega\)&\textcmd{Upomega}\\\hline
+  % \end{longtable}
+\end{center}
+\vspace{-10mm}
+
+\subsection{Акценты}
+\label{sec:math-2:acents}
+
+Когда буквы кончаются, а понятия ещё остаются, то на помощь приходят
+разнообразные акценты:
+
+\begin{center}
+  \begin{tabular}{SclSclSclScl}\hline
+    \multicolumn{8}{c}{\cbox{Акценты}}\\\hline
+    \(\acute{a}\)&\textcmd{acute}\lstinline!{a}!&
+    \(\bar{a}\)&\textcmd{bar}\lstinline!{a}!&
+    \(\breve{a}\)&\textcmd{breve}\lstinline!{a}!&
+    \(\check{a}\)&\textcmd{check}\lstinline!{a}!\\
+    \(\dot{a}\)&\textcmd{dot}\lstinline!{a}!&
+    \(\ddot{a}\)&\textcmd{ddot}\lstinline!{a}!&
+    \(\dddot{a}\)&\textcmd{dddot}\lstinline!{a}!&
+    \(\grave{a}\)&\textcmd{grave}\lstinline!{a}!\\
+    \(\hat{a}\)&\textcmd{hat}\lstinline!{a}!&
+    \(\mathring{a}\)&\textcmd{mathring}\lstinline!{a}!&
+    \(\tilde{a}\)&\textcmd{tilde}\lstinline!{a}!&
+    \(\vec{a}\)&\textcmd{vec}\lstinline!{a}!\\
+    \hline
+  \end{tabular}
+\end{center}
+
+При желании с помощью пакета \textpkg{amsxtra} акценты можно
+расставить не над символом, а сбоку:
+\begin{center}
+  \begin{tabular}{clclclcl}\hline
+    \multicolumn{8}{c}{\cbox{Акценты}}\\\hline
+    \(A\spcheck\)&A\textcmd{spcheck}&
+    \(A\spdot\)&A\textcmd{spdot}&
+    \(A\spddot\)&A\textcmd{spddot}&
+    \(A\spdddot\)&A\textcmd{spdddot}\\
+    \(A\sphat\)&A\textcmd{sphat}&
+    \(A\sptilde\)&A\textcmd{sptilde}& & & &\\
+    \hline
+  \end{tabular}
+\end{center}
+
+Если и этого мало, то можно создавать составные акценты, комбинируя
+стандартные команды: \(\check{\hat{а}}\), \(\breve{\vec{а}}\),
+\(\grave{\ddot{а}}\) и так далее. Пакет \textpkg{amsmath} гарантирует
+правильное выравнивание для составных акцентов.
+
+Пакет \textpkg{amsfonts} позволяет пометить комбинацию символов или
+формулу широкой крышечкой или тильдой:
+\textcmdh{widehat}
+\textcmdh{widetilde}
+\begin{examplenv}[0.5\linewidth]{math-2-whidehat}
+\[\begin{split}
+  &\widehat{\text{формула}}\\
+  &\widetilde{\text{ещё формула}}
+\end{split}\]
+\end{examplenv}
+
+Кроме тильды и крышечки есть ещё стрелочки, фигурные скобки и просто
+линии.
+\begin{center}
+  \begin{tabular}{SclScl}\hline
+    \multicolumn{4}{c}{\cbox{Широкие акценты}}\\\hline
+    \(\overleftarrow{abc}\)&\textcmd{overleftarrow}\lstinline!{abc}!&
+    \(\overline{abc}\)&\textcmd{overline}\lstinline!{abc}!\\
+    \(\overrightarrow{abc}\)&\textcmd{overrightarrow}\lstinline!{abc}!&
+    \(\overbrace{abc}\)&\textcmd{overbrace}\lstinline!{abc}!\\
+    \(\underline{abc}\)&\textcmd{underline}\lstinline!{abc}!&
+    \(\underbrace{abc}\)&\textcmd{underbrace}\lstinline!{abc}!\\\hline
+  \end{tabular}
+\end{center}
+
+
+
+
+В пакете \textpkg{cancel} определяются макросы \textcmd{cancel},
+\textcmd{bcancel} и \textcmd{xcancel}, рисующие линии, перечёркивающие
+аргумент команды. Таким образом можно просто зачёркивать
+математические выражения. В этом же пакете переопределена команда
+\textcmd{cancelto}\lstinline!{значение}{выражение}!, рисующая через
+выражение по диагонали стрелку, указывающую на значение:
+\begin{examplenv}[0.5\linewidth]{math-2-cancel-1}
+\begin{align*}
+ &\cancel{2\times2=5} &\xcancel{2+2=3}\\
+ &\bcancel{2^2=22}    &\cancelto{5}{2+3}
+\end{align*}
+\end{examplenv}
+
+
+\subsection{Многоточия}
+\label{sec:math-2:manypoints}
+Многоточия бывают разные:
+
+
+\begin{center}
+  \begin{tabular}{clclclcl}\hline
+    \multicolumn{8}{c}{\cbox{Многоточия}}\\\hline
+    \(\cdotp\)&\textcmd{cdotp}&
+    \(\cdots\)&\textcmd{cdots}&
+    \(\colon\)&\textcmd{colon}&
+    \(\ddots\)&\textcmd{ddots}\\
+    \(\ldotp\)&\textcmd{ldotp}&
+    \(\ldots\)&\textcmd{ldots}&
+    \(\vdots\)&\textcmd{vdots}&
+    &\\[1mm]\hline
+  \end{tabular}
+\end{center}
+
+В соответствие с правилами отечественного набора~\cite{Milchin-2003} во
+всех случаях, кроме случая перемножения символов, используется многоточие,
+расположенное на~базовой линии \textcmd{ldots}. При этом знак операции 
+или препинания повторяется до и после многоточия. 
+
+При наборе многоточия в ряде перемножаемых символов многоточие
+располагается на средней линии \textcmd{cdots}. При этом многоточие символов
+никакими знаками не отделяется. 
+\begin{examplenv}[0.5\linewidth]{math-2-whidehat}
+\[\begin{split}
+  &a_1+a_2+\ldots+a_n\\
+\text{ и\ \ }  &a_1, a_2,\ldots,a_n,\\
+\text{ но!\ } &a_1a_2\cdots a_n
+\end{split}\]
+\end{examplenv}
+
+\Note{} Пакет \textpkg{amsmath} переопределяет команду \textcmd{dots} в
+соответствие с зарубежными правилами типографии так, что в зависимости
+от ситуации правильно выбирается \textcmd{ldots} или \textcmd{cdots}.
+
+
+
+\subsection{Математика в текстовой моде}
+\label{sec:math-2:mathtext}
+
+Набирая математические символы в текстовой моде, следует проявлять
+аккуратность. Например, знак минус (\(-\)) значительно отличается от
+короткого тире ({-}), хотя символ один и тот же, но моды разные. 
+
+В пакете \textpkg{textcomp} определено некоторое количество
+математических символов специально для текстовой моды:
+\begin{center}
+  \begin{tabular}{SclScl}\hline
+    \multicolumn{4}{c}{\cbox{Математические символы в текстовой моде (\textpkg{textcomp})}}\\\hline
+    \textdegree&\textcmd{textdegree}&
+    \textdiv&\textcmd{textdiv}\\
+    \textfractionsolidus&\textcmd{textfractionsolidus}&
+    \textlnot&\textcmd{textlnot}\\
+    \textminus&\textcmd{textminus}&
+    \textonehalf&\textcmd{textonehalf}\\
+    \textonequarter&\textcmd{textonequarter}&
+    \textonesuperior&\textcmd{textonesuperior}\\
+    \textpm&\textcmd{textpm}&
+    \textsurd&\textcmd{textsurd}\\
+    \textthreequarters&\textcmd{textthreequarters}&
+    \textthreesuperior&\textcmd{textthreesuperior}\\
+    \texttimes&\textcmd{texttimes}&
+    \texttwosuperior&\textcmd{texttwosuperior}\\\hline
+  \end{tabular}
+\end{center}
+
+\subsection{Бинарные операторы}
+\label{sec:math-2:binop}
+
+Кроме стандартных математических операторов сложения (\(+\)) и
+вычитания (\(-\)) в математике определено ещё множество других. 
+\vspace{-3mm}
+
+\begin{center}
+  \begin{longtable}{SclSclScl}\hline
+    \multicolumn{6}{c}{\cbox{Бинарные операторы}}\\\hline
+    \(\amalg\)&\textcmd{amlg}&
+    \(\ast\)&\textcmd{ast} или $*$&
+    \(\bigcirc\)&\textcmd{bigcirc}\\
+    \(\bigtriangledown\)&\textcmd{bigtriangledown}&
+    \(\bigtriangleup\)&\textcmd{bigtriangleup}&
+    \(\bullet\)&\textcmd{bullet}\\
+    \(\cap\)&\textcmd{cap}& 
+    \(\cdot\)&\textcmd{cdot}&
+%    \(\cap\)&\textcmd{cap}\\
+    \(\circ\)&\textcmd{circ}\\ 
+    \(\cup\)&\textcmd{cup}& 
+    \(\dagger\)&\textcmd{dagger}&
+    \(\ddagger\)&\textcmd{ddagger}\\ 
+    \(\diamond\)&\textcmd{diamond}& 
+    \(\div\)&\textcmd{div}& 
+    \(\lhd\)&\textcmd{lhd}\\
+    \(\mp\)&\textcmd{mp}& 
+    \(\odot\)&\textcmd{odot}& 
+    \(\ominus\)&\textcmd{ominus}\\
+    \(\oplus\)&\textcmd{oplus}&
+    \(\oslash\)&\textcmd{oslash}& 
+    \(\otimes\)&\textcmd{otimes}\\ 
+    \(\pm\)&\textcmd{pm}& 
+    \(\rhd\)&\textcmd{rhd}&
+    \(\setminus\)&\textcmd{setminus}\\
+    \(\sqcap\)&\textcmd{sqcap}&
+    \(\sqcup\)&\textcmd{sqcup}&
+    \(\star\)&\textcmd{star}\\
+    \(\times\)&\textcmd{times}&
+    \(\triangleleft\)&\textcmd{triangleleft}&
+    \(\triangleright\)&\textcmd{triangleright}\\
+    \(\unlhd\)&\textcmd{unlhd}&
+    \(\unrhd\)&\textcmd{unrhd}&
+    \(\uplus\)&\textcmd{uplus}\\
+    \(\vee\)&\textcmd{vee}& 
+    \(\wedge\)&\textcmd{wedge}&
+    \(\wr\)&\textcmd{wr}\\\hline
+    \multicolumn{6}{c}{\cbox{Дополнительные символы бинарных операторов 
+                       (\textpkg{amssymb})}}\\\hline
+    \(\barwedge\)&\textcmd{barwedge}& 
+    \(\boxdot\)&\textcmd{boxdot}& 
+    \(\boxminus\)&\textcmd{boxminus}\\
+    \(\boxplus\)&\textcmd{boxplus}&
+    \(\boxtimes\)&\textcmd{boxtimes}& 
+    \(\Cap\)&\textcmd{Cap}\\ 
+    \(\centerdot\)&\textcmd{centerdot}& 
+    \(\circledast\)&\textcmd{circledast}&
+    \(\circledcirc\)&\textcmd{circledcirc}\\ 
+    \(\circleddash\)&\textcmd{circleddash}& 
+    \(\Cup\)&\textcmd{Cup}& 
+    \(\curlyvee\)&\textcmd{curlyvee}\\
+    \(\curlywedge\)&\textcmd{curlywedge}& 
+    \(\divideontimes\)&\textcmd{divideontimes}& 
+    \(\dotplus\)&\textcmd{dotplus}\\ 
+    \(\doublebarwedge\)&\textcmd{doublebarwedge}&
+    \(\intercal\)&\textcmd{intercal}& 
+    \(\leftthreetimes\)&\textcmd{leftthreetimes}\\
+    \(\ltimes\)&\textcmd{ltimes}& 
+    \(\rightthreetimes\)&\textcmd{rightthreetimes}&
+    \(\rtimes\)&\textcmd{rtimes}\\
+    \(\smallsetminus\)&\textcmd{smallsetminus}& 
+    \(\veebar\)&\textcmd{veebar}& 
+    & \\\hline
+    \multicolumn{6}{c}{\cbox{Дополнительные символы бинарных операторов 
+                       (\textpkg{wasysym})}}\\\hline
+    \(\lhd\)&\textcmd{lhd}& 
+    \(\LHD\)&\textcmd{LHD}& 
+    \(\ocircle\)&\textcmd{ocircle}\\ 
+    \(\rhd\)&\textcmd{rhd}& 
+    \(\RHD\)&\textcmd{RHD}& 
+    \(\unlhd\)&\textcmd{unlhd}\\ 
+    \(\unrhd\)&\textcmd{unrhd}& 
+    &  & 
+    & \\ 
+    \hline
+  \end{longtable}
+\end{center}
+\vspace{-10mm}
+
+
+\subsection{Символы отношений}
+\label{sec:math-2:relations}
+
+\begin{center}
+  \begin{longtable}{SclSclScl}\hline
+    \multicolumn{6}{c}{\cbox{Символы отношений}}\\\hline
+    \(\approx\)&\textcmd{approx}&
+    \(\asymp\)&\textcmd{asymp}&
+    \(\bowtie\)&\textcmd{bowtie}\\
+    \(\cong\)&\textcmd{cong}&
+    \(\dashv\)&\textcmd{dashv}&
+    \(\doteq\)&\textcmd{doteq}\\
+    \(\equiv\)&\textcmd{equiv}&
+    \(\frown\)&\textcmd{frown}&
+    \(\preceq\)&\textcmd{preceq}\\
+    \(\mid\)&\textcmd{mid}&
+    \(\models\)&\textcmd{models}&
+    \(\parallel\)&\textcmd{parallel}\\
+    \(\perp\)&\textcmd{perp}&
+    \(\prec\)&\textcmd{prec}&
+    \(\propto\)&\textcmd{propto}\\
+    \(\sim\)&\textcmd{sim}&
+    \(\simeq\)&\textcmd{simeq}&
+    \(\smile\)&\textcmd{smile}\\
+    \(\succ\)&\textcmd{succ}&
+    \(\succeq\)&\textcmd{succeq}&
+    \(\vdash\)&\textcmd{vdash}\\\hline
+    \multicolumn{6}{c}{\cbox{Символы неравенства}}\\\hline
+    \(\geq\)&\textcmd{geq}&
+    \(\gg\)&\textcmd{gg}&
+    \(\leq\)&\textcmd{leq}\\
+    \(\ll\)&\textcmd{ll}&
+    \(\neq\)&\textcmd{neq}&
+            &             \\\hline
+    \multicolumn{6}{c}{\cbox{Символы включения}}\\\hline
+    \(\sqsubseteq\)&\textcmd{sqsubseteq}&
+    \(\sqsupseteq\)&\textcmd{sqsupseteq}&
+    \(\subset\)&\textcmd{subset}\\
+    \(\supset\)&\textcmd{supset}&
+    \(\supseteq\)&\textcmd{supseteq}&
+    \(\subseteq\)&\textcmd{subseteq}\\\hline
+    \multicolumn{6}{c}{\cbox{Отрицание символов отношений}}\\\hline
+    \(\ne\)&\textcmd{ne}&
+    \(\not<\)&\textcmd{not}<&
+    \(\not>\)&\textcmd{not}>\\
+    \(\not\approx\)&\textcmd{not}\textcmd{approx}&
+    \(\not\asymp\)&\textcmd{not}\textcmd{asymp}&
+    \(\not\cong\)&\textcmd{not}\textcmd{cong}\\
+    \(\not\equiv\)&\textcmd{not}\textcmd{equiv}&
+    \(\not\ge\)&\textcmd{not}\textcmd{ge}&
+    \(\not\le\)&\textcmd{not}\textcmd{le}\\
+    \(\not\ne\)&\textcmd{not}\textcmd{ne}&
+    \(\not\preceq\)&\textcmd{not}\textcmd{preceq}&
+    \(\not\perp\)&\textcmd{not}\textcmd{perp}\\
+    \(\not\prec\)&\textcmd{not}\textcmd{prec}&
+    \(\not\propto\)&\textcmd{not}\textcmd{propto}&
+    \(\not\sim\)&\textcmd{not}\textcmd{sim}\\
+    \(\not\simeq\)&\textcmd{not}\textcmd{simeq}&
+    \(\not\sqsubseteq\)&\textcmd{not}\textcmd{sqsubseteq}&
+    \(\not\sqsupseteq\)&\textcmd{not}\textcmd{sqsupseteq}\\
+    \(\not\succ\)&\textcmd{not}\textcmd{succ}&
+    \(\not\succeq\)&\textcmd{not}\textcmd{succeq}&
+    \(\not\subset\)&\textcmd{not}\textcmd{subset}\\
+    \(\not\supset\)&\textcmd{not}\textcmd{supset}&
+    \(\not\supseteq\)&\textcmd{not}\textcmd{supseteq}&
+    \(\not\subseteq\)&\textcmd{not}\textcmd{subseteq}\\
+    \(\notin\)&\textcmd{notin}&
+    &&
+    &\\\hline
+    \multicolumn{6}{c}{\cbox{Дополнительные символы отношений
+                       (\textpkg{amssymb})}}\\\hline
+    \(\approxeq\)&\textcmd{approxeq}&
+    \(\backepsilon\)&\textcmd{backepsilon}&
+    \(\backsim\)&\textcmd{backsim}\\
+    \(\backsimeq\)&\textcmd{backsimeq}&
+    \(\because\)&\textcmd{because}&
+    \(\between\)&\textcmd{between}\\
+    \(\Bumpeq\)&\textcmd{Bumpeq}&
+    \(\bumpeq\)&\textcmd{bumpeq}&
+    \(\circeq\)&\textcmd{circeq}\\
+    \(\curlyeqprec\)&\textcmd{curlyeqprec}&
+    \(\curlyeqsucc\)&\textcmd{curlyeqsucc}&
+    \(\doteqdot\)&\textcmd{doteqdot}\\
+    \(\eqcirc\)&\textcmd{eqcirc}&
+    \(\fallingdotseq\)&\textcmd{fallingdotseq}&
+    \(\multimap\)&\textcmd{multimap}\\
+    \(\pitchfork\)&\textcmd{pitchfork}&
+    \(\precapprox\)&\textcmd{precapprox}&
+    \(\preccurlyeq\)&\textcmd{preccurlyeq}\\
+    \(\precsim\)&\textcmd{precsim}&
+    \(\risingdotseq\)&\textcmd{risingdotseq}&
+    \(\shortmid\)&\textcmd{shortmid}\\
+    \(\shortparallel\)&\textcmd{shortparallel}&
+    \(\smallfrown\)&\textcmd{smallfrown}&
+    \(\smallsmile\)&\textcmd{smallsmile}\\
+    \(\succapprox\)&\textcmd{succapprox}&
+    \(\succcurlyeq\)&\textcmd{succcurlyeq}&
+    \(\succsim\)&\textcmd{succsim}\\
+    \(\therefore\)&\textcmd{therefore}&
+    \(\thickapprox\)&\textcmd{thickapprox}&
+    \(\thicksim\)&\textcmd{thicksim}\\
+    \(\varpropto\)&\textcmd{varpropto}&
+    \(\Vdash\)&\textcmd{Vdash}&
+    \(\vDash\)&\textcmd{vDash}\\
+    \(\Vvdash\)&\textcmd{Vvdash}&
+    &  &
+    &  \\\hline
+    \multicolumn{6}{c}{\cbox{Дополнительные символы неравенства (\textpkg{amssymb})}}\\\hline
+    \(\eqslantgtr\)&\textcmd{eqslantgtr}&
+    \(\eqslantless\)&\textcmd{eqslantless}&
+    \(\geqq\)&\textcmd{geqq}\\
+    \(\geqslant\)&\textcmd{geqslant}&
+    \(\ggg\)&\textcmd{ggg}&
+    \(\gnapprox\)&\textcmd{gnapprox}\\
+    \(\gneq\)&\textcmd{gneq}&
+    \(\gneqq\)&\textcmd{gneqq}&
+    \(\gnsim\)&\textcmd{gnsim}\\
+    \(\gtrapprox\)&\textcmd{gtrapprox}&
+    \(\gtrdot\)&\textcmd{gtrdot}&
+    \(\gtreqless\)&\textcmd{gtreqless}\\
+    \(\gtreqqless\)&\textcmd{gtreqqless}&
+    \(\gtrless\)&\textcmd{gtrless}&
+    \(\gtrsim\)&\textcmd{gtrsim}\\
+    \(\gvertneqq\)&\textcmd{gvertneqq}&
+    \(\leqq\)&\textcmd{leqq}&
+    \(\leqslant\)&\textcmd{leqslant}\\
+    \(\lessapprox\)&\textcmd{lessapprox}&
+    \(\lessdot\)&\textcmd{lessdot}&
+    \(\lesseqgtr\)&\textcmd{lesseqgtr}\\
+    \(\lesseqqgtr\)&\textcmd{lesseqqgtr}&
+    \(\lessgtr\)&\textcmd{lessgtr}&
+    \(\lesssim\)&\textcmd{lesssim}\\
+    \(\lll\)&\textcmd{lll}&
+    \(\lnapprox\)&\textcmd{lnapprox}&
+    \(\lneq\)&\textcmd{lneq}\\
+    \(\lneqq\)&\textcmd{lneqq}&
+    \(\lnsim\)&\textcmd{lnsim}&
+    \(\lvertneqq\)&\textcmd{lvertneqq}\\
+    \(\ngeq\)&\textcmd{ngeq}&
+    \(\ngeqq\)&\textcmd{ngeqq}&
+    \(\ngeqslant\)&\textcmd{ngeqslant}\\
+    \(\ngtr\)&\textcmd{ngtr}&
+    \(\nleq\)&\textcmd{nleq}&
+    \(\nleqq\)&\textcmd{nleqq}\\
+    \(\nleqslant\)&\textcmd{nleqslant}&
+    \(\nless\)&\textcmd{nless}&
+              &        \\\hline
+    \multicolumn{6}{c}{\cbox{Дополнительные символы включения (\textpkg{amssymb})}}\\\hline
+    \(\nsubseteq\)&\textcmd{nsubseteq}&
+    \(\nsupseteq\)&\textcmd{nsupseteq}&
+    \(\nsupseteqq\)&\textcmd{nsupseteqq}\\
+    \(\sqsubset\)&\textcmd{sqsubset}&
+    \(\sqsupset\)&\textcmd{sqsupset}&
+    \(\Subset\)&\textcmd{Subset}\\
+    \(\subseteqq\)&\textcmd{subseteqq}&
+    \(\subsetneq\)&\textcmd{subsetneq}&
+    \(\subsetneqq\)&\textcmd{subsetneqq}\\
+    \(\Supset\)&\textcmd{Supset}&
+    \(\supseteqq\)&\textcmd{supseteqq}&
+    \(\supsetneq\)&\textcmd{supsetneq}\\
+    \(\supsetneqq\)&\textcmd{supsetneqq}&
+    \(\varsubsetneq\)&\textcmd{varsubsetneq}&
+    \(\varsubsetneqq\)&\textcmd{varsubsetneqq}\\
+    \(\varsupsetneq\)&\textcmd{varsupsetneq}&
+    \(\varsupsetneqq\)&\textcmd{varsupsetneqq}&
+            &        \\\hline
+    \multicolumn{6}{c}{\cbox{Дополнительные символы отрицания (\textpkg{amssymb})}}\\\hline
+    \(\ncong\)&\textcmd{ncong}&
+    \(\nmid\)&\textcmd{nmid}&
+    \(\nparallel\)&\textcmd{nparallel}\\
+    \(\nprec\)&\textcmd{nprec}&
+    \(\npreceq\)&\textcmd{npreceq}&
+    \(\nshortmid\)&\textcmd{nshortmid}\\
+    \(\nshortparallel\)&\textcmd{nshortparallel}&
+    \(\nsim\)&\textcmd{nsim}&
+    \(\nsucc\)&\textcmd{nsucc}\\
+    \(\nsucceq\)&\textcmd{nsucceq}&
+    \(\nvDash\)&\textcmd{nvDash}&
+    \(\nvdash\)&\textcmd{nvdash}\\
+    \(\nVDash\)&\textcmd{nVDash}&
+    \(\precnapprox\)&\textcmd{precnapprox}&
+    \(\precnsim\)&\textcmd{precnsim}\\
+    \(\succnapprox\)&\textcmd{succnapprox}&
+    \(\succnsim\)&\textcmd{succnsim}&
+      &    \\\hline
+    \multicolumn{6}{c}{\cbox{Дополнительные треугольные символы (\textpkg{amssymb})}}\\\hline
+    \multicolumn{1}{r}{\(\blacktriangleleft\)}&
+    \multicolumn{2}{l}{\textcmd{blacktriangleleft}}&
+    \multicolumn{1}{r}{\(\blacktriangleright\)}&
+    \multicolumn{2}{l}{\textcmd{blacktriangleright}}\\
+    \multicolumn{1}{r}{\(\ntriangleleft\)}&
+    \multicolumn{2}{l}{\textcmd{ntriangleleft}}&
+    \multicolumn{1}{r}{\(\ntrianglelefteq\)}&
+    \multicolumn{2}{l}{\textcmd{ntrianglelefteq}}\\
+    \multicolumn{1}{r}{\(\ntriangleright\)}&
+    \multicolumn{2}{l}{\textcmd{ntriangleright}}&
+    \multicolumn{1}{r}{\(\ntrianglerighteq\)}&
+    \multicolumn{2}{l}{\textcmd{ntrianglerighteq}}\\
+    \multicolumn{1}{r}{\(\trianglelefteq\)}&
+    \multicolumn{2}{l}{\textcmd{trianglelefteq}}&
+    \multicolumn{1}{r}{\(\triangleq\)}&
+    \multicolumn{2}{l}{\textcmd{triangleq}}\\
+    \multicolumn{1}{r}{\(\trianglerighteq\)}&
+    \multicolumn{2}{l}{\textcmd{trianglerighteq}}&
+    \multicolumn{1}{r}{\(\vartriangleleft\)}&
+    \multicolumn{2}{l}{\textcmd{vartriangleleft}}\\
+    \multicolumn{1}{r}{\(\vartriangleright\)}&
+    \multicolumn{2}{l}{\textcmd{vartriangleright}}&
+    &&\\\hline
+    \multicolumn{6}{c}{\cbox{Дополнительные символы отношений
+                       (\textpkg{wasysym})}}\\\hline
+    \(\apprge\)&\textcmd{apprge}&
+    \(\apprle\)&\textcmd{apprle}&
+    \(\invneg\)&\textcmd{invneg}\\
+    \(\Join\)&\textcmd{Join}&
+    \(\leadsto\)&\textcmd{leadsto}&
+    \(\logof\)&\textcmd{logof}\\
+    \(\sqsubset\)&\textcmd{sqsubset}&
+    \(\sqsupset\)&\textcmd{sqsupset}&
+    \(\wasypropto\)&\textcmd{wasypropto}\\\hline
+  \end{longtable}
+\end{center}
+\vspace{-10mm}
+
+
+\subsection{Стрелки}
+\label{sec:math-2:arrows}
+\begin{center}
+  \begin{longtable}{SclScl}\hline
+    \multicolumn{4}{c}{\cbox{Стрелки}}\\\hline
+    \(\Downarrow\)&\textcmd{Downarrow}&
+    \(\downarrow\)&\textcmd{downarrow}\\
+    \(\hookleftarrow\)&\textcmd{hookleftarrow}&
+    \(\hookrightarrow\)&\textcmd{hookrightarrow}\\
+    \(\leadsto\)&\textcmd{leadsto}&
+    \(\leftarrow\)&\textcmd{leftarrow}\\
+    \(\Leftarrow\)&\textcmd{Leftarrow}&
+    \(\leftharpoondown\)&\textcmd{leftharpoondown}\\
+    \(\leftharpoonup\)&\textcmd{leftharpoonup}&
+    \(\Leftrightarrow\)&\textcmd{Leftrightarrow}\\
+    \(\leftrightarrow\)&\textcmd{leftrightarrow}&
+    \(\longleftarrow\)&\textcmd{longleftarrow}\\
+    \(\Longleftarrow\)&\textcmd{Longleftarrow}&
+    \(\longleftrightarrow\)&\textcmd{longleftrightarrow}\\
+    \(\Longleftrightarrow\)&\textcmd{Longleftrightarrow}&
+    \(\longmapsto\)&\textcmd{longmapsto}\\
+    \(\Longrightarrow\)&\textcmd{Longrightarrow}&
+    \(\longrightarrow\)&\textcmd{longrightarrow}\\
+    \(\mapsto\)&\textcmd{mapsto}&
+    \(\nearrow\)&\textcmd{nearrow}\\
+    \(\nwarrow\)&\textcmd{nwarrow}&
+    \(\Rightarrow\)&\textcmd{Rightarrow}\\
+    \(\rightarrow\)&\textcmd{rightarrow}&
+    \(\rightharpoondown\)&\textcmd{rightharpoondown}\\
+    \(\rightharpoonup\)&\textcmd{rightharpoonup}&
+    \(\rightleftharpoons\)&\textcmd{rightleftharpoons}\\
+    \(\searrow\)&\textcmd{searrow}&
+    \(\swarrow\)&\textcmd{swarrow}\\
+    \(\uparrow\)&\textcmd{uparrow}&
+    \(\Uparrow\)&\textcmd{Uparrow}\\
+    \(\updownarrow\)&\textcmd{updownarrow}&
+    \(\Updownarrow\)&\textcmd{Updownarrow}\\\hline
+    \multicolumn{4}{c}{\cbox{Дополнительные стрелки (\textpkg{amssymb})}}\\\hline
+    \(\circlearrowleft\)&\textcmd{circlearrowleft}&
+    \(\circlearrowright\)&\textcmd{circlearrowright}\\
+    \(\curvearrowleft\)&\textcmd{curvearrowleft}&
+    \(\curvearrowright\)&\textcmd{curvearrowright}\\
+    \(\dashleftarrow\)&\textcmd{dashleftarrow}&
+    \(\dashrightarrow\)&\textcmd{dashrightarrow}\\
+    \(\downdownarrows\)&\textcmd{downdownarrows}&
+    \(\downharpoonleft\)&\textcmd{downharpoonleft}\\
+    \(\downharpoonright\)&\textcmd{downharpoonright}&
+    \(\leftarrowtail\)&\textcmd{leftarrowtail}\\
+    \(\leftleftarrows\)&\textcmd{leftleftarrows}&
+    \(\leftrightarrows\)&\textcmd{leftrightarrows}\\
+    \(\leftrightharpoons\)&\textcmd{leftrightharpoons}&
+    \(\leftrightsquigarrow\)&\textcmd{leftrightsquigarrow}\\
+    \(\Lleftarrow\)&\textcmd{Lleftarrow}&
+    \(\looparrowleft\)&\textcmd{looparrowleft}\\
+    \(\looparrowright\)&\textcmd{looparrowright}&
+    \(\Lsh\)&\textcmd{Lsh}\\
+    \(\rightarrowtail\)&\textcmd{rightarrowtail}&
+    \(\rightleftarrows\)&\textcmd{rightleftarrows}\\
+    \(\rightleftharpoons\)&\textcmd{rightleftharpoons}&
+    \(\rightrightarrows\)&\textcmd{rightrightarrows}\\
+    \(\rightsquigarrow\)&\textcmd{rightsquigarrow}&
+    \(\Rsh\)&\textcmd{Rsh}\\
+    \(\twoheadleftarrow\)&\textcmd{twoheadleftarrow}&
+    \(\twoheadrightarrow\)&\textcmd{twoheadrightarrow}\\
+    \(\upharpoonleft\)&\textcmd{upharpoonleft}&
+    \(\upharpoonright\)&\textcmd{upharpoonright}\\
+    \(\upuparrows\)&\textcmd{upuparrows}&
+    &\\\hline
+    \multicolumn{4}{c}{\cbox{Дополнительные перечёркнутые стрелки (\textpkg{amssymb})}}\\\hline
+    \(\nLeftarrow\)&\textcmd{nLeftarrow}&
+    \(\nleftarrow\)&\textcmd{nleftarrow}\\
+    \(\nLeftrightarrow\)&\textcmd{nLeftrightarrow}&
+    \(\nleftrightarrow\)&\textcmd{nleftrightarrow}\\
+    \(\nRightarrow\)&\textcmd{nRightarrow}&
+    \(\nrightarrow\)&\textcmd{nrightarrow}\\\hline
+    \multicolumn{4}{c}{\cbox{Стрелки-акценты (\textpkg{amssymb})}}\\\hline
+    \(\overleftrightarrow{abc}\)&\textcmd{overleftrightarrow}\lstinline!{abc}!&
+    \(\underleftarrow{abc}\)&\textcmd{underleftarrow}\lstinline!{abc}!\\
+    \(\underrightarrow{abc}\)&\textcmd{underrightarrow}\lstinline!{abc}!&
+    \(\underleftrightarrow{abc}\)&\textcmd{underleftrightarrow}\lstinline!{abc}!\\\hline
+    \multicolumn{4}{c}{\cbox{Стрелки вместе с текстом (\textpkg{amssymb})}}\\\hline
+    \(\xleftarrow{abc}\)&\textcmd{xleftarrow}\lstinline!{abc}!&
+    \(\xrightarrow{abc}\)&\textcmd{xrightarrow}\lstinline!{abc}!\\\hline
+  \end{longtable}
+\end{center}
+\vspace{-5mm}
+%\shortpage
+
+\subsection{Разделители}
+\label{sec:math-2:delimeters}
+
+В разделе~\ref{sec:math:school:braces} на
+стр.~\pageref{sec:math:school:braces} уже были кратко изложены правила
+набора разделителей в формулах с наглядным примером. В этом разделе
+будут просто перечислены доступные в \LaTeX{} символы"=разделители.
+%\vspace{-3mm}
+
+\begin{center}
+  \begin{tabular}{SclSclScl}\hline
+    \multicolumn{6}{c}{\cbox{Скобки переменного размера}}\\\hline
+    \((\) \(\Big(\)&\lstinline!(!&
+    \()\) \(\Big)\)&\lstinline!)!&
+    \([\) \(\Big[\)&\lstinline![!\\
+    \(]\) \(\Big]\)&\lstinline!]!&
+    \(\{\) \(\Big\{\)&\lstinline!\{!&
+    \(\}\) \(\Big\}\)&\lstinline!\}!\\
+    \(|\) \(\Big|\)&\lstinline!|!&
+%    \(\|\) \(\Big\|\)&\lstinline!\|!\\
+    \(\backslash\) \(\Big\backslash\)&\textcmd{backslash}&
+    \(\downarrow\) \(\Big\downarrow\)&\textcmd{downarrow}\\
+    \(\Downarrow\) \(\Big\Downarrow\)&\textcmd{Downarrow}&
+    \(\langle\) \(\Big\langle\)&\textcmd{langle}&
+    \(\lceil\) \(\Big\lceil\)&\textcmd{lceil}\\
+    \(\lfloor\) \(\Big\lfloor\)&\textcmd{lfloor}&
+    \(\rangle\) \(\Big\rangle\)&\textcmd{rangle}&
+    \(\rceil\) \(\Big\rceil\)&\textcmd{rceil}\\
+    \(\rfloor\) \(\Big\rfloor\)&\textcmd{rfloor}&
+    \(\uparrow\) \(\Big\uparrow\)&\textcmd{uparrow}&
+    \(\Uparrow\) \(\Big\Uparrow\)&\textcmd{Uparrow}\\
+    \(\updownarrow\) \(\Big\updownarrow\)&\textcmd{updownarrow}&
+    \(\Updownarrow\) \(\Big\Updownarrow\)&\textcmd{Updownarrow}&
+    &\\   \hline
+    \multicolumn{6}{c}{\cbox{Дополнительные разделители (\textpkg{amssymb})}}\\\hline
+    \(\lvert\) \(\Big\lvert\)&\textcmd{lvert}&
+    \(\lVert\) \(\Big\lVert\)&\textcmd{lVert}&
+    \(\rvert\) \(\Big\rvert\)&\textcmd{rvert}\\
+    \(\rVert\) \(\Big\rVert\)&\textcmd{rVert}&
+    \(\llcorner\) &\textcmd{llcorner}&
+    \(\lrcorner\) &\textcmd{lrcorner}\\
+    \(\ulcorner\) &\textcmd{ulcorner}&
+    \(\urcorner\) &\textcmd{urcorner}&
+    &\\
+    \hline
+  \end{tabular}
+\end{center}
+
+
+
+\subsection{Операторы переменного размера}
+\label{sec:math-2:varop}
+\medskip
+
+\textcmdh{bigcap}\textcmdh{bigcup}\textcmdh{bigodot}\textcmdh{bigoplus}
+\textcmdh{bigotimes}\textcmdh{bigsqcup}\textcmdh{biguplus}\textcmdh{bigvee}
+\textcmdh{bigwedge}\textcmdh{coprod}\textcmdh{int}\textcmdh{oint}\textcmdh{prod}
+\textcmdh{sum}\textpkgh{amsmath}\textcmdh{iint}\textcmdh{iiint}\textcmdh{iiiint}
+\textcmdh{idotsint}
+
+\begin{center}
+  \includegraphics[]{math/math-2-varoptable.eps}
+\end{center}
+
+% \fxnote{вставить эту таблицу как картинку - какие-то нелады с
+%   интегралами iint и iiint}
+% \begin{center}
+%   \begin{longtable}{SclScl}\hline
+%     \multicolumn{4}{c}{Операторы переменного размера}\\\hline
+%     \(\bigcap\) \(\displaystyle\bigcap\)&\textcmd{bigcap}&
+%     \(\bigcup\) \(\displaystyle\bigcup\)&\textcmd{bigcup}\\
+%     \(\bigodot\) \(\displaystyle\bigodot\)&\textcmd{bigodot}&
+%     \(\bigoplus\) \(\displaystyle\bigoplus\)&\textcmd{bigoplus}\\
+%     \(\bigotimes\) \(\displaystyle\bigotimes\)&\textcmd{bigotimes}&
+%     \(\bigsqcup\) \(\displaystyle\bigsqcup\)&\textcmd{bigsqcup}\\
+%     \(\biguplus\) \(\displaystyle\biguplus\)&\textcmd{biguplus}&
+%     \(\bigvee\) \(\displaystyle\bigvee\)&\textcmd{bigvee}\\
+%     \(\bigwedge\) \(\displaystyle\bigwedge\)&\textcmd{bigwedge}&
+%     \(\coprod\) \(\displaystyle\coprod\)&\textcmd{coprod}\\
+%     \(\int\) \(\displaystyle\int\)&\textcmd{int}&
+%     \(\oint\) \(\displaystyle\oint\)&\textcmd{oint}\\
+%     \(\prod\) \(\displaystyle\prod\)&\textcmd{prod}&
+%     \(\sum\) \(\displaystyle\sum\)&\textcmd{sum}\\\hline
+%     \multicolumn{4}{c}{Дополнительные операторы переменного размера (\textpkg{amsmath})}\\\hline
+%     \(\iint\) \(\displaystyle\iint\)&\textcmd{iint}&
+%     \(\iiint\) \(\displaystyle\iiint\)&\textcmd{iiint}\\
+%     \(\iiiint\) \(\displaystyle\iiiint\)&\textcmd{iiiint}&
+%     \(\idotsint\) \(\displaystyle\idotsint\)&\textcmd{idotsint}\\\hline
+% %     \(\---\) \(\displaystyle\---\)&\textcmd{---}&
+% %     \(\---\) \(\displaystyle\---\)&\textcmd{---}\\
+%   \end{longtable}
+% \end{center}
+
+
+
+
+\section{Производные и  интегралы} 
+\label{sec:math-2:difandint}
+
+Фактически всё, что нужно знать про производные и интегралы, уже было
+изложено в разделе~\ref{sec:math:school:diff-int} на
+стр.~\pageref{sec:math:school:diff-int}, где рассказывалось про школьную
+математику. В разделе~\ref{sec:math-2:varop} перечислены 
+дополнительные символы, которые можно использовать для представления
+сложных интегралов.
+
+\subsubsection{commath}
+\label{sec:math-2:commath}
+
+%\shortpage
+
+Пакет \textpkg{commath} (документация \textfile{commath.pdf}.)
+специализируется на отображении дифференциалов, производных и
+пределов.
+\medskip
+\textcmdh{dif}
+\textcmdh{Dif}
+\textcmdh{od}
+\textcmdh{pd}
+\textcmdh{md}
+\textcmdh{eval}
+\textcmdh{fullfunction}
+
+\noindent\includegraphics[]{math/math-2-commath.eps}
+\medskip
+
+
+\subsubsection{esdiff}
+\label{sec:math-2:esdiff}
+
+Надоело постоянно писать
+\textcmd{frac}\lstinline!{\partial^3 f}{\partial x\,\partial y^2}!?  Тогда,
+возможно, немного помогут макросы, определённые в пакете
+\textpkg{esdiff}:
+\bigskip
+
+\textcmdh{diff}
+\textcmdh{diffp}
+\noindent\includegraphics[]{math/math-2-ediff.eps}
+\smallskip
+
+Документацию к пакету можно получить из файла исходников \textfile{esdiff.dtx}.
+
+
+Стилю \textpkg{esdiff} при инициализации можно передавать опции для
+изменения значений форматирования производных по умолчанию:
+\begin{eqlist*}
+\item[\textopt{text}] "--- возвращает стиль \textcmd{textstyle} для
+  отображения производной в текстовой моде. По умолчанию используется
+  стиль \textcmd{displaystyle};
+\item[\textopt{italic}] "--- знак d в производной отображается
+  курсивом (\(d\)). По умолчанию используется опция \textopt{roman};
+
+\longitem[\textopt{thin}, \textopt{med} и \textopt{big}] "---
+регулирует расстояние между знаком производной d и обозначением
+функции или переменной. По умолчанию пробел отсутствует совсем;
+
+\longitem[\textopt{thinp}, \textopt{medp} и \textopt{bigp}] "---
+то же, что и предыдущий пункт, но для знака \(\partial\);
+
+\longitem[\textopt{thinc}, \textopt{medc} и \textopt{bigc}] "---
+задаёт расстояние между \(\partial x\) и \(\partial y\) в частной
+производной вида \lstinline!\diffp{f}{{x}{y}}!. По умолчанию пробел
+отсутствует.
+\end{eqlist*}
+\smallskip
+
+При использовании \textpkg{esdiff} рекомендуется загружать опцию
+\textopt{thinc}:
+\begin{lstlisting}
+\usepackage[thinc]{esdiff}
+\end{lstlisting}
+
+
+
+\subsubsection{Прямые интегралы}
+\label{sec:math-2:intstright}
+
+Традиционно в российской математической типографии использовались
+прямые символы интегрирования. С другой стороны основной язык науки
+сейчас английский и к наклонным символам тоже можно привыкнуть.
+
+Прямые интегралы можно получить с помощью пакета \textpkg{wasysym},
+загруженного с опцией \textopt{integrals}. Также прямые интегралы
+появляются при использовании математических шрифтов \textpkg{euler},
+\mindex{шрифты!Euler} но в этом случае для согласования текста и
+математики необходимо использовать шрифты Concrete
+\mindex{шрифты!Concrete} (пакет \textpkg{concrete}, чуть более
+подробная информация в разделе~\ref{sec:base2:font} на
+стр.~\pageref{sec:base2:font}).
+\bigskip
+
+\textcmdh{int}
+\textcmdh{iint}
+\textcmdh{iiint}
+\noindent\includegraphics[]{math/math-2-int-0.eps}
+
+\noindent\includegraphics[]{math/math-2-int-1.eps}
+\smallskip
+
+\noindent\includegraphics[]{math/math-2-int-3.eps}
+
+
+\section{Матрицы, тензоры и  диаграммы} 
+\label{sec:math-2:matrix}
+
+\shortpage
+
+Для набора матриц можно использовать стандартное окружение для
+создания таблиц в математической моде \textenv{array} (см. раздел~\ref{sec:tables:tabular} на стр.~\pageref{sec:tables:tabular}). 
+\begin{example}[0.55\linewidth]{math-2-whidehat}
+\[\left(\begin{array}{@{}ccc@{}}
+  a_{11}&a_{12}&a_{13}\\
+  a_{21}&a_{22}&a_{23}\\
+  a_{31}&a_{32}&a_{33} \end{array}\right)
+\begin{pmatrix}x_1\\x_2\\x_3\end{pmatrix}=
+\begin{pmatrix}b_1\\b_2\\b_3\end{pmatrix}\]
+\end{example}
+При описании формата окружения \textenv{array} комбинация символов
+\lstinline!@{}! используется для подавления пробелов перед первым и
+после последнего столбцов. В~отличие от окружения \textenv{array}
+окружения из семейства \textenv{matrix} не требуют описания формата
+столбцов. Это проще при наборе, но теряется возможность выравнивания
+элементов матрицы.\textenvh{pmatrix}
+\textenvh{bmatrix}\textenvh{vmatrix}\textenvh{Vmatrix}
+\begin{example}[0.57\linewidth]{math-2-whidehat}
+\begin{gather*}
+  \begin{matrix}1&2\\3&4\end{matrix}\quad
+  \begin{pmatrix}5&6\\7&8\end{pmatrix}\quad
+  \begin{bmatrix}9&A\\B&C\end{bmatrix}\\
+  \begin{vmatrix}D&E\\F&10\end{vmatrix}\quad
+  \begin{Vmatrix}11&12\\13&14\end{Vmatrix}
+\end{gather*}
+\end{example}
+Для многоточия, простирающегося на несколько ячеек, используется команда
+\textcmd{hdotsfor}\lstinline![множитель для разрядки точек]{число столбцов}!:
+\bigskip
+
+\noindent\includegraphics[]{math/math-2-matrix.eps}
+
+
+\subsubsection{tensor}
+\label{sec:math-2:tensor}
+Для представления тензоров  со смешанными индексами можно
+воспользоваться пакетом \textpkg{tensor}:
+\medskip
+
+\noindent\includegraphics[]{math/math-2-tensor.eps}
+
+Можно просто добавлять индексы к символу с помощью команды
+\textcmd{indeces}, а можно воспользоваться командой \textcmd{tensor},
+у которой есть необязательный аргумент для набора индексов перед
+символами. Эти же команды, но со звёздочкой <<$*$>> на конце,
+убирают пробелы между индексами.
+
+Этот же пакет можно использовать для набора названий химических
+элементов. Для удобства определена команда \textcmd{nulide}.
+Дополнительную информацию следует искать в документации
+\textfile{tensor.pdf}.
+
+
+\subsubsection{amscd}
+\label{sec:math-2:hhtensor}
+
+Для создания простых коммутативных диаграмм можно воспользоваться
+окружением \textpkg{array}, но окружение \textenv{CD}, определённое в
+стилевом файле \textpkg{amscd}\footnote{Стиль \textpkg{amscd} является
+  частью пакета \AMSTeX, но при инициализации \textpkg{amsmath}
+  автоматически не загружается.}, подходит для этого лучше.
+\medskip
+
+\textenvh{CD}
+\noindent\includegraphics[]{math/math-2-CD.eps}
+\smallskip
+
+Команды \lstinline!@>>>!, \lstinline!@<<<!, \lstinline!@VVV!,
+\lstinline!@AAA! определяют стрелки вправо, влево, вниз и вверх
+соответственно. Три одинаковых знака в каждой команде необходимы для
+набора индексов. Если выражение находится между первым и вторым
+символом в командах для определения горизонтальных стрелок, то это
+выражение печатается сверху стрелки, а если между вторым и третьим, то
+снизу. Аналогично и для команд, определяющих вертикальные стрелки:
+между первым и вторым символом "--- печать слева от стрелки, а между
+вторым и третьим "--- \mbox{справа.}
+
+\Note Пакет \textpkg{amscd} позволяет создавать простые
+коммутативные диаграммы, для более сложных случаев следует обратиться к
+более общим или специализированным пакетам, например, к пакету
+\textpkg{xypic}.
+
+\subsubsection{Биномиальные коэффициенты}
+
+В \textpkg{amsmath} определена команда \textcmd{binom}, которая легко
+позволяет записать <<Бином Ньютона>>:\mindex{бином Ньютона}
+\begin{examplenv}[0.6\linewidth]{math-2-whidehat}
+\[(x+y)^n=\sum_{k=0}^n\binom{n}{k}x^ky^{n-k}\]
+\end{examplenv}
+
+\section{Пробелы в формулах}
+\mindexemph{формулы!пробелы|(}
+\mindex{пробелы|(}
+
+\LaTeX{} хорошо расставляет пробелы между математическими символами,
+но временами формулы требуют ручной доработки. Например, 
+знак приращения, дифференциала или частной производной следует
+отделять от предыдущей комбинации символов небольшим пробелом
+(\lstinline!\partial x\,\partial y!). Иногда могут потребоваться
+пробелы больших размеров или даже отрицательные.
+\begin{center}
+  \begin{tabular}{SclScl}\hline
+    \multicolumn{4}{c}{\cbox{Пробелы в математических формулах}}\\\hline
+    \multicolumn{2}{c}{\cbox{Положительные пробелы}}&
+    \multicolumn{2}{c}{\cbox{Отрицательные пробелы}}\\\hline
+    \(\fbox{A}\fbox{B}\)&\lstinline!\(AB\)!&
+    &\\
+    \(\fbox{A} \fbox{B}\)&\lstinline!\(A B\)!&
+    &\\
+    \(\fbox{A}\,\fbox{B}\)&\lstinline!\(A\, B\)!&
+    \(\fbox{A}\mskip-\thinmuskip\fbox{B}\)&\lstinline|\(A\! B\)|\\
+    \(\fbox{A}\medspace \fbox{B}\)&\lstinline!\(A\: B\)!&
+    \(\fbox{A}\negmedspace\fbox{B}\)&\lstinline!\(A\negmedspace B\)!\\
+    \(\fbox{A}\thickspace \fbox{B}\)&\lstinline!\(A\; B\)!&
+    \(\fbox{A}\negthickspace\fbox{B}\)&\lstinline!\(A\negthickspace B\)!\\
+    \(\fbox{A}\ \fbox{B}\)&\lstinline!\(A\ B\)!&
+    &\\
+    \(\fbox{A}\quad\fbox{B}\)&\lstinline!\(A\quad B\)!&
+    &\\
+    \(\fbox{A}\qquad\fbox{B}\)&\lstinline!\(A\qquad B\)!&
+    &\\
+    \(\fbox{A}\hspace{5mm}\fbox{B}\)&\lstinline!\(A\hspace{5mm}B\)!&
+    \(\fbox{A}\hspace{-5mm}\fbox{B}\)&\lstinline!\(A\hspace{-5mm}B\)!\\
+    \(\fbox{A}\hphantom{xyz}\fbox{B}\)&\lstinline!\(A\hphantom{xyz}B\)!&
+    &\\
+    \(\fbox{A}xyz\fbox{B}\)&\lstinline!\(AxyzB\)!&
+    &\\[1mm]\hline
+ \end{tabular}
+\end{center}
+%\textcmdh{!}\textcmdh{,}%\textcmdh{ }
+\textcmdh{quad}\textcmdh{qquad}
+\textcmdh{negmedspace}\textcmdh{negthickspace}
+\textcmdh{medspace}\textcmdh{thickspace}
+\textcmdh{hspace}\textcmdh{hphantom}
+%\textcmdh{:}\textcmdh{;}
+
+В таблице пробелов для лучшего их представления буквы A и B заключены
+в~рамку с помощью команды \textcmd{fbox}.
+
+Следует обратить внимание на команду \textcmd{hphantom}. Эта команда
+позволяет сформировать горизонтальный пробел, в точности равный ширине
+текста, передаваемого её аргументу. Кроме команды \textcmd{hphantom}
+существуют аналогичные по~функционалу команды \textcmd{vphantom} и
+\textcmd{phantom}. 
+
+Команда \textcmd{phantom}\lstinline!{аргумент}! образует пустой бокс,
+полностью совпадающий по размеру с её аргументом, а команда
+\textcmd{vhantom} создаёт <<подпорку>>, равную по~высоте аргументу.
+\mindexemph{формулы!пробелы|)}
+\mindex{пробелы|)}
+
+
+\section{Многострочные формулы}
+\label{sec:math-2:equation}
+
+В главе~\ref{cha:math}, где описывались начала математики, все
+формулы однострочные. В~реальности математические выражения постоянно
+норовят выйти за пределы не только строки, но и страницы.
+
+По умолчанию разрыв страницы не может появиться внутри выключенной
+многострочной формулы, созданной средствами пакета
+\textpkg{amsmath}. Причина этого поведения заключается в том, что
+такие проблемные места должны контролироваться автором лично.  Команда
+\textcmd{allowdisplaybreaks} меняет это умолчание, позволяя \LaTeX{}
+добавлять разрыв страницы внутри выносной формулы автоматически. Также автор может указать место разрыва внутри многострочной формулы с
+помощью декларации \textcmd{displaybreak}, разместив её
+непосредственно перед командой переноса строки~\lstinline!\\!.
+
+\Note Если нумерация формул в тексте не нужна, то следует заменить окружение
+для создания однострочных формул \textenv{equation} на \textenv{equation$*$}:
+\begin{examplenv}[0.5\linewidth]{math-2-equation}
+\begin{equation}\label{eq:ex1}
+  \fbox{\text{Однострочная формула}}
+\end{equation}
+\begin{equation*}%без номера
+  \fbox{\text{Однострочная формула}}
+\end{equation*}
+\end{examplenv}
+
+Для объединения нескольких однострочных формул в одну общую группу
+используются окружения \textenv{align}/\textenv{align$*$}:
+\begin{examplenv}[0.52\linewidth]{math-2-align}
+\begin{align}
+ &\fbox{\text{Несколько формул}}\\
+ &\fbox{\text{внутри одного окружения}}\\
+ &\fbox{\text{с позиционированием}}
+\end{align}
+\end{examplenv}
+Внутри окружения \textenv{align} строки разделяются с помощью
+стандартной команды переноса \lstinline!\\!. Выравнивание выполняется
+по символу \lstinline!&!. Часто выравнивание производится по знаку
+равенства или по какому-либо бинарному оператору. Формулы можно
+выравнивать по нескольким точкам.
+\begin{examplenv}[0.5\linewidth]{math-2-align}
+\begin{align}
+  x'&=\gamma(x-\beta ct)  &y'&=y\\
+  ct'&=\gamma(ct-\beta x) &z'&=z 
+\end{align}
+\end{examplenv}
+Существует два расширения для \textenv{align}: \textenv{flalign} и
+\textenv{alignat}. У \textenv{alignat} имеется обязательный параметр,
+указывающий число формул в одной строке. Если это число, например,
+равно 2, то число столбцов в окружении равно \(2\times2=4\).
+Эти расширения внутри имеют тот же синтаксис, что и 
+\textenv{align}/\textenv{align$*$}, но в отличие от них
+\textenv{flalign}/\textenv{flalign$*$} максимизируют расстояния между
+группами формул, а использование \textenv{alignat}/\textenv{alignat}
+даёт возможность задавать расстояния вручную:
+\begin{examplenv}[0.5\linewidth]{math-2-align}
+\begin{align*}
+  x'&=\gamma(x-\beta ct) &\quad y'&=y\\
+  ct'&=\gamma(ct-\beta x)&\quad z'&=z 
+\end{align*}
+\begin{flalign*}
+  x'&=\gamma(x-\beta ct) &\quad y'&=y\\
+  ct'&=\gamma(ct-\beta x)&\quad z'&=z 
+\end{flalign*}
+\begin{alignat*}{2}
+  x'&=\gamma(x-\beta ct) &\quad y'&=y\\
+  ct'&=\gamma(ct-\beta x)&\quad z'&=z 
+\end{alignat*}
+\end{examplenv}
+
+Если выравнивание формул не нужно, то сгодятся окружения 
+\textenv{gather}/\textenv{gather$*$}:
+\begin{examplenv}[0.55\linewidth]{math-2-gather}
+\begin{gather}
+  \fbox{\text{Несколько формул}}\\
+  \fbox{\text{без}}\\
+  \fbox{\text{выравнивания}}
+\end{gather}
+\end{examplenv}
+
+Для формирования многострочной формулы существует окружение \textenv{multline}:
+\begin{examplenv}[0.55\linewidth]{math-2-multline}
+\begin{multline}
+  \fbox{\text{Оооочень}}\\
+  \fbox{\text{длинная}}\\
+  \shoveleft{\fbox{\text{многострочная}}}\\
+  \fbox{\text{формула}}
+\end{multline}
+\end{examplenv}
+Все строки окружения \textenv{multline}, кроме первой и последней, по
+умолчанию центрируются по ширине. Первая строка выравнивается 
+по~левому краю, а последняя "--- по правому. Команда \textcmd{shoveleft}
+позволяет выравнять указанную строку по~левому краю, а
+\textcmd{shoveright}, соответственно, по правому.
+
+Окружение \textenv{split} также позволяет разбить длинную формулу:
+\begin{examplenv}[0.57\linewidth]{math-2-split}
+\begin{equation}
+  \begin{split}
+    &\fbox{\text{Разбиение формулы}}\\ 
+    &\fbox{\text{на строки с выравниванием}}
+  \end{split}
+\end{equation}
+\end{examplenv}
+  Внутри \textenv{split} разные части
+формулы можно выравнивать с помощью символа \lstinline!&! по примеру
+окружения \textenv{align}.
+
+\Note Следует обратить внимание, что если номер формулы не
+помещается в строке, то нумерация переносится ниже.
+
+Окружение \textenv{split} можно использовать только внутри окружений,
+формирующих выключенную формулу. \textenv{split} не умеет расставлять
+нумерацию, поэтому целиком полагается в этом на внешнее окружение. По
+умолчанию номер формулы центрируется по вертикали (опция
+\textopt{centertags} пакета \textpkg{amsmath}), но если при загрузке
+пакета \textpkg{amsmath} указать опцию \textopt{tbtags}, то номер
+формулы размещается в последней строке, если номера ставятся справа, и
+в первой строке, если умолчание изменено, и номера выводятся слева
+(опция \textopt{leqno} пакет \textpkg{amsmath}).
+
+
+
+Окружения \textenv{aligned}, \textenv{gathered} и \textenv{alignedat},
+как и \textenv{split}, могут использоваться только внутри выключенной
+формулы:
+
+\begin{examplenv}[0.45\linewidth]{math-2-aligned}
+\begin{equation}
+ \begin{aligned}[b]
+   x'&=\gamma(x-\beta ct) \\
+   ct'&=\gamma(ct-\beta x) 
+ \end{aligned}\quad
+ \begin{gathered}[t]
+   y'=y\\
+   z'=z 
+ \end{gathered}
+\end{equation}
+\end{examplenv}
+
+Синтаксис этих окружений соответствует синтаксису схожих по звучанию с
+ними окружений, за исключением необязательного параметра, который
+позволяет выравнивать конструкции по вертикали. Параметр может
+принимать значения:
+\begin{eqlist}
+\item[\textopt{[c]}] "--- выравнивание по центральной линии
+  (используется по умолчанию),
+\item[\textopt{[b]}] "--- выравнивание по последней строке,
+\item[\textopt{[t]}] "--- выравнивание по первой строке.
+\end{eqlist}
+
+\subsubsection{Вставка текста}
+\label{sec:math-2:text}
+
+\mindex{формулы!вставка текста}
+
+Для вставки небольших фрагментов текста между формулами можно
+воспользоваться командой \textcmd{intertext}.
+\begin{examplenv}[0.53\linewidth]{math-2-intertext}
+\begin{align}
+ \begin{cases}
+  \dot{x}=-R\omega\sin\omega t\\
+  \dot{y}=\hphantom{-}R\omega\cos\omega t
+ \end{cases}\\
+ \intertext{следовательно,}
+ a_{\tau}=0
+\end{align}
+\end{examplenv}
+Использование команды \textcmd{intertext} позволяет не нарушать
+выравнивание формул внутри окружения. Пакет \textpkg{nccmath}
+переопределяет команду \textcmd{intertext}, добавляя необязательный
+параметр, задающий вертикальный промежуток между текстом и окружающими
+его формулами: \textcmd{intertext}\lstinline![расстояние]{текст}!.
+
+\Note Окружение \textenv{cases} из примера можно использовать для
+оформления систем уравнений.
+
+
+\subsubsection{cases}
+\label{sec:math-2:cases}
+
+
+В дополнение к стандартному окружение \textenv{cases} одноимённый
+стилевой файл \textpkg{cases} из коллекции \textpkg{ltxmisc}
+определяет простое окружение \textenv{numcases} для отображения
+простых условных конструкций:
+{\renewcommand{\geq}{\geqslant}
+\begin{examplenv}[0.43\linewidth]{math-2-intertext}
+\begin{numcases}{|x|=}
+  x, & для $x \geq 0$\\
+ -x, & для $x < 0$
+\end{numcases}
+\end{examplenv}
+}
+
+
+\subsubsection{empheq}
+\label{sec:math-2:empheq}
+
+Пакет \textpkg{mh} содержит множество улучшений и дополнений для 
+\textpkg{amsmath}. В~частности туда входит стиль \textpkg{empheq},
+предоставляющий разнообразные средства для <<украшения>> формул,
+например вот так:
+\smallskip
+
+\textenvh{empheq}
+\noindent\includegraphics[]{math/math-2-empheq.eps}
+
+Подробнейшая документация \textfile{empheq.pdf} позволит сделать даже
+самый унылый математический трактат <<нарядным>>.
+
+\section{Нумерация формул}
+\label{sec:math-2:numbering}
+
+Как правило, если для оформления выключенной формулы используется
+окружение без символа $*$ на конце, то формула нумеруется
+автоматически. Если номер не помещается в той же строке, что и
+формула, то он выводится чуть ниже.
+
+
+
+\mindex{ссылка на формулу}
+\Note Следует обратить внимание на то, что традиционно при формировании
+ссылки на номер формулы вокруг неё выставляются скобки. Команда
+\textcmd{ref} это не делает, зато это умеет делать \textcmd{eqref}:
+\begin{examplenv}[0.59\linewidth]{math-2-numbering-2}
+На формулу можно сослаться 
+так~\ref{eq:num1} и так~\eqref{eq:num1}.
+\end{examplenv}
+
+По умолчанию номер формулы выводятся справа от неё с выравниванием 
+по~правой границе текста.  Умолчание можно изменить, например, с помощью
+опции \textopt{leqno}, передаваемой при загрузке пакета
+\textpkg{amsmath}. В этом случае номера формул будут выводиться слева
+от них.
+
+
+Если автоматическая нумерация формул не устраивает, то всегда с
+помощью команд \textcmd{tag} и \textcmd{tag$*$} можно поставить свою
+метку. Аналогично можно пропустить номер формулы с помощью команды
+\textcmd{notag}.
+\begin{examplenv}[0.63\linewidth]{math-2-numbering}
+\newcommand{\mft}[1]{\fbox{\text{#1}}}
+\begin{gather}
+  \mft{{Формула \No 1}}\label{eq:num1}\\
+  \mft{{Формула \No 2}}\notag\\
+  \mft{{Формула \No 3}}\tag{$*$}\label{eq:num2}\\
+  \mft{{Формула \No 4}}\tag*{$*$}\\
+  \mft{{Формула \No 5}}\tag{\ref{eq:num1}$'$}\\
+  \mft{{Формула \No 6}}\tag{\ref{eq:num2}$'$}
+\end{gather}
+\end{examplenv}
+С помощью \textcmd{tag} \textcmd{ref} можно организовать подчинённую
+нумерацию формул. 
+
+
+
+\subsubsection{Подчинённая нумерация формул}
+\label{sec:math-2:subequation}
+
+Стандартные механизмы формирования подчинённой нумерации охватывают
+далеко не все возможные варианты создания иерархии формул. Если
+необходимо что-то нестандартное, то, как было показано в предыдущем
+примере, подчинённую нумерацию достаточно легко сделать
+руками. 
+
+Существует также некоторое количество пакетов, специализирующихся на
+решении этой проблемы, например, пакет \textpkg{deleq}. За
+подробностями следует обратиться к файлу документации
+\textfile{deleq.dvi}.
+
+Пакет \textpkg{amsmath} определяет окружение \textenv{subequations},
+которое формирует подчинённую нумерацию автоматически.
+
+\begin{examplenv}[0.60\linewidth]{math-2-numbering-3}
+\begin{equation}
+  \fbox{\text{Формула \No 1}}
+\end{equation}
+\begin{subequations}
+\label{eq:num3}
+\begin{equation}
+  \label{eq:num3-1}
+  \fbox{\text{Формула \No 2}}
+\end{equation}
+\begin{equation}
+  \fbox{\text{Формула \No 3}}
+\end{equation}
+\end{subequations}\par
+Можно сослаться на группу~\eqref{eq:num3},
+а можно на конкретную 
+формулу~\eqref{eq:num3-1}.
+\end{examplenv}
+\bigskip
+
+Вид и формат подчинённой нумерации можно изменить, переопределив команду
+\textcmd{theequation}, как показано далее:
+\begin{lstlisting}
+\renewcommand{\theequation}
+             {\theparentequation \asbuk{equation}}
+\end{lstlisting}
+
+Теперь подчинённая нумерация будет выводиться с помощью русских букв.
+\medskip
+
+\Note Естественный механизм автоматической нумерации формул в
+\LaTeX{} был одной из основных причин, по которой \TeX"=сообщество
+предпочло \LaTeX{} чистому \TeX.
+
+
+\section{Теоремы}
+\label{sec:math-2:theorem}
+
+
+В разделе~\ref{sec:pr:beamer} на стр.~\pageref{sec:pr:beamer},
+посвящённом описанию презентационного класса \textpkg{beamer}, уже
+упоминалось о возможности создавать новые именованные окружения с
+помощью команды \textcmd{newtheorem}:
+\medskip
+
+\begin{examplenv}[0.5\linewidth]{theo-prog}
+\newtheorem{Thexmpl}{Пример}
+\begin{Thexmpl}[Теорема Пифагора]
+  \label{th:Pythagor}
+  Пифагоровы штаны во все стороны равны.
+\end{Thexmpl}
+\begin{Thexmpl}
+  \label{th:WisdomLaw}
+  Мудрость ограничена, а глупость 
+бесконечна.
+\end{Thexmpl}
+Можем сослаться на первую теорему: 
+Теорема~\ref{th:Pythagor}, а можно 
+и на вторую: Теорема~\ref{th:WisdomLaw}.
+\end{examplenv}
+\bigskip
+
+Команда \textcmd{newtheorem} имеет несколько форм:
+\begin{lstlisting}[]
+\newtheorem{|<<теорема>>|}{|<<заголовок>>|}
+\newtheorem{|<<теорема>>|}[|<<существующая теорема>>|]{|<<заголовок>>|}
+\newtheorem{|<<теорема>>|}{|<<заголовок>>|}[|<<имя счётчика>>|]
+
+\end{lstlisting}
+
+В первом случае создаётся <<теорема>> с указанным <<заголовком>> и
+своей собственной нумерацией. Во втором случае созданная <<теорема>>
+будет пользоваться тем же счётчиком, что и уже <<существующая
+теорема>>. В третьем случае <<теорема>> для формирования своей
+нумерации будет использовать указанный счётчик (например,
+\textcount{section}). При этом нумерация <<теоремы>> по отношению к
+этому счётчику будет подчинённой.
+
+% О том, что такое
+% счётчики и как их определять, было подробно рассказано в
+% разделе~\ref{sec:prog:counters} на стр.~\pageref{sec:prog:counters}.
+
+Определив с помощью \textcmd{newtheorem} новое  окружение, его можно
+использовать для формирования математических утверждений:
+\begin{lstlisting}[]
+\begin{|<<теорема>>|}[|<<подзаголовок>>|]
+     |<<текст утверждения>>|
+\end{|<<теорема>>|}
+\end{lstlisting}
+\medskip
+
+\Note Пакет \textpkg{nccthm} из коллекции \textpkg{ncctools}
+содержит множество улучшений по сравнению со стандартными механизмами
+формирования математических утверждений, а также имеет русскую
+локализацию. Исчерпывающую документацию по~этому замечательному пакету
+можно найти в файле \textfile{nccthm.pdf} или в~\cite{Rozhenko-2005}.
+
+
+
+
+
+
+
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../ctex"
+%%% End: 

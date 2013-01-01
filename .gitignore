@@ -7,6 +7,7 @@
 *.ilg
 *.cb
 *.blg
+*.bbl
 *.glo
 *.gls
 *.tar.bz2
@@ -16,6 +17,8 @@
 *.nav
 *.snm
 *.toc
+*.ver
+*.hst
 *~
 *-eps-converted-to.pdf
 .#*

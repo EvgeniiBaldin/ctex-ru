@@ -1,0 +1,58 @@
+%  -*- coding: koi8-r -*-
+\input{../structheader}
+\usepackage[warn]{mathtext}
+\usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}%first paragraph indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{srcltx}
+\usepackage{textcomp}
+\usepackage{floatflt}
+\usepackage{wrapfig}
+\usepackage{afterpage}
+\usepackage{ccaption}
+\usepackage{pseudocode}
+\usepackage{../example}
+\captiondelim{. }
+\usepackage{xspace}
+%научные символы и смайлики \smiley \frownie
+\usepackage{wasysym}
+
+%backslash
+\newcommand{\bs}{\symbol{'134}}
+%degree
+\newcommand{\grad}{\ensuremath{{}^{\circ}}\xspace}
+\begin{document}
+\pagestyle{empty}
+\setcounter{section}{1}
+\begin{example}[0.48\textwidth]{codebox}
+\begin{pseudocode}{C2F\_таблица}
+              {\text{от}, \text{до}}
+\PROCEDURE{C2F}{c}
+\COMMENT{Преобразование 
+   $^\circ$С$\to$$^\circ$F}\\
+f \GETS {9c/5} + 32\\
+\RETURN{f}
+\ENDPROCEDURE
+\MAIN
+x \GETS \text{от} \\
+\WHILE x \leqslant \text{до} \DO
+\BEGIN
+\OUTPUT{x, \CALL{C2F}{x}}\\
+x \GETS x+1
+\END
+\ENDMAIN
+\end{pseudocode}
+\end{example}
+
+
+
+%\begin{thebibliography}{9}
+%\bibitem{}
+%\newblock
+%\end{thebibliography}
+\end{document}
+

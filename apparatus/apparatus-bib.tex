@@ -1,0 +1,36 @@
+%  -*- coding: koi8-r -*-
+\documentclass[a4paper,12pt]{scrartcl} 
+\usepackage[warn]{mathtext}
+\usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}%first paragraph indent
+\usepackage{cmap}
+\usepackage[unicode=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{srcltx}
+\usepackage{textcomp}
+\usepackage{floatflt}
+\usepackage{wrapfig}
+\usepackage{afterpage}
+\usepackage{ccaption}
+\captiondelim{. }
+\usepackage{xspace}
+%научные символы и смайлики \smiley \frownie
+\usepackage{wasysym}
+
+%backslash
+\newcommand{\bs}{\symbol{'134}}
+%degree
+\newcommand{\grad}{\ensuremath{{}^{\circ}}\xspace}
+\begin{document}
+\pagestyle{empty}
+Полезно почитать книгу \cite[Роженко]{rozenko-2005}.
+
+\begin{thebibliography}{W}
+\bibitem{rozenko-2005}Роженко А.И. Искусство вёрстки в 
+\LaTeX'е. \newblock --- Новосибирск: Изд. ИВМиМГ СО~РАН, 2005. 398~с.
+\end{thebibliography}
+\end{document}

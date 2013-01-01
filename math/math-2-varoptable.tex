@@ -1,0 +1,73 @@
+%  -*- coding: koi8-r -*-
+\input{../structheader}
+\usepackage[warn]{mathtext}
+\usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}%first paragraph indent
+\usepackage{cmap}
+%\usepackage[unicode=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{nccboxes}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{srcltx}
+\usepackage{textcomp}
+\usepackage{floatflt}
+\usepackage{wrapfig}
+\usepackage{afterpage}
+\usepackage{ccaption}
+\captiondelim{. }
+\usepackage{xspace}
+%научные символы и смайлики \smiley \frownie
+%\usepackage{wasysym}
+\usepackage{cellspace}
+\usepackage{longtable}
+
+%backslash
+\newcommand{\bs}{\symbol{'134}}
+%degree
+\newcommand{\grad}{\ensuremath{{}^{\circ}}\xspace}
+
+%команда (бэкслэш в начале вставляет автоматически)
+\newcommand{\textcmde}[1]{{\normalfont\bs#1}}
+\newcommand{\textcmd}[1]{\textcmde{#1}}
+\newcommand{\textpkge}[1]{{\textbf{#1}}}
+\newcommand{\textpkg}[1]{\textpkge{#1}}
+
+\begin{document}
+\pagestyle{empty}
+
+%\hrule
+\begin{center}
+  \begin{tabular}{SclScl}\hline
+    \multicolumn{4}{c}{\cbox{Операторы переменного размера}}\\\hline
+    \(\bigcap\) \(\displaystyle\bigcap\)&\textcmd{bigcap}&
+    \(\bigcup\) \(\displaystyle\bigcup\)&\textcmd{bigcup}\\
+    \(\bigodot\) \(\displaystyle\bigodot\)&\textcmd{bigodot}&
+    \(\bigoplus\) \(\displaystyle\bigoplus\)&\textcmd{bigoplus}\\
+    \(\bigotimes\) \(\displaystyle\bigotimes\)&\textcmd{bigotimes}&
+    \(\bigsqcup\) \(\displaystyle\bigsqcup\)&\textcmd{bigsqcup}\\
+    \(\biguplus\) \(\displaystyle\biguplus\)&\textcmd{biguplus}&
+    \(\bigvee\) \(\displaystyle\bigvee\)&\textcmd{bigvee}\\
+    \(\bigwedge\) \(\displaystyle\bigwedge\)&\textcmd{bigwedge}&
+    \(\coprod\) \(\displaystyle\coprod\)&\textcmd{coprod}\\
+    \(\int\) \(\displaystyle\int\)&\textcmd{int}&
+    \(\oint\) \(\displaystyle\oint\)&\textcmd{oint}\\
+    \(\prod\) \(\displaystyle\prod\)&\textcmd{prod}&
+    \(\sum\) \(\displaystyle\sum\)&\textcmd{sum}\\\hline
+    \multicolumn{4}{c}{\cbox{Дополнительные операторы переменного размера (\textpkg{amsmath})}}\\\hline
+    \(\iint\) \(\displaystyle\iint\)&\textcmd{iint}&
+    \(\iiint\) \(\displaystyle\iiint\)&\textcmd{iiint}\\
+    \(\iiiint\) \(\displaystyle\iiiint\)&\textcmd{iiiint}&
+    \(\idotsint\) \(\displaystyle\idotsint\)&\textcmd{idotsint}\\\hline
+%     \(\---\) \(\displaystyle\---\)&\textcmd{---}&
+%     \(\---\) \(\displaystyle\---\)&\textcmd{---}\\
+  \end{tabular}
+\end{center}
+
+%\begin{thebibliography}{9}
+%\bibitem{}
+%\newblock
+%\end{thebibliography}
+\end{document}

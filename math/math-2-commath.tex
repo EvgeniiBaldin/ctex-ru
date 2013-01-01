@@ -1,0 +1,44 @@
+%  -*- coding: koi8-r -*-
+\input{../structheader}
+\usepackage[warn]{mathtext}
+\usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}%first paragraph indent
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{srcltx}
+\usepackage{textcomp}
+\usepackage{xspace}
+%научные символы и смайлики \smiley \frownie
+\usepackage{wasysym}
+\usepackage{commath}
+\usepackage{../example}
+
+%backslash
+\newcommand{\bs}{\symbol{'134}}
+%degree
+\newcommand{\grad}{\ensuremath{{}^{\circ}}\xspace}
+\begin{document}
+\pagestyle{empty}
+\begin{example}[0.6\linewidth]{math-2-commath-1}
+\[\begin{split}
+  &\dif{x}\quad \Dif{X}\\
+  &\od{f}{x}\quad \od[2]{f}{x}\\
+  &\pd{f}{x}\quad \pd[2]{f}{x}\quad
+   \md{f}{5}{x}{2}{y}{3}\\
+  &\eval[0]{f(x)}_{x=0}\quad
+   \eval[2]{f(x)}_{x=0}\quad
+   \eval{f(x)}_{x=0}\\
+  &\fullfunction{f}
+         {\mathbb R}{\mathbb R}{x}{\sqrt{x}}
+\end{split}\]
+\end{example}
+
+
+%\begin{thebibliography}{9}
+%\bibitem{}
+%\newblock
+%\end{thebibliography}
+\end{document}

@@ -1,0 +1,782 @@
+%  -*- coding: koi8-r -*-
+\chapter{Документация и программный код}
+\label{cha:code}
+ {\setlength{\epigraphwidth}{0.7\textwidth}
+  \epigraph{+++ Ошибка Деления На
+    Огурец. \\\(\phantom{+++}\)Переустановите Вселенную И Перезагрузитесь
+    +++}{\emph{Так зависает Гекс \\<<Санта-Хрякус>>  Терри
+    Пратчетт}}
+
+
+Если вспомнить историю, то Д.\,Э.~Кнут создал \TeX{} именно для целей
+представления кода и алгоритмов в своём глобальном пятитомнике
+<<Искусство программирования>>.
+
+Написание документации "--- это неотъемлемая часть процесса создания
+качественного программного продукта. \LaTeX{} сам по себе качественный
+инструмент и достоин быть включённым в эту технологическую цепочку.
+
+% Программирование под Linux вполне естественное занятие.
+
+\section{Форматирование кода}
+\label{sec:make-up:code}
+
+\LaTeX{} может использоваться не только для набора математики. Хотя
+набор математики безусловно вершина типографского искусства, но есть
+масса задач, где сложность форматирования сравнима. Представление
+исходников программ "--- это весьма не простое занятие, особенно если
+хочется сделать код читаемым. 
+
+Традиционно в книгах из-за избыточной сложности код программы делают
+одним шрифтом фиксированной ширины. И все настолько привыкли к такому
+порядку, что любые попытки <<раскрасить>> код натыкаются на
+иррациональное отторжение. Возможно, со временем ситуация поменяется в
+том числе и из-за возможностей \LaTeX{} в деле формирования читаемой
+распечатки программы.
+
+\subsubsection{verbatim}
+\label{sec:code:verbatim}
+
+Простейший способ включения кода в текст "--- это заключить его
+в стандартное окружение \textenv{verbatim}, которое просто выводит этот
+текст на печать с отступами пользователя. 
+% Но при этом исчезает возможность делать акценты в избранных местах.
+
+Небольшие вставки можно делать с помощью команды
+\textcmd{verb}\lstinline$!текст!$. Сразу после \textcmd{verb} должен идти
+группирующий символ (в данном случае <<!>>), который обязан указать
+окончание действия команды. Группирующий символ может быть любым, кроме
+пробела или звёздочки <<$*$>>.
+
+Пакет \textpkg{verbatim} из коллекции \textpkg{tools} переопределяет
+стандартную команду так, что внутри окружения можно вставлять тексты
+неограниченного размера. Кроме этого пакет предоставляет команду
+\textcmd{verbatiminput}, которой в качестве основного аргумента
+можно передать имя внешнего файла. 
+
+Кроме упомянутых макросов и окружения определены такие же, но со
+звёздочкой в конце имени, то есть команды
+\textcmd{verb$*$}/\textcmd{verbatiminput$*$} и окружение
+\textenv{verbatim$*$}.  $*$-форма отличается от
+базовой тем, что все пробелы визуализируются с помощью символа
+<<\textvisiblespace>> (\textcmd{textvisiblespace}).
+
+\begin{example}{verbatim}
+\begin{verbatim*}
+\textbf{verbatim} в        \LaTeX{}
+\end{verbatim*}
+\end{example}
+
+
+\subsubsection{altt}
+\label{sec:code:altt}
+
+Стандартный пакет \textpkg{altt} "--- это почти то же самое, что и
+\textpkg{verbatim}, но позволяет использовать команды \LaTeX{} внутри
+окружения, правда, шрифт в любом случае остаётся фиксированной ширины,
+как для печатной машинки.
+
+\begin{example}{altt}
+\begin{alltt}
+ \textbf{altt} в           \LaTeX{}    
+\end{alltt}
+\end{example}
+
+
+Гораздо более разнообразные средства управления выводом
+неформатированного текста предоставляет пакет \textpkg{fancyvrb}. За
+подробной информацией следует обратиться к документации пакета
+\textfile{fancyvrb.pdf}.
+
+
+\subsubsection{listings}
+\label{sec:code:listings}
+
+\fxnote{Добавить про то как прикинуться verbatim}
+%чтобы везде был ttfamily как verbatim
+%   basicstyle=\ttfamily,
+%   commentstyle=,
+
+
+Пакет \textpkg{listings} специализируется на оформлении программного
+кода. К пакету прилагается подробнейшая документация\footnote{Следует
+  поискать файл \textfile{listings.pdf}.}, которую имеет смысл изучить,
+если выводить код на печать приходится часто.  С помощью команд пакета
+можно включить как небольшие кусочки кода, так и целые его сегменты,
+ну и, естественно, файлы.
+
+Для загрузки пакета \textpkg{listings} необходимо добавить в заголовок
+следующие инструкции:
+%begin{example}{lst-header}
+\textcmdh{lstloadlanguages}
+\begin{lstlisting}[escapechar=*,caption={Заголовок listings}]
+\usepackage{listings}
+% подгружаемые языки *"---* подробнее в документации *\textpkg{listings}*
+\lstloadlanguages{[LaTeX]TeX,bash,MetaPost,Perl,C++,make}
+% включаем кириллицу и добавляем кое-какие опции
+\lstset{language=[LaTeX]TeX, % выбираем язык по умолчанию
+        extendedchars=true,  % включаем не латиницу
+        escapechar=|,        % *|<<выпадаем>> в \LaTeX{}|*
+        frame=tb,            % рамка сверху и снизу
+        commentstyle=\itshape, % шрифт для комментариев 
+        stringstyle=\bfseries} % шрифт для строк
+
+\end{lstlisting}
+%end{example}
+
+Сразу после загрузки пакета рекомендуется <<подгрузить>> используемые
+в тексте языки программирования\footnote{Версия пакета
+  \textpkg{listings} 1.3c поддерживает следующие языки (в скобках
+  указаны диалекты): ABAP, ACSL, Ada (83, 95), Algol (60, 68), Ant,
+  Assembler (x86masm), Awk (gnu, POSIX), bash, Basic (Visual), C
+  (ANSI, Handel, Objective, Sharp), C++ (ANSI, GNU, ISO, Visual), Caml
+  (light, Objective), Clean, Cobol (1974, 1985, ibm), Comal 80, csh,
+  Delphi, Eiffel, Elan, erlang, Euphoria, Fortran (77, 90, 95), GCL,
+  Gnuplot, Haskell, HTML, IDL (empty, CORBA), inform, Java (empty,
+  AspectJ), JVMIS, ksh, Lisp (empty, Auto), Logo, make (empty, gnu),
+  Mathematica (1.0, 3.0), Matlab, Mercury, MetaPost, Miranda, Mizar,
+  ML, Modula-2, MuPAD, NASTRAN, Oberon-2, OCL (decorative, OMG),
+  Octave, Oz, Pascal (Borland6, Standard, XSC), Perl, PHP, PL/I,
+  Plasm, POV, Prolog, Promela, Python, R, Reduce, Rexx, RSL, Ruby, S
+  (empty, PLUS), SAS, Scilab, sh, SHELXL, Simula (67, CII, DEC, IBM),
+  SQL, tcl (empty, tk), TeX (AlLaTeX, common, LaTeX, plain,
+  primitive), VBScript, Verilog, VHDL (empty, AMS), VRML (97), XML,
+  XSLT.} с помощью макроса \textcmd{lstloadlanguages}.  В квадратных
+скобочках перед названием языка можно указать желательный диалект.
+
+Команда \textcmd{lstset} позволяет устанавливать значения по
+умолчанию, которые всегда можно переопределить для конкретного
+сегмента кода. Некоторые из полезных умолчаний перечислены далее.
+\begin{itemize}
+\item Для того чтобы можно было печатать кириллицу, например в
+  комментариях, следует определить переменную
+  \textopt{extendedchars=true}\footnote{Если это не сработает, то необходимо
+    обновить пакет до последней версии или сменить дистрибутив
+    \LaTeX{} на более подходящий.}.
+\item Опция \textopt{escapechar} позволяет при наборе кода
+  пользоваться услугами \LaTeX{} напрямую. Всё, что находится между
+  выбранными символами, обрабатывается средствами \LaTeX.
+  Естественно, если выбранный символ (в данном случае <<\textopt{|}>>)
+  используется в отображаемом языке, то могут возникнуть проблемы при
+  компиляции. Для того чтобы обнулить \textopt{escapechar}, достаточно
+  ничего не писать за знаком равно при переопределении
+  \textopt{escapechar} по месту формирования кода.
+\item Инструкция \textopt{frame=<POSITION>} позволяет рисовать рамку
+  вокруг сегмента кода. На вход принимаются буквы \textopt{t} "---
+  обрамление сверху, \textopt{b} "--- снизу, \textopt{l} и \textopt{r}
+  "--- слева и справа соответственно. В случае \textopt{frame=trbl}
+  будет нарисована простейшая одинарная рамка. Опция \textopt{frame=}
+  эквивалентна отказу от обрамления. Если вместо прописных букв
+  указать заглавные \textopt{frame=TRBL}, то рамка будет двойная. В
+  пакете есть возможность сделать рамки посложнее.
+\end{itemize}
+
+Все команды, определённые в пакете \textpkg{listings}, начинаются с
+префикса \textopt{lst}. Команда для включения небольших кусочков кода
+\textcmd{lstinline}\lstinline$!код!$ аналогична по~действию команде
+\textcmd{verb}\lstinline$!текст!$.
+
+Сегмент кода оформляется с помощью окружения \textenv{lstlisting}:
+\begin{example}[0.44\textwidth]{lstlisting}
+\begin{lstlisting}[language=Perl,
+ frame=tlBR,
+ caption={Включение сегмента кода}]
+# Проверка для перезаписи
+if (open(CHECK,"<$file")) {
+ $cmd=$term->readline
+       ("Overwrite (yes/NO): ");
+ if (lc($cmd) ne "yes") {die;}
+ close(CHECK);}
+
+\end{lstlisting}
+\end{example}
+Необязательный параметр может принять опции, специфичные для
+оформления этого куска кода. Например, опция \textopt{language}
+позволяет установить язык программирования, отличный от выбранного по
+умолчанию, \textopt{frame} определяет рамку вокруг фрагмента, а
+\textopt{caption} создаёт подпись к фрагменту кода.
+
+
+Файлы можно включать с помощью команды \textcmd{lstinputlisting}:
+\begin{lstlisting}[]
+% Установка значений по умолчанию
+\lstset{numbers=left, language=MetaPost,
+% Для цветных принтеров
+%       backgroundcolor=\color{yellow}, 
+        frame=shadowbox, rulesepcolor=\color{black}}
+% Вставка файла
+\lstinputlisting[firstline=16, lastline=24,
+  emph={forsuffixes,text,bpath},
+  emphstyle={\bfseries\scshape},
+  emph={[2]fill,unfill},
+  emphstyle={[2]\bfseries\underbar}]{intro.mp}
+
+\end{lstlisting}
+
+%begin{example}{lstinputlisting}
+\lstinputlisting[language=MetaPost,frame=shadowbox, rulesepcolor=\color{black},
+emph={forsuffixes,text,bpath},emphstyle={\bfseries\scshape},
+emph={[2]fill,unfill},emphstyle={[2]\bfseries\underbar},
+%backgroundcolor=\color{yellow},
+numbers=left,firstline=16,lastline=24]{code/intro.mp}
+%end{example}
+
+С помощью опций \textopt{firstline} и \textopt{secondline} можно указать
+строки, которые следует вывести.  В зависимости от выбора языка
+форматирование существенно меняется. Инструкция \textopt{numbers=left}
+нумерует строки слева. 
+
+\textpkgh{color}
+Для работы с цветами можно воспользоваться командой \textcmd{color},
+определённой в одноимённом пакете.  Цвета хороши для выделения каких-то
+ключевых слов и подложки, за которую отвечает опция
+\textopt{backgroundcolor}. Возможности для определения своих
+<<словариков>> предоставляет опция \textopt{emph=<список ключевых
+  слов>}.  В начале списка может идти его метка в квадратных скобках,
+таким образом можно поддерживать одновременно несколько списков. С
+помощью \textopt{emphstyle} можно определить способ выделения ключевых
+слов.
+
+
+Обычно код располагается прямо по месту основного текста, так как
+обсуждение исходников можно не прерывать в самом коде, благо есть
+комментарии. Но при желании можно воспользоваться опцией
+\textopt{float}, чтобы из фрагмента кода получился полноценный
+<<плавающий>> объект.
+
+Пакет с учётом диалектов поддерживает свыше сотни распространённых
+языков программирования и разметки. Так что, скорее всего, вам не
+придётся определять свой язык с помощью инструкции
+\textcmd{lstdefinelanguage}. Но если очень хочется, то и это
+возможно. 
+
+\section{LCD-дисплей}
+\label{sec:code:lcd}
+
+LCD-дисплеи сейчас встроены даже в кофемолки. Они легко узнаваемы,
+поэтому нет необходимости копировать их вид в документацию с помощью
+фотографий "--- достаточно нарисовать что-то похожее. Изобразить вид
+дисплея можно с помощью пакета \LaTeX{} \textpkg{lcd}.
+\medskip
+
+\begin{examplenv}[0.56\textwidth]{LCD-text}
+\definecolor{darkgreen}{rgb}{0.22,0.26,0.19}
+\definecolor{lightgreen}{rgb}{0.05,0.97,0.55}
+\LCDcolors{darkgreen}{lightgreen}
+\centering
+\LARGE\textLCD{12}|Linux Format|\\[2mm]
+\LCDcolors{white}{darkgreen}
+\small\textLCD{12}|Linux Format|
+\end{examplenv}
+\medskip
+
+Для определения цветов используется макрос \textcmd{definecolor} из
+пакета \textpkg{color}. Команда \textcmd{LCDcolors} формирует цвет букв и
+фона, а макрос \textcmd{textLCD} выводит LCD-подобный текст на
+экран. \textcmd{textLCD} понимает стандартные команды изменения
+размера шрифта, поэтому его можно использовать совместно с обычным
+текстом внутри абзаца.
+
+
+По умолчанию определены только латинские буквы, цифры и некоторые 
+из~стандартных символов. Для определения других символов можно
+воспользоваться макросом \textcmd{DefineLCDchar}. Макросу
+передаётся имя символа и битовая маска, определяющая картинку
+\(5\times7\) точек. Имя символа может быть однобуквенным, тогда
+соответствующая буква замещается новым рисунком, или многобуквенным,
+тогда созданный рисунок кодируется указанным словом в фигурных
+скобках. Другие размеры матрицы в пакете отсутствуют, но при желании
+его вполне можно доработать.
+
+\begin{figure}[htbp]
+%begin{example}{LCD-yo-def}
+\centering
+\unitlength1.96mm
+\begin{picture}(54,10)
+\put(1.3,8){\makebox(0,0)[bl]{
+   \texttt{\bs DefineLCDchar\{yo\}\{01010000001111110001111001000111111\}}}}
+\put(5.5,6.5){\line(1,0){16.7}}\put(22.2,6.5){\line(0,1){1}}\put(20.2,7.5){\line(1,0){4}}
+\put(5.5,5.5){\line(1,0){21.4}}\put(26.9,5.5){\line(0,1){2}}\put(24.9,7.5){\line(1,0){4}}
+\put(5.5,4.5){\line(1,0){26.1}}\put(31.6,4.5){\line(0,1){3}}\put(29.5,7.5){\line(1,0){4}}
+\put(5.5,3.5){\line(1,0){30.8}}\put(36.3,3.5){\line(0,1){4}}\put(34.3,7.5){\line(1,0){4}}
+\put(5.5,2.5){\line(1,0){35.5}}\put(41.0,2.5){\line(0,1){5}}\put(39.0,7.5){\line(1,0){4}}
+\put(5.5,1.5){\line(1,0){40.2}}\put(45.7,1.5){\line(0,1){6}}\put(43.7,7.5){\line(1,0){4}}
+\put(5.5,0.5){\line(1,0){44.9}}\put(50.4,0.5){\line(0,1){7}}\put(48.4,7.5){\line(1,0){4}}
+\multiput(0,0)(1,0){6}{\line(0,1){7}}
+\multiput(0,0)(0,1){8}{\line(1,0){5}}
+\linethickness{0.7\unitlength}
+%01010
+\put(1,6.35){\line(1,0){0.7}}
+\put(3,6.35){\line(1,0){0.7}}
+%00000
+%11111
+\put(0,4.35){\line(1,0){0.7}}
+\put(1,4.35){\line(1,0){0.7}}
+\put(2,4.35){\line(1,0){0.7}}
+\put(3,4.35){\line(1,0){0.7}}
+\put(4,4.35){\line(1,0){0.7}}
+%10001
+\put(0,3.35){\line(1,0){0.7}}
+\put(4,3.35){\line(1,0){0.7}}
+%11100
+\put(0,2.35){\line(1,0){0.7}}
+\put(1,2.35){\line(1,0){0.7}}
+\put(2,2.35){\line(1,0){0.7}}
+%10001
+\put(0,1.35){\line(1,0){0.7}}
+\put(4,1.35){\line(1,0){0.7}}
+%11111
+\put(0,0.35){\line(1,0){0.7}}
+\put(1,0.35){\line(1,0){0.7}}
+\put(2,0.35){\line(1,0){0.7}}
+\put(3,0.35){\line(1,0){0.7}}
+\put(4,0.35){\line(1,0){0.7}}
+\end{picture}
+%end{example}
+\caption{Определяем букву <<Ё>> для LCD}
+\end{figure}
+
+Для эмуляции дисплея используется команда \textcmd{LCD}, в качестве
+обязательных параметров ей передаётся число строк и число столбцов, за
+которыми следует содержание строк, разделённых каким-то
+разделителем. В приведённом примере в качестве разделителя используется
+вертикальная черта, но вместо неё может быть любой символ.
+\medskip
+\begin{examplenv}[0.7\textwidth]{LCD-yo}
+\DefineLCDchar{yo}{01010000001111110001111001000111111}
+\definecolor{lightblue}{rgb}{0.9,0.91,0.99}
+\definecolor{darkblue}{rgb}{0.14,0.2,0.66}
+\LCDcolors{darkblue}{lightblue}
+\LCDframe
+\setlength{\LCDunitlength}{1.1mm}
+\LCD{2}{4}|LF {yo} |
+          |zone |
+\end{examplenv}
+
+
+
+\section{Битовые поля}
+\label{sec:code:bytefields}
+
+Для описания сетевых протоколов, а также для бинарных форматов данных
+удобнее всего представить последовательность битов графически, то есть
+в виде таблицы. Это специализация пакета \textpkg{bytefield}. В пакете
+определено одноимённое окружение \textenv{bytefield}:
+\begin{lstlisting}[]
+\begin{bytefield}{|<<битовая ширина поля>>|}
+  |<<битовые поля>>|
+\end{bytefield}
+
+\end{lstlisting}
+
+В окружении \textenv{bytefield} работают команды \textcmd{wordbox} и
+\textcmd{bitbox}, которые формируют поля, занимающие ширину таблицы
+или только часть её соответственно:
+\begin{lstlisting}[]
+\wordbox[|<<рамка>>|]{|<<число строк>>|}{|<<текст>>|}
+\bitbox[|<<рамка>>|]{|<<число занимаемых битов>>|}{|<<текст>>|}
+
+\end{lstlisting}
+
+Не обязательный параметр <<рамка>> позволяет сформировать обрамление
+для текущего битового поля. Значение по умолчанию \textopt{[lrtb]}
+означает, что рамка рисуется со всех сторон поля: \textopt{l} "---
+слава, \textopt{r} "--- справа, \textopt{t} "--- сверху и \textopt{b} "---
+снизу. Строки разделяются двойной обратной чертой \textopt{\bs\bs}.
+
+Вот так описывается формат пакета сетевого
+протокола UDP\footnote{User Datagram Protocol "--- это сетевой
+  протокол для передачи данных в сетях IP.}:
+\begin{lstlisting}[]
+\begin{bytefield}{32}
+\bitheader{0,15,16,31}\\
+\begin{rightwordgroup}{Заголовок}
+\bitbox{16}{Порт отправителя}\bitbox{16}{Порт получателя}\\
+\bitbox{16}{Размер}\bitbox{16}{Контрольная сумма}
+\end{rightwordgroup}\\
+\wordbox[lrt]{1}{Данные}\\
+\skippedwords\\
+\wordbox[lrb]{1}{до 65{.}527 байт}
+\end{bytefield}
+
+\end{lstlisting}
+
+Кроме уже упомянутых команд создания полей при описании формата UDP
+использовалась команда нумерации столбцов \textcmd{bitheader},
+конструкция для создания группы \textcmd{wordgroupr} и макрос
+\textcmd{skippedwords} для
+формирования <<разрыва>>. 
+
+
+\begin{table}[t]
+\hfill
+\begin{bytefield}{32}
+\bitheader{0,15,16,31}\\
+\begin{rightwordgroup}{Заголовок}
+\bitbox{16}{Порт отправителя}\bitbox{16}{Порт получателя}\\
+\bitbox{16}{Размер}\bitbox{16}{Контрольная сумма}
+\end{rightwordgroup}\\
+\wordbox[lrt]{1}{Данные}\\
+\skippedwords\\
+\wordbox[lrb]{1}{до 65{.}527 байт}
+\end{bytefield}
+\caption{Формат пакета UDP}\label{tab:code:udp}
+\end{table}
+
+В качестве обязательного аргумента команде \textcmd{bitheader}
+передаётся список нумеруемых битов, при этом можно передавать
+диапазоны чисел, например, \textopt{\{0-31\}}. В пакете определены два
+окружения для группировки битовых полей \textenv{rightwordgroup} и
+\textenv{leftwordgroup} "--- отличие этих команд в том, что для первой
+заголовок группы вводится справа, а для второй "--- слева. За более
+подробной информацией следует обратиться к документации пакета.
+
+\section{Представление алгоритмов}
+\label{sec:code:algorithms}
+
+Собственно говоря, именно то, ради чего Д.\,Э.~Кнут и создал \TeX{}
+"--- комбинация математики и сложного форматирования. Поэтому пакеты
+для облегчения записи алгоритмов в \LaTeX{} были с самого его
+рождения. На текущий момент число даже стандартных пакетов,
+попадающих под эту тематику, больше десятка. Здесь рассмотрена только
+малая их часть.
+
+% alg
+% algorithm2e
+% algorithmicx
+% algorithms
+% clrscode
+% nassflow
+% newalg
+% ntabbing
+% progkeys
+% program
+% pseudocode
+% vdm
+% zed-csp
+
+% \subsection{alg}
+% \label{sec:alg}
+
+% Аналогично algorithmic.
+
+\subsubsection{algorithms}
+\label{sec:code:algoritmic}
+
+Пакет \textpkg{algorithms} ориентирован на написание алгоритмов, а не
+на представление кода. Это позволяет отрешиться от форматирования и
+сосредоточиться на~основной задаче. Пакет определяет окружение
+\textenv{algorithmic}. Для использования в~преамбуле следует загрузить
+одноимённый стиль. \textpkgh{algorithmic}
+
+%\begin{algorithm}[ht]
+%\caption{Пример использования пакета \textbf{algorithm}}
+%\label{alg:code:algoritmic}
+\begin{examplenv}[0.6\textwidth]{algorithmic}
+\begin{algorithmic}[1]
+\IF{\(i\leqslant0\)} \STATE \(i\gets1\) \ELSE 
+ \IF{\(i\geqslant0\)} \STATE \(i\gets0\) 
+ \COMMENT{смысла в~этом алгоритме не ищите}
+ \ENDIF
+\ENDIF
+\ENSURE \(i\geqslant0\) 
+\FORALL{\(\xi \in \mathcal{A}\)} 
+ \STATE \(\mathcal{B}\gets\xi^2\)
+\ENDFOR
+\RETURN \(\mathcal{B}\)
+\end{algorithmic}
+\end{examplenv}
+%\end{algorithm}
+Если необязательный аргумент определён, то осуществляется  нумерация
+строк. Если аргумент равен 1, то нумеруются все строки, если 2 "--- то
+каждая вторая, а далее по индукции.
+
+Команда \textcmd{STATE} определяет простое утверждение. Условный
+оператор представлен командами \textcmd{IF}\lstinline!{<условие>}!,
+\textcmd{ELSIF}\lstinline!{<условие>}!, \textcmd{ELSE} и
+\textcmd{ENDIF}. 
+
+Циклы представлены операторами \textcmd{FOR} и \textcmd{FORALL},
+которые закрываются командой \textcmd{ENDFOR}. Аналогично присутствуют
+пары \textcmd{WHILE}\lstinline!{<условие>}! "--- \textcmd{ENDWHILE},
+\textcmd{REPEAT} "--- \textcmd{UNTILL}\lstinline!{<условие>}! и
+бесконечный цикл \textcmd{LOOP} "--- \textcmd{ENDLOOP}. Кроме уже
+перечисленных конструкций определены предварительное условие для
+корректного выполнения алгоритма \textcmd{REQUIRE}, постусловие,
+которое должно выполняться при корректной работе алгоритма,
+\textcmd{ENSURE}, возвращение результата формируется с помощью
+\textcmd{RETURN}, промежуточная печать \textcmd{PRINT} и комментарий
+\textcmd{COMMENT}.
+
+Собственно говоря, всё.  Псевдокод автоматически разбивается на строки
+и форматируется в соответствии с общепринятыми
+представлениям. Очевидно также, что навыки набора математики будут
+здесь очень кстати. Подробности по~настройке пакета следует выяснять в
+документации к нему: \textfile{algorithms.pdf}.
+
+Для того чтобы из объекта \textenv{algorithmic} сделать <<плавающий
+объект>>, можно воспользоваться окружением \textenv{algorithm}, для
+этого следует в преамбуле загрузить одноимённый стиль.  Внутри
+\textenv{algorithm} можно использовать команды \textcmd{caption} и
+\textcmd{label}.
+
+\subsubsection{Клоны algorithms}
+\label{sec:code:clone-algorithm}
+
+
+С помощью имеющихся наработок пакета \textpkg{algorithms} был создан
+\textpkg{algorithmicx}. Данный пакет предоставляет более расширенный
+набор команд. Кроме этого пользователю предлагаются команды,
+которые позволяют сформировать свои алгоритмические конструкции. Автор
+также предоставил вариант форматирования отступов, принятый в Pascal,
+что позволяет относительно легко переводить программы на этом языке к
+виду, годному для красивой распечатки. Пакет не совместим с
+\textpkg{algorithms}. Решение схожей функциональности предлагает
+пакет \textpkg{algorithm2e}. Форматирование C-подобно. Предоставлен
+избыточный набор конструкций и возможность  самостоятельного создания новых
+структур. Есть зачатки локализации. Пакет не совместим с
+\textpkg{algorithms}.
+
+
+
+
+
+\subsubsection{clrscode}
+\label{sec:code:clrscode}
+
+Пакет \textpkg{clrscode} даёт возможность набирать псевдокод,
+как это делали авторы книги\footnote{\emph{Introduction to
+    algorithms}, Second Edition Thomas H. Cormen, Charles
+  E. Leiserson, Ronald L. Rivest, Clifford Stein.} <<Алгоритмы:
+построение и анализ>> Томас Х. Кормен, Чарльз И. Лейзерсон, Рональд
+Л. Ривест и Клиффорд Штайн. Для работы с пакетом необходимо загрузить
+одноимённый стиль.  
+\smallskip
+ 
+% Прекрасный пример того, как можно адаптировать \LaTeX{} для
+% нужд создания книг по программированию.
+
+
+
+% \begin{figure}[ht]\centering
+\noindent\includegraphics[]{code/code-codebox}
+  
+%   \caption{Пример использования пакета \textpkg{clrscode}}
+%   \label{fig:code:clrscode}
+% \end{figure}
+
+
+
+
+
+\subsubsection{pseudocode}
+\label{sec:code:pseudocode}
+Профессор Дональд Л.\,Крехер (Donald L.\,Kreher) и профессор Дуглас Р.\,Стин\-сон
+(Doug\-las R.\,Stinson) написали книгу <<Combinatorial Algorithms:
+Generation, Enu\-me\-ration and Search>>. Специально для этой книги в
+целях написания псевдокода они создали пакет, который так и назвали:
+\textpkg{pseudocode}. Дональд Л.\,Крехер использовал одноимённое
+окружение и в своей следующей книге по алгоритмам, выпущенной уже 2005
+году.  Пакет развивается и поддерживается. \textenvh{pseudocode}
+\bigskip
+
+% \begin{figure}[ht]\centering
+\noindent\includegraphics[]{code/code-pseudocode}
+  
+%  \caption{Пример использования пакета \textpkg{pseudocode}}
+%   \label{fig:code:pseudocode}
+% \end{figure}
+
+
+
+
+
+
+
+
+
+
+\section{История изменений}
+\label{sec:code:changelog}
+
+\mindex{контроль версий|(}
+В процессе создания программных продуктов возникает множество
+сопутствующей документации, в которой в частности описываются
+подробные спецификации и технические задания. 
+
+Как правило, техническое задание меняется в процессе его реализации,
+так как невозможно предусмотреть всё заранее, поэтому документация
+имеет привычку также изменяться. Для реконструкции внесённых
+изменений в документации в~неё добавляется журнал изменений или
+change~log.
+
+\begin{figure}[t]\centering
+  \fbox{\quad\includegraphics[width=0.8\textwidth]{code/code-vhistory}\quad}
+  
+  \caption{Пример использования пакета \textpkg{vhistory}}
+  \label{fig:code:vhistory}
+\end{figure}
+
+Журнал изменений можно отобразить в виде таблицы:
+\begin{itemize}
+\item номер версии;
+\item время внесения изменений;
+\item инициалы авторов изменений для их идентификации;
+\item краткое описание сделанных изменений.
+\end{itemize}
+
+
+История изменений формируется внутри окружения
+\textenv{versionhistory}.  Каждая строка журнала создаётся с помощью
+команды \textcmd{vhEntry}:
+\begin{lstlisting}[escapechar=!]
+\vhEntry{!<<Версия>>!}{!<<Дата>>!}{!<<Автор(ы)>>!}{!<<резюме>>!}
+
+\end{lstlisting}
+
+<<Автор(ы)>> обозначаются с помощью сокращений, которые дозволяется
+делать только латиницей. Разделителем между сокращениями служит символ
+вертикальной черты <<|>>. Пример из документации к пакету:
+\begin{lstlisting}[escapechar=!]
+\vhEntry{1.1}{13.05.04}{JW|AK|KL}{Typos corrected.}
+\end{lstlisting}
+
+Далее следует пример использования \textpkg{vhistory}, результат
+действия которого отображается на рис.~\ref{fig:code:vhistory}.
+\begin{lstlisting}[escapechar=]
+% Преамбула
+% Опция owncaptions необходима для локализация заголовков
+\usepackage[owncaptions]{vhistory}
+
+  |\ldots|
+
+% Тело документа
+% Расшифровка сокращений для обозначения авторов
+\newcommand{\JW}{Jochen Wertenauer}
+\newcommand{\EMB}{Евгений М. Балдин}
+
+{\renewcommand{\setseparator}{ \and }
+\title{Пример использования пакета \textbf{vhistory}}
+\author{\vhListAllAuthorsLong}
+\date{Версия \vhCurrentVersion{} от \vhCurrentDate}
+\maketitle
+}
+
+% Локализация заголовков. 
+\renewcommand{\vhhistoryname}{Журнал изменений}
+\renewcommand{\vhversionname}{Версия}
+\renewcommand{\vhdatename}{Дата}
+\renewcommand{\vhauthorname}{Автор(ы)}
+\renewcommand{\vhchangename}{Изменения}
+
+% Создание журнала изменений
+\begin{versionhistory}
+  \vhEntry{1.0}{22/01/04}{JW}{Создание}
+  \vhEntry{1.1}{21/07/07}{JW}{Исправление бага с owncaptions}
+  \vhEntry{1.2}{29/09/07}{JW|EMB}{Проверка работоспособности}
+\end{versionhistory}
+\end{lstlisting}
+
+Следует обратить внимание на команды \textcmd{vhCurrentVersion} и
+\textcmd{vhCurrentDate}. В них хранится последняя версия и дата
+последнего изменения. Эти данные полезно вынести в колонтитул
+(см. раздел~\ref{sec:colontitles}).
+
+Команда \textcmd{vhListAllAuthorsLong} печатает список авторов, если
+предварительно расшифровать их акронимы с помощью
+\textcmd{newcommand}. 
+
+\Note Версия пакета, идущая в дистрибутиве \TeXLive 2007, не
+позволяет из-за бага включить опцию \textopt{owncaptions}, что не
+позволяет локализовать заголовки. Автор исправил этот баг 21/07/2007 в
+версии 1.3 и сейчас поправленная версия пакета доступна на CTAN
+(\CTANpath{/macros/latex/contrib/vhistory.zip}).
+
+
+Подробности о возможностях пакета \textpkg{vhistory} можно найти в его
+документации \textfile{vh_sets_en.pdf}.
+
+
+\section{Исходники \LaTeX{} и контроль версий}
+\label{sec:latex-VC}
+
+
+\LaTeX"=исходник тоже представляет собой  код. И как всякий код он
+достоин включения в систему контроля версий. Часто бывает любопытно
+узнать версию текущего документа и последний момент его
+обновления. Если в качестве системы контроля версий используется
+\textprog{Subversion} или \textprog{svn}, то для начала следует загрузить пакет
+\textpkg{svn}\footnote{Если же в вашем проекте используется \textprog{cvs}
+  (Concurrent Versions System), то следует воспользоваться пакетами
+  \textpkg{rcs} или \textpkg{rcsinfo}.}.
+\begin{lstlisting}
+\usepackage{svn}
+\SVN $Date$
+\SVN $Rev$
+
+\end{lstlisting}
+
+При этом в текст следует добавить метки, предваряемые командой
+\textcmd{SVN}. Для интерполяции меток в системе Subversion при
+обновлении файла следует выполнить команды вида:
+\begin{lstlisting}[language=bash,frame=]
+> svn propset svn:keywords "Date Rev" |<<имя файла>>|
+> svn commit -m "интерполяция меток"
+
+\end{lstlisting}
+
+При этом \textprog{svn} передаётся информация, какие именно метки требуется
+обновлять при выполнении \textopt{commit}. В данном случае это метки
+\textopt{Date} и \textopt{Rev} "--- дата и версия соответственно. Более
+подробную информацию можно получить с помощью команды
+\begin{lstlisting}[language=bash,frame=]
+> svn help propset
+
+\end{lstlisting}
+
+Команда \textcmd{SVN}\lstinline! $Date$! определяет команды
+\textcmd{SVNDate} и \textcmd{SVNTime}, ответственные за календарную
+дату и время. Все остальные составные команды вида
+\textcmd{SVN}\lstinline! $Keyword$!, где Keyword "--- одна
+из интерполируемых меток \textprog{svn}, определяют команды вида:
+\textcmd{SVNKeyword}.
+
+После интерполяции метки будут выглядеть примерно следующим образом:
+\begin{example}{svn}
+\SVN $Date: 2006-11-25 21:02:20 +0600 $
+\SVN $Rev: 265 $
+Документ обновлён \SVNDate\ \SVNTime 
+
+Текущая версия \SVNRev 
+\end{example}
+
+Схожую функциональность предоставляет пакет \textpkg{svninfo}.
+\bigskip
+
+\mindex{контроль версий|)}
+
+
+\Note К сожалению, в книгах по \LaTeX{} редко рассматриваются пакеты,
+полезные для представления программных текстов или псевдокода. Здесь
+была предпринята попытка восполнить этот зияющий пробел. Тема
+настолько обширна, что разрабатывать её можно почти
+бесконечно. \LaTeX{} "---сам по себе код, поэтому программистам, по
+идее, должно быть уютно в его окружении.
+
+
+
+
+
+\endinput
+
+
+
+
+
+
+
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: "../ctex"
+%%% End: 

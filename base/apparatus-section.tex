@@ -1,0 +1,53 @@
+%  -*- coding: koi8-r -*-
+%структура страницы
+%\documentclass[10pt,bibtotoc,idxtotoc,liststotoc,pagesize]{scrbook} 
+\documentclass[10pt,bibtotoc,liststotoc,pagesize]{scrartcl} 
+\setlength{\paperwidth}{170mm}
+\setlength{\paperheight}{240mm}
+\areaset{130mm}{110mm}
+\usepackage[warn]{mathtext}
+\usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}
+\title{Пример рубрикации}
+\author{А.\,В.~Тор}
+\begin{document}
+\maketitle{}
+\tableofcontents{}
+\section{Раздел}
+\label{ex:section}
+Основной элемент рубрикации. 
+\subsection{Подраздел}
+\label{ex:subsection}
+Вспомогательный элемент рубрикации.
+\subsubsection[Подподраздел]{Что-то более мелкое, чем подраздел}
+\label{ex:subsubsection}
+Вспомогательный для вспомогательного. В содержании выводится 
+краткая версия заголовка.
+\paragraph{Параграф}
+\label{ex:paragraph}
+Важный параграф.
+
+\subparagraph{Подпараграф}
+\label{ex:subparagraph}
+Параграф чуть менее важный.
+
+\section*{Раздел, отсутствующий в содержании}
+\label{ex:nointableofcontnts}
+
+Всяко бывает. Иногда и такое нужно.
+
+\section*{Заключение}
+\label{ex:afterwords}
+\addcontentsline{toc}{section}{Заключение} 
+
+Заключение в отличие от, скажем, раздела~\ref{ex:subsection} 
+на странице~\pageref{ex:subsection} нумеровать не надо, но в 
+содержании отразить необходимо.
+
+\appendix
+
+\section{Приложение}
+
+\end{document}

@@ -1,0 +1,125 @@
+%  -*- coding: koi8-r -*-
+%структура страницы
+\input{../structheader}
+% \usepackage[warn]{mathtext}
+% \usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}%first paragraph indent
+%\usepackage{cmap}
+%\usepackage[unicode=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{srcltx}
+\usepackage{textcomp}
+\usepackage{floatflt}
+\usepackage{wrapfig}
+\usepackage{afterpage}
+\usepackage{ccaption}
+\captiondelim{. }
+\usepackage{xspace}
+%научные символы и смайлики \smiley \frownie
+\usepackage{musixtex}
+\usepackage{example}
+
+%backslash
+\newcommand{\bs}{\symbol{'134}}
+%degree
+\newcommand{\grad}{\ensuremath{{}^{\circ}}\xspace}
+\begin{document}
+\pagestyle{empty}
+
+
+%\begin{example}[0.5\linewidth]{musixtex-2}
+\begin{music}
+\parindent=0pt
+\generalmeter{\meterfrac34}
+\generalsignature{-1}
+%перенос формул в тексте
+\newcommand*{\lift}[2]{\raise#1\Interligne#2}
+\mulooseness=2
+\startpiece%
+% \Uptext{Умеренно}%
+ \notes%
+ \zql{d}\lift{1}{\qs}%
+ \ibbu0s5\qb0{km}\tbu0\qb0{o}%
+ \ibbu0s0\zqb0{m}%
+ \lift{-3}{\qp}%
+ \qb0{km}\tbu0\qb0{k}%
+ \ibl0j{-6}%
+ \zqb0{h}%
+ \lift{3}{\qs}%
+ \ccu{k}%
+ \tbl0%
+ \zqb0{f} %
+ \lift{2}{\qs}%
+ \ccu{k} %
+ \enotes\bar%
+ \notes%
+ \zql{d}\lift{1}{\qs}%
+ \ibbu0s5\qb0{km}\tbu0\qb0{o}%
+ \ibbu0s0\zqb0{m}%
+ \lift{-3}{\qp}%
+ \qb0{km}\tbu0\qb0{k}%
+ \ibl0j{-6}%
+ \zqb0{h}%
+ \lift{3}{\qs}%
+ \ccu{k}%
+ \tbl0%
+ \zqb0{f} %
+ \lift{2}{\qs}%
+ \ccu{k} %
+ \enotes\alaligne%
+ \notes%
+ \zql{d}\lift{1}{\qs}%
+ \ibbu0s5\qb0{km}\tbu0\qb0{p}%
+ \ibbu0s0\zqb0{n}%
+ \lift{-3}{\qp}%
+ \qb0{kn}\tbu0\qb0{k}%
+ \ibl0j{-6}%
+ \zqb0{i}%
+ \lift{4}{\qs}%
+ \ccu{k}%
+ \tbl0%
+ \zqb0{g} %
+ \lift{3}{\qs}%
+ \ccu{k}\ \ \ %
+ \enotes\bar%
+ \notes%
+ \zql{d}\lift{1}{\qs}%
+ \ibbu0s5\qb0{km}\tbu0\qb0{p}%
+ \ibbu0s0\zqb0{n}%
+ \lift{-3}{\qp}%
+ \qb0{kn}\tbu0\qb0{k}%
+ \ibl0j{-6}%
+ \zqb0{i}%
+ \lift{4}{\qs}%
+ \ccu{k}%
+ \tbl0%
+ \zqb0{g} %
+ \lift{3}{\qs}%
+ \ccu{k}     %
+ \enotes%
+\endpiece%
+\end{music}
+%\end{example}
+%  \notes\qu{abcdefghijk}\enotes
+
+%  \notes\zq{acegik}\qu m\enotes
+
+% \begin{example}[0.54\linewidth]{guitar}
+% \begin{guitar}
+% Спа[Gm]сибо [Eb]вам, мои дожд[Gm]и
+% [Eb]Спаси[D7]бо вам, мои осен[Gm]ние
+% За всё, что [A7]вы во мне по[D7]сеяли
+% Спа[Eb]сибо [D7]вам, мои дож[Gm]ди
+% \end{guitar}
+% \end{example}
+
+
+% Друзья у[Gm]ходят [A]как-то невзна[Dm]чай
+% Друзья у[Gm]ходят в [C]прошлое как в [F]замять
+
+
+\end{document}
