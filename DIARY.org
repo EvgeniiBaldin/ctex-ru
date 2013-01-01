@@ -37,13 +37,23 @@ password XXXXXXXXXXXXXXXXXXX
 > git remote add googlecode https://ctex-ru.googlecode.com/git
 > git push googlecode master:master
 
-Извлечение исходников:
+*** Извлечение исходников
 
 > git clone https://code.google.com/p/ctex-ru/
 
 мне можно и так:
 
 > git clone https://E.M.Baldin@code.google.com/p/ctex-ru/
+
+*** Работа с исходниками
+
+Если работаешь один, то всё просто:
+
+> git add <files>
+> git commit -m "Причина изменений"
+> git push googlecode
+
+Несколько человек должны быть осторожнее в своих изменениях.
 
 
 *** Отличия от оригинала
