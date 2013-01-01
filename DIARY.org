@@ -4,14 +4,47 @@
 
 Весь текст в koi8-r 
 
-Можно воспользоваться Makefile (make dist делает и исходники и pdf)
+Можно воспользоваться Makefile. Достаточно сказать make ctex.pdf
 
-Сборка заведомо проходит в рамках TeX Live 2011 в полной
+Сборка заведомо проходит в рамках TeX Live 2012 в полной
 установке. 
 
 Необходимо доставить пакеты c CTAN, отсутствующие в TeX Live: floatflt
 (проблемы с лицензией — автор испарился) и slashbox (исчез между TeX
 Live 2009 и TeX Live 2011)
+
+*** К вопросу о Google Code
+
+Информация по делу тут:
+http://alblue.bandlem.com/2011/07/setting-up-google-code-with-git.html
+
+Вкратце:
+ * Настраивается .netrc Информация для настройки берётся тут:
+   https://code.google.com/hosting/settings
+   Что-то вроде:
+
+-------------------------------------
+machine ctex-ru.googlecode.com
+login E.M.Baldin@gmail.com
+password XXXXXXXXXXXXXXXXXXX
+machine wiki.ctex-ru.googlecode.com
+login E.M.Baldin@gmail.com
+password XXXXXXXXXXXXXXXXXXX
+-------------------------------------
+
+ * Переходим в директорию git-проекта и набираем
+
+> git remote add googlecode https://ctex-ru.googlecode.com/git
+> git push googlecode master:master
+
+Извлечение исходников:
+
+> git clone https://code.google.com/p/ctex-ru/
+
+мне можно и так:
+
+> git clone https://E.M.Baldin@code.google.com/p/ctex-ru/
+
 
 *** Отличия от оригинала
  Немного поменялось описание bytefield в соответствиями с изменениями
@@ -20,6 +53,9 @@ Live 2009 и TeX Live 2011)
  Ловля оторванных предлогов и переносов на другие страницы
 
  Исправление опечаток и ошибок (Клапейрон)
+
+ Поправлена информация об оформлении библиографии по ГОСТу. Спасибо
+И.А. Котельникову за обновление стилей gost2008  и gost2003
 
 *** Проблемы сборки
 

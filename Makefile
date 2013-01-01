@@ -10,8 +10,9 @@ include rules.mk
 
 all:
 	$(PREFIX)$(ECHO) "run: make ctex.pdf"
-	$(PREFIX)$(ECHO) "run: make index"
 	$(PREFIX)$(ECHO) "run: make clean"
+
+#	$(PREFIX)$(ECHO) "run: make index"
 
 
 ctex.pdf: preheader title-1 preamble-1 intro-1 \

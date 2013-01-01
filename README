@@ -4,8 +4,8 @@
   have now regained exclusive rights to the content and decided to
   publish it under a Creative Commons Attribution-ShareAlike 3.0
   Unported License (CC-BY-SA 3.0).  Please contact me
-  (E.M.Baldin@inp.nsk.su) if you require a different type of copyright
-  license for your purposes.
+  (E.M.Baldin@inp.nsk.su or E.M.Baldin@gmail.com) if you require a
+  different type of copyright license for your purposes.
 
   This book is a guide to using the LaTeX document preparation
   system. It describes the complete fundamentals of the typesetting
@@ -23,3 +23,17 @@
   tools.  As the author of both the content and the typesetting, I
   will greatly appreciate any comments and useful advice on improving
   the quality of the electronic version of the book.
+
+
+** Compilation tips
+
+Checked with TeX Live 2012. You should download from CTAN and install
+manualy floatflt and slashbox packages. After that:
+
+> make ctex.pdf
+> make ctex.pdf
+> make ctex.pdf
+
+and
+
+> okular ctex.pdf
