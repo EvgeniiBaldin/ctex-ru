@@ -1,0 +1,52 @@
+%  -*- coding: koi8-r -*-
+\input{../structheader}
+%\documentclass[a4paper,12pt]{scrartcl} 
+\usepackage[warn]{mathtext}
+\usepackage[T2A]{fontenc}
+\usepackage[koi8-r]{inputenc}
+\usepackage[english,russian]{babel}
+\usepackage{indentfirst}%first paragraph indent
+\usepackage{cmap}
+\usepackage[unicode=true]{hyperref}
+\usepackage{graphicx}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{srcltx}
+\usepackage{textcomp}
+\usepackage{floatflt}
+\usepackage{wrapfig}
+\usepackage{afterpage}
+\usepackage{slashbox} %отсутствует в TeX Live 2011
+\usepackage{../example} 
+\usepackage{colortbl}
+\usepackage{multirow}
+\usepackage{ccaption}
+\captiondelim{. }
+\usepackage{xspace}
+%научные символы и смайлики \smiley \frownie
+\usepackage{wasysym}
+\usepackage{topcapt}
+
+%backslash
+\newcommand{\bs}{\symbol{'134}}
+%degree
+\newcommand{\grad}{\ensuremath{{}^{\circ}}\xspace}
+\begin{document}
+\pagestyle{empty}
+
+
+\begin{example}[0.55\linewidth]{tabular-6}
+\centering % при цветной печати будет цвет
+\begin{tabular}{c>{\columncolor{yellow}}cc} 
+\backslashbox{два}{один} & Истина & Ложь \\
+\rowcolor{yellow}
+Истина &                        & Истина \\
+Ложь   & \multirow{-2}*{Истина} & Ложь
+\end{tabular}  
+\end{example}
+
+%\begin{thebibliography}{9}
+%\bibitem{}
+%\newblock
+%\end{thebibliography}
+\end{document}

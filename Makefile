@@ -174,13 +174,19 @@ base/watermark.eps: base/watermark.tex
 	$(PREFIX)cd base; make watermark.eps
 
 tables-1: tables/tables.tex tables/tables-notopcaption.eps \
-          tables/tables-topcaption.eps 
+          tables/tables-topcaption.eps \
+          tables/tables-slashbox.eps 
 
 tables/tables-notopcaption.eps: tables/tables-notopcaption.tex
 	$(PREFIX)cd tables; make tables-notopcaption.eps
 
 tables/tables-topcaption.eps: tables/tables-topcaption.tex
 	$(PREFIX)cd tables; make tables-topcaption.eps
+
+# Пакет slashbox исчез между TeX Live 2009 и TeX Live 2011 
+# Для компиляции его нужно установить вручную с CTAN
+#tables/tables-slashbox.eps: tables/tables-slashbox.tex structheader.tex
+#	$(PREFIX)cd tables; make tables-slashbox.eps
 
 
 apparatus-1: apparatus/apparatus.tex \

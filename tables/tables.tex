@@ -423,25 +423,31 @@ e = 1+\frac{1}{2}+\frac{1}{6}+\cdots
 быть отрицательным. В этом случае объединяются ячейки сверху от
 команды. Подобное может потребоваться, чтобы согласовать свою работу с
 пакетом  \textpkg{colortbl}:
+\smallskip
+
+\noindent
 \textcmdhemph{rowcolor}
 \textcmdhemph{columncolor}
-\begin{example}[0.55\linewidth]{tabular-6}
-\centering % при цветной печати будет цвет
-\begin{tabular}{c>{\columncolor{yellow}}cc} 
-\backslashbox{два}{один} & Истина & Ложь \\
-\rowcolor{yellow}
-Истина &                        & Истина \\
-Ложь   & \multirow{-2}*{Истина} & Ложь
-\end{tabular}  
-\end{example}
+\includegraphics{tables/tables-slashbox}
+% \begin{example}[0.55\linewidth]{tabular-6}
+% \centering % при цветной печати будет цвет
+% \begin{tabular}{c>{\columncolor{yellow}}cc} 
+% \backslashbox{два}{один} & Истина & Ложь \\
+% \rowcolor{yellow}
+% Истина &                        & Истина \\
+% Ложь   & \multirow{-2}*{Истина} & Ложь
+% \end{tabular}  
+% \end{example}
+
 Пакет  \textpkg{colortbl} предназначен для раскрашивания таблицы в
 разные цвета. В~документации \textfile{colortbl.pdf} подробно
 излагаются принципы работы пакета.
 
-Команда \textcmd{backslashbox}\lstinline!{текст}{текст}!, делящая клетку на~две
-части наклонной чертой, определена в пакете \textpkg{slashbox}. Иногда
-так оформляют клетку на~перекрестии боковика и головки. С пакетом идёт
-пример \textfile{slashbox.tex}.
+Команда \textcmd{backslashbox}\lstinline!{текст}{текст}!, делящая
+клетку на~две части наклонной чертой, определена в пакете
+\textpkg{slashbox} (пакет необходимо скачать с CTAN и
+самостоятельно  установить). Иногда так оформляют клетку на~перекрестии
+боковика и головки. С пакетом идёт пример \textfile{slashbox.tex}.
 
 
 Автор кириллических шрифтов \textpkg{lh} Ольга Лапко для более
