@@ -479,26 +479,32 @@ dvi"=файла.
 
 %здесь привести пример рисунка в оборку wrapfigure.eps
 
-\begin{floatingfigure}{0.53\textwidth}
+% \begin{floatingfigure}{0.53\textwidth}
+% \centering    
+%  \includegraphics[width=0.5\textwidth]{graphics/wrapfigure.eps}
+%  \caption{Картинка в оборку.}
+% \end{floatingfigure}
+
+\begin{wrapfigure}{o}{0.51\textwidth}
 \centering    
- \includegraphics[width=0.5\textwidth]{graphics/wrapfigure.eps}
+ \includegraphics[width=0.46\textwidth]{graphics/wrapfigure.eps}
  \caption{Картинка в оборку.}
-\end{floatingfigure}
+\end{wrapfigure}
 
 
 Маленькие иллюстративные рисунки удобно делать в оборку с текстом,
-то есть текст должен обтекать их. Такие картинки располагаются на
-внешней стороне страницы, то есть слева для чётных, а справа для
+то есть текст должен обтекать их. Такие картинки располагаются 
+на~внешней стороне страницы, то есть слева для чётных, а справа для
 нечётных страниц или в случае одностороннего режима печати.
 
 
 Традиционно разбираются два пакета для создания подобных рисунков "---
-это \textpkg{floatflt} и \textpkg{wrapfig}. Заметим, что 
+это \textpkg{floatflt} и \textpkg{wrapfig}. Заметим, что
 \textpkg{floatflt} более автоматизирован для размещения картинок, но
-он также чаще <<ломается>> при большом числе плавающих
-объектов. Возможны даже <<потери>> картинок. Эти пакеты
-определяют окружения \textenv{floatingfigure} и \textenv{wrapfigure}
-соответственно.
+он также чаще <<ломается>> при большом числе плавающих объектов и его
+нужно самостоятельно устанавливать с CTAN. Возможны даже <<потери>>
+картинок. Эти пакеты определяют окружения \textenv{floatingfigure} и
+\textenv{wrapfigure} соответственно.
 
 \begin{lstlisting}
 \begin{floatingfigure}[|<<размещение>>|]{|<<ширина>>|}

@@ -1570,11 +1570,17 @@ www-адреса автоматически переносятся на следующую строку, но если
 \mindex{фоновый текст}
 \mindex{черновик}
 
-\begin{floatingfigure}[o]{0.46\textwidth}
+%\begin{floatingfigure}[o]{0.46\textwidth}
+%   \centering
+%   \includegraphics[width=0.355\textwidth]{base/watermark.eps}
+%   \caption{\textpkgemph{draftwatermark}}\label{fig:base2:watermark}
+% \end{floatingfigure}
+\begin{wrapfigure}{o}{0.44\textwidth}
   \centering
-  \includegraphics[width=0.355\textwidth]{base/watermark.eps}
+  \includegraphics[width=0.32\textwidth]{base/watermark.eps}
   \caption{\textpkgemph{draftwatermark}}\label{fig:base2:watermark}
-\end{floatingfigure}
+\end{wrapfigure}
+
 Чтобы показать, что копия документа не окончательная, или просто
 вставить какой"=то текст в качестве фона, можно воспользоваться
 специализированным пакетом  \textpkgemph{draftwatermark}. С
@@ -1584,12 +1590,11 @@ www-адреса автоматически переносятся на следующую строку, но если
  через всю страницу по~диагонали печатается слово <<DRAFT>>. Пакет
 совместим как с \textprog{dvips}, так и с \textprog{pdflatex}.
 
-Стилю можно передать для печати своё сообщение и изменить
-размер шрифта. На рис.~\ref{fig:base2:watermark} изображена страница, на
-фоне которой идёт надпись <<Рабочая версия>>. Для того чтобы её
-получить, в преамбуле были добавлены следующие строки:
-\textcmdhemph{SetWatermarkScale}
-\textcmdhemph{SetWatermarkLightness}
+Стилю можно передать для печати своё сообщение и изменить размер
+шрифта. На~рис.~\ref{fig:base2:watermark} изображена страница, на~фоне
+которой идёт надпись <<Рабочая версия>>. Для того чтобы её получить, в
+преамбуле были добавлены следующие строки:
+\textcmdhemph{SetWatermarkScale} \textcmdhemph{SetWatermarkLightness}
 \textcmdhemph{SetWatermarkText}
 \begin{lstlisting}[]
 % Загрузка пакета

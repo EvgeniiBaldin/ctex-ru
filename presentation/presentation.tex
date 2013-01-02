@@ -47,21 +47,28 @@
 \section{slides}
 \label{sec:pr:slides}
 
-\begin{floatingfigure}{0.545\textwidth}
+% \begin{floatingfigure}{0.545\textwidth}
+%   \centering
+%   \fbox{\includegraphics[width=0.54\textwidth]{presentation/presentation-slides.eps}}
+%   \caption{\textpkg{slides} "--- это просто}\label{fig:prsentation:slides}
+% \end{floatingfigure}
+
+\begin{wrapfigure}{o}{0.53\textwidth}
   \centering
-  \fbox{\includegraphics[width=0.54\textwidth]{presentation/presentation-slides.eps}}
+  \fbox{\includegraphics[width=0.48\textwidth]{presentation/presentation-slides.eps}}
   \caption{\textpkg{slides} "--- это просто}\label{fig:prsentation:slides}
-\end{floatingfigure}
+\end{wrapfigure}
 
 Динозавр среди классов \LaTeX, специализирующихся на
 презентациях. Идея очень простая. В качестве класса документа
 выбирается \textpkg{slides}. В результате базовый размер шрифта
 автоматически увеличивается. Это позволяет прочитать стандартный текст
 на экране и избавиться от одного из <<смертных грехов>> докладчика, а именно
-желания уместить слишком много информации на одной страничке. Здесь по
-умолчанию ничего с этим не выйдет. Опция  класса \textopt{landscape}
+желания уместить слишком много информации на одной страничке. Здесь 
+по~умолчанию ничего с этим не выйдет. Опция  класса \textopt{landscape}
 позволяет выбирать альбомную ориентацию для страницы по
-умолчанию. Слайды создаются с~помощью окружения \textenv{slide}. Всё.
+умолчанию. Слайды создаются с~помощью окружения \textenv{slide}. 
+%Всё.
 
 
 \begin{lstlisting}[]
