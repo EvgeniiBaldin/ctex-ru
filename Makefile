@@ -10,6 +10,7 @@ include rules.mk
 
 all:
 	$(PREFIX)$(ECHO) "run: make ctex.pdf"
+	$(PREFIX)$(ECHO) "run: make ctex.ps"
 	$(PREFIX)$(ECHO) "run: make clean"
 
 #	$(PREFIX)$(ECHO) "run: make index"
@@ -21,6 +22,16 @@ ctex.pdf: preheader title-1 preamble-1 intro-1 \
           tables-1 apparatus-1 math-2  code-1 science-1 \
            humanities-1 catalog-1 appendix-1 index bib
 	$(PREFIX)$(PDFLATEX) ctex.tex
+
+ctex.ps: ctex.dvi
+	$(DVIPS) ctex.dvi
+
+ctex.dvi: preheader title-1 preamble-1 intro-1 \
+          base-1 math-1 graphics-1 program-1 \
+          make-up-1 classes-1 presentation-1 base-2 \
+          tables-1 apparatus-1 math-2  code-1 science-1 \
+           humanities-1 catalog-1 appendix-1 index bib
+	$(PREFIX)$(LATEX) ctex.tex
 
 # TeXнический заголовок
 preheader: preheader.tex structheader.tex 

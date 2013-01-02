@@ -27,3 +27,5 @@
 auto/
 *.synctex.gz
 /ctex.pdf
+/ctex.ps
+/ctex.dvi
