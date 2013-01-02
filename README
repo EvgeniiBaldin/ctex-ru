@@ -27,8 +27,7 @@
 
 ** Compilation tips
 
-Checked with TeX Live 2012. You should download from CTAN and install
-manualy floatflt and slashbox packages. After that:
+Checked with TeX Live 2012. 
 
 > make ctex.pdf
 > make ctex.pdf

@@ -5,13 +5,10 @@
 Весь текст в koi8-r 
 
 Можно воспользоваться Makefile. Достаточно сказать make ctex.pdf
+(лучше сразу трижды).
 
 Сборка заведомо проходит в рамках TeX Live 2012 в полной
 установке. 
-
-Необходимо доставить пакеты c CTAN, отсутствующие в TeX Live: floatflt
-(проблемы с лицензией — автор испарился) и slashbox (исчез между TeX
-Live 2009 и TeX Live 2011)
 
 *** К вопросу о Google Code
 
@@ -19,16 +16,17 @@ Live 2009 и TeX Live 2011)
 http://alblue.bandlem.com/2011/07/setting-up-google-code-with-git.html
 
 Вкратце:
- * Настраивается .netrc Информация для настройки берётся тут:
-   https://code.google.com/hosting/settings
-   Что-то вроде:
+ * Настраивается ~/.netrc Информация для настройки берётся тут:
+   https://code.google.com/hosting/settings В файл нужно написать
+   что-то вроде (вместо ctex-ru, NAME и XXXXXX нужно подставить свою
+   информацию):
 
 -------------------------------------
 machine ctex-ru.googlecode.com
-login E.M.Baldin@gmail.com
+login NAME@gmail.com
 password XXXXXXXXXXXXXXXXXXX
 machine wiki.ctex-ru.googlecode.com
-login E.M.Baldin@gmail.com
+login NAME@gmail.com
 password XXXXXXXXXXXXXXXXXXX
 -------------------------------------
 
