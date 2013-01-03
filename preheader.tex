@@ -16,6 +16,8 @@
 
 \usepackage[breaklinks,hyperfootnotes=false,unicode=true]{hyperref}
 \hypersetup{
+%  frenchlinks=true,
+  colorlinks=true,
   pdfencoding=auto,
   pdfinfo={
     Title={Computer Typesetting Using LaTeX},
@@ -345,7 +347,7 @@
 \newlength{\NoteWidth}
 %\newcommand{\NoteSign}{$\diamondsuit$}
 %\newcommand{\NoteSign}{\textbullet}
-\newcommand{\NoteSign}{$\RHD$}
+\newcommand{\NoteSign}{\textcolor{green}{$\RHD$}}
 \settowidth{\NoteWidth}{\NoteSign\,}
 %знак заметки - вероятно надо поменять на мордочку
 \newcommand{\Note}{\hspace{-\NoteWidth}\NoteSign\,}
