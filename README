@@ -3,7 +3,8 @@
   978-5-9775-0230-6.  Under the contract with the publishing house, I
   have now regained exclusive rights to the content and decided to
   publish it under a Creative Commons Attribution-ShareAlike 3.0
-  Unported License (CC-BY-SA 3.0).  Please contact me
+  Unported License (CC-BY-SA 3.0). The source code is published under
+  GPL General Public License version 3 or later. Please contact me
   (E.M.Baldin@inp.nsk.su or E.M.Baldin@gmail.com) if you require a
   different type of copyright license for your purposes.
 
@@ -25,6 +26,10 @@
   the quality of the electronic version of the book.
 
 
+** Google Code 
+
+> git clone https://code.google.com/p/ctex-ru/
+
 ** Compilation tips
 
 Checked with TeX Live 2012. 
@@ -32,7 +37,3 @@ Checked with TeX Live 2012.
 > make ctex.pdf
 > make ctex.pdf
 > make ctex.pdf
-
-and
-
-> okular ctex.pdf

@@ -12,7 +12,7 @@ all:
 	$(PREFIX)$(ECHO) "Usage:"
 	$(PREFIX)$(ECHO) "     make ctex.pdf -- 3 times is better"
 	$(PREFIX)$(ECHO) "     make clean"
-	$(PREFIX)$(ECHO) "     make archive -- make dist/ dir with source and ctex.pdf"
+	$(PREFIX)$(ECHO) "     make ctan -- make $(CTANDIR)/ dir with ctex.zip for CTAN uploading"
 	$(PREFIX)$(ECHO) "       All changes should be commited and ctex.pdf should be updated"
 
 # теряется информация о страницах
@@ -24,11 +24,14 @@ all:
 # исходники. Предполагается, что все изменения закоммичены, то есть
 # git status ни на что не ругается, а ctex.pdf обновлён, то есть make
 # ctex.pdf сказан трижды.
-archive:
-	$(PREFIX)$(MKDIR) dist
-	$(PREFIX)$(CP) -a ctex.pdf dist/
+ctan:
+	$(PREFIX)$(MKDIR) $(CTANDIR)/ctex/
+	$(PREFIX)$(CP) -a ctex.pdf $(CTANDIR)/ctex/
+	$(PREFIX)$(CP) -a README $(CTANDIR)/ctex/
 	$(PREFIX)$(GIT-ARCHIVE) --format=tar.gz HEAD \
-          --prefix=ctex-`date +'%y%m%d'`/  -o dist/ctex.tar.gz 
+          --prefix=ctex-`date +'%y%m%d'`/  \
+           -o $(CTANDIR)/ctex/ctex.tar.gz 
+	$(PREFIX)cd $(CTANDIR); $(ZIP) -r ctex.zip ctex/
 
 ctex.pdf: preheader title-1 preamble-1 intro-1 \
           base-1 math-1 graphics-1 program-1 \
@@ -412,4 +415,4 @@ ctex-pkg.idx: ctex-index.tex ctex.ist
 
 
 clean:
-	$(PREFIX)$(RM)  $(TMPFILES)
+	$(PREFIX)$(RM)  $(TMPFILES)  $(CTANDIR)/

@@ -19,9 +19,11 @@ RM := rm -f
 MKDIR := mkdir -p
 CP := cp 
 GIT-ARCHIVE := git archive
+ZIP := zip
 ECHO := echo
 MAKEINDEX := makeindex
 
+CTANDIR := CTAN
 TMPFILES := mpxerr.tex *~ *-eps-converted-to.pdf \
  *.aux *.log *.dvi *.exa *.idx *.ind *.ilg *.cb *.blg *.bbl \
  *.glo *.gls *.mpx *.out *.exa *.toc *.snm *.nav *.ver *.hst
