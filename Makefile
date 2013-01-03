@@ -9,12 +9,26 @@ include rules.mk
 
 
 all:
-	$(PREFIX)$(ECHO) "run: make ctex.pdf"
-	$(PREFIX)$(ECHO) "run: make ctex.ps"
-	$(PREFIX)$(ECHO) "run: make clean"
+	$(PREFIX)$(ECHO) "Usage:"
+	$(PREFIX)$(ECHO) "     make ctex.pdf -- 3 times is better"
+	$(PREFIX)$(ECHO) "     make clean"
+	$(PREFIX)$(ECHO) "     make archive -- make dist/ dir with source and ctex.pdf"
+	$(PREFIX)$(ECHO) "       All changes should be commited and ctex.pdf should be updated"
 
+# теряется информация о страницах
+#	$(PREFIX)$(ECHO) "run: make ctex.ps" 
 #	$(PREFIX)$(ECHO) "run: make index"
 
+
+#    Cоздаётся дирректория dist, куда копируется ctex.pdf и
+# исходники. Предполагается, что все изменения закоммичены, то есть
+# git status ни на что не ругается, а ctex.pdf обновлён, то есть make
+# ctex.pdf сказан трижды.
+archive:
+	$(PREFIX)$(MKDIR) dist
+	$(PREFIX)$(CP) -a ctex.pdf dist/
+	$(PREFIX)$(GIT-ARCHIVE) --format=tar.gz HEAD \
+          --prefix=ctex-`date +'%y%m%d'`/  -o dist/ctex.tar.gz 
 
 ctex.pdf: preheader title-1 preamble-1 intro-1 \
           base-1 math-1 graphics-1 program-1 \
@@ -23,8 +37,10 @@ ctex.pdf: preheader title-1 preamble-1 intro-1 \
            humanities-1 catalog-1 appendix-1 index bib
 	$(PREFIX)$(PDFLATEX) ctex.tex
 
+
 ctex.ps: ctex.dvi
 	$(DVIPS) ctex.dvi
+
 
 ctex.dvi: preheader title-1 preamble-1 intro-1 \
           base-1 math-1 graphics-1 program-1 \

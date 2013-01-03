@@ -16,6 +16,9 @@ PDFLATEX := pdflatex
 PDFTOPS := pdftops
 DVIPS := dvips
 RM := rm -f
+MKDIR := mkdir -p
+CP := cp 
+GIT-ARCHIVE := git archive
 ECHO := echo
 MAKEINDEX := makeindex
 
