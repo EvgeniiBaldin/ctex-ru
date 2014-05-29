@@ -22,6 +22,7 @@ GIT-ARCHIVE := git archive
 ZIP := zip
 ECHO := echo
 MAKEINDEX := makeindex
+GIT := git
 
 CTANDIR := CTAN
 TMPFILES := mpxerr.tex *~ *-eps-converted-to.pdf \

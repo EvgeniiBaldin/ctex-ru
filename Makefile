@@ -12,6 +12,7 @@ all:
 	$(PREFIX)$(ECHO) "Usage:"
 	$(PREFIX)$(ECHO) "     make ctex.pdf -- 3 times is better"
 	$(PREFIX)$(ECHO) "     make clean"
+	$(PREFIX)$(ECHO) "     make googlecode (push source)"
 	$(PREFIX)$(ECHO) "     make ctan -- make $(CTANDIR)/ dir with ctex.zip for CTAN uploading"
 	$(PREFIX)$(ECHO) "       All changes should be commited and ctex.pdf should be updated"
 
@@ -412,7 +413,8 @@ ctex-cmd.idx: ctex-index.tex ctex.ist
 ctex-pkg.idx: ctex-index.tex ctex.ist
 	$(PREFIX)$(PDFLATEX) ctex.tex
 
-
+googlecode: 
+	$(PREFIX)$(GIT) push googlecode
 
 clean:
 	$(PREFIX)$(RM)  $(TMPFILES)  
