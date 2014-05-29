@@ -1,5 +1,8 @@
 -*- mode:org; coding: utf-8  -*-
 ** Планы на будущее
+*** добавить микротипографику
+ microtype -- пройтись и проверить, что всё нормально, но нужно будет
+ пройтись и по всем внешним сегментам.
 *** DONE Избавиться от slashbox
     CLOSED: [2013-01-02 Ср. 10:51]
 Исчез между TeX Live 2009 и TeX Live 2011
@@ -21,10 +24,78 @@ MetaPost напрямую
 перевести всё на pdf.
 *** Перевести всё в Unicode
 *** Сделать версию для электронных читалок 
+ Это должна быть основной -- ориентация на google nexus
 *** Написать методичку для студентов
 Она должна быть небольшой и пошаговой
 *** Добавить главу про XeTeX
+\usepackage{polyglossia}
+\setdefaultlanguage{russian}
+ \setromanfont[Mapping=tex-text,BoldFont=<%= config['bold'] %>]{<%= config['font'] %>}
+\newfontfamily\cyrillicfont{<%= config['font'] %>}
+\setmonofont[Scale=.85]{<%= config['mono'] %>}
+\newfontfamily\cyrillicfonttt{<%= config['mono'] %>}
+\XeTeXlinebreaklocale{<%= lang %>}
+ <%= config['langrule'] %>
+
+Поставил пакет texlive-lang-cyrillic — переносы расставились, но
+пропали длинные тире. Решилось добавлением \setkeys{russian}{babelshorthands=true} в преамбулу.
 *** Добавить главу про emacs
+ + auctex+reftex
+   * forward and reverse search
+   * emacswiki
+   * master file
+ + preview latex
+ + whizzytex
+ + latexenc.el важно если нужен cp866 в файле
+ + вставка символов
+   * latex-doc
+   * latex-toolbar
+   * latex-units.el
+ + dviview, decview
+*** Добавить обзор BaKoMa TeX
+http://www.bakoma-tex.com/menu/linux.php
+*** Оформление кода
+**** Описать проблемы listings
+\lstset{
+    keepspaces=true,
+    extendedchars=\true,
+    inputencoding=utf8,
+    escapechar={|}
+}
+Первые две строки нужны для кириллических комментариев. escapchar всё
+равно использовать придётся из-за проблем в строках если не указан language
+
+***** рецепт от Eddy_Em
+http://www.linux.org.ru/forum/desktop/8777775?cid=8778076
+
+> какие настройки для наиболее «красивого» отображения кода следует использовать?
+
+Так это же «на вкус и на цвет». Я, например, вот так делаю:
+
+\lstset{basicstyle=\small,breaklines=true,language=Octave,
+    extendedchars=true,aboveskip=1em,belowcaptionskip=5pt,
+    prebreak = \hbox{%
+\normalfont\small\hfill\green{\ensuremath{\hookleftarrow}}},
+    postbreak = \hbox to 0pt{%
+\hss\normalfont\small\green{\ensuremath{\hookrightarrow}}\hspace{1ex}},
+    commentstyle=\color{blue},showspaces=false,
+    showstringspaces=false,stringstyle=\bfseries\color[rgb]{0.6,0,1},
+    numbers=left,numberstyle=\tiny,stepnumber=2,
+    keywordstyle=\bfseries\color[rgb]{0,0.1,0.5},
+    frameround=tttt,frame=trBL,tabsize=4,backgroundcolor=\color[rgb]{.9,.9,1}}
+\lstloadlanguages{Octave}
+\def\lstlistingname{Листинг}
+\def\lstref#1{(см.~листинг~\ref{#1})}
+
+P.S. Так как у меня КОИ8-Р, никаких проблем с кириллицей нет.
+
+**** Описать пакет minted
+Нужно добавить для раскраски
+> sudo aptitude install python-pygments
+
+Кириллица отображается, если использовать совместно с XiTeX
+**** Описать препроцессор highlight
+http://www.andre-simon.de/doku/highlight/en/highlight.html
 ** Замеченные проблемы
 *** TODO elsart → elsarticle
 
@@ -114,6 +185,9 @@ http://www.tex.uniyar.ac.ru/doc/hyperref_options.pdf
 В начале обратить внимание, что копировать примеры из книги не стоит,
 так как они набирались без учёта будущей электронной копии.
 
+*** TODO Команда \textpkgh считаются за символ 
+Необходимо сделать так, чтобы она воспринималась как отсутствие
+символа, иначе вместо одного пробела вставляется два.
 ** DONE Планы для исходников на Google Code [3/3]
    CLOSED: [2013-01-01 Вт. 19:21]
   * [X] Зарегистрировать проект ctex-ru
@@ -127,3 +201,22 @@ http://www.tex.uniyar.ac.ru/doc/hyperref_options.pdf
  * [X] Перейти на pdflatex, чтобы был поиск кириллицы (cmap)
  * [ ] добавить историю версий в конце
  * [ ] добавить страничку благодарности за историй версий
+** TeX Live 2013 проблемы
+jamesjames Root@erc <theism@mail.ru>
+кому:	 E.M.Baldin@inp.nsk.su
+дата:	 25 августа 2013 г., 17:58
+тема:	 TexLive 2013 убран \No
+
+В TexLive 2013 убрали \No:
+
+ftp://sunsite.icm.edu.pl/pub/CTAN/macros/latex/contrib/babel-contrib/russian/russianb.pdf
+> Babel Changes in version 1.2
+> The macro \No is removed since the Cyrillic number sign is available
+> on keyboard and can also be typed using the \textnumero macro.
+
+И теперь, те кто захочет освоить LaTeX по документации до 2013 года будет получать ошибку из-за \No, сначала думал что напутали с установкой пакетов в gentoo, но оказалось что так надо и будет впредь.
+
+Придётся прописывать для совместимости в старых работах tex в преамбуле:
+\DeclareRobustCommand{\No}{\ifmmode{\nfss@text{\textnumero}}\else\textnumero\fi}
+
+Возможно вы могли бы дополнить вашу книгу последними важными особенностями, чем несомненно облегчите жизнь многим начинающим и не только им.

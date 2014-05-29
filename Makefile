@@ -415,4 +415,5 @@ ctex-pkg.idx: ctex-index.tex ctex.ist
 
 
 clean:
-	$(PREFIX)$(RM)  $(TMPFILES)  $(CTANDIR)/
+	$(PREFIX)$(RM)  $(TMPFILES)  
+	$(PREFIX)$(RM) -rf  $(CTANDIR)/
