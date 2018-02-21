@@ -10,6 +10,7 @@
 *.bbl
 *.glo
 *.gls
+*.eps
 *.tar.bz2
 *.mpx
 *.out
